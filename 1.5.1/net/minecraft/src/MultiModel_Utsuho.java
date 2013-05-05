@@ -98,8 +98,8 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 		textureHeight=64;
 		textureWidth=64;
 		f1 += 8F;
-		bipedHead = new Modchu_ModelRenderer(this, 0, 1);
-		bipedHead.addBox(-4F, -7F, -4F, 8, 7, 8, f);
+		bipedHead = new Modchu_ModelRenderer(this, 0, 0);
+		bipedHead.addBox(-4F, -7F, -4F, 8, 8, 8, f);
 		bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHeadwear = new Modchu_ModelRenderer(this, 24, 0);
 		bipedHeadwear.addBox(-4F, 0.0F, 0.0F, 8, 4, 4, f);
@@ -782,6 +782,6 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
     			"Skirt6", "Skirt7", "Skirt8", "Skirt9", "Skirt10",
     			"Skirt11", "Skirt12"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(caps_showPartsHideList, (Object) s);
     }
 }

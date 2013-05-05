@@ -93,6 +93,10 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 	private float AY;
 	private float prevAY;
 
+	private float[] pastX=new float[10];
+	private float[] pastY=new float[10];
+	private float[] pastZ=new float[10];
+
 	public MultiModel_Yomu()
 	{
 		this(0.0F);
@@ -435,41 +439,48 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 		Tuka6.setRotateAngleDeg(0F,-90F,-45F);
 		BradeC.addChild(Tuka6);
 
-		HanreiC = new Modchu_ModelRenderer(this, 16, 19);
-		HanreiC.addBall(8.0F, 0.0F, 6.0F, 4.0F, 4.0F, 4.0F);
+		HanreiC = new Modchu_ModelRenderer(this,0 ,0);
+	//	HanreiC.addBox(6F, -2F,2F, 4, 4, 4, psize);
+		HanreiC.addBall(8f, 0, 6f,4f,4f,4f);
+	//	HanreiC.setScale(4f,4f,4f);
 		HanreiC.setRotationPointLM(0F,0F,0F);
-		x1=-6.0F;
-		y1=-2.0F;
-		z1=-5.0F;
+		x1=0F;
+		y1=0F;
+		z1=0F;
 		IdOffset=0F;
 		AY=0F;
 
-		Hanrei1 = new Modchu_ModelRenderer(this, 2, 24);
-		Hanrei1.addBall(0.0F, 0.0F, 0.0F, 6.0F, 6.0F, 6.0F);
+
+/*		Hanrei1 = new Modchu_ModelRenderer(this,0 ,0);
+	//	Hanrei1.addBox(-1F, -1F,-2F, 2, 2, 4, psize);
+		Hanrei1.addBall(0f,0f,0f,6f,6f,6f);
 		Hanrei1.setRotationPointLM(0F,0.0F,0F);
-		Hanrei1.setRotateAngleDeg(0F,0F,0F);
+		setRotationDeg(Hanrei1,0F,0F,0F);
+	//	bipedBody.addChild(Hanrei1);
 
-		Hanrei2 = new Modchu_ModelRenderer(this, 2, 24);
-		Hanrei2.addBox(-1.0F, -1.0F, -2.0F, 2, 2, 4, f);
+		Hanrei2 = new Modchu_ModelRenderer(this,2 ,24);
+		Hanrei2.addBox(-1F, -1F,-2F, 2, 2, 4, psize);
 		Hanrei2.setRotationPointLM(8F,0.0F,4F);
-		Hanrei2.setRotateAngleDeg(90F,0F,0F);
+		setRotationDeg(Hanrei2,90F,0F,0F);
 
-		Hanrei3 = new Modchu_ModelRenderer(this, 2, 24);
-		Hanrei3.addBox(-1.0F, -1.0F, -2.0F, 2, 2, 4, f);
+		Hanrei3 = new Modchu_ModelRenderer(this,2 ,24);
+		Hanrei3.addBox(-1F, -1F,-2F, 2, 2, 4, psize);
 		Hanrei3.setRotationPointLM(8F,0.0F,4F);
-		Hanrei3.setRotateAngleDeg(0F,90F,0F);
+		setRotationDeg(Hanrei3,0F,90F,0F);
+*/
+		Hanrei4 = new Modchu_ModelRenderer(this,0 ,0);
+	//	Hanrei4.addBox(7F, -1F,3F, 2, 2, 2, psize);
+		Hanrei4.addBall(8f, 0.3f, 5.0f,2f,2f,2f);
+	//	Hanrei4.setScale(2f,2f,2f);
+		Hanrei4.setRotationPointLM(0F,0.0F,0F);//(8F,0.5F,6.5F);
+	//	HanreiC.addChild(Hanrei4);
 
-		Hanrei4 = new Modchu_ModelRenderer(this, 0, 0);
-		Hanrei4.addBall(8.0F, 0.3F, 5.0F, 2.0F, 2.0F, 2.0F);
-		Hanrei4.setRotationPointLM(0F,0.0F,0F);
-		Hanrei4.setRotateAngleDeg(0F,0F,0F);
-		HanreiC.addChild(Hanrei4);
-
-		Hanrei5 = new Modchu_ModelRenderer(this, 0, 0);
-		Hanrei5.addBall(8.0F, 0.2F, 4.7F, 1.0F, 1.0F, 1.0F);
-		Hanrei5.setRotationPointLM(0F,0F,0F);
-		Hanrei5.setRotateAngleDeg(0F,0F,0F);
-		Hanrei4.addChild(Hanrei5);
+		Hanrei5 = new Modchu_ModelRenderer(this,0 ,0);
+	//	Hanrei5.addBox(7.5F, -0.5F,3.5F, 1, 1, 1, psize);
+		Hanrei5.addBall(8f, 0.2f, 4.7f,1f,1f,1f);
+	//	Hanrei5.setScale(1f,1f,1f);
+		Hanrei5.setRotationPointLM(0F,0F,0F);//(8F,1F,7F)
+	//	Hanrei4.addChild(Hanrei5);
 
 		PlateR1 = new Modchu_ModelRenderer(this, 45, 52, Skirt);
 		PlateR1.addPlate(-8.0F, 0.0F, 0.0F, 16, 8, 0, f);
@@ -541,6 +552,8 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 		mainFrame.addChild(bipedHead);
 		mainFrame.addChild(bipedBody);
 		mainFrame.addChild(HanreiC);
+		mainFrame.addChild(Hanrei4);
+		mainFrame.addChild(Hanrei5);
 
 		Skirt1.setRotateAngleDeg(-118F, 113F, 42F);
 		Skirt2.setRotateAngleDeg(-65F, 113F, 42F);
@@ -655,10 +668,6 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 		Headband2.setScale(1.0F, 0.3F, 1.0F);
 		Headband3.setScale(1.0F, 0.3F, 1.0F);
 		Headband4.setScale(1.0F, 0.3F, 1.0F);
-		HanreiC.setScale(2.0F, 2.0F, 2.0F);
-		Hanrei1.setScale(3.0F, 3.0F, 3.0F);
-		//Hanrei4.setScale(1.0F, 1.0F, 1.0F);
-		Hanrei5.setScale(0.5F, 0.5F, 0.5F);
 		Ribon4.setScale(0.5F, 0.5F, 0.5F);
 		Ribon5.setScale(0.8F, 0.8F, 0.8F);
 		Ribon6.setScale(0.8F, 0.8F, 0.8F);
@@ -709,17 +718,17 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 		if(getCapsValueBoolean(caps_isOpenInv, entityliving)) {
 			try
 			{
-				IdIndex = IdList.indexOf(Integer.valueOf(entityliving.entityId));
-				HanreiC.rotateAngleY = ((Float)AngleYList.get(IdIndex)).floatValue();
-				AY = ((Float)YawOffsetList.get(IdIndex)).floatValue();
+				IdIndex=IdList.indexOf(entityliving.entityId);
+				HanreiC.rotateAngleY=(Float)AngleYList.get(IdIndex);
+				AY=(Float)YawOffsetList.get(IdIndex);
 			}
 			catch (Exception var15)
 			{
-				IdList.add(Integer.valueOf(entityliving.entityId));
-				AngleYList.add(Float.valueOf(HanreiC.rotateAngleY));
-				YawOffsetList.add(Float.valueOf(entityliving.renderYawOffset));
-				IdIndex = IdList.indexOf(Integer.valueOf(entityliving.entityId));
-				AY = entityliving.renderYawOffset;
+				IdList.add(entityliving.entityId);
+				AngleYList.add(HanreiC.rotateAngleY);
+				YawOffsetList.add(entityliving.renderYawOffset);//renderYawOffset);
+				IdIndex=IdList.indexOf(entityliving.entityId);
+				AY=entityliving.renderYawOffset;//renderYawOffset;
 			}
 			finally
 			{
@@ -728,72 +737,72 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 		} else {
 			try
 			{
-				IdIndex = IdList.indexOf(Integer.valueOf(entityliving.entityId));
-				HanreiC.rotateAngleY = ((Float)AngleYList.get(IdIndex)).floatValue();
-				AY = ((Float)YawOffsetList.get(IdIndex)).floatValue();
+				IdIndex=IdList.indexOf(entityliving.entityId);
+				HanreiC.rotateAngleY=(Float)AngleYList.get(IdIndex);
+				AY=(Float)YawOffsetList.get(IdIndex);
 			}
 			catch (Exception var14)
 			{
-				IdList.add(Integer.valueOf(entityliving.entityId));
-				AngleYList.add(Float.valueOf(HanreiC.rotateAngleY));
-				YawOffsetList.add(Float.valueOf(entityliving.renderYawOffset));
-				IdIndex = IdList.indexOf(Integer.valueOf(entityliving.entityId));
-				AY = entityliving.renderYawOffset;
+				IdList.add(entityliving.entityId);
+				AngleYList.add(HanreiC.rotateAngleY);
+			//	YawOffsetList.add(entityliving.renderYawOffset);
+				YawOffsetList.add(entityliving.renderYawOffset);
+				IdIndex=IdList.indexOf(entityliving.entityId);
+				AY=entityliving.renderYawOffset;//renderYawOffset;
 			}
 
-			float var9 = entityliving.renderYawOffset / 180.0F * (float)Math.PI;
-			float var10 = var9 - AY / 180.0F * (float)Math.PI;
+			float r1=(entityliving.renderYawOffset)/180F*(float)Math.PI;
 
-			for (HanreiC.rotateAngleY -= var10 * 0.45F; HanreiC.rotateAngleY > (float)Math.PI; HanreiC.rotateAngleY -= ((float)Math.PI * 2F))
+			float move=r1-AY/180F*(float)Math.PI;
+
+			HanreiC.rotateAngleY-=move*0.45F;
+			while(HanreiC.rotateAngleY>(float)Math.PI)
+				HanreiC.rotateAngleY-=2f*(float)Math.PI;
+			while(HanreiC.rotateAngleY<-(float)Math.PI)
+				HanreiC.rotateAngleY+=2f*(float)Math.PI;
+			if(HanreiC.rotateAngleY!=0F)
 			{
-				;
+		//		if(Math.abs(HanreiC.rotateAngleY/200F)>0.01F)
+		//			HanreiC.rotateAngleY-=Math.copySign(0.01F,HanreiC.rotateAngleY);
+		//		else
+		//			HanreiC.rotateAngleY-=HanreiC.rotateAngleY/200F;
+					HanreiC.rotateAngleY*=0.99f;
 			}
-
-			while (HanreiC.rotateAngleY < -(float)Math.PI)
-			{
-				HanreiC.rotateAngleY += ((float)Math.PI * 2F);
-			}
-
-			if (HanreiC.rotateAngleY != 0.0F)
-			{
-				HanreiC.rotateAngleY *= 0.99F;
-			}
-
-			Hanrei4.rotateAngleY = Hanrei5.rotateAngleY = HanreiC.rotateAngleY;
-			AngleYList.set(IdIndex, Float.valueOf(HanreiC.rotateAngleY));
-			YawOffsetList.set(IdIndex, Float.valueOf(entityliving.renderYawOffset));
+			Hanrei4.rotateAngleY=Hanrei5.rotateAngleY=HanreiC.rotateAngleY;
+			AngleYList.set(IdIndex, HanreiC.rotateAngleY);
+			YawOffsetList.set(IdIndex, entityliving.renderYawOffset);
 		}
 	}
 
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
 	{
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
-        bipedHeadwear.rotateAngleX = bipedHeadwear.rotateAngleY = bipedHeadwear.rotateAngleZ = 0.0F;
-        getCapsValue(caps_shiftArray, HanreiC.rotationPointX, HanreiC.rotationPointY, HanreiC.rotationPointZ);
-        float[] pastX = (float[]) getCapsValue(caps_pastX);
-        float[] pastY = (float[]) getCapsValue(caps_pastY);
-        float[] pastZ = (float[]) getCapsValue(caps_pastZ);
-        Hanrei4.rotationPointX = pastX[4] - HanreiC.rotationPointX;
-        Hanrei4.rotationPointY = pastY[4] - HanreiC.rotationPointY + 1.0F;
-        Hanrei4.rotationPointZ = pastZ[4] - HanreiC.rotationPointZ + 2.5F;
-        Hanrei5.rotationPointX = pastX[9] - HanreiC.rotationPointX + 3.0F;
-        Hanrei5.rotationPointY = pastY[9] - HanreiC.rotationPointY + 1.5F;
-        Hanrei5.rotationPointZ = pastZ[9] - HanreiC.rotationPointZ + 3.5F;
-        //Modchu_Debug.mDebug("Hanrei4.rotationPointZ="+Hanrei4.rotationPointZ+" HanreiC.rotationPointX="+HanreiC.rotationPointX);
+		bipedHeadwear.rotateAngleX = bipedHeadwear.rotateAngleY = bipedHeadwear.rotateAngleZ = 0.0F;
+		shiftArray(HanreiC.rotationPointX, HanreiC.rotationPointY, HanreiC.rotationPointZ);
 
-        HanreiC.rotationPointX = x1 + MathHelper.cos((f2 + (float)entity.entityId + 0.01F * f4) * 0.11F) * 0.5F;
-        HanreiC.rotationPointZ = z1 + MathHelper.cos((f2 + (float)entity.entityId + 0.01F * f4) * 0.07F) * 0.5F;
-        HanreiC.rotationPointY = y1 + MathHelper.cos((f2 + (float)entity.entityId + 0.01F * f4) * 0.13F) * 0.5F;
-        Skirt.rotateAngleX = 0.0F;
-        Skirt.rotationPointZ = 0.0F;
+		Hanrei4.rotationPointX=pastX[4];
+		Hanrei4.rotationPointY=pastY[4]+1.0F;
+		Hanrei4.rotationPointZ=pastZ[4]+2.5F;
 
-        if (isRiding)
-        {
-            Skirt.rotationPointZ -= 0.8F;
-            Skirt.rotateAngleX = getCapsValueFloat(caps_convertDegtoRad, -25.0F);
-        }
+		Hanrei5.rotationPointX=pastX[9];
+		Hanrei5.rotationPointY=pastY[9]+1.5F;
+		Hanrei5.rotationPointZ=pastZ[9]+3.5F;
 
-        if(getCapsValueBoolean(caps_getIsSneak)){
+
+		HanreiC.rotationPointX=x1+MathHelper.cos((f2+entity.entityId+0.01F*f4)*0.11F) * 0.5F;
+		HanreiC.rotationPointZ=z1+MathHelper.cos((f2+entity.entityId+0.01F*f4)*0.07F) * 0.5F;
+		HanreiC.rotationPointY=y1+MathHelper.cos((f2+entity.entityId+0.01F*f4)*0.13F) * 0.5F;
+
+		Skirt.rotateAngleX = 0.0F;
+		Skirt.rotationPointZ = 0.0F;
+
+		if (isRiding)
+		{
+			Skirt.rotationPointZ -= 0.8F;
+			Skirt.rotateAngleX = getCapsValueFloat(caps_convertDegtoRad, -25.0F);
+		}
+
+		if(getCapsValueBoolean(caps_getIsSneak)){
 			Skirt.rotationPointZ = -0.5F;
 		} else {
 			Skirt.rotationPointZ = 0.0F;
@@ -801,6 +810,20 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 		Skirt.rotationPointY = 3.5F;
 		Skirt.rotateAngleX = 0.0F;
 		skirtFloats(f, f1, f2, f3, f4, f5, entity);
+	}
+
+	private void shiftArray(float x,float y,float z)
+	{
+		int i;
+		for(i=0;i<9;i++)
+		{
+			pastX[9-i]=pastX[8-i];
+			pastY[9-i]=pastY[8-i];
+			pastZ[9-i]=pastZ[8-i];
+		}
+		pastX[0]=x;
+		pastY[0]=y;
+		pastZ[0]=z;
 	}
 
 	@Override
@@ -883,7 +906,7 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
     			"Skirt11", "Skirt12", "Skirt13", "Skirt14", "Skirt15",
     			"Skirt16"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(caps_showPartsHideList, (Object) s);
     }
 
     @Override
