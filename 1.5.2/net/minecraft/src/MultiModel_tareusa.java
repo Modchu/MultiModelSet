@@ -37,26 +37,26 @@ public class MultiModel_tareusa extends MultiModel {
 	public void initModel(float f, float f1) {
 		super.initModel(f, f1);
 		Prim = new Modchu_ModelRenderer(this, 24, 16);
-		Prim.addBoxLM(-2F, -8.7F, -3.5F, 4, 1, 0, f);
-		Prim.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Prim.addBox(-2F, -8.7F, -3.5F, 4, 1, 0, f);
+		Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(Prim);
 		UsaEL = new Modchu_ModelRenderer(this, 0, 0);
 		UsaEL.setMirror(true);
-		UsaEL.addBoxLM(-1.5F, 0F, 2F, 3, 6, 1, f + 0.1F);
-		UsaEL.setRotationPointLM(0F, 0F, 0F);
+		UsaEL.addBox(-1.5F, 0F, 2F, 3, 6, 1, f + 0.1F);
+		UsaEL.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(UsaEL);
 		UsaER = new Modchu_ModelRenderer(this, 0, 0);
-		UsaER.addBoxLM(-1.5F, 0F, 2F, 3, 6, 1, f + 0.1F);
-		UsaER.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		UsaER.addBox(-1.5F, 0F, 2F, 3, 6, 1, f + 0.1F);
+		UsaER.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(UsaER);
 		UsaEL1 = new Modchu_ModelRenderer(this, 0, 0);
 		UsaEL1.setMirror(true);
-		UsaEL1.addBoxLM(-1.5F, 0F, -1F, 3, 3, 1, f + 0.1F);
-		UsaEL1.setRotationPointLM(0F, 0F, 0F);
+		UsaEL1.addBox(-1.5F, 0F, -1F, 3, 3, 1, f + 0.1F);
+		UsaEL1.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(UsaEL1);
 		UsaER1 = new Modchu_ModelRenderer(this, 0, 0);
-		UsaER1.addBoxLM(-1.5F, 0F, -1F, 3, 3, 1, f + 0.1F);
-		UsaER1.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		UsaER1.addBox(-1.5F, 0F, -1F, 3, 3, 1, f + 0.1F);
+		UsaER1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(UsaER1);
 
 		Usasippo = new Modchu_ModelRenderer(this, 24, 0);
@@ -76,15 +76,15 @@ public class MultiModel_tareusa extends MultiModel {
 		setCapsValue(caps_visible, bipedHeadwear, false);
 	}
 
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5) {
-		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
 		Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.3F);
 		UsaER.rotateAngleX = UsaEL.rotateAngleX = mh_sin(f2 * 0.2F) * 0.1F + 0.2F;
 		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
 			Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.5F);
 		}
-		if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
+		if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
 			Usasippo.rotateAngleY = mh_sin(f2 * 0.2F) * 0.2F;
 			Usasippo.setRotateAngleX(0.0F);
 		}
@@ -138,5 +138,10 @@ public class MultiModel_tareusa extends MultiModel {
     public void showModelSettingReflects() {
     	super.showModelSettingReflects();
     	setCapsValue(caps_visible, bipedHeadwear, false);
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

@@ -362,8 +362,8 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	SideTailL.rotateAngleX = SideTailR.rotateAngleX = -0.262F;
     	ChignonL.rotateAngleX = ChignonR.rotateAngleX = 0.262F;
     	ChignonL.rotateAngleZ = 0.262F;
@@ -563,7 +563,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
     		bipedHead.rotationPointY = 15F;
     	}
-    	armSwing(f, f1, f2, f3, f4, f5);
+    	armSwing(f, f1, f2, f3, f4, f5, entityCaps);
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     		bipedHead.rotationPointY = bipedRightLeg.rotateAngleX < 0.0F ? 20F : 20F - bipedRightLeg.rotateAngleX * 8F;
     	}
@@ -571,7 +571,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     		bipedHead.rotationPointY = bipedRightLeg.rotateAngleX < 0.0F ? 20F : 20F - bipedRightLeg.rotateAngleX * 8F;
     	}
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
-    		float f6 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * 3.141593F);
+    		float f6 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) * 3.141593F);
     		float f7 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))
     				* (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
     		bipedRightArm.rotateAngleZ = 0.0F;
@@ -610,12 +610,12 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5) {
+    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	float[] lgrounds = null;
     	float onGroundR = 0;
     	float onGroundL = 0;
     	if (entityCaps != null) {
-    		lgrounds = (float[])getCapsValue(caps_Grounds);
+    		lgrounds = (float[])getCapsValue(caps_Grounds, entityCaps);
     		if (lgrounds != null) {
     			onGroundR = lgrounds[0];
     			onGroundL = lgrounds[1];
@@ -662,7 +662,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
@@ -684,7 +684,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void actionInit1() {
+    public void actionInit1(MMM_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	setCapsValue(caps_sneakBan, true);
     	setCapsValue(caps_waitBan, true);
@@ -692,7 +692,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, false);
     	setCapsValue(caps_sneakBan, false);
     	setCapsValue(caps_waitBan, false);
@@ -709,8 +709,8 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5) {
-    	float speed = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_actionSpeed) / 10;
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	float speed = Modchu_ModelCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 10;
     	if (speed < 0.0F) return;
 
     	float f6 = bipedBody.rotateAngleZ;
@@ -718,14 +718,14 @@ public class MultiModel_Yukkuri extends MultiModel {
     	bipedRightArm.rotateAngleX = -f6 * 1.86567233F;
     	bipedRightArm.rotateAngleY = 0.0F;
     	bipedRightArm.rotateAngleZ = 0.0F;
-    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_actionReverse)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_actionReverse)) {
     		if (f6 < 0.5F) {
     			f6 += speed;
-    		} else setCapsValue(caps_actionReverse, true);
+    		} else setCapsValue(entityCaps, caps_actionReverse, true);
     	} else {
     		if (f6 > -0.3F) {
     			f6 -= speed;
-    		} else setCapsValue(caps_actionReverse, false);
+    		} else setCapsValue(entityCaps, caps_actionReverse, false);
     	}
     	if (f6 > 0.5449998F) f6 = 0.5449998F;
     	if (f6 < -0.3880023F) f6 = -0.3880023F;
@@ -762,11 +762,16 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public double getMountedYOffset() {
-    	double d = 1.4D;
+    public float getMountedYOffset() {
+    	float d = 1.4F;
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
-    		d -= 0.1D;
+    		d -= 0.1F;
     	};
-    	return d;
+    	return (float) d;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

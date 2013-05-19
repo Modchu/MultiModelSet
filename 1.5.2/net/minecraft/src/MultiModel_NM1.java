@@ -209,25 +209,25 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	bootL2.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bootL2.setRotateAngleX(0.2792527F);
     	Breast = new Modchu_ModelRenderer(this, 53, 0);
-    	Breast.addBoxLM(0.0F, -2.5F, 0.0F, 3, 5, 2, f);
-    	Breast.setRotationPointLM(0.0F, -1.0F, -2F);
+    	Breast.addBox(0.0F, -2.5F, 0.0F, 3, 5, 2, f);
+    	Breast.setRotationPoint(0.0F, -1.0F, -2F);
     	Breast.setRotateAngleZ(((float)Math.PI / 2F));
     	Breast.setRotateAngleY(((float)Math.PI * 2F / 9F));
     	eyeR = new Modchu_ModelRenderer(this, 32, 0);
     	eyeR.addPlate(-4F, -4F, -4.001F, 4, 4, 0, f);
-    	eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	eyeL = new Modchu_ModelRenderer(this, 47, 0);
     	eyeL.addPlate(0.0F, -4F, -4.001F, 4, 4, 0, f);
-    	eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
     	eyeR1 = new Modchu_ModelRenderer(this, 52, 13);
     	eyeR1.addPlate(-4F, -4F, -4.002F, 4, 4, 0, f);
-    	eyeR1.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeR1.setRotationPoint(0.0F, 0.0F, 0.0F);
     	eyeL1 = new Modchu_ModelRenderer(this, 56, 13);
     	eyeL1.addPlate(0.0F, -4F, -4.002F, 4, 4, 0, f);
-    	eyeL1.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeL1.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Cachusya = new Modchu_ModelRenderer(this, 0, 7);
     	Cachusya.addPlate(-2F, -9F, -4F, 4, 1, 0, f);
-    	Cachusya.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	Cachusya.setRotationPoint(0.0F, 0.0F, 0.0F);
     	tie = new Modchu_ModelRenderer(this, 24, 6);
     	tie.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, f + 0.1F);
     	tie.setRotationPoint(-0.5F, -8F + f1, -2.1F);
@@ -430,13 +430,13 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
-    public void setLivingAnimationsMM(float f, float f1, float f2)
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimationsMM(f, f1, f2);
+    	super.setLivingAnimations(entityCaps, f, f1, f2);
     	Arms[0].setRotationPoint(0.5F, 9.0F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 9.0F, 0F);
     	Arms[0].rotateAngleX = 0F;
@@ -445,7 +445,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	Arms[1].rotateAngleX = 0F;
     	Arms[1].rotateAngleY = 0F;
     	Arms[1].rotateAngleZ = 0F;
-    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps.caps_Entity);
+    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
 
@@ -509,7 +509,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
     {
     	bipedHead.rotateAngleY = f3 / (180F / (float)Math.PI);
     	bipedHead.rotateAngleX = f4 / (180F / (float)Math.PI);
@@ -549,7 +549,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
 
     	bipedRightArm.rotateAngleY = 0.0F;
     	bipedLeftArm.rotateAngleY = 0.0F;
-    	armSwing(f, f1, f2, f3, f4, f5);
+    	armSwing(f, f1, f2, f3, f4, f5, entityCaps);
 
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
     	{
@@ -602,7 +602,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	}
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
-    		float f7 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * (float)Math.PI);
+    		float f7 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) * (float)Math.PI);
     		float f9 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * (float)Math.PI);
     		bipedRightArm.rotateAngleZ = 0.0F;
     		bipedLeftArm.rotateAngleZ = 0.0F;
@@ -664,10 +664,10 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void actionInit1() {
+    public void actionInit1(MMM_IModelCaps entityCaps) {
     	boolean b = bipedRightLeg.showModel;
     	boolean b1 = bipedLeftLeg.showModel;
-    	super.actionInit1();
+    	super.actionInit1(entityCaps);
     	setCapsValue(caps_visible, rightLeg, b);
     	setCapsValue(caps_visible, rightLeg2, b);
     	setCapsValue(caps_visible, rightLegPlus, b);
@@ -723,8 +723,8 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	bipedRightArm.addChild(ArmR1);
     	bipedRightArm.addChild(HandR1);
     	bipedRightArm.addChild(HandR2);

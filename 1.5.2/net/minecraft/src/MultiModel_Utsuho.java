@@ -131,94 +131,94 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 
 		CS1 = new Modchu_ModelRenderer(this, 0, 20);
 		CS1.addBox(-1.0F, 0F, -0.3F, 2, 7, 2, f);
-		CS1.setRotationPointLM(0.0F, 4.0F, 0.0F);
+		CS1.setRotationPoint(0.0F, 4.0F, 0.0F);
 		CS1.setRotateAngleDeg(0F,30F,0F);
 		bipedLeftArm.addChild(CS1);
 
 		CS2 = new Modchu_ModelRenderer(this, 0, 20);
 		CS2.addBox(-1.0F, 0F, -0.3F, 2, 7, 2, f);
-		CS2.setRotationPointLM(0.0F, 4.0F, 0.0F);
+		CS2.setRotationPoint(0.0F, 4.0F, 0.0F);
 		CS2.setRotateAngleDeg(0F,90F,0F);
 		bipedLeftArm.addChild(CS2);
 
 		CS3 = new Modchu_ModelRenderer(this, 0, 20);
 		CS3.addBox(-1.0F, 0F, -0.3F, 2, 7, 2, f);
-		CS3.setRotationPointLM(0.0F, 4.0F, 0.0F);
+		CS3.setRotationPoint(0.0F, 4.0F, 0.0F);
 		CS3.setRotateAngleDeg(0F,150F,0F);
 		bipedLeftArm.addChild(CS3);
 
 		CS4 = new Modchu_ModelRenderer(this, 0, 20);
 		CS4.addBox(-1.0F, 0F, -0.3F, 2, 7, 2, f);
-		CS4.setRotationPointLM(0.0F, 4.0F, 0.0F);
+		CS4.setRotationPoint(0.0F, 4.0F, 0.0F);
 		CS4.setRotateAngleDeg(0F,-30F,0F);
 		bipedLeftArm.addChild(CS4);
 
 		CS5 = new Modchu_ModelRenderer(this, 0, 20);
 		CS5.addBox(-1.0F, 0F, -0.3F, 2, 7, 2, f);
-		CS5.setRotationPointLM(0.0F, 4.0F, 0.0F);
+		CS5.setRotationPoint(0.0F, 4.0F, 0.0F);
 		CS5.setRotateAngleDeg(0F,-90F,0F);
 		bipedLeftArm.addChild(CS5);
 
 		CS6 = new Modchu_ModelRenderer(this, 0, 20);
 		CS6.addBox(-1.0F, 0F, -0.3F, 2, 7, 2, f);
-		CS6.setRotationPointLM(0.0F, 4.0F, 0.0F);
+		CS6.setRotationPoint(0.0F, 4.0F, 0.0F);
 		CS6.setRotateAngleDeg(0.0F,-150F,0F);
 		bipedLeftArm.addChild(CS6);
 
 		CS7 = new Modchu_ModelRenderer(this, 8, 20);
 		CS7.addBox(-0.5F, -4F, -0.5F, 1, 8, 1, f);
-		CS7.setRotationPointLM(0.0F, 10.0F, 0.0F);
+		CS7.setRotationPoint(0.0F, 10.0F, 0.0F);
 		CS7.setRotateAngleDeg(0F,-60F,90F);
 		bipedLeftArm.addChild(CS7);
 
 		CS8 = new Modchu_ModelRenderer(this, 8, 20);
 		CS8.addBox(-0.5F, -4F, -0.5F, 1, 8, 1, f);
-		CS8.setRotationPointLM(0.0F, 10.0F, 0.0F);
+		CS8.setRotationPoint(0.0F, 10.0F, 0.0F);
 		CS8.setRotateAngleDeg(0F,0F,90F);
 		bipedLeftArm.addChild(CS8);
 
 		CS9 = new Modchu_ModelRenderer(this, 8, 20);
 		CS9.addBox(-0.5F, -4F, -0.5F, 1, 8, 1, f);
-		CS9.setRotationPointLM(0.0F, 10.0F, 0F);
+		CS9.setRotationPoint(0.0F, 10.0F, 0F);
 		CS9.setRotateAngleDeg(0F,60F,90F);
 		bipedLeftArm.addChild(CS9);
 
 		RightShoo = new Modchu_ModelRenderer(this, 0, 42);
 		RightShoo.mirror=true;
 		RightShoo.addBox(-3.5F, 0.2F, -2.5F, 4, 6, 5, f);
-		RightShoo.setRotationPointLM(1.5F, 3.0F, 0.0F);
+		RightShoo.setRotationPoint(1.5F, 3.0F, 0.0F);
 		bipedRightLeg.addChild(RightShoo);
 
 		HipR = new Modchu_ModelRenderer(this, 57, 28);
 		HipR.addBox(-1.5F, -0F, -0F, 3, 2, 2, f);
-		HipR.setRotationPointLM(0.6F,-0.1F, 2.0F);
+		HipR.setRotationPoint(0.6F,-0.1F, 2.0F);
 		HipR.setRotateAngleDeg(-150F,0F,0F);
 		bipedRightLeg.addChild(HipR);
 
 		HipL = new Modchu_ModelRenderer(this, 57, 24);
 		HipL.mirror=true;
 		HipL.addBox(-1.5F, -0F, -0F, 3, 2, 2, f);
-		HipL.setRotationPointLM(-0.6F, -0.1F, 2.0F);
+		HipL.setRotationPoint(-0.6F, -0.1F, 2.0F);
 		HipL.setRotateAngleDeg(-150F,0F,0F);
 		bipedLeftLeg.addChild(HipL);
 
 		eyeR = new Modchu_ModelRenderer(this, 32, 19);
 		eyeR.addPlate(-4.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		eyeL = new Modchu_ModelRenderer(this, 42, 19);
 		eyeL.addPlate(0.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 		bipedHead.addChild(eyeL);
 
 		Prim = new Modchu_ModelRenderer(this, 24, 16);
-		Prim.addBoxLM(-2F, -7.7F, -3.5F, 4, 1, 0, f);
+		Prim.addBox(-2F, -7.7F, -3.5F, 4, 1, 0, f);
 		Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(Prim);
 
 		Circle1 = new Modchu_ModelRenderer(this, 25, 0);
 		Circle1.addBall(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-		Circle1.setRotationPointLM(0F,0F,0F);
+		Circle1.setRotationPoint(0F,0F,0F);
 		Circle1.setRotateAngleDeg(45F,45F,0F);
 		bipedLeftLeg.addChild(Circle1);
 		x1=1F;
@@ -227,64 +227,64 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 
 		Circle2 = new Modchu_ModelRenderer(this, 25, 0);
 		Circle2.addBall(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-		Circle2.setRotationPointLM(0F,0F,0F);
+		Circle2.setRotationPoint(0F,0F,0F);
 		Circle2.setRotateAngleDeg(45F,45F,0F);
 		bipedLeftLeg.addChild(Circle2);
 
 		WingLroot = new Modchu_ModelRenderer(this, 0, 0);
 		WingLroot.mirror=true;
-		WingLroot.addBoxLM(-0.5F, 0F, -0.5F, 1, 3, 1,f);
-		WingLroot.setRotationPointLM(0.4F, -1.0F, 1.2F);
+		WingLroot.addBox(-0.5F, 0F, -0.5F, 1, 3, 1,f);
+		WingLroot.setRotationPoint(0.4F, -1.0F, 1.2F);
 		bipedBody.addChild(WingLroot);
 
 		WingL2 = new Modchu_ModelRenderer(this, 0, 0);
 		WingL2.mirror=true;
-		WingL2.addBoxLM(-2.4F, 2F, -0.4F, 1, 4, 1,f);
+		WingL2.addBox(-2.4F, 2F, -0.4F, 1, 4, 1,f);
 		WingLroot.addChild(WingL2);
 
 		WingL3 = new Modchu_ModelRenderer(this, 0, 0);
 		WingL3.mirror=true;
-		WingL3.addBoxLM(4.5F, 2.5F, 1.3F, 1, 3, 1,f);
+		WingL3.addBox(4.5F, 2.5F, 1.3F, 1, 3, 1,f);
 		WingLroot.addChild(WingL3);
 
 		WingL4 = new Modchu_ModelRenderer(this, 0, 0);
 		WingL4.mirror=true;
-		WingL4.addBoxLM(3.5F, 2F, 1.3F, 1, 3, 1,f);
+		WingL4.addBox(3.5F, 2F, 1.3F, 1, 3, 1,f);
 		WingLroot.addChild(WingL4);
 
 		WingL5 = new Modchu_ModelRenderer(this, 0, 0);
 		WingL5.mirror=true;
-		WingL5.addBoxLM(2.5F, 2F, 1.3F, 1, 2, 1,f);
+		WingL5.addBox(2.5F, 2F, 1.3F, 1, 2, 1,f);
 		WingLroot.addChild(WingL5);
 
 		WingL6 = new Modchu_ModelRenderer(this, 0, 0);
 		WingL6.mirror=true;
-		WingL6.addBoxLM(1.8F, 1.5F, 1.3F, 1, 1, 1,f);
+		WingL6.addBox(1.8F, 1.5F, 1.3F, 1, 1, 1,f);
 		WingLroot.addChild(WingL6);
 
 		WingRroot = new Modchu_ModelRenderer(this, 0, 0);
-		WingRroot.addBoxLM(-0.5F, 0F, -0.5F, 1, 3, 1,f);
-		WingRroot.setRotationPointLM(-0.5F, -1.0F, 1.2F);
+		WingRroot.addBox(-0.5F, 0F, -0.5F, 1, 3, 1,f);
+		WingRroot.setRotationPoint(-0.5F, -1.0F, 1.2F);
 		bipedBody.addChild(WingRroot);
 
 		WingR2 = new Modchu_ModelRenderer(this, 0, 0);
-		WingR2.addBoxLM(1.4F, 2F, -0.4F, 1, 4, 1,f);
+		WingR2.addBox(1.4F, 2F, -0.4F, 1, 4, 1,f);
 		WingRroot.addChild(WingR2);
 
 		WingR3 = new Modchu_ModelRenderer(this, 0, 0);
-		WingR3.addBoxLM(-5.5F, 2.5F, 1.3F, 1, 3, 1,f);
+		WingR3.addBox(-5.5F, 2.5F, 1.3F, 1, 3, 1,f);
 		WingRroot.addChild(WingR3);
 
 		WingR4 = new Modchu_ModelRenderer(this, 0, 0);
-		WingR4.addBoxLM(-4.5F, 2F, 1.3F, 1, 3, 1,f);
+		WingR4.addBox(-4.5F, 2F, 1.3F, 1, 3, 1,f);
 		WingRroot.addChild(WingR4);
 
 		WingR5 = new Modchu_ModelRenderer(this, 0, 0);
-		WingR5.addBoxLM(-3.5F, 2F, 1.3F, 1, 2, 1,f);
+		WingR5.addBox(-3.5F, 2F, 1.3F, 1, 2, 1,f);
 		WingRroot.addChild(WingR5);
 
 		WingR6 = new Modchu_ModelRenderer(this, 0, 0);
-		WingR6.addBoxLM(-2.8F, 1.5F, 1.3F, 1, 1, 1,f);
+		WingR6.addBox(-2.8F, 1.5F, 1.3F, 1, 1, 1,f);
 		WingRroot.addChild(WingR6);
 
 		Tail = new Modchu_ModelRenderer(this, 46, 19);
@@ -293,85 +293,85 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 		bipedHead.addChild(Tail);
 
 		Tail2 = new Modchu_ModelRenderer(this, 46, 19);
-		Tail2.addBoxLM(-1F, -6.4F, 5.9F, 2, 5, 2,f);
+		Tail2.addBox(-1F, -6.4F, 5.9F, 2, 5, 2,f);
 		Tail2.setRotationPoint(0.0F, 0.8F, 0.0F);
 		bipedHead.addChild(Tail2);
 
 		Bust1 = new Modchu_ModelRenderer(this, 54, 17);
-		Bust1.addBoxLM(-1.5F, -1.5F, 0F, 3, 3, 1,f);
-		Bust1.setRotationPointLM(0F, -1.5F, -2.5F);
+		Bust1.addBox(-1.5F, -1.5F, 0F, 3, 3, 1,f);
+		Bust1.setRotationPoint(0F, -1.5F, -2.5F);
 		bipedBody.addChild(Bust1);
 
 		Bust2 = new Modchu_ModelRenderer(this, 0, 0);
-		Bust2.addBoxLM(-1F, 0F, 0F, 1, 1, 1,f);
-		Bust2.setRotationPointLM(0F, -2.0F, -2.7F);
+		Bust2.addBox(-1F, 0F, 0F, 1, 1, 1,f);
+		Bust2.setRotationPoint(0F, -2.0F, -2.7F);
 		Bust2.setRotateAngleDeg(-45F, 90F, 79F);
 		bipedBody.addChild(Bust2);
 
 		Bust3 = new Modchu_ModelRenderer(this, 0, 0);
-		Bust3.addBoxLM(0F, 0F, 0F, 1, 1, 1,f);
-		Bust3.setRotationPointLM(0F, -2.0F, -2.7F);
+		Bust3.addBox(0F, 0F, 0F, 1, 1, 1,f);
+		Bust3.setRotationPoint(0F, -2.0F, -2.7F);
 		Bust3.setRotateAngleDeg(-45F, 90F, 90F);
 		bipedBody.addChild(Bust3);
 
 		Bust4 = new Modchu_ModelRenderer(this, 0, 0);
-		Bust4.addBoxLM(0F, 0F, 0F, 1, 1, 1,f);
-		Bust4.setRotationPointLM(0F, -1.0F, -2.7F);
+		Bust4.addBox(0F, 0F, 0F, 1, 1, 1,f);
+		Bust4.setRotationPoint(0F, -1.0F, -2.7F);
 		Bust4.setRotateAngleDeg(-45F, 90F, 101F);
 		bipedBody.addChild(Bust4);
 
 		Ahoge = new Modchu_ModelRenderer(this, 0, 1);
-		Ahoge.addBoxLM(0F, 0F, 0F, 0, 3, 4,f);
+		Ahoge.addBox(0F, 0F, 0F, 0, 3, 4,f);
 		Ahoge.setRotationPoint(0F, -7F, -4F);
 		bipedHead.addChild(Ahoge);
 
 		Skirt1 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt1.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt1.setRotationPointLM(2.4F,-3F,-0.6F);
+		Skirt1.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt1.setRotationPoint(2.4F,-3F,-0.6F);
 
 		Skirt2 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt2.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt2.setRotationPointLM(2F,-3F,-1.2F);
+		Skirt2.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt2.setRotationPoint(2F,-3F,-1.2F);
 
 		Skirt3 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
-		Skirt3.addBoxLM(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt3.setRotationPointLM(0F,-4F,0F);
+		Skirt3.addBox(0F, 0F, 0F, 16, 4, 4,f);
+		Skirt3.setRotationPoint(0F,-4F,0F);
 
 		Skirt4 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
-		Skirt4.addBoxLM(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt4.setRotationPointLM(0F,-4F,0F);
+		Skirt4.addBox(0F, 0F, 0F, 16, 4, 4,f);
+		Skirt4.setRotationPoint(0F,-4F,0F);
 
 		Skirt5 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt5.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt5.setRotationPointLM(-2F,-3F,-1.2F);
+		Skirt5.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt5.setRotationPoint(-2F,-3F,-1.2F);
 
 		Skirt6 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt6.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt6.setRotationPointLM(-2.4F, -3F, -0.6F);
+		Skirt6.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt6.setRotationPoint(-2.4F, -3F, -0.6F);
 
 		Skirt7 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt7.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt7.setRotationPointLM(-2.4F,-3F,0.6F);
+		Skirt7.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt7.setRotationPoint(-2.4F,-3F,0.6F);
 
 		Skirt8 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt8.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt8.setRotationPointLM(-2F,-3F,1.2F);
+		Skirt8.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt8.setRotationPoint(-2F,-3F,1.2F);
 
 		Skirt9 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
-		Skirt9.addBoxLM(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt9.setRotationPointLM(0F,-4F,0F);
+		Skirt9.addBox(0F, 0F, 0F, 16, 4, 4,f);
+		Skirt9.setRotationPoint(0F,-4F,0F);
 
 		Skirt10 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
-		Skirt10.addBoxLM(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt10.setRotationPointLM(0F,-4F,0F);
+		Skirt10.addBox(0F, 0F, 0F, 16, 4, 4,f);
+		Skirt10.setRotationPoint(0F,-4F,0F);
 
 		Skirt11 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt11.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt11.setRotationPointLM(2F,-3F,1.2F);
+		Skirt11.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt11.setRotationPoint(2F,-3F,1.2F);
 
 		Skirt12 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
-		Skirt12.addBoxLM(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt12.setRotationPointLM(2.4F,-3F,0.6F);
+		Skirt12.addBox(0F, 0F, 0F, 12, 4, 4,f);
+		Skirt12.setRotationPoint(2.4F,-3F,0.6F);
 
 		Ribon0 = new Modchu_ModelRenderer(this, 0, 16);
 		Ribon0.addBox(-1F, -1F, 0F, 2, 2, 2);
@@ -381,7 +381,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 
 		RibonLU1 = new Modchu_ModelRenderer(this, 1, 40);
 		RibonLU1.addBox(0F, -0.5F, -0.5F, 5, 1, 1);
-		RibonLU1.setRotationPointLM(0.5F,0.2F,1F);
+		RibonLU1.setRotationPoint(0.5F,0.2F,1F);
 		RibonLU1.setRotateAngle(0.7853982F, 0F, -0.4886922F);
 		Ribon0.addChild(RibonLU1);
 
@@ -405,61 +405,61 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 
 		RibonRU1 = new Modchu_ModelRenderer(this, 1, 40);
 		RibonRU1.addBox(0F, -0.5F, -0.5F, 5, 1, 1);
-		RibonRU1.setRotationPointLM(-0.5F, 0.2F, 1F);
+		RibonRU1.setRotationPoint(-0.5F, 0.2F, 1F);
 		RibonRU1.setRotateAngle(-2.356194F, 3.141593F, -0.4886922F);
 		Ribon0.addChild(RibonRU1);
 
 		RibonRU2 = new Modchu_ModelRenderer(this, 1, 40);
 		RibonRU2.addBox(-0.5F, -0.5F, -0.5F, 5, 1, 1);
-		RibonRU2.setRotationPointLM(-0.5F, 0.2F, 1F);
+		RibonRU2.setRotationPoint(-0.5F, 0.2F, 1F);
 		RibonRU2.setRotateAngle(-2.356194F, 3.141593F, -0.1745329F);
 		Ribon0.addChild(RibonRU2);
 
 		RibonRU3 = new Modchu_ModelRenderer(this, 2, 40);
 		RibonRU3.addBox(0F, -0.5F, -0.5F, 4, 1, 1);
-		RibonRU3.setRotationPointLM(-0.5F, 0.2F, 1F);
+		RibonRU3.setRotationPoint(-0.5F, 0.2F, 1F);
 		RibonRU3.setRotateAngle(-2.356194F, 3.141593F, 0.1745329F);
 		Ribon0.addChild(RibonRU3);
 
 		RibonRU4 = new Modchu_ModelRenderer(this, 2, 40);
 		RibonRU4.addBox(-0.5F, -0.5F, -0.5F, 4, 1, 1);
-		RibonRU4.setRotationPointLM(-0.5F, 0.2F, 1F);
+		RibonRU4.setRotationPoint(-0.5F, 0.2F, 1F);
 		RibonRU4.setRotateAngle(-2.356194F, 3.141593F, 0.5759587F);
 		Ribon0.addChild(RibonRU4);
 
 		RibonLD1 = new Modchu_ModelRenderer(this, 1, 40);
 		RibonLD1.addBox(0F, -0.5F, -0.5F, 5, 1, 1);
-		RibonLD1.setRotationPointLM(-0.5F, -0.3F, 1F);
+		RibonLD1.setRotationPoint(-0.5F, -0.3F, 1F);
 		RibonLD1.setRotateAngleDeg(-110F, -5F, 27F);
 		bipedHead.addChild(RibonLD1);
 
 		RibonLD2 = new Modchu_ModelRenderer(this, 0, 40);
 		RibonLD2.addBox(0F, -0.5F, -0.5F, 6, 1, 1);
-		RibonLD2.setRotationPointLM(-0.5F, -0.3F, 1F);
+		RibonLD2.setRotationPoint(-0.5F, -0.3F, 1F);
 		RibonLD2.setRotateAngleDeg(-110F, -13F, 42F);
 		Ribon0.addChild(RibonLD2);
 
 		RibonLD3 = new Modchu_ModelRenderer(this, -1, 40);
 		RibonLD3.addBox(0F, -0.5F, -0.5F, 7, 1, 1);
-		RibonLD3.setRotationPointLM(-0.5F,-0.3F, 1F);
+		RibonLD3.setRotationPoint(-0.5F,-0.3F, 1F);
 		RibonLD3.setRotateAngleDeg(-110F, -21F, 54F);
 		Ribon0.addChild(RibonLD3);
 
 		RibonRD1 = new Modchu_ModelRenderer(this, 3, 40);
 		RibonRD1.addBox(0F, -0.5F, -0.5F, 5, 1, 1);
-		RibonRD1.setRotationPointLM(0.5F, -0.3F, 1F);
+		RibonRD1.setRotationPoint(0.5F, -0.3F, 1F);
 		RibonRD1.setRotateAngleDeg(20F, -175F, 27F);
 		Ribon0.addChild(RibonRD1);
 
 		RibonRD2 = new Modchu_ModelRenderer(this, 0, 40);
 		RibonRD2.addBox(0F, -0.5F, -0.5F, 6, 1, 1);
-		RibonRD2.setRotationPointLM(0.5F, -0.3F, 1F);
+		RibonRD2.setRotationPoint(0.5F, -0.3F, 1F);
 		RibonRD2.setRotateAngleDeg(20F, -167F, 42F);
 		Ribon0.addChild(RibonRD2);
 
 		RibonRD3 = new Modchu_ModelRenderer(this, -1, 40);
 		RibonRD3.addBox(0F, -0.5F, -0.5F, 7, 1, 1);
-		RibonRD3.setRotationPointLM(0.5F, -0.3F, 1F);
+		RibonRD3.setRotationPoint(0.5F, -0.3F, 1F);
 		RibonRD3.setRotateAngleDeg(20F, -159F, 54F);
 		Ribon0.addChild(RibonRD3);
 
@@ -478,21 +478,21 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 		float x = -0.125F;
 		float y = 0.0F;
 		float z = -0.05F;
-		WingR3.setRotationPointLM(x, y, z);
-		WingR4.setRotationPointLM(x, y, z);
-		WingR5.setRotationPointLM(x, y, z);
-		WingR6.setRotationPointLM(x, y, z);
+		WingR3.setRotationPoint(x, y, z);
+		WingR4.setRotationPoint(x, y, z);
+		WingR5.setRotationPoint(x, y, z);
+		WingR6.setRotationPoint(x, y, z);
 
 		x = 0.09F;
 		y = 0.05F;
 		z = -0.09F;
-		WingL3.setRotationPointLM(x, y, z);
-		WingL4.setRotationPointLM(x, y, z);
-		WingL5.setRotationPointLM(x, y, z);
-		WingL6.setRotationPointLM(x, y, z);
+		WingL3.setRotationPoint(x, y, z);
+		WingL4.setRotationPoint(x, y, z);
+		WingL5.setRotationPoint(x, y, z);
+		WingL6.setRotationPoint(x, y, z);
 
-		WingR2.setRotationPointLM(2.85F, 2.205F, 0.1F);
-		WingL2.setRotationPointLM(0.2F, 0.0F, -0.1F);
+		WingR2.setRotationPoint(2.85F, 2.205F, 0.1F);
+		WingL2.setRotationPoint(0.2F, 0.0F, -0.1F);
 
 		WingL2.rotateAngleX = 0.0F;
 		WingL2.rotateAngleY = 0.0F;
@@ -611,8 +611,8 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
     public void skirtFloatsInit(float f, float f1) {
     }
 
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5) {
-		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
 		WingLroot.rotateAngleX=1.570796313F;
 		WingRroot.rotateAngleX=1.570796313F;
@@ -640,11 +640,11 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 		}
 		Skirt.rotationPointY = 3.0F;
 		Skirt.rotateAngleX = 0.0F;
-		skirtFloats(f, f1, f2, f3, f4, f5);
+		skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
 		Skirt1.setRotateAngle(-0.7853982F, 0.2268928F, 0.8203047F);
@@ -699,8 +699,8 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void actionInit1() {
-		super.actionInit1();
+	public void actionInit1(MMM_IModelCaps entityCaps) {
+		super.actionInit1(entityCaps);
 		((Modchu_ModelRenderer) bipedLeftArm).removeChild(CS1);
 		((Modchu_ModelRenderer) bipedLeftArm).removeChild(CS2);
 		((Modchu_ModelRenderer) bipedLeftArm).removeChild(CS3);
@@ -738,8 +738,8 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 	}
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightLeg2).removeChild(RightShoo);
     	((Modchu_ModelRenderer) leftLeg2).removeChild(Circle1);
     	((Modchu_ModelRenderer) leftLeg2).removeChild(Circle2);

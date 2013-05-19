@@ -41,7 +41,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 
 		Glass = new Modchu_ModelRenderer(this, 24, 0);
 		Glass.addPlate(-8.0F, -4.0F, 0F, 16, 8, 0, psize);
-		Glass.setRotationPointLM(0.0F, -4.0F, -4.0F);
+		Glass.setRotationPoint(0.0F, -4.0F, -4.0F);
 		bipedHead.addChild(Glass);
 		Glass.setScale(0.5F,0.5F,1.0F);
 
@@ -69,7 +69,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 
 		Ahoge = new Modchu_ModelRenderer(this, 0, 1);
 		Ahoge.addBox(0F, 0F, 0F, 0, 3, 4,psize);
-		Ahoge.setRotationPointLM(0F, -7F, -4F);
+		Ahoge.setRotationPoint(0F, -7F, -4F);
 		bipedHead.addChild(Ahoge);
 
 		pink = new Modchu_ModelRenderer(this,0,1);
@@ -93,13 +93,13 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 	}
 
 	@Override
-	public void setLivingAnimationsMM(float f, float f1, float f2) {
-		super.setLivingAnimationsMM(f, f1, f2);
-		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps.caps_Entity);
+	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+		super.setLivingAnimations(entityCaps, f, f1, f2);
+		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 		IdOffset=entityliving.entityId;
 		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger))
@@ -109,9 +109,9 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5) {
-		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
-		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps.caps_Entity);
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
+		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entity != null) ;else return;
 
 		float t;

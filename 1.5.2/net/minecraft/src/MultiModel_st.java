@@ -99,167 +99,167 @@ public class MultiModel_st extends MultiModel_SR2
 		Skirt.setRotationPoint(0.0F, 3.0F, 0.0F);
 		bipedBody.addChild(Skirt);
 		ArmR1 = new Modchu_ModelRenderer(this, 44, 55);
-		ArmR1.addBoxLM(-8.5F, 4F, -2F, 3, 2, 7, f);
-		ArmR1.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		ArmR1.addBox(-8.5F, 4F, -2F, 3, 2, 7, f);
+		ArmR1.setRotationPoint(3.3F, 0.3F, -1.5F);
 		ArmR2 = new Modchu_ModelRenderer(this, 48, 47);
-		ArmR2.addBoxLM(-7.5F, 6F, -1.5F, 2, 2, 6, f);
-		ArmR2.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		ArmR2.addBox(-7.5F, 6F, -1.5F, 2, 2, 6, f);
+		ArmR2.setRotationPoint(3.3F, 0.3F, -1.5F);
 		ArmR3 = new Modchu_ModelRenderer(this, 27, 45);
-		ArmR3.addBoxLM(-10F, 2.5F, 0.5F, 2, 6, 2, f);
-		ArmR3.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		ArmR3.addBox(-10F, 2.5F, 0.5F, 2, 6, 2, f);
+		ArmR3.setRotationPoint(3.3F, 0.3F, -1.5F);
 		ArmR3.setRotateAngleZ(-0.1745329F);
 		HandR = new Modchu_ModelRenderer(this, 46, 38);
-		HandR.addBoxLM(-7.5F, 8F, -2F, 2, 2, 7, f);
-		HandR.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		HandR.addBox(-7.5F, 8F, -2F, 2, 2, 7, f);
+		HandR.setRotationPoint(3.3F, 0.3F, -1.5F);
 		JointR = new Modchu_ModelRenderer(this, 31, 32);
-		JointR.addBoxLM(-5.5F, -1F, 2.0F, 2, 6, 3, f);
-		JointR.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		JointR.addBox(-5.5F, -1F, 2.0F, 2, 6, 3, f);
+		JointR.setRotationPoint(3.3F, 0.3F, -1.5F);
 		JointR.setRotateAngleX(-0.5410521F);
 		FingerR1 = new Modchu_ModelRenderer(this, 36, 57);
-		FingerR1.addBoxLM(-7F, 9F, -1.8F, 2, 2, 1, f);
-		FingerR1.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR1.addBox(-7F, 9F, -1.8F, 2, 2, 1, f);
+		FingerR1.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR1.setRotateAngleX(-0.122173F);
 		FingerR2 = new Modchu_ModelRenderer(this, 36, 61);
-		FingerR2.addBoxLM(-7F, 10F, -5F, 2, 2, 1, f);
-		FingerR2.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR2.addBox(-7F, 10F, -5F, 2, 2, 1, f);
+		FingerR2.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR2.setRotateAngleX(0.1745329F);
 		FingerR3 = new Modchu_ModelRenderer(this, 42, 51);
-		FingerR3.addBoxLM(-6.3F, 10.8F, -2F, 1, 2, 2, f);
-		FingerR3.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR3.addBox(-6.3F, 10.8F, -2F, 1, 2, 2, f);
+		FingerR3.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR3.setRotateAngleZ(0.1570796F);
 		FingerR4 = new Modchu_ModelRenderer(this, 42, 56);
-		FingerR4.addBoxLM(-11F, 9.2F, -2F, 1, 3, 2, f);
-		FingerR4.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR4.addBox(-11F, 9.2F, -2F, 1, 3, 2, f);
+		FingerR4.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR4.setRotateAngleZ(-0.2792527F);
 		FingerR5 = new Modchu_ModelRenderer(this, 42, 51);
-		FingerR5.addBoxLM(-6.3F, 10.8F, 0.5F, 1, 2, 2, f);
-		FingerR5.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR5.addBox(-6.3F, 10.8F, 0.5F, 1, 2, 2, f);
+		FingerR5.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR5.setRotateAngleZ(0.1570796F);
 		FingerR6 = new Modchu_ModelRenderer(this, 42, 56);
-		FingerR6.addBoxLM(-11F, 9.2F, 0.5F, 1, 3, 2, f);
-		FingerR6.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR6.addBox(-11F, 9.2F, 0.5F, 1, 3, 2, f);
+		FingerR6.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR6.setRotateAngleZ(-0.2792527F);
 		FingerR7 = new Modchu_ModelRenderer(this, 42, 51);
-		FingerR7.addBoxLM(-6.3F, 10.8F, 3F, 1, 2, 2, f);
-		FingerR7.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR7.addBox(-6.3F, 10.8F, 3F, 1, 2, 2, f);
+		FingerR7.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR7.setRotateAngleZ(0.1570796F);
 		FingerR8 = new Modchu_ModelRenderer(this, 42, 56);
-		FingerR8.addBoxLM(-11F, 9.2F, 3F, 1, 3, 2, f);
-		FingerR8.setRotationPointLM(3.3F, 0.3F, -1.5F);
+		FingerR8.addBox(-11F, 9.2F, 3F, 1, 3, 2, f);
+		FingerR8.setRotationPoint(3.3F, 0.3F, -1.5F);
 		FingerR8.setRotateAngleZ(-0.2792527F);
 		ArmL1 = new Modchu_ModelRenderer(this, 44, 55);
-		ArmL1.addBoxLM(5.5F, 4F, -2F, 3, 2, 7, f);
-		ArmL1.setRotationPointLM(-3.3F, 1.0F, -1.5F);
+		ArmL1.addBox(5.5F, 4F, -2F, 3, 2, 7, f);
+		ArmL1.setRotationPoint(-3.3F, 1.0F, -1.5F);
 		ArmL2 = new Modchu_ModelRenderer(this, 48, 47);
-		ArmL2.addBoxLM(5.5F, 6F, -1.5F, 2, 2, 6, f);
-		ArmL2.setRotationPointLM(-3.3F, 1.0F, -1.5F);
+		ArmL2.addBox(5.5F, 6F, -1.5F, 2, 2, 6, f);
+		ArmL2.setRotationPoint(-3.3F, 1.0F, -1.5F);
 		ArmL3 = new Modchu_ModelRenderer(this, 27, 45);
-		ArmL3.addBoxLM(8F, 2.5F, 0.5F, 2, 6, 2, f);
-		ArmL3.setRotationPointLM(-3.3F, 1.0F, -1.5F);
+		ArmL3.addBox(8F, 2.5F, 0.5F, 2, 6, 2, f);
+		ArmL3.setRotationPoint(-3.3F, 1.0F, -1.5F);
 		ArmL3.setRotateAngleZ(0.1745329F);
 		HandL = new Modchu_ModelRenderer(this, 46, 38);
-		HandL.addBoxLM(5.5F, 8F, -2F, 2, 2, 7, f);
-		HandL.setRotationPointLM(-3.3F, 1.0F, -1.5F);
+		HandL.addBox(5.5F, 8F, -2F, 2, 2, 7, f);
+		HandL.setRotationPoint(-3.3F, 1.0F, -1.5F);
 		JointL = new Modchu_ModelRenderer(this, 31, 32);
-		JointL.addBoxLM(3.5F, -1F, 2.0F, 2, 6, 3, f);
-		JointL.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		JointL.addBox(3.5F, -1F, 2.0F, 2, 6, 3, f);
+		JointL.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		JointL.setRotateAngleX(-0.5410521F);
 		FingerL1 = new Modchu_ModelRenderer(this, 36, 57);
-		FingerL1.addBoxLM(5F, 9F, -1.8F, 2, 2, 1, f);
-		FingerL1.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL1.addBox(5F, 9F, -1.8F, 2, 2, 1, f);
+		FingerL1.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL1.setRotateAngleX(-0.122173F);
 		FingerL2 = new Modchu_ModelRenderer(this, 36, 61);
-		FingerL2.addBoxLM(5F, 10F, -5F, 2, 2, 1, f);
-		FingerL2.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL2.addBox(5F, 10F, -5F, 2, 2, 1, f);
+		FingerL2.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL2.setRotateAngleX(0.1745329F);
 		FingerL3 = new Modchu_ModelRenderer(this, 42, 51);
-		FingerL3.addBoxLM(5.3F, 10.8F, -2F, 1, 2, 2, f);
-		FingerL3.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL3.addBox(5.3F, 10.8F, -2F, 1, 2, 2, f);
+		FingerL3.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL3.setRotateAngleZ(-0.1570796F);
 		FingerL4 = new Modchu_ModelRenderer(this, 42, 56);
-		FingerL4.addBoxLM(10F, 9.2F, -2F, 1, 3, 2, f);
-		FingerL4.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL4.addBox(10F, 9.2F, -2F, 1, 3, 2, f);
+		FingerL4.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL4.setRotateAngleZ(0.2792527F);
 		FingerL5 = new Modchu_ModelRenderer(this, 42, 51);
-		FingerL5.addBoxLM(5.3F, 10.8F, 0.5F, 1, 2, 2, f);
-		FingerL5.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL5.addBox(5.3F, 10.8F, 0.5F, 1, 2, 2, f);
+		FingerL5.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL5.setRotateAngleZ(-0.1570796F);
 		FingerL6 = new Modchu_ModelRenderer(this, 42, 56);
-		FingerL6.addBoxLM(10F, 9.2F, 0.5F, 1, 3, 2, f);
-		FingerL6.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL6.addBox(10F, 9.2F, 0.5F, 1, 3, 2, f);
+		FingerL6.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL6.setRotateAngleZ(0.2792527F);
 		FingerL7 = new Modchu_ModelRenderer(this, 42, 51);
-		FingerL7.addBoxLM(5.3F, 10.8F, 3F, 1, 2, 2, f);
-		FingerL7.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL7.addBox(5.3F, 10.8F, 3F, 1, 2, 2, f);
+		FingerL7.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL7.setRotateAngleZ(-0.1570796F);
 		FingerL8 = new Modchu_ModelRenderer(this, 42, 56);
-		FingerL8.addBoxLM(10F, 9.2F, 3F, 1, 3, 2, f);
-		FingerL8.setRotationPointLM(-3.3F, 0.3F, -1.5F);
+		FingerL8.addBox(10F, 9.2F, 3F, 1, 3, 2, f);
+		FingerL8.setRotationPoint(-3.3F, 0.3F, -1.5F);
 		FingerL8.setRotateAngleZ(0.2792527F);
 		Tail1 = new Modchu_ModelRenderer(this, 42, 33);
-		Tail1.addBoxLM(-0.5F, 5F, 1.0F, 1, 3, 1, f);
-		Tail1.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tail1.addBox(-0.5F, 5F, 1.0F, 1, 3, 1, f);
+		Tail1.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tail1.setRotateAngleX(0.2617994F);
 		Tail2 = new Modchu_ModelRenderer(this, 42, 33);
-		Tail2.addBoxLM(-0.5F, 7.9F, -2F, 1, 3, 1, f);
-		Tail2.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tail2.addBox(-0.5F, 7.9F, -2F, 1, 3, 1, f);
+		Tail2.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tail2.setRotateAngleX(((float)Math.PI / 5F));
 		Tail3 = new Modchu_ModelRenderer(this, 42, 33);
-		Tail3.addBoxLM(-0.5F, 10F, -4.3F, 1, 3, 1, f);
-		Tail3.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tail3.addBox(-0.5F, 10F, -4.3F, 1, 3, 1, f);
+		Tail3.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tail3.setRotateAngleX(0.8552113F);
 		Tailroot = new Modchu_ModelRenderer(this, 48, 32);
-		Tailroot.addBoxLM(-1.5F, 4F, 2.0F, 3, 1, 1, f);
-		Tailroot.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tailroot.addBox(-1.5F, 4F, 2.0F, 3, 1, 1, f);
+		Tailroot.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tailroot1 = new Modchu_ModelRenderer(this, 48, 32);
-		Tailroot1.addBoxLM(-1.5F, 7F, 1.0F, 3, 1, 1, f);
-		Tailroot1.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tailroot1.addBox(-1.5F, 7F, 1.0F, 3, 1, 1, f);
+		Tailroot1.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tailroot1.setRotateAngleX(0.2617994F);
 		Tailroot2 = new Modchu_ModelRenderer(this, 48, 35);
-		Tailroot2.addBoxLM(-2F, 8.5F, -2F, 4, 1, 1, f);
-		Tailroot2.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tailroot2.addBox(-2F, 8.5F, -2F, 4, 1, 1, f);
+		Tailroot2.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tailroot2.setRotateAngleX(((float)Math.PI / 5F));
 		Tailroot3 = new Modchu_ModelRenderer(this, 48, 35);
-		Tailroot3.addBoxLM(-2F, 10F, -2F, 4, 1, 1, f);
-		Tailroot3.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tailroot3.addBox(-2F, 10F, -2F, 4, 1, 1, f);
+		Tailroot3.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tailroot3.setRotateAngleX(((float)Math.PI / 5F));
 		Tailroot4 = new Modchu_ModelRenderer(this, 48, 32);
-		Tailroot4.addBoxLM(-1.5F, 11F, -4.4F, 3, 1, 1, f);
-		Tailroot4.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tailroot4.addBox(-1.5F, 11F, -4.4F, 3, 1, 1, f);
+		Tailroot4.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tailroot4.setRotateAngleX(0.8552113F);
 		Tailend = new Modchu_ModelRenderer(this, 48, 28);
-		Tailend.addBoxLM(-6.5F, 11F, 4.5F, 2, 1, 2, f);
-		Tailend.setRotationPointLM(0.0F, -8.0F, 0.0F);
+		Tailend.addBox(-6.5F, 11F, 4.5F, 2, 1, 2, f);
+		Tailend.setRotationPoint(0.0F, -8.0F, 0.0F);
 		Tailend.setRotateAngleY(((float)Math.PI / 4F));
 		Parka = new Modchu_ModelRenderer(this, 0, 45);
-		Parka.addBoxLM(-4.5F, -9F, -4.1F, 9, 10, 9, f);
-		Parka.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Parka.addBox(-4.5F, -9F, -4.1F, 9, 10, 9, f);
+		Parka.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Mahura = new Modchu_ModelRenderer(this, 0, 32);
-		Mahura.addBoxLM(-5F, -1.6F, -4.6F, 10, 3, 10, f);
-		Mahura.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Mahura.addBox(-5F, -1.6F, -4.6F, 10, 3, 10, f);
+		Mahura.setRotationPoint(0.0F, 0.0F, 0.0F);
 		LegAR = new Modchu_ModelRenderer(this, 46, 21);
-		LegAR.addBoxLM(-4F, 13.2F, -3F, 4, 1, 5, f);
-		LegAR.setRotationPointLM(1.0F, -7.0F, 0.0F);
+		LegAR.addBox(-4F, 13.2F, -3F, 4, 1, 5, f);
+		LegAR.setRotationPoint(1.0F, -7.0F, 0.0F);
 		LegAL = new Modchu_ModelRenderer(this, 46, 21);
-		LegAL.addBoxLM(0.0F, 13.2F, -3F, 4, 1, 5, f);
-		LegAL.setRotationPointLM(-1F, -7.0F, 0.0F);
+		LegAL.addBox(0.0F, 13.2F, -3F, 4, 1, 5, f);
+		LegAL.setRotationPoint(-1F, -7.0F, 0.0F);
 		Breast1 = new Modchu_ModelRenderer(this, 0, 32);
-		Breast1.addBoxLM(0.0F, -2.5F, 0.0F, 2, 5, 1, f);
-		Breast1.setRotationPointLM(0.0F, 1.0F, -2F);
+		Breast1.addBox(0.0F, -2.5F, 0.0F, 2, 5, 1, f);
+		Breast1.setRotationPoint(0.0F, 1.0F, -2F);
 		Breast1.setRotateAngleZ(((float)Math.PI / 2F));
 		Breast1.setRotateAngleY(0.4363323F);
 		eyeR = new Modchu_ModelRenderer(this, 0, 16);
 		eyeR.addPlate(-4F, -4.9F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		eyeL = new Modchu_ModelRenderer(this, 4, 16);
 		eyeL.addPlate(0.0F, -4.9F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Cheek_R = new Modchu_ModelRenderer(this, 32, 8);
 		Cheek_R.addPlate(-4.5F, -4.5F, -4.002F, 4, 4, 0, f);
-		Cheek_R.setRotationPointLM(0.0F, 1.0F, 0.0F);
+		Cheek_R.setRotationPoint(0.0F, 1.0F, 0.0F);
 		Cheek_L = new Modchu_ModelRenderer(this, 32, 19);
 		Cheek_L.addPlate(0.5F, -4.5F, -4.002F, 4, 4, 0, f);
-		Cheek_L.setRotationPointLM(0.0F, 1.0F, 0.0F);
+		Cheek_L.setRotationPoint(0.0F, 1.0F, 0.0F);
 		mainFrame = new Modchu_ModelRenderer(this, 0, 0);
 		mainFrame.setRotationPoint(0F, 0F + f1, 0F);
 		mainFrame.addChild(bipedHead);
@@ -351,9 +351,9 @@ public class MultiModel_st extends MultiModel_SR2
 										leftLeg.isHidden = leftLeg2.isHidden = true;
 	}
 
-    public void setLivingAnimationsMM(float f, float f1, float f2)
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-        super.setLivingAnimationsMM(f, f1, f2);
+        super.setLivingAnimations(entityCaps, f, f1, f2);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
     		Cheek_R.setVisible(true);
     		Cheek_L.setVisible(true);
@@ -364,9 +364,9 @@ public class MultiModel_st extends MultiModel_SR2
     }
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5)
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
 	{
-		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Skirt.rotationPointY -= 1.0F;
 		Skirt.rotateAngleX = 0.0F;
 		Skirt.rotationPointZ = 0.0F;
@@ -378,8 +378,8 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
 	@Override
-	public void actionInit1() {
-		super.actionInit1();
+	public void actionInit1(MMM_IModelCaps entityCaps) {
+		super.actionInit1(entityCaps);
 		bipedLeftArm.isHidden = true;
 		bipedRightArm.isHidden = true;
 		bipedLeftLeg.isHidden = true;
@@ -392,8 +392,8 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
 	@Override
-	public void actionRelease1() {
-		super.actionRelease1();
+	public void actionRelease1(MMM_IModelCaps entityCaps) {
+		super.actionRelease1(entityCaps);
 		bipedLeftArm.isHidden = false;
 		bipedRightArm.isHidden = false;
 		bipedLeftLeg.isHidden = false;
@@ -418,8 +418,8 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5) {
-    	super.action1(f, f1, f2, f3, f4, f5);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	LegAR.rotationPointY = -11.0F;
     	LegAL.rotationPointY = -11.0F;
     	rightHand.rotateAngleY = 0.785398163F;

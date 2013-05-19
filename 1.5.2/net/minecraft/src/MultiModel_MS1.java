@@ -45,56 +45,56 @@ public class MultiModel_MS1 extends MultiModel_SR2
 		Skirt.setRotationPoint(0.0F, 7F + f1, 0.0F);
 		bipedBody.addChild(Skirt);
 		Goggles1A = new Modchu_ModelRenderer(this, 0, 32);
-		Goggles1A.addBoxLM(-4F, -5.5F, -5F, 8, 4, 1, f);
-		Goggles1A.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Goggles1A.addBox(-4F, -5.5F, -5F, 8, 4, 1, f);
+		Goggles1A.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Goggles2A = new Modchu_ModelRenderer(this, 0, 37);
-		Goggles2A.addBoxLM(-4F, -4F, -6F, 8, 1, 1, f);
-		Goggles2A.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Goggles2A.addBox(-4F, -4F, -6F, 8, 1, 1, f);
+		Goggles2A.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Goggles3A = new Modchu_ModelRenderer(this, 0, 39);
 		Goggles3A.addBox(-3.5F, -5.5F, -5.5F, 7, 4, 1, f);
-		Goggles3A.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Goggles3A.setRotationPoint(0.0F, 0.0F, 0.0F);
 		GogglesRA = new Modchu_ModelRenderer(this, 0, 44);
 		GogglesRA.addBox(-5.1F, -4.5F, -5F, 1, 2, 3, f);
-		GogglesRA.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		GogglesRA.setRotationPoint(0.0F, 0.0F, 0.0F);
 		GogglesLA = new Modchu_ModelRenderer(this, 0, 44);
 		GogglesLA.mirror = true;
 		GogglesLA.addBox(4.1F, -4.5F, -5F, 1, 2, 3, f);
-		GogglesLA.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		GogglesLA.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Goggles1 = new Modchu_ModelRenderer(this, 0, 32);
-		Goggles1.addBoxLM(-4F, -7F, -7.3F, 8, 4, 1, f + 0.1F);
-		Goggles1.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Goggles1.addBox(-4F, -7F, -7.3F, 8, 4, 1, f + 0.1F);
+		Goggles1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Goggles1.setRotateAngleX(-0.4886921F);
 		Goggles2 = new Modchu_ModelRenderer(this, 0, 37);
-		Goggles2.addBoxLM(-4F, -5.5F, -8.3F, 8, 1, 1, f);
-		Goggles2.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Goggles2.addBox(-4F, -5.5F, -8.3F, 8, 1, 1, f);
+		Goggles2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Goggles2.setRotateAngleX(-0.4886921F);
 		Goggles3 = new Modchu_ModelRenderer(this, 0, 39);
 		Goggles3.addBox(-3.5F, -7F, -7.8F, 7, 4, 1, f + 0.1F);
-		Goggles3.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Goggles3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Goggles3.setRotateAngleX(-0.4886921F);
 		GogglesR = new Modchu_ModelRenderer(this, 0, 44);
 		GogglesR.addBox(-5.1F, -5.5F, -7F, 1, 2, 3, f);
-		GogglesR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		GogglesR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		GogglesR.setRotateAngleX(-0.4886921F);
 		GogglesL = new Modchu_ModelRenderer(this, 0, 44);
 		GogglesL.mirror = true;
 		GogglesL.addBox(4.1F, -5.5F, -7F, 1, 2, 3, f);
-		GogglesL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		GogglesL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		GogglesL.setRotateAngleX(-0.4886921F);
 		Cheek_R = new Modchu_ModelRenderer(this, 32, 8);
 		Cheek_R.addPlate(-4.5F, -4.5F, -4.002F, 4, 4, 0, f);
-		Cheek_R.setRotationPointLM(0.0F, 1.0F, 0.0F);
+		Cheek_R.setRotationPoint(0.0F, 1.0F, 0.0F);
 		Cheek_L = new Modchu_ModelRenderer(this, 32, 19);
 		Cheek_L.addPlate(0.5F, -4.5F, -4.002F, 4, 4, 0, f);
-		Cheek_L.setRotationPointLM(0.0F, 1.0F, 0.0F);
+		Cheek_L.setRotationPoint(0.0F, 1.0F, 0.0F);
 		((Modchu_ModelRenderer) bipedHead).removeChild(eyeR);
 		((Modchu_ModelRenderer) bipedHead).removeChild(eyeL);
 		eyeR = new Modchu_ModelRenderer(this, 0, 0);
 		eyeR.addPlate(-4F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		eyeL = new Modchu_ModelRenderer(this, 4, 0);
 		eyeL.addPlate(0.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 		bipedHead.addChild(eyeL);
 		bipedHead.addChild(Goggles1A);
@@ -162,9 +162,9 @@ public class MultiModel_MS1 extends MultiModel_SR2
     	setCapsValue(caps_visible, Skirt, false);
     }
 
-    public void setLivingAnimationsMM(float f, float f1, float f2)
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-        super.setLivingAnimationsMM(f, f1, f2);
+        super.setLivingAnimations(entityCaps, f, f1, f2);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
     		setCapsValue(caps_visible, Cheek_R, true);
     		setCapsValue(caps_visible, Cheek_L, true);
@@ -175,9 +175,9 @@ public class MultiModel_MS1 extends MultiModel_SR2
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5)
+    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, MMM_IModelCaps entityCaps)
     {
-    	super.setRotationAnglesLM(f, f1, ticksExisted, pheadYaw, pheadPitch, f5);
+    	super.setRotationAnglesLM(f, f1, ticksExisted, pheadYaw, pheadPitch, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeR, false);
     		setCapsValue(caps_visible, eyeL, true);
@@ -190,8 +190,8 @@ public class MultiModel_MS1 extends MultiModel_SR2
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5) {
-    	super.skirtFloats(f, f1, f2, f3, f4, f5);
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
     	SkirtTop.setRotationPoint(-3.5F, -2.5F, 3.0F);

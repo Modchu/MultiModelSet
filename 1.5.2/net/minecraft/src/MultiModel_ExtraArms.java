@@ -101,10 +101,10 @@ public class MultiModel_ExtraArms extends MultiModel {
 		((Modchu_ModelRenderer) bipedHead).removeChild(eyeL);
 		eyeL = new Modchu_ModelRenderer(this, 32, 19);
 		eyeL.addPlate(-4.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		eyeR = new Modchu_ModelRenderer(this, 42, 19);
 		eyeR.addPlate(0.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 		bipedHead.addChild(eyeL);
 		((Modchu_ModelRenderer) bipedHead).removeChild(bipedHeadwear);
@@ -112,9 +112,9 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setLivingAnimationsMM(float f, float f1, float f2) {
-    	super.setLivingAnimationsMM(f, f1, f2);
-    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps.caps_Entity);
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
     	// –Úƒpƒ`
@@ -128,11 +128,11 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Cwave.setVisible(false);
 
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		Antena.rotationPointY = 4F;
     	}
@@ -223,5 +223,10 @@ public class MultiModel_ExtraArms extends MultiModel {
     public float getWidth()
     {
     	return 0.8F;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

@@ -104,8 +104,8 @@ public class MultiModel_usagi extends MultiModel {
 		Usasippo.setRotationPointZ(2.0F);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	UsaER.rotateAngleX = UsaEL.rotateAngleX = 0.6981317F;
     	UsaEL.rotationPointX = 0.0F;
     	UsaER.rotationPointX = -0.1F;
@@ -121,7 +121,7 @@ public class MultiModel_usagi extends MultiModel {
     		UsaEL.rotationPointZ = UsaER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F + 8F;
     		Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.5F);
     	}
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) Usasippo.rotateAngleY = mh_sin(f * 0.2F) * 0.5F;
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) Usasippo.rotateAngleY = mh_sin(f * 0.2F) * 0.5F;
 
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) Usasippo.setRotateAngleY(0.0F);
 
@@ -202,5 +202,10 @@ public class MultiModel_usagi extends MultiModel {
     	CatEL.rotateAngleY = -0.2617994F;
     	UsaER.rotateAngleY = 0.2617994F;
     	UsaEL.rotateAngleY = -0.2617994F;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

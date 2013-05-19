@@ -34,22 +34,22 @@ public class MultiModel_twinD extends MultiModel_SR2
 		super.initModel(f, f1);
 		longhearR = new Modchu_ModelRenderer(this, 52, 13);
 		longhearR.addBox(2.5F, -8F, 7.4F, 2, 18, 1);
-		longhearR.setRotationPointLM(0F, 0F, 0F);
+		longhearR.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longhearR);
 
 		longhearL = new Modchu_ModelRenderer(this, 58, 13);
 		longhearL.addBox(-4.5F, -8F, 7.4F, 2, 18, 1);
-		longhearL.setRotationPointLM(0F, 0F, 0F);
+		longhearL.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longhearL);
 
 		kamidomeR = new Modchu_ModelRenderer(this, 46, 19);
 		kamidomeR.addBox(1F, -7F, 6.5F, 2, 2, 1);
-		kamidomeR.setRotationPointLM(0F, 0F, 0F);
+		kamidomeR.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(kamidomeR);
 
 		kamidomeL = new Modchu_ModelRenderer(this, 46, 22);
 		kamidomeL.addBox(-3F, -7F, 6.5F, 2, 2, 1);
-		kamidomeL.setRotationPointLM(0F, 0F, 0F);
+		kamidomeL.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(kamidomeL);
 
 		longhearR.rotateAngleX=longhearL.rotateAngleX=kamidomeR.rotateAngleX=kamidomeL.rotateAngleX=0.296706F;

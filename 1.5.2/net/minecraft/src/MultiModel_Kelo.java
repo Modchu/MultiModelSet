@@ -179,11 +179,11 @@ public class MultiModel_Kelo extends MultiModel {
 		ShoesL.setRotationPoint(0.5F, 0.0F, 0.5F);
 		bipedLeftLeg.addChild(ShoesL);
 		eyeL = new Modchu_ModelRenderer(this, 16, 16);
-		eyeL.addBoxLM(0F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
+		eyeL.addBox(0F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
 		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeL);
 		eyeR = new Modchu_ModelRenderer(this, 8, 16);
-		eyeR.addBoxLM(-4F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
+		eyeR.addBox(-4F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
 		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 
@@ -329,9 +329,9 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
     {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5);
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
     	bipedRightLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F) * 1.4F * f1) / 1.5F;
     	bipedLeftLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1) / 1.5F;
@@ -347,7 +347,7 @@ public class MultiModel_Kelo extends MultiModel {
     		bipedRightLeg.rotateAngleY = 0.3141593F;
     		bipedLeftLeg.rotateAngleY = -0.3141593F;
     	}
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		bipedRightArm.rotationPointZ = MathHelper.sin(bipedBody.rotateAngleY) * 4F;
     		bipedRightArm.rotationPointX = -MathHelper.cos(bipedBody.rotateAngleY) * 3.5F + 1.0F;
@@ -403,7 +403,7 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
@@ -431,8 +431,8 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	setCapsValue(caps_visible, rightHandPlus, true);
     	setCapsValue(caps_visible, leftHandPlus, true);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(SleeveR);
@@ -446,8 +446,8 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	rightHandPlus.showModel = leftHandPlus.showModel = false;
     	bipedRightArm.addChild(SleeveR);
     	bipedLeftArm.addChild(SleeveL);
@@ -464,8 +464,8 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5) {
-    	super.action1(f, f1, f2, f3, f4, f5);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
 		float f6 = bipedBody.rotateAngleZ;
 		if (f6 > 0.0F) {
 			bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f6 * 1.30889264F);
@@ -515,8 +515,8 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public double getMountedYOffset() {
-    	double d = 0.85D;
+    public float getMountedYOffset() {
+    	float d = 0.85F;
     	return d;
     }
 
@@ -533,5 +533,10 @@ public class MultiModel_Kelo extends MultiModel {
     @Override
     public float ridingViewCorrection() {
     	return -0.75F;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }
