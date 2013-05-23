@@ -308,11 +308,11 @@ public class MultiModel_dm extends MultiModel_SR2
     }
 
 	@Override
-	public void defaultPartsSettingBefore() {
-		super.defaultPartsSettingBefore();
+	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"
 		};
-		setCapsValue(caps_showPartsHideList, (Object) s);
+		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
 	}
 }

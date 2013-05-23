@@ -666,8 +666,8 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s1 = {
     			"MariribonL", "MariribonR", "MariribonC", "RSidehair1", "RSidehair2",
     			"RSidehair3", "RSidehair4", "LSidehair1", "LSidehair2", "LSidehair3",
@@ -680,7 +680,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     			"L_hair4", "B_hair1", "B_hair2", "B_hair3", "B_hair4",
     			"B_hair5"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override

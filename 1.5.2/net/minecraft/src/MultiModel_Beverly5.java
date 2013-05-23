@@ -816,7 +816,7 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
     @Override
     public void action4(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	// 両手を前に出すモーション
-    	if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, Modchu_ModelCapsHelper.getCapsValueInt(this, caps_dominantArm)) > 0.0F) {
+    	if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm)) > 0.0F) {
     		rightArm.rotateAngleX += leftArm.rotateAngleX += -1.57F;
     		rightArm.rotateAngleY = leftArm.rotateAngleY = 0.0F;
     		rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
@@ -856,7 +856,7 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 
     @Override
     public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
-    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_dominantArm) == 0) return rightArm;
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     	return leftArm;
     }
 
@@ -911,11 +911,11 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"hemSkirtR1", "hemSkirtL1", "hemSkirtR2", "hemSkirtL2"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 }

@@ -431,15 +431,15 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s1 = {
     			"rightLegbottom", "leftLegbottom", "rightearhair", "leftearhair"
     	};
     	String[] s2 = {
     			"rightLeg_b", "leftLeg_b", "r_earhair", "l_earhair"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override

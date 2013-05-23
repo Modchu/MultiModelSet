@@ -364,12 +364,12 @@ public class MultiModel_SA extends MultiModel_Aug {
     }
 
 	@Override
-	public void defaultPartsSettingBefore() {
-		super.defaultPartsSettingBefore();
+	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"
 		};
-		setCapsValue(caps_showPartsHideList, (Object) s);
+		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
 		String[] s1 = {
 				"ChignonAug_R", "ChignonAug_L", "SideTailAug_RU", "SideTailAug_RB", "SideTailAug_LU",
 				"SideTailAug_LB", "SideTail_RBU", "SideTail_RBB", "SideTail_LBU", "SideTail_LBB",
@@ -380,6 +380,6 @@ public class MultiModel_SA extends MultiModel_Aug {
 				"SideTA_LB", "SideT_RBU", "SideT_RBB", "SideT_LBU", "SideT_LBB",
 				"SideTU_LB", "SideTU_RB"
 		};
-		setCapsValue(caps_showPartsRenemeMap, s1, s2);
+		setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
 	}
 }

@@ -567,6 +567,9 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     	bipedLeftArm.addChild(Negi1);
     	bipedLeftArm.addChild(Negi2);
     	bipedLeftArm.addChild(Negi3);
+    	setCapsValue(caps_visible, Negi1, false);
+    	setCapsValue(caps_visible, Negi2, false);
+    	setCapsValue(caps_visible, Negi3, false);
     	actionPartsInit(f, f1);
     }
 
@@ -665,13 +668,13 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
     			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entity)) {
     		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
-    			Negi1.setVisible(true);
-    			Negi2.setVisible(true);
-    			Negi3.setVisible(true);
+    			setCapsValue(caps_visible, Negi1, true);
+    			setCapsValue(caps_visible, Negi2, true);
+    			setCapsValue(caps_visible, Negi3, true);
     		} else {
-    			Negi1.setVisible(false);
-    			Negi2.setVisible(false);
-    			Negi3.setVisible(false);
+    			setCapsValue(caps_visible, Negi1, false);
+    			setCapsValue(caps_visible, Negi2, false);
+    			setCapsValue(caps_visible, Negi3, false);
     		}
     	}
     	float f6 = mh_sin(f2 * 0.09F) * 0.05F + 0.05F;
@@ -686,12 +689,12 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Cheek_R", "Cheek_L"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"SideTailRoot_R", "SideTailRoot_L", "SideTailM_RU", "SideTailM_RB", "SideTailM_LU",
     			"SideTailM_LB", "SideTailF_RU", "SideTailF_RB", "SideTailF_LU", "SideTailF_LB",
@@ -704,15 +707,15 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     			"SideTN_LU", "SideTN_LB", "SideTR_R", "SideTR_L", "D_Hari_L",
     			"HOM_R", "HOM_L", "HOF_R", "HOF_L", "HON_L"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void defaultPartsSettingAfter() {
+    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//Negi Default off
-    	setCapsValue(caps_defaultShowPartsMap, "Negi1", i, false);
-    	setCapsValue(caps_defaultShowPartsMap, "Negi2", i, false);
-    	setCapsValue(caps_defaultShowPartsMap, "Negi3", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "Negi1", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "Negi2", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "Negi3", i, false);
     }
 }

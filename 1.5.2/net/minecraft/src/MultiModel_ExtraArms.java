@@ -202,12 +202,12 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "d"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"FirstAidSet" ,"Binoculars", "BinocularsL1", "BinocularsL2", "BinocularsR1",
     			"BinocularsR2", "BinocularsR1", "BinocularsR2"
@@ -216,7 +216,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     			"FA_Set" ,"Bino", "BinoL1", "Bino_L2", "Bino_R1",
     			"Bino_R2", "Bino_R1", "Bino_R2"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override

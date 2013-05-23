@@ -657,26 +657,26 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	}
 
 	@Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"SkirtTopBack", "SkirtTopL", "SkirtTopBackL", "SkirtFrontL", "SkirtLeftFront",
     			"SkirtBackL", "SkirtLeftBack", "SkirtRightBack", "SkirtRightFront", "Skirt1",
     			"Skirt2", "Skirt3", "Skirt4"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"bipedHeadwear2", "backRightLeg", "backLeftLeg"
     	};
     	String[] s2 = {
     			"Headwear2", "b_RightLeg", "b_LeftLeg"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) == 2) {
     		setCapsValue(caps_visible, Skirt1, false);
     		setCapsValue(caps_visible, Skirt2, false);

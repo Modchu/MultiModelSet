@@ -694,15 +694,15 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt21", "Skirt22", "Skirt23", "Skirt24", "Skirt25",
     			"Skirt26", "Skirt27", "Skirt27", "Skirt28", "Skirt29",
     			"Skirt210", "Skirt211", "Skirt212", "Skirt213", "Skirt214",
     			"Skirt215", "Skirt216"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 
 	@Override

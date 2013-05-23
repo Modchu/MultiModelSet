@@ -407,24 +407,24 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "ChignonB", "Tail", "d"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"BreastPocket", "LsidePocket", "RsidePocket", "BackpackPocket"
     	};
     	String[] s2 = {
     			"B_Pocket", "L_Pocket", "R_Pocket", "B_packPocket"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, bipedHeadwear, false);
     	setCapsValue(caps_visible, ChignonB, false);
     	setCapsValue(caps_visible, Tail, false);

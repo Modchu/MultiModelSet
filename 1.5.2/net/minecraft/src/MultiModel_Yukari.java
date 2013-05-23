@@ -725,12 +725,12 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Cheek_R", "Cheek_L"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"RabbitEar_RB1", "RabbitEar_RB2", "RabbitEar_R1", "RabbitEar_R2", "RabbitEar_R3",
     			"RabbitEar_R4", "RabbitEar_LB1", "RabbitEar_LB2", "RabbitEar_L1", "RabbitEar_L2",
@@ -751,7 +751,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     			"Ac_HB2", "ArmAc_RF", "ArmAc_RB", "ArmAc_RR", "ArmAc_RL",
     			"ArmAc_R", "BeltAc_L"
     	};
-    	setCapsValue(caps_showPartsRenemeMap, s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override

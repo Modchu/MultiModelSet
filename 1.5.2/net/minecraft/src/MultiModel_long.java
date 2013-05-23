@@ -48,17 +48,17 @@ public class MultiModel_long extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Tail", "SideTailL", "SideTailR", "ChignonB"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, Tail, false);
     	setCapsValue(caps_visible, SideTailL, false);
     	setCapsValue(caps_visible, SideTailR, false);

@@ -635,32 +635,32 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingAfter() {
+    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//bipedRightLeg Default off
-    	setCapsValue(caps_defaultShowPartsMap, "bipedRightLeg", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "bipedRightLeg", i, false);
     	//bipedLeftLeg Default off
-    	setCapsValue(caps_defaultShowPartsMap, "bipedLeftLeg", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "bipedLeftLeg", i, false);
     	//HornR Default off
-    	setCapsValue(caps_defaultShowPartsMap, "HornR", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "HornR", i, false);
     	//HornL Default off
-    	setCapsValue(caps_defaultShowPartsMap, "HornL", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "HornL", i, false);
     	//ArmR Default off
-    	setCapsValue(caps_defaultShowPartsMap, "ArmR", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "ArmR", i, false);
     	//ArmL Default off
-    	setCapsValue(caps_defaultShowPartsMap, "ArmL", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "ArmL", i, false);
     	//LegR Default off
-    	setCapsValue(caps_defaultShowPartsMap, "LegR", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "LegR", i, false);
     	//LegL Default off
-    	setCapsValue(caps_defaultShowPartsMap, "LegL", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "LegL", i, false);
     	//HandR Default off
-    	setCapsValue(caps_defaultShowPartsMap, "HandR", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "HandR", i, false);
     	//HandL Default off
-    	setCapsValue(caps_defaultShowPartsMap, "HandL", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "HandL", i, false);
     	//bootR Default off
-    	setCapsValue(caps_defaultShowPartsMap, "bootR", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "bootR", i, false);
     	//bootL Default off
-    	setCapsValue(caps_defaultShowPartsMap, "bootL", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "bootL", i, false);
     }
 
     @Override

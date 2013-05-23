@@ -136,9 +136,9 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void showModelSettingReflects() {
-		super.showModelSettingReflects();
-		int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_showPartsMapBoolean, "Skirt", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType));
+	public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+		super.showModelSettingReflects(entityCaps);
+		int i = Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_showPartsMapBoolean, "Skirt", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType));
 		boolean b = i != 0;
 		setCapsValue(caps_visible, specialModel[0], b);
 	}

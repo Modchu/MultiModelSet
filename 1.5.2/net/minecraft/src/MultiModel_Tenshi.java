@@ -821,25 +821,15 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
 
 		ItemStack is;
 		boolean isHelmet = false;
-/*
-		if (entityliving instanceof EntityPlayer) {
-			is = ((EntityPlayer) entityliving).inventory.armorItemInSlot(3);
-			if (is != null && is.stackSize > 0) {
-				Item item = is.getItem();
-				if(item instanceof ItemArmor) isHelmet = true;
-			}
-		} else if (mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
-					&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entityliving)) {
-*/
-			//isHelmet = ((LMM_EntityLittleMaid) entityliving).maidInventory.armorInventory[3] != null;
-			Object inventory = getCapsValue(caps_Inventory);
-			if (inventory != null
-					&& inventory instanceof InventoryPlayer) {
-				Object[] o = (Object[]) Modchu_Reflect.getFieldObject(InventoryPlayer.class, "field_70460_b", "armorInventory", inventory);
-				if (o != null
-						&& o[3] != null) isHelmet = true;
-			}
-		//}
+
+		Object inventory = getCapsValue(entityCaps, caps_Inventory);
+		if (inventory != null
+				&& inventory instanceof InventoryPlayer) {
+			Object[] o = (Object[]) Modchu_Reflect.getFieldObject(InventoryPlayer.class, "field_70460_b", "armorInventory", inventory);
+			if (o != null
+					&& o[3] != null) isHelmet = true;
+		}
+
 		if(isHelmet){
 			Hat1.isHidden = Hat2.isHidden = Hat3.isHidden =
 					Hat4.isHidden = Hat5.isHidden = Hat6.isHidden =
@@ -857,6 +847,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
 					Line1.isHidden = Line2.isHidden = Line3.isHidden =
 					Line4.isHidden = Leaf1.isHidden = Leaf2.isHidden = true;
 		}
+
 	}
 
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
@@ -1002,8 +993,8 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
 	}
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
     			"Skirt6", "Skirt7", "Skirt8", "Skirt9", "Skirt10",
@@ -1013,7 +1004,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
     			"Skirt29", "Skirt210", "Skirt211", "Skirt212", "Skirt213",
     			"Skirt214", "Skirt215", "Skirt216"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 
     @Override
@@ -1034,14 +1025,9 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
     	((Modchu_ModelRenderer) leftArm).removeChild(Patch2);
     }
 
-    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
-    	super.setArmorBipedHeadShowModel(entityCaps, b);
-    	Hat1.isHidden = Hat2.isHidden = Hat3.isHidden =
-    			Hat4.isHidden = Hat5.isHidden = Hat6.isHidden =
-    			Hat7.isHidden = Hat8.isHidden = Hat9.isHidden =
-    			Hat10.isHidden = Hat11.isHidden = Hat12.isHidden =
-    			Hat13.isHidden = Hat14.isHidden = Peach1.isHidden =
-    			Line1.isHidden = Line2.isHidden = Line3.isHidden =
-    			Line4.isHidden = Leaf1.isHidden = Leaf2.isHidden = !b;
+    @Override
+    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorSkirtShowModel(entityCaps, b);
+    	Skirt.isHidden = !b;
     }
 }

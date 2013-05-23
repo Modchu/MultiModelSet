@@ -377,10 +377,10 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     			f15 *= f15;
     			f15 = 1.0F - f15;
     			float f18 = (float)Math.sin(f15 * 3.141593F) * 1.2F;
-    			float f8 = (float)Math.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * 3.141593F) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			float f8 = (float)Math.sin(onGroundR * 3.141593F) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			rightArm.rotateAngleX -= (double)f18 + (double)f8;
     			rightArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-    			rightArm.rotateAngleZ = (float)Math.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * 3.141593F) * -0.4F;
+    			rightArm.rotateAngleZ = (float)Math.sin(onGroundR * 3.141593F) * -0.4F;
     		}
 
     		// L
@@ -390,10 +390,10 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     			f15 *= f15;
     			f15 = 1.0F - f15;
     			float f18 = (float)Math.sin(f15 * 3.141593F) * 1.2F;
-    			float f8 = (float)Math.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * 3.141593F) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			float f8 = (float)Math.sin(onGroundL * 3.141593F) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			leftArm.rotateAngleX -= (double)f18 + (double)f8;
     			leftArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-    			leftArm.rotateAngleZ = (float)Math.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * 3.141593F) * -0.4F;
+    			leftArm.rotateAngleZ = (float)Math.sin(onGroundL * 3.141593F) * -0.4F;
     		}
     	}
 
@@ -561,18 +561,18 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "SkirtR", "SkirtL", "SkirtTopL", "SkirtFrontL",
     			"SkirtLeftL", "SkirtBackL", "d"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_indexOfAllVisible, "ightArm", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType), bipedRightArm.showModel);
     	setCapsValue(caps_indexOfAllVisible, "eftArm", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType), bipedLeftArm.showModel);
     	setCapsValue(caps_indexOfAllVisible, "ightLeg", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType), bipedRightLeg.showModel);
@@ -682,7 +682,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     @Override
     public void action4(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	// 両手を前に出すモーション
-    	if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, Modchu_ModelCapsHelper.getCapsValueInt(this, caps_dominantArm)) > 0.0F) {
+    	if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm)) > 0.0F) {
     		rightArm.rotateAngleX += leftArm.rotateAngleX += -1.57F;
     		rightArm.rotateAngleY = leftArm.rotateAngleY = 0.0F;
     		rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
@@ -732,7 +732,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
 
     @Override
     public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
-    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_dominantArm) == 0) return rightArm;
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     	return leftArm;
     }
 

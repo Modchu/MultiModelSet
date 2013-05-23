@@ -206,24 +206,24 @@ public class MultiModel_MS1 extends MultiModel_SR2
     }
 
 	@Override
-	public void defaultPartsSettingBefore() {
-		super.defaultPartsSettingBefore();
+	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"
 		};
-		setCapsValue(caps_showPartsHideList, (Object) s);
+		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
 	}
 
     @Override
-    public void defaultPartsSettingAfter() {
+    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//GogglesA Default off
-    	setCapsValue(caps_defaultShowPartsMap, "GogglesA", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "GogglesA", i, false);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, Tail, false);
     	setCapsValue(caps_visible, SideTailR, false);
     	setCapsValue(caps_visible, SideTailL, false);

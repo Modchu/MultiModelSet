@@ -806,8 +806,8 @@ public class MultiModel_Angel extends MultiModel_SR2 {
 	}
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
     			"Skirt6", "Skirt7", "Skirt8", "Skirt9", "Skirt10",
@@ -817,7 +817,7 @@ public class MultiModel_Angel extends MultiModel_SR2 {
     			"Skirt29", "Skirt210", "Skirt211", "Skirt212", "Skirt213",
     			"Skirt214", "Skirt215", "Skirt216"
     	};
-    	setCapsValue(caps_showPartsHideList, (Object) s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 
     @Override

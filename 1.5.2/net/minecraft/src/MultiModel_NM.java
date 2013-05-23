@@ -345,13 +345,13 @@ public class MultiModel_NM extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingAfter() {
+    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//RightArm2 Default off
-    	setCapsValue(caps_defaultShowPartsMap, "RightArm2", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "RightArm2", i, false);
     	//LeftArm2 Default off
-    	setCapsValue(caps_defaultShowPartsMap, "LeftArm2", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "LeftArm2", i, false);
     	//Zukin Default off
-    	setCapsValue(caps_defaultShowPartsMap, "Zukin", i, false);
+    	setCapsValue(entityCaps, caps_defaultShowPartsMap, "Zukin", i, false);
     }
 }
