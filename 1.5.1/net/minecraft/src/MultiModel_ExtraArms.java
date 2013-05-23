@@ -101,10 +101,10 @@ public class MultiModel_ExtraArms extends MultiModel {
 		((Modchu_ModelRenderer) bipedHead).removeChild(eyeL);
 		eyeL = new Modchu_ModelRenderer(this, 32, 19);
 		eyeL.addPlate(-4.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		eyeR = new Modchu_ModelRenderer(this, 42, 19);
 		eyeR.addPlate(0.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 		bipedHead.addChild(eyeL);
 		((Modchu_ModelRenderer) bipedHead).removeChild(bipedHeadwear);
@@ -112,9 +112,11 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setLivingAnimationsLM(EntityLiving entityliving, float f, float f1, float f2) {
-    	super.setLivingAnimationsLM(entityliving, f, f1, f2);
-    	float f3 = (float)entityliving.ticksExisted + f2 + getCapsValueFloat(caps_entityIdFactor);
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    	if (entityliving != null) ;else return;
+    	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
     	// –Úƒpƒ`
     	if( 0 > MathHelper.sin(f3 * 0.05F) + MathHelper.sin(f3 * 0.13F) + MathHelper.sin(f3 * 0.7F) + 2.55F) {
     		setCapsValue(caps_visible, eyeR, false);
@@ -126,19 +128,19 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Cwave.setVisible(false);
 
-    	if(getCapsValueFloat(caps_onGround) > -9990F && !getCapsValueBoolean(caps_aimedBow))
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		Antena.rotationPointY = 4F;
     	}
     	Skirt.rotationPointZ = 0.0F;
-    	if (getCapsValueBoolean(caps_getIsSneak)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     		Skirt.rotateAngleX += 0.3F;
     	}
-    	if (getCapsValueBoolean(caps_getIsWait))
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait))
     	{
     		Antena.rotationPointY = 0.0F;
     		if (0.0D > (double)(mh_sin(f2 * 0.1F) * 0.3F) + Math.random() * 0.15000000596046448D + 0.10000000149011612D)
@@ -150,14 +152,14 @@ public class MultiModel_ExtraArms extends MultiModel {
     			Cwave.setVisible(false);
     		}
     	}
-    	if(getCapsValueBoolean(caps_aimedBow) || getCapsValueBoolean(caps_getIsWait))
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) || Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait))
     	{
     		if (!aimedBowBinoculars)
     		{
     			aimedBowBinoculars = true;
     			((Modchu_ModelRenderer) bipedLeftArm).removeChild(Binoculars);
     			bipedLeftLeg.addChild(Binoculars);
-    			if(getCapsValueBoolean(caps_aimedBow))
+    			if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     			{
     				Binoculars.setRotationPoint(0.0F, -10.0F, 0.0F);
     			} else {
@@ -179,7 +181,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     			Binoculars.setRotateAngleZ(0.0F);
     		}
     	}
-    	if(getCapsValueBoolean(caps_aimedBow))
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		setCapsValue(caps_visible, eyeL, true);
     		setCapsValue(caps_visible, eyeR, false);
@@ -200,12 +202,12 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "d"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"FirstAidSet" ,"Binoculars", "BinocularsL1", "BinocularsL2", "BinocularsR1",
     			"BinocularsR2", "BinocularsR1", "BinocularsR2"
@@ -214,12 +216,17 @@ public class MultiModel_ExtraArms extends MultiModel {
     			"FA_Set" ,"Bino", "BinoL1", "Bino_L2", "Bino_R1",
     			"Bino_R2", "Bino_R1", "Bino_R2"
     	};
-    	addShowPartsReneme(s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
     public float getWidth()
     {
     	return 0.8F;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

@@ -196,7 +196,7 @@ public class MultiModel_Petit extends MultiModel {
 
     @Override
     public void skirtFloatsInit(float f, float f1) {
-    	if(!getCapsValueBoolean(caps_skirtFloats)) return;
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	//ã
     	SkirtTop = new Modchu_ModelRenderer(this, 8, 16);
     	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0, f - 1.9F);
@@ -230,7 +230,7 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 15.6F, 0.0F);
     	bipedHeadwear.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedBody.setRotationPoint(0.0F, 14.6F, 0.0F);
@@ -254,8 +254,8 @@ public class MultiModel_Petit extends MultiModel {
     	Arms[1].setRotationPoint(-0.5F, 2.5F, 0F);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	bipedHead.rotationPointY = 15.6F;
     	bipedBody.rotationPointY = 14.6F;
     	bipedRightArm.rotationPointX = -1.7F;
@@ -264,18 +264,18 @@ public class MultiModel_Petit extends MultiModel {
     	bipedRightLeg.rotationPointY = bipedLeftLeg.rotationPointY = 5.0F;
     	Skirt.rotationPointY = 4.0F;
     	bipedHead.rotationPointZ = 0.0F;
-    	if(getCapsValueBoolean(caps_getIsRiding)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
     		bipedHead.rotationPointY -= 4.5F;
     		bipedBody.rotationPointY -= 4.5F;
     	}
 
-    	if(getCapsValueBoolean(caps_getIsSneak)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     		bipedHead.rotationPointY += 0.5F;
     		bipedHead.rotationPointZ = 2.0F;
     		Skirt.rotationPointZ = 0.0F;
     	}
 
-    	if(getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeR, false);
     		setCapsValue(caps_visible, FaceR, false);
     	}
@@ -294,9 +294,9 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	if (!getCapsValueBoolean(caps_skirtFloats)) return;
-    	float motionY = getCapsValueFloat(caps_motionY);
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
     	SkirtTop.setRotationPoint(-4.0F, -2.0F, 4.0F);
     	SkirtFront.setRotationPoint(0.0F, 8.0F, 0.0F);
     	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -334,8 +334,8 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	rightArmPlus.showModel = rightArmPlus2.showModel =
     			leftArmPlus.showModel = leftArmPlus2.showModel =
     			rightLegPlus.showModel = rightLegPlus2.showModel =
@@ -344,8 +344,8 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	rightArmPlus.showModel = rightArmPlus2.showModel =
     			leftArmPlus.showModel = leftArmPlus2.showModel =
     			rightLegPlus.showModel = rightLegPlus2.showModel =
@@ -354,19 +354,19 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public void action1(Entity entity) {
-    	super.action1(entity);
-    	float f1 = bipedBody.rotateAngleZ;
-    	if (f1 > 0.0F) {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 1.75F + (f1 * 0.52355705F);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+    	float f6 = bipedBody.rotateAngleZ;
+    	if (f6 > 0.0F) {
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 1.75F + (f6 * 0.52355705F);
     	} else {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 1.75F + (f1 * 0.52355705F);
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 1.75F + (f6 * 0.52355705F);
     	}
-    	bipedHead.rotationPointX = -f1 * 1.30597063F;
-    	rightLeg.rotationPointY -= -0.2F + f1 * 0.93283616F;
-    	leftLeg.rotationPointY -= -0.5F + f1 * 0.93283616F;
+    	bipedHead.rotationPointX = -f6 * 1.30597063F;
+    	rightLeg.rotationPointY -= -0.2F + f6 * 0.93283616F;
+    	leftLeg.rotationPointY -= -0.5F + f6 * 0.93283616F;
     	rightLeg2.rotationPointY -= 3.0F;
-    	leftLeg2.rotationPointY -= 3.5F - f1 * 0.93283616F;
+    	leftLeg2.rotationPointY -= 3.5F - f6 * 0.93283616F;
     	rightArm2.rotationPointX = -0.5F;
     	leftArm2.rotationPointX = 0.5F;
     	rightArm2.rotationPointY =
@@ -398,8 +398,8 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public double getMountedYOffset() {
-    	return 1.6D;
+    public float getMountedYOffset() {
+    	return 1.6F;
     }
 
     @Override
@@ -408,7 +408,12 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public float Physical_Hammer() {
-    	return getCapsValueFloat(caps_Physical_Hammer) == 1.0F ? 1.3F : getCapsValueFloat(caps_Physical_Hammer);
+    public float Physical_Hammer(MMM_IModelCaps entityCaps) {
+    	return Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_Physical_Hammer) == 1.0F ? 1.3F : Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_Physical_Hammer);
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

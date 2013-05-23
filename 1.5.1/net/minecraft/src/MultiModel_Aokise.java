@@ -48,10 +48,10 @@ public class MultiModel_Aokise extends MultiModel_SR2
 		textureWidth = 64;
 		textureHeight = 64;
 		f1 += 8F;
-		bipedCloak = new ModelRenderer(this, 0, 0);
+		bipedCloak = new Modchu_ModelRenderer(this, 0, 0);
 		bipedCloak.addBox(-5.0F, 0.0F, -1.0F, 10, 16, 1, f);
 		bipedCloak.showModel = false;
-		bipedEars = new ModelRenderer(this, 0, 16);
+		bipedEars = new Modchu_ModelRenderer(this, 0, 16);
 		bipedEars.addBox(-3.0F, -6.0F, -1.0F, 6, 6, 1, f);
 		bipedEars.showModel = false;
 		bipedHead = new Modchu_ModelRenderer(this, 0, 0);
@@ -113,96 +113,96 @@ public class MultiModel_Aokise extends MultiModel_SR2
 
 		eyeR = new Modchu_ModelRenderer(this, 32, 19);
 		eyeR.addPlate(-4.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		eyeL = new Modchu_ModelRenderer(this, 42, 19);
 		eyeL.addPlate(0.0F, -5.0F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 		bipedHead.addChild(eyeL);
 
 		sideR = new Modchu_ModelRenderer(this, 0, 35);
 		sideR.addBox(-3.2F, -0.8F, -1.5F, 1, 6, 3, f);
-		sideR.setRotationPointLM(0F, 3.5F, 0F);
+		sideR.setRotationPoint(0F, 3.5F, 0F);
 		bipedBody.addChild(sideR);
 
 		sideL = new Modchu_ModelRenderer(this, 0, 35);
 		sideL.mirror = true;
 		sideL.addBox(2.2F, -0.8F, -1.5F, 1, 6, 3, f);
-		sideL.setRotationPointLM(0F, 3.5F, 0F);
+		sideL.setRotationPoint(0F, 3.5F, 0F);
 		bipedBody.addChild(sideL);
 
 		mune = new Modchu_ModelRenderer(this, 0, 33);
 		mune.addBox(-2F, -0.4F, -2.8F, 4, 1, 1);
-		mune.setRotationPointLM(0F, -3F, 0F);
+		mune.setRotationPoint(0F, -3F, 0F);
 		bipedBody.addChild(mune);
 
 		long1 = new Modchu_ModelRenderer(this, 0, 44);
 		long1.addBox(-3F, -6F, 4.2F, 6, 11, 1);
-		long1.setRotationPointLM(0F, 0F, 0F);
+		long1.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(long1);
 
 		long2 = new Modchu_ModelRenderer(this, 0, 56);
 		long2.addBox(-3F, 4F, 5F, 6, 7, 1);
-		long2.setRotationPointLM(0F, 0F, 0F);
+		long2.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(long2);
 
 		longSL1 = new Modchu_ModelRenderer(this, 14, 35);
 		longSL1.addBox(-2F, -5F, 4.5F, 2, 11, 1);
-		longSL1.setRotationPointLM(0F, 0F, 0F);
+		longSL1.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longSL1);
 
 		longSL2 = new Modchu_ModelRenderer(this, 8, 37);
 		longSL2.addBox(-2.9F, 3.5F, 5.5F, 2, 6, 1);
-		longSL2.setRotationPointLM(0F, 0F, 0F);
+		longSL2.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longSL2);
 
 		longSL3 = new Modchu_ModelRenderer(this, 14, 45);
 		longSL3.addBox(3.5F, 0F, 1.6F, 1, 10, 2);
-		longSL3.setRotationPointLM(0F, 0F, 0F);
+		longSL3.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longSL3);
 
 		longSR1 = new Modchu_ModelRenderer(this, 14, 35);
 		longSR1.mirror = true;
 		longSR1.addBox(0F, -5F, 4.5F, 2, 11, 1);
-		longSR1.setRotationPointLM(0F, 0F, 0F);
+		longSR1.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longSR1);
 
 		longSR2 = new Modchu_ModelRenderer(this, 8, 37);
 		longSR2.mirror = true;
 		longSR2.addBox(1F, 3.5F, 5.5F, 2, 6, 1);
-		longSR2.setRotationPointLM(0F, 0F, 0F);
+		longSR2.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longSR2);
 
 		longSR3 = new Modchu_ModelRenderer(this, 14, 45);
 		longSR3.mirror = true;
 		longSR3.addBox(-4.5F, 0F, 1.6F, 1, 10, 2);
-		longSR3.setRotationPointLM(0F, 0F, 0F);
+		longSR3.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longSR3);
 
 		kamidome1 = new Modchu_ModelRenderer(this, 8, 35);
 		kamidome1.addBox(-0.5F, -5F, 5F, 1, 1, 1);
-		kamidome1.setRotationPointLM(0F, 0F, 0F);
+		kamidome1.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(kamidome1);
 
 		ribon1 = new Modchu_ModelRenderer(this, 10, 33);
 		ribon1.addBox(-2.5F, -4.7F, 4.8F, 2, 1, 1);
-		ribon1.setRotationPointLM(0F, 0F, 0F);
+		ribon1.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(ribon1);
 
 		ribon2 = new Modchu_ModelRenderer(this, 10, 33);
 		ribon2.addBox(0.5F, -4.7F, 4.8F, 2, 1, 1);
-		ribon2.setRotationPointLM(0F, 0F, 0F);
+		ribon2.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(ribon2);
 
 		ribon3 = new Modchu_ModelRenderer(this, 0, 16);
 		ribon3.addBox(2F, -3.5F, 4.8F, 2, 7, 1);
-		ribon3.setRotationPointLM(0F, 0F, 0F);
+		ribon3.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(ribon3);
 
 		ribon4 = new Modchu_ModelRenderer(this, 0, 16);
 		ribon4.mirror = true;
 		ribon4.addBox(-4F, -3.5F, 4.8F, 2, 7, 1);
-		ribon4.setRotationPointLM(0F, 0F, 0F);
+		ribon4.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(ribon4);
 
 		mainFrame = new Modchu_ModelRenderer(this, 0, 0);

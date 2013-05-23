@@ -116,27 +116,27 @@ public class MultiModel_Pawapro extends MultiModel {
 
     	eyeR = new Modchu_ModelRenderer(this, 32, 0);
     	eyeR.addPlate(-3.999999F, -4.9F, -4.001F, 4, 4, 0, f);
-    	eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeR);
     	eyeL = new Modchu_ModelRenderer(this, 36, 0);
     	eyeL.addPlate(-0.000001F, -4.9F, -4.001F, 4, 4, 0, f);
-    	eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeL);
     	eyeRniko = new Modchu_ModelRenderer(this, 32, 12);
     	eyeRniko.addPlate(-3.999999F, -4.9F, -4.001F, 4, 4, 0, f);
-    	eyeRniko.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeRniko.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeRniko);
     	eyeLniko = new Modchu_ModelRenderer(this, 36, 12);
     	eyeLniko.addPlate(-0.000001F, -4.9F, -4.001F, 4, 4, 0, f);
-    	eyeLniko.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeLniko.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeLniko);
     	eyeRFire = new Modchu_ModelRenderer(this, 32, 4);
     	eyeRFire.addPlate(-3.999999F, -4.9F, -4.001F, 4, 4, 0, f);
-    	eyeRFire.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeRFire.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeRFire);
     	eyeLFire = new Modchu_ModelRenderer(this, 36, 4);
     	eyeLFire.addPlate(-0.000001F, -4.9F, -4.001F, 4, 4, 0, f);
-    	eyeLFire.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeLFire.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeLFire);
     	mainFrame = new Modchu_ModelRenderer(this, 0, 0);
     	mainFrame.setRotationPoint(0F, 0F + f1, 0F);
@@ -150,7 +150,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
@@ -234,8 +234,8 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	bipedHead.rotationPointY += 1.0F;
     	bipedBody.rotationPointY -= 3.0F;
     	bipedRightArm.rotationPointY += 5.0F;
@@ -248,15 +248,15 @@ public class MultiModel_Pawapro extends MultiModel {
     	setCapsValue(caps_visible, eyeLFire, false);
     	setCapsValue(caps_visible, eyeRFire, false);
 
-    	if (getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeLniko, true);
     		setCapsValue(caps_visible, eyeRniko, true);
     	}
-    	if (getCapsValueBoolean(caps_aimedBow)){
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)){
     		setCapsValue(caps_visible, eyeLFire, true);
     		setCapsValue(caps_visible, eyeRFire, true);
     	}
-    	if (getCapsValueBoolean(caps_getIsSneak)){
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)){
     		Skirt.rotationPointY = 0.0F;
     		Skirt.rotationPointZ = 0.0F;
     		Skirt.rotateAngleX = 0.0F;
@@ -276,7 +276,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void actionInit1() {
+    public void actionInit1(MMM_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	boolean b = false;
     	setCapsValue(caps_visible, bipedLeftArm, b);
@@ -324,7 +324,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, false);
     	setCapsValue(caps_sneakBan, false);
     	setCapsValue(caps_waitBan, false);
@@ -384,13 +384,13 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void action1(Entity entity) {
-    	super.action1(entity);
-    	float f1 = bipedBody.rotateAngleZ;
-    	if (f1 > 0.0F) {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f1 * 1.30889264F);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+    	float f6 = bipedBody.rotateAngleZ;
+    	if (f6 > 0.0F) {
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f6 * 1.30889264F);
     	} else {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f1 * 1.30889264F);
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f6 * 1.30889264F);
     	}
     	bipedHead.rotationPointX = 0.0F;
     	rightHand.rotationPointY = -3.0F;
@@ -400,14 +400,19 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(boolean b) {
+    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
-    	super.setArmorBipedHeadShowModel(b);
+    	super.setArmorBipedHeadShowModel(entityCaps, b);
     }
 
     @Override
-    public void setArmorBipedBodyShowModel(boolean b) {
-    	super.setArmorBipedBodyShowModel(b);
+    public void setArmorBipedBodyShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedBodyShowModel(entityCaps, b);
     	setCapsValue(caps_visible, Logo2, b);
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

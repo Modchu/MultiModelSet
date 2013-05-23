@@ -94,12 +94,12 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
 
     	eyeR = new Modchu_ModelRenderer(this, 17, 0);
     	eyeR.addPlate(-3.0F, -4F, -4.01F, 2, 3, 0, f);
-    	eyeR.setRotationPointLM(0F, 0F, 0F);
+    	eyeR.setRotationPoint(0F, 0F, 0F);
     	bipedHead.addChild(eyeR);
 
     	eyeL = new Modchu_ModelRenderer(this, 21, 0);
     	eyeL.addPlate(1.0F, -4F, -4.01F, 2, 3, 0, f);
-    	eyeL.setRotationPointLM(0F, 0F, 0F);
+    	eyeL.setRotationPoint(0F, 0F, 0F);
     	bipedHead.addChild(eyeL);
 
     	Ponytail = new Modchu_ModelRenderer(this, 52, 5);
@@ -213,15 +213,15 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHeadwear.setRotationPoint(0F, 0F, 0F);
     	bipedBody.setRotationPoint(0F, bodyPosY, 0F);
 
     	//INIT POSITION
     	bipedHead.setRotationPoint (0F, headPosY, 0F);
     	HeadMount.setRotationPoint (0F, 0F, 0F);
-    	eyeR.setRotationPointLM (0F, 0F, 0F);
-    	eyeL.setRotationPointLM (0F, 0F, 0F);
+    	eyeR.setRotationPoint (0F, 0F, 0F);
+    	eyeL.setRotationPoint (0F, 0F, 0F);
     	Ponytail.setRotationPoint (0F, -5.2F, 5F);
     	BunchR.setRotationPoint (-4.5F, -5.5F, 1.7F);
     	BunchL.setRotationPoint ( 4.5F, -5.5F, 1.7F);
@@ -280,6 +280,8 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
 		bipedBody.rotateAngleY = 0F;
 
 		//ふわりスカート
+		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		if (entity != null) ;else return;
 		float velY = (float)entity.motionY + 0.1F;
 
 		float fwBuf1 = velY * 5F;
@@ -297,7 +299,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
 
     @Override
     public void skirtFloatsInit(float f, float f1) {
-    	if(!getCapsValueBoolean(caps_skirtFloats)) return;
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	//上
     	SkirtTop = new Modchu_ModelRenderer(this, 6, 16);
     	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 8, 6, 0);
@@ -334,8 +336,8 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
      * 姿勢制御・更新差分
      */
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	reset(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	reset(f, f1, f2, f3, f4, f5, entityCaps);
     	//頭部
     	bipedHead.rotateAngleY += f3 / 57.29578F;
     	bipedHead.rotateAngleX += f4 / 57.29578F;
@@ -358,7 +360,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     	bipedRightLeg.rotateAngleX += MathHelper.cos(f * 0.5656F) * 1.2F * f1;
     	bipedLeftLeg.rotateAngleX -= MathHelper.cos(f * 0.5656F) * 1.2F * f1;
 
-    	if (getCapsValueBoolean(caps_getIsRiding))
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding))
     	{
     		// 乗り物に乗っている
     		bipedRightArm.rotateAngleX -= 0.3F;
@@ -382,8 +384,8 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     		bipedRightArm.rotateAngleX
     			= bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemRight;
     	}
-    	armSwing(f, f1, f2, f3, f4, f5, entity);
-    	if (getCapsValueBoolean(caps_getIsSneak))
+    	armSwing(f, f1, f2, f3, f4, f5, entityCaps);
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
     	{
     		// しゃがみ
     		bipedBody.rotateAngleX += 0.5F;
@@ -402,7 +404,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     	{
     		// 通常立ち
     	}
-    	if (getCapsValueBoolean(caps_getIsWait))
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait))
     	{
     		//待機状態の特別表示
     		bipedRightArm.rotateAngleX += MathHelper.sin(f2 * 0.062F) * 0.05F -0.6F;
@@ -420,7 +422,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     	}
     	else
     	{
-    		if (getCapsValueBoolean(caps_aimedBow))
+    		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     		{
     			// 弓構え
     			float f6 = MathHelper.sin(onGround * 3.141593F);
@@ -452,13 +454,13 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     	//
     	((Modchu_ModelRenderer) Arms[2]).setRotateAngle(-0.78539816339744830961566084581988F - ((Modchu_ModelRenderer) bipedRightArm).getRotateAngleX(), 0F, 0F);
     	((Modchu_ModelRenderer) Arms[3]).setRotateAngle(-0.78539816339744830961566084581988F - ((Modchu_ModelRenderer) bipedLeftArm).getRotateAngleX(), 0F, 0F);
-    	skirtFloats(f, f1, f2, f3, f4, f5, entity);
+    	skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	if (!getCapsValueBoolean(caps_skirtFloats)) return;
-    	float motionY = getCapsValueFloat(caps_motionY);
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
     	Skirt.rotationPointY = 9.0F;
     	SkirtBack.rotateAngleX = SkirtRight.rotateAngleX = SkirtLeft.rotateAngleX = SkirtFront.rotateAngleX = 0.0F;
     	SkirtBack.rotateAngleY = SkirtRight.rotateAngleY = SkirtLeft.rotateAngleY = SkirtFront.rotateAngleY = 0.0F;
@@ -488,13 +490,13 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void action1(Entity entity) {
-    	super.action1(entity);
-    	float f1 = bipedBody.rotateAngleZ;
-    	if (f1 > 0.0F) {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f1 * 1.30889264F);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+    	float f6 = bipedBody.rotateAngleZ;
+    	if (f6 > 0.0F) {
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f6 * 1.30889264F);
     	} else {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f1 * 1.30889264F);
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f6 * 1.30889264F);
     	}
     	rightArm2.rotationPointY += 1.0F;
     	leftArm2.rotationPointY += 1.0F;
@@ -524,7 +526,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     }
 
     @Override
-    public double getMountedYOffset() {
-    	return 0.85D;
+    public float getMountedYOffset() {
+    	return 0.85F;
     }
 }

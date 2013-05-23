@@ -128,12 +128,12 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
     	bipedRightLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F) * 1.4F * f1) / 1.5F;
     	bipedLeftLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1) / 1.5F;
@@ -141,12 +141,12 @@ public class MultiModel_Shion extends MultiModel {
     	setCapsValue(caps_visible, sodeR, true);
     	setCapsValue(caps_visible, WsodeL, false);
     	setCapsValue(caps_visible, WsodeR, false);
-    	if(getCapsValueBoolean(caps_getIsRiding)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
     		bipedRightLeg.rotateAngleY = 0.0F;
     		bipedLeftLeg.rotateAngleY = 0.0F;
     	}
-    	boolean modchuRemodelingModel = getCapsValueBoolean(caps_modchuRemodelingModel);
-    	if(getCapsValueBoolean(caps_getIsSneak)) {
+    	boolean modchuRemodelingModel = Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_modchuRemodelingModel);
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     		if (!modchuRemodelingModel) {
     			bipedRightLeg.rotateAngleX -= 0.5F;
     			bipedLeftLeg.rotateAngleX -= 0.5F;
@@ -173,13 +173,13 @@ public class MultiModel_Shion extends MultiModel {
     			SkirtL.setRotationPoint(-0.5F, 0.0F, 0.0F);
     		}
     	}
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, sodeL, false);
     		setCapsValue(caps_visible, sodeR, false);
     		setCapsValue(caps_visible, WsodeL, true);
     		setCapsValue(caps_visible, WsodeR, true);
     	}
-    	if(getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeR, false);
     		setCapsValue(caps_visible, eyeL, true);
     	}
@@ -196,14 +196,14 @@ public class MultiModel_Shion extends MultiModel {
     	kanzasi.rotateAngleY = -0.175F;
     	kanzasi.rotateAngleZ = 1.396F;
     	obi.rotateAngleX = 0.0873F;
-    	if (getCapsValueBoolean(caps_modchuRemodelingModel)) {
-    		if (getCapsValueBoolean(caps_getIsSneak)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_modchuRemodelingModel)) {
+    		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     			bipedBody.rotateAngleX = 0.0F;
     			bipedHead.rotationPointZ = 0.0F;
     			bipedBody.rotationPointZ = 0.0F;
     			bipedRightLeg.rotationPointZ = 0.0F;
     			bipedLeftLeg.rotationPointZ = 0.0F;
-    			if (!getCapsValueBoolean(caps_aimedBow)) {
+    			if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     				bipedRightArm.rotateAngleX = MathHelper.sin(f2 * 0.067F) * 0.05F - 0.7F;
     				bipedRightArm.rotateAngleY = 0.0F;
     				bipedRightArm.rotateAngleZ = -0.4F;
@@ -223,8 +223,10 @@ public class MultiModel_Shion extends MultiModel {
     			bipedRightArm.rotationPointZ = 0.0F;
     			bipedLeftArm.rotationPointZ = 0.0F;
     		}
-    		if (getCapsValueBoolean(caps_getIsRiding)) {
-    			if (entity.ridingEntity != null) {
+    		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
+    			EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    			if (entity != null
+    					&& entity.ridingEntity != null) {
     				bipedRightArm.rotateAngleX += -0.6283185F;
     				bipedLeftArm.rotateAngleX += -0.6283185F;
     				bipedRightLeg.rotateAngleX = -1.256637F;
@@ -241,7 +243,7 @@ public class MultiModel_Shion extends MultiModel {
     	if (0.0D > (double) (mh_sin(f2 * 0.1F) * 0.3F)
     			+ Math.random() * 0.10000000149011612D
     			+ 0.18000000715255737D) {
-    		setCapsValue(caps_visible, eyeL, true);
+    		setCapsValue(caps_visible, eyeL, false);
     		setCapsValue(caps_visible, eyeR, false);
     	} else {
     		setCapsValue(caps_visible, eyeL, true);
@@ -250,8 +252,8 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(sodeR);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(sodeL);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(WsodeR);
@@ -263,8 +265,8 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightArm).removeChild(sodeR);
     	((Modchu_ModelRenderer) leftArm).removeChild(sodeL);
     	((Modchu_ModelRenderer) rightArm).removeChild(WsodeR);
@@ -276,8 +278,7 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
-		setCapsValue(caps_visible, Skirt, getGuiParts().get("Skirt"));
+    public String getUsingTexture() {
+    	return null;
     }
 }

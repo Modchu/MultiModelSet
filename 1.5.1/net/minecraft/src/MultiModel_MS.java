@@ -23,15 +23,15 @@ public class MultiModel_MS extends MultiModel_MS1
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, Entity entity)
+    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, MMM_IModelCaps entityCaps)
     {
-    	super.setRotationAnglesLM(f, f1, ticksExisted, pheadYaw, pheadPitch, f5, entity);
+    	super.setRotationAnglesLM(f, f1, ticksExisted, pheadYaw, pheadPitch, f5, entityCaps);
     	Goggles1A.setVisible(false);
     	Goggles2A.setVisible(false);
     	Goggles3A.setVisible(false);
     	GogglesRA.setVisible(false);
     	GogglesLA.setVisible(false);
-    	if (getCapsValueBoolean(caps_aimedBow)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeR, false);
     		setCapsValue(caps_visible, eyeL, true);
     		Goggles1.setVisible(false);
@@ -56,11 +56,5 @@ public class MultiModel_MS extends MultiModel_MS1
     		GogglesRA.setVisible(false);
     		GogglesLA.setVisible(false);
     	}
-    }
-
-    @Override
-    public void defaultPartsSettingAfter() {
-    	//Cheek Default off
-    	setGuiParts("Cheek", false);
     }
 }

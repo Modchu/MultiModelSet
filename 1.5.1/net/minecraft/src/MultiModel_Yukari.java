@@ -676,10 +676,12 @@ public class MultiModel_Yukari extends MultiModel_Aug
     public void skirtFloatsInit(float f, float f1) {
     }
 
-    public void setLivingAnimationsLM(EntityLiving entityliving, float f, float f1, float f2) {
-    	super.setLivingAnimationsLM(entityliving, f, f1, f2);
-    	float f3 = (float)entityliving.ticksExisted + f2 + getCapsValueFloat(caps_entityIdFactor);
-    	if (getCapsValueBoolean(caps_isLookSuger)) {
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    	if (entityliving != null) ;else return;
+    	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
     		setCapsValue(caps_visible, Cheek_R, true);
     		setCapsValue(caps_visible, Cheek_L, true);
     		RabbitEar_R3.rotateAngleZ = mh_sin(f3 * 0.09F) * 0.09F + 0.87F;
@@ -692,17 +694,17 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	}
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
     {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Skirt.rotationPointY -= 2.0F;
     	Skirt.rotationPointZ = 0.0F;
-    	if (getCapsValueBoolean(caps_getIsSneak)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     		Skirt.rotationPointZ = -0.3F;
     		Skirt.rotateAngleX += 0.3F;
     	}
 
-    	if (getCapsValueBoolean(caps_getIsRiding))
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding))
     	{
     		RabbitEar_RB1.setRotateAngleX(0.08726461F);
     		RabbitEar_LB1.setRotateAngleX(0.08726461F);
@@ -719,12 +721,16 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
+    	String[] s = {
+    			"Cheek_R", "Cheek_L"
+    	};
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"RabbitEar_RB1", "RabbitEar_RB2", "RabbitEar_R1", "RabbitEar_R2", "RabbitEar_R3",
     			"RabbitEar_R4", "RabbitEar_LB1", "RabbitEar_LB2", "RabbitEar_L1", "RabbitEar_L2",
@@ -745,26 +751,12 @@ public class MultiModel_Yukari extends MultiModel_Aug
     			"Ac_HB2", "ArmAc_RF", "ArmAc_RB", "ArmAc_RR", "ArmAc_RL",
     			"ArmAc_R", "BeltAc_L"
     	};
-    	addShowPartsReneme(s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void defaultPartsSettingAfter() {
-    	//Cheek Default off
-    	setGuiParts("Cheek", false);
-    }
-
-    @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
-    	if (getCapsValueBoolean(caps_skirtFloats)) {
-    		setCapsValue(caps_visible, Skirt, getGuiParts().get("Skirt"));
-    	}
-    }
-
-    @Override
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedRightLeg).removeChild(Skirt_R);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arm_RF);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arm_RB);
@@ -809,8 +801,8 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightLeg).removeChild(Skirt_R);
     	((Modchu_ModelRenderer) rightArm2).removeChild(Arm_RF);
     	((Modchu_ModelRenderer) rightArm2).removeChild(Arm_RB);
@@ -855,9 +847,9 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(boolean b) {
+    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
-    	super.setArmorBipedHeadShowModel(b);
+    	super.setArmorBipedHeadShowModel(entityCaps, b);
     	((Modchu_ModelRenderer) RabbitEar_R1).setVisible(b);
     	((Modchu_ModelRenderer) RabbitEar_R2).setVisible(b);
     	((Modchu_ModelRenderer) RabbitEar_R3).setVisible(b);
@@ -906,8 +898,8 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedBodyShowModel(boolean b) {
-    	super.setArmorBipedBodyShowModel(b);
+    public void setArmorBipedBodyShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedBodyShowModel(entityCaps, b);
     	((Modchu_ModelRenderer) Arm_RF).setVisible(b);
     	((Modchu_ModelRenderer) Arm_RB).setVisible(b);
     	((Modchu_ModelRenderer) Arm_RR).setVisible(b);
@@ -962,14 +954,14 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedRightArmShowModel(boolean b) {
-    	super.setArmorBipedRightArmShowModel(b);
+    public void setArmorBipedRightArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedRightArmShowModel(entityCaps, b);
     	bipedRightArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorSkirtShowModel(boolean b) {
-    	super.setArmorSkirtShowModel(b);
+    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorSkirtShowModel(entityCaps, b);
     	Skirt.isHidden = !b;
     	((Modchu_ModelRenderer) Skirt_R).setVisible(b);
     	((Modchu_ModelRenderer) Skirt_L).setVisible(b);
@@ -984,20 +976,20 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedLeftArmShowModel(boolean b) {
-    	super.setArmorBipedLeftArmShowModel(b);
+    public void setArmorBipedLeftArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedLeftArmShowModel(entityCaps, b);
     	bipedLeftArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedRightLegShowModel(boolean b) {
-    	super.setArmorBipedRightLegShowModel(b);
+    public void setArmorBipedRightLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedRightLegShowModel(entityCaps, b);
     	bipedRightLeg.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedLeftLegShowModel(boolean b) {
-    	super.setArmorBipedLeftLegShowModel(b);
+    public void setArmorBipedLeftLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedLeftLegShowModel(entityCaps, b);
     	bipedLeftLeg.isHidden = !b;
     }
 }

@@ -68,59 +68,59 @@ public class MultiModel_brs extends MultiModel_SR2
 		Skirt.setRotationPoint(0.0F, -4F + f1, 0.0F);
 		bipedBody.addChild(Skirt);
 		TailR1 = new Modchu_ModelRenderer(this, 58, 10);
-		TailR1.addBoxLM(-6F, -7F, 1.9F, 1, 6, 2, f);
-		TailR1.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailR1.addBox(-6F, -7F, 1.9F, 1, 6, 2, f);
+		TailR1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailR1.setRotateAngleZ(0.2443461F);
 		TailR2 = new Modchu_ModelRenderer(this, 46, 19);
-		TailR2.addBoxLM(-9.3F, -4.7F, 1.7F, 2, 8, 2, f);
-		TailR2.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailR2.addBox(-9.3F, -4.7F, 1.7F, 2, 8, 2, f);
+		TailR2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailR2.setRotateAngleX(0.0698132F);
 		TailR2.setRotateAngleY(0.1047198F);
 		TailR2.setRotateAngleZ(0.6457718F);
 		TailR3 = new Modchu_ModelRenderer(this, 46, 32);
-		TailR3.addBoxLM(-5.3F, -9.5F, 1.1F, 4, 1, 3, f);
-		TailR3.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailR3.addBox(-5.3F, -9.5F, 1.1F, 4, 1, 3, f);
+		TailR3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailR3.setRotateAngleY(0.0349066F);
 		TailR3.setRotateAngleZ(-0.2268928F);
 		TailL1 = new Modchu_ModelRenderer(this, 52, 10);
-		TailL1.addBoxLM(5F, -6F, 1.9F, 1, 5, 2, f);
-		TailL1.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailL1.addBox(5F, -6F, 1.9F, 1, 5, 2, f);
+		TailL1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailL1.setRotateAngleZ(-0.2443461F);
 		TailL2 = new Modchu_ModelRenderer(this, 54, 19);
-		TailL2.addBoxLM(7.3F, -4.7F, 1.7F, 2, 11, 2, f);
-		TailL2.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailL2.addBox(7.3F, -4.7F, 1.7F, 2, 11, 2, f);
+		TailL2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailL2.setRotateAngleX(0.0698132F);
 		TailL2.setRotateAngleY(-0.1047198F);
 		TailL2.setRotateAngleZ(-0.6457718F);
 		TailL3 = new Modchu_ModelRenderer(this, 46, 32);
-		TailL3.addBoxLM(2.7F, -9F, 1.1F, 4, 1, 3, f);
-		TailL3.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailL3.addBox(2.7F, -9F, 1.1F, 4, 1, 3, f);
+		TailL3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailL3.setRotateAngleY(-0.0349066F);
 		TailL3.setRotateAngleZ(0.0523599F);
 		TailL4 = new Modchu_ModelRenderer(this, 28, 32);
-		TailL4.addBoxLM(5F, -7F, 1.2F, 6, 1, 3, f);
-		TailL4.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		TailL4.addBox(5F, -7F, 1.2F, 6, 1, 3, f);
+		TailL4.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TailL4.setRotateAngleZ(-0.4363323F);
 		Parkar = new Modchu_ModelRenderer(this, 28, 37);
-		Parkar.addBoxLM(-4F, -1F, -2.1F, 8, 2, 6, f);
-		Parkar.setRotationPointLM(0.0F, 0.0F, 0.0F);
+		Parkar.addBox(-4F, -1F, -2.1F, 8, 2, 6, f);
+		Parkar.setRotationPoint(0.0F, 0.0F, 0.0F);
 		Breast1 = new Modchu_ModelRenderer(this, 0, 32);
-		Breast1.addBoxLM(0.0F, -2.5F, 0.0F, 2, 5, 1, f);
-		Breast1.setRotationPointLM(0.0F, -7F + f1, -2F);
+		Breast1.addBox(0.0F, -2.5F, 0.0F, 2, 5, 1, f);
+		Breast1.setRotationPoint(0.0F, -7F + f1, -2F);
 		Breast1.setRotateAngleZ(((float)Math.PI / 2F));
 		Breast1.setRotateAngleY(0.4363323F);
 		eyeR = new Modchu_ModelRenderer(this, 0, 16);
 		eyeR.addPlate(-4F, -4.9F, -4.001F, 4, 4, 0, f);
-		eyeR.setRotationPointLM(0.0F, -8F + f1, 0.0F);
+		eyeR.setRotationPoint(0.0F, -8F + f1, 0.0F);
 		eyeL = new Modchu_ModelRenderer(this, 4, 16);
 		eyeL.addPlate(0.0F, -4.9F, -4.001F, 4, 4, 0, f);
-		eyeL.setRotationPointLM(0.0F, -8F + f1, 0.0F);
+		eyeL.setRotationPoint(0.0F, -8F + f1, 0.0F);
 		Cheek_R = new Modchu_ModelRenderer(this, 32, 8);
 		Cheek_R.addPlate(-4.5F, -4.5F, -4.002F, 4, 4, 0, f);
-		Cheek_R.setRotationPointLM(0.0F, -7F + f1, 0.0F);
+		Cheek_R.setRotationPoint(0.0F, -7F + f1, 0.0F);
 		Cheek_L = new Modchu_ModelRenderer(this, 32, 19);
 		Cheek_L.addPlate(0.5F, -4.5F, -4.002F, 4, 4, 0, f);
-		Cheek_L.setRotationPointLM(0.0F, -7F + f1, 0.0F);
+		Cheek_L.setRotationPoint(0.0F, -7F + f1, 0.0F);
 		mainFrame = new Modchu_ModelRenderer(this, 0, 0);
 		mainFrame.setRotationPoint(0F, 0F + f1, 0F);
 		mainFrame.addChild(bipedHead);
@@ -141,21 +141,24 @@ public class MultiModel_brs extends MultiModel_SR2
 		actionPartsInit(f, f1);
     }
 
-    public void setLivingAnimationsLM(EntityLiving entityliving, float f, float f1, float f2)
+	@Override
+	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+		super.defaultPartsSettingBefore(entityCaps);
+		String[] s = {
+				"Cheek_R", "Cheek_L"
+		};
+		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
+	}
+
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimationsLM(entityliving, f, f1, f2);
-    	if (getCapsValueBoolean(caps_isLookSuger)) {
+    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
     		Cheek_R.setVisible(true);
     		Cheek_L.setVisible(true);
     	} else {
     		Cheek_R.setVisible(false);
     		Cheek_L.setVisible(false);
     	}
-    }
-
-    @Override
-    public void defaultPartsSettingAfter() {
-    	//Cheek Default off
-    	setGuiParts("Cheek", false);
     }
 }

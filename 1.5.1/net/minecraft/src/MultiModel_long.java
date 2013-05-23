@@ -32,11 +32,11 @@ public class MultiModel_long extends MultiModel_SR2
 		super.initModel(f, f1);
 		longhear = new Modchu_ModelRenderer(this, 52, 12);
 		longhear.addBox(-1.5F, -9F, 7F, 3, 17, 3);
-		longhear.setRotationPointLM(0F, 0F, 0F);
+		longhear.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(longhear);
 		kamidome = new Modchu_ModelRenderer(this, 46, 19);
 		kamidome.addBox(-1F, -7F, 6F, 2, 2, 1);
-		kamidome.setRotationPointLM(0F, 0F, 0F);
+		kamidome.setRotationPoint(0F, 0F, 0F);
 		bipedHead.addChild(kamidome);
 
 		kamidome.rotateAngleX=0.2974289F;
@@ -48,17 +48,17 @@ public class MultiModel_long extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Tail", "SideTailL", "SideTailR", "ChignonB"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, Tail, false);
     	setCapsValue(caps_visible, SideTailL, false);
     	setCapsValue(caps_visible, SideTailR, false);

@@ -179,11 +179,11 @@ public class MultiModel_Kelo extends MultiModel {
 		ShoesL.setRotationPoint(0.5F, 0.0F, 0.5F);
 		bipedLeftLeg.addChild(ShoesL);
 		eyeL = new Modchu_ModelRenderer(this, 16, 16);
-		eyeL.addBoxLM(0F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
+		eyeL.addBox(0F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
 		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeL);
 		eyeR = new Modchu_ModelRenderer(this, 8, 16);
-		eyeR.addBoxLM(-4F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
+		eyeR.addBox(-4F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
 		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		bipedHead.addChild(eyeR);
 
@@ -329,9 +329,9 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
     {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
     	bipedRightLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F) * 1.4F * f1) / 1.5F;
     	bipedLeftLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F + 3.141593F) * 1.4F * f1) / 1.5F;
@@ -340,14 +340,14 @@ public class MultiModel_Kelo extends MultiModel {
     	setCapsValue(caps_visible, KeloeyeL2, false);
     	setCapsValue(caps_visible, KeloeyeR2, false);
 
-    	if(getCapsValueBoolean(caps_getIsRiding))
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding))
     	{
     		bipedRightLeg.rotateAngleX = -1.256637F;
     		bipedLeftLeg.rotateAngleX = -1.256637F;
     		bipedRightLeg.rotateAngleY = 0.3141593F;
     		bipedLeftLeg.rotateAngleY = -0.3141593F;
     	}
-    	if(getCapsValueFloat(caps_onGround) > -9990F && !getCapsValueBoolean(caps_aimedBow))
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		bipedRightArm.rotationPointZ = MathHelper.sin(bipedBody.rotateAngleY) * 4F;
     		bipedRightArm.rotationPointX = -MathHelper.cos(bipedBody.rotateAngleY) * 3.5F + 1.0F;
@@ -356,7 +356,7 @@ public class MultiModel_Kelo extends MultiModel {
     	}
     	Skirt.rotationPointY = 10.0F;
     	Skirt.rotationPointZ = 0.0F;
-    	if(getCapsValueBoolean(caps_getIsSneak))
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
     	{
     		bipedHead.rotationPointY = 5.5F;
     		bipedBody.rotationPointY = 5.0F;
@@ -378,14 +378,14 @@ public class MultiModel_Kelo extends MultiModel {
     		bipedLeftLeg.rotationPointY = 9F;
     	}
 
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow))
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		setCapsValue(caps_visible, KeloeyeL1, false);
     		setCapsValue(caps_visible, KeloeyeR1, false);
     		setCapsValue(caps_visible, KeloeyeL2, true);
     		setCapsValue(caps_visible, KeloeyeR2, true);
     	}
-    	if (getCapsValueBoolean(caps_aimedBow)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeL, true);
     		setCapsValue(caps_visible, eyeR, false);
     	} else {
@@ -403,36 +403,36 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "ChignonB", "Tail", "d"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"BreastPocket", "LsidePocket", "RsidePocket", "BackpackPocket"
     	};
     	String[] s2 = {
     			"B_Pocket", "L_Pocket", "R_Pocket", "B_packPocket"
     	};
-    	addShowPartsReneme(s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, bipedHeadwear, false);
     	setCapsValue(caps_visible, ChignonB, false);
     	setCapsValue(caps_visible, Tail, false);
     }
 
     @Override
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	setCapsValue(caps_visible, rightHandPlus, true);
     	setCapsValue(caps_visible, leftHandPlus, true);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(SleeveR);
@@ -446,8 +446,8 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	rightHandPlus.showModel = leftHandPlus.showModel = false;
     	bipedRightArm.addChild(SleeveR);
     	bipedLeftArm.addChild(SleeveL);
@@ -464,13 +464,13 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void action1(Entity entity) {
-    	super.action1(entity);
-		float f1 = bipedBody.rotateAngleZ;
-		if (f1 > 0.0F) {
-			bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f1 * 1.30889264F);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+		float f6 = bipedBody.rotateAngleZ;
+		if (f6 > 0.0F) {
+			bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f6 * 1.30889264F);
 		} else {
-			bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f1 * 1.30889264F);
+			bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f6 * 1.30889264F);
 		}
 		bipedHead.rotationPointX = 0.0F;
 		rightArm.rotationPointY = 1.0F;
@@ -515,8 +515,8 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public double getMountedYOffset() {
-    	double d = 0.85D;
+    public float getMountedYOffset() {
+    	float d = 0.85F;
     	return d;
     }
 
@@ -533,5 +533,10 @@ public class MultiModel_Kelo extends MultiModel {
     @Override
     public float ridingViewCorrection() {
     	return -0.75F;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

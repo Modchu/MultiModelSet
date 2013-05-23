@@ -58,14 +58,14 @@ public class MultiModel_naz extends MultiModel {
 		CatTail.setRotateAngleX(-4.363323F);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	CatTail.setRotateAngleX(mh_sin(f * 0.6662F) * 0.5F - 4.363323F);
 
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		CatTail.setRotateAngleX(mh_sin(f2 * 0.6662F) * 0.1F - 4.363323F);
     	}
-    	if(getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeL, true);
     		setCapsValue(caps_visible, eyeR, false);
     	} else {
@@ -78,5 +78,10 @@ public class MultiModel_naz extends MultiModel {
     			setCapsValue(caps_visible, eyeR, true);
     		}
     	}
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

@@ -104,8 +104,8 @@ public class MultiModel_usagi extends MultiModel {
 		Usasippo.setRotationPointZ(2.0F);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	UsaER.rotateAngleX = UsaEL.rotateAngleX = 0.6981317F;
     	UsaEL.rotationPointX = 0.0F;
     	UsaER.rotationPointX = -0.1F;
@@ -113,7 +113,7 @@ public class MultiModel_usagi extends MultiModel {
     	UsaEL.rotationPointZ = UsaER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F - 0.2F;
     	CatEL.rotationPointZ = CatER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F;
     	Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.3F);
-    	if(getCapsValueBoolean(caps_getIsRiding)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
     		UsaER.rotateAngleX = UsaEL.rotateAngleX = 2.094F;
     		UsaEL.rotationPointX = -2F;
     		UsaER.rotationPointX = 2.0F;
@@ -121,11 +121,11 @@ public class MultiModel_usagi extends MultiModel {
     		UsaEL.rotationPointZ = UsaER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F + 8F;
     		Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.5F);
     	}
-    	if(getCapsValueFloat(caps_onGround) > -9990F && !getCapsValueBoolean(caps_aimedBow)) Usasippo.rotateAngleY = mh_sin(f * 0.2F) * 0.5F;
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) Usasippo.rotateAngleY = mh_sin(f * 0.2F) * 0.5F;
 
-    	if(getCapsValueBoolean(caps_getIsSneak)) Usasippo.setRotateAngleY(0.0F);
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) Usasippo.setRotateAngleY(0.0F);
 
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Usasippo.setRotateAngleY(mh_cos(f2 * 0.2F) * 0.5F);
     		UsaER.rotateAngleX = UsaEL.rotateAngleX = 2.268928F;
     		UsaEL.rotationPointX = -2F;
@@ -133,7 +133,7 @@ public class MultiModel_usagi extends MultiModel {
     		UsaEL.rotationPointY = UsaER.rotationPointY = -13.3F;
     		UsaEL.rotationPointZ = UsaER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F + 7.8F;
     	}
-    	if(getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeR, false);
     		setCapsValue(caps_visible, eyeL, true);
     		Usasippo.setRotateAngleY(0.0F);
@@ -147,15 +147,15 @@ public class MultiModel_usagi extends MultiModel {
     		}
     	}
 
-    	if (getCapsValueBoolean(caps_modchuRemodelingModel)) {
-    		if (getCapsValueBoolean(caps_getIsSneak)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_modchuRemodelingModel)) {
+    		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     			UsaER.rotateAngleX = UsaEL.rotateAngleX = 2.268928F;
     			UsaEL.rotationPointX = -2F;
     			UsaER.rotationPointX = 2.0F;
     			UsaEL.rotationPointY = UsaER.rotationPointY = -13.3F;
     			UsaEL.rotationPointZ = UsaER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F + 7.8F;
     		}
-    		if (getCapsValueBoolean(caps_getIsWait)) {
+    		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait)) {
     			if(!isTaremimi
     					&& 0.0D > (double)(mh_sin(f2 * 0.1F) * 0.2F) + Math.random() * 0.10000000149011612D + 0.18000000715255737D) {
     				isTaremimi = true;
@@ -202,5 +202,10 @@ public class MultiModel_usagi extends MultiModel {
     	CatEL.rotateAngleY = -0.2617994F;
     	UsaER.rotateAngleY = 0.2617994F;
     	UsaEL.rotateAngleY = -0.2617994F;
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

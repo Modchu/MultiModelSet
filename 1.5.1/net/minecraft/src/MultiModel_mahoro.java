@@ -40,7 +40,7 @@ public class MultiModel_mahoro extends MultiModel {
     	super.initModel(f, f1);
     	f1 += 8F;
     	Prim = new Modchu_ModelRenderer(this, 0, 1);
-    	Prim.addBoxLM(0F, -3F, -2F, 1, 6, 1, f);
+    	Prim.addBox(0F, -3F, -2F, 1, 6, 1, f);
     	Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Prim.angleFirst = false;
     	Prim.setRotateAngleDegZ(90F); //deg
@@ -117,15 +117,15 @@ public class MultiModel_mahoro extends MultiModel {
     	((Modchu_ModelRenderer) bipedHead).removeChild(SideTailL);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
     	// ì¡éÍÉÇÅ[ÉVÉáÉì
     	SensorR.rotateAngleZ = bipedRightArm.rotateAngleX * 0.3F + mh_sin(f2 * 0.067F) * 0.1F + (-10F / 180F * 3.141526F);
     	SensorL.rotateAngleZ = -SensorR.rotateAngleZ;
     	//DropTail.rotateAngleX = 10F / 180F * 3.141526F - bipedHead.rotateAngleX;
 
-		if (getCapsValueBoolean(caps_aimedBow)) {
+		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
 			eyeL.showModel = true;
 			eyeR.showModel = false;
 		} else {
@@ -142,11 +142,16 @@ public class MultiModel_mahoro extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"SideTailR", "SideTailL", "Tail"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

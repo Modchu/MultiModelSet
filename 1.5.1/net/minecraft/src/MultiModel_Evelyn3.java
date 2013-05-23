@@ -72,12 +72,12 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 
     	eyeR = new Modchu_ModelRenderer(this, 17, 1);
     	eyeR.addPlate(-1.9F, -4F, -3.11F, 1, 2, 0, f);
-    	eyeR.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeR);
 
     	eyeL = new Modchu_ModelRenderer(this, 22, 1);
     	eyeL.addPlate(0.9F, -4F, -3.11F, 1, 2, 0, f);
-    	eyeL.setRotationPointLM(0.0F, 0.0F, 0.0F);
+    	eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHead.addChild(eyeL);
 
     	ChignonB = new Modchu_ModelRenderer(this, 40, 0);
@@ -290,7 +290,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	}
 
 	public void skirtFloatsInit(float f, float f1) {
-		if(!getCapsValueBoolean(caps_skirtFloats)) return;
+		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
 		//SkirtR ã
 		SkirtTop = new Modchu_ModelRenderer(this, 5, 40);
 		((Modchu_ModelRenderer) SkirtTop).addPlate(-2.5F, 0.0F, -2.5F, 5, 5, 0);
@@ -357,15 +357,17 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	}
 
 	@Override
-    public void setLivingAnimationsLM(EntityLiving entityliving, float f, float f1, float f2)
+    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-        super.setLivingAnimationsLM(entityliving, f, f1, f2);
+        super.setLivingAnimations(entityCaps, f, f1, f2);
+		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		if (entityliving != null) ;else return;
 
         // ‘ºl”ÉB
         if(entityliving instanceof EntityVillager)
         {
              EntityVillager ev = (EntityVillager)entityliving;
-             if ((Boolean) getObjectInvokeMethod(ev.getClass(), "getIsMatingFlag", ev))
+             if ((Boolean) Modchu_Reflect.getFieldObject(ev.getClass(), "getIsMatingFlag", ev))
              //if(ev.getIsMatingFlag())
              {
                  bipedHead.rotateAngleZ = 0.3F;
@@ -382,9 +384,9 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
 	{
-    	reset(f, f1, f2, f3, f4, f5, entity);
+    	reset(f, f1, f2, f3, f4, f5, entityCaps);
 		//heading
 		bipedHead.rotateAngleY = f3 / 57.29578F;
 		bipedHead.rotateAngleX = f4 / 57.29578F;
@@ -420,7 +422,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		rightLeg.rotationPointY = 4.0F;
 		leftLeg.rotationPointY = 4.0F;
 
-		if(getCapsValueBoolean(caps_getIsRiding))  // æ‚è•¨‚Éæ‚Á‚Ä‚¢‚é
+		if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding))  // æ‚è•¨‚Éæ‚Á‚Ä‚¢‚é
 		{
 			shiftY = 3.0F;
 			if(isRidingMaster)
@@ -454,19 +456,19 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		BodyR.rotateAngleX = BodyL.rotateAngleX = 0.4F;
 		BodyR.rotateAngleZ = -0.25F;
 		BodyL.rotateAngleZ = 0.25F;
-		armSwing(f, f1, f2, f3, f4, f5, entity);
+		armSwing(f, f1, f2, f3, f4, f5, entityCaps);
 		Skirt.rotateAngleX = bipedBody.rotateAngleX;
-		if(getCapsValueBoolean(caps_getIsSneak))
+		if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
 		{
 			// ‚µ‚á‚ª‚Ý
 			bipedBody.rotateAngleX = -0.05F + 0.4F;
 			BodyR.rotateAngleX = BodyL.rotateAngleX = 0.55F;
-			if(!getCapsValueBoolean(caps_getIsWait))
+			if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait))
 			{
 				bipedRightArm.rotateAngleX += 0.5F;
 				bipedLeftArm.rotateAngleX += 0.5F;
 			}
-			if(!getCapsValueBoolean(caps_getIsRiding)) {
+			if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
 				shiftY = 2F;
 				rightLeg2.rotateAngleX += 1F;
 				leftLeg2.rotateAngleX += 1F;
@@ -489,7 +491,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 			leftLeg.rotationPointZ = 0F;
 			bipedHead.rotationPointZ = 0F;
 		}
-		if (getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
 			//‘Ò‹@ó‘Ô‚Ì“Á•Ê•\Ž¦
 			bipedRightArm.rotateAngleX -= 0.5F - MathHelper.sin(f2 * 0.067F) * 0.05F;
 			bipedRightArm.rotateAngleY = 0.0F;
@@ -508,11 +510,11 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 			Arms[1].rotateAngleX -= 0.5F;
 			Arms[1].rotateAngleY -= 1.5F;
 		} else {
-			if (getCapsValueBoolean(caps_aimedBow))
+			if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
 			{
 				// ‹|\‚¦
-				float f6 = MathHelper.sin(getCapsValueFloat(caps_onGround) * 3.141593F);
-				float f7 = MathHelper.sin((1.0F - (1.0F - getCapsValueFloat(caps_onGround)) * (1.0F - getCapsValueFloat(caps_onGround))) * 3.141593F);
+				float f6 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) * 3.141593F);
+				float f7 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
 				bipedRightArm.rotateAngleZ = MathHelper.cos(f2 * 0.09F) * 0.05F + 0.05F;
 				bipedLeftArm.rotateAngleZ = -MathHelper.cos(f2 * 0.09F) * 0.05F + 0.05F;
 				bipedRightArm.rotateAngleY = f6 * 0.6F - 0.1F + bipedHead.rotateAngleY;
@@ -567,13 +569,13 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		Tail.rotateAngleX += 0.05F;
 		SideTailR.rotateAngleZ = 0.05F;
 		SideTailL.rotateAngleZ =-0.05F;
-		skirtFloats(f, f1, f2, f3, f4, f5, entity);
+		skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
    }
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-		if (!getCapsValueBoolean(caps_skirtFloats)) return;
-		float motionY = getCapsValueFloat(caps_motionY);
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+		float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
 		SkirtTop.setRotationPoint(-1.0F, 1.0F, 2.0F);
 		SkirtTopBack.setRotationPoint(-5.5F, -3.5F, 1.5F);
 		SkirtFront.setRotationPoint(-2.5F, 4.5F, -2.5F);
@@ -655,27 +657,27 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	}
 
 	@Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"SkirtTopBack", "SkirtTopL", "SkirtTopBackL", "SkirtFrontL", "SkirtLeftFront",
     			"SkirtBackL", "SkirtLeftBack", "SkirtRightBack", "SkirtRightFront", "Skirt1",
     			"Skirt2", "Skirt3", "Skirt4"
     	};
-    	showPartsHideListadd(s);
+    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"bipedHeadwear2", "backRightLeg", "backLeftLeg"
     	};
     	String[] s2 = {
     			"Headwear2", "b_RightLeg", "b_LeftLeg"
     	};
-    	addShowPartsReneme(s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
-    	if (getCapsValueBoolean(caps_skirtFloats)) {
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) == 2) {
     		setCapsValue(caps_visible, Skirt1, false);
     		setCapsValue(caps_visible, Skirt2, false);
     		setCapsValue(caps_visible, Skirt3, false);
@@ -684,7 +686,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHeadwear.setRotationPoint(0.0F, -1.0F, 2.0F);
     	bipedHeadwear2.setRotationPoint(0.0F, 5.0F, 0.0F);
@@ -731,8 +733,8 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	boolean b = true;
     	if (rightLeg != null) setCapsValue(caps_visible, rightLeg, b);
     	if (rightLeg2 != null) setCapsValue(caps_visible, rightLeg2, b);
@@ -753,15 +755,15 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void action1(Entity entity) {
-    	super.action1(entity);
-    	float f1 = bipedBody.rotateAngleZ;
-    	if (f1 > 0.0F) {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY - 6.5F + (f1 * 1.30889264F);
-        	bipedHead.rotationPointX = f1 * 4.10447914F;
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+    	float f6 = bipedBody.rotateAngleZ;
+    	if (f6 > 0.0F) {
+    		bipedHead.rotationPointY = bipedBody.rotationPointY - 6.5F + (f6 * 1.30889264F);
+        	bipedHead.rotationPointX = f6 * 4.10447914F;
     	} else {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY - 6.5F - (f1 * 1.30889264F);
-        	bipedHead.rotationPointX = f1 * 4.10447914F;
+    		bipedHead.rotationPointY = bipedBody.rotationPointY - 6.5F - (f6 * 1.30889264F);
+        	bipedHead.rotationPointX = f6 * 4.10447914F;
     	}
     	rightLeg.rotationPointX = -1.0F;
     	leftLeg.rotationPointX = 1.0F;
@@ -808,8 +810,8 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public double getMountedYOffset() {
-    	return 0.7D;
+    public float getMountedYOffset() {
+    	return 0.7F;
     }
 
     @Override

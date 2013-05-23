@@ -135,11 +135,11 @@ public class MultiModel_suika extends MultiModel {
 		bipedHead.addChild(eyeR);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Hyoutan1.rotateAngleX = Hyoutan2.rotateAngleX = Hyoutan1.rotateAngleY = Hyoutan2.rotateAngleY = -0.7853982F;
 
-    	if(getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeL, true);
     		setCapsValue(caps_visible, eyeR, false);
     		if (!initAimedBow) {
@@ -182,8 +182,8 @@ public class MultiModel_suika extends MultiModel {
     	return 0.8F;
     }
 
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Hyoutan1);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Hyoutan2);
     	bipedBody.addChild(Hyoutan1);
@@ -192,13 +192,18 @@ public class MultiModel_suika extends MultiModel {
     	Hyoutan2.setRotationPoint(4.0F, -2.0F, 0.0F);
     }
 
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) bipedBody).removeChild(Hyoutan1);
     	((Modchu_ModelRenderer) bipedBody).removeChild(Hyoutan2);
     	bipedLeftArm.addChild(Hyoutan1);
     	bipedLeftArm.addChild(Hyoutan2);
     	Hyoutan1.setRotationPoint(-1.0F, 1.0F, 0.0F);
     	Hyoutan2.setRotationPoint(-1.0F, 1.0F, 0.0F);
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

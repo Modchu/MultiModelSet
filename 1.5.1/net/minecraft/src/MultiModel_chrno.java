@@ -1,6 +1,5 @@
 package net.minecraft.src;
 
-import org.lwjgl.opengl.GL11;
 
 public class MultiModel_chrno extends MultiModel {
 
@@ -21,7 +20,6 @@ public class MultiModel_chrno extends MultiModel {
     public Modchu_ModelRenderer Rightarm2;
     public Modchu_ModelRenderer Leftarm1;
     public Modchu_ModelRenderer Leftarm2;
-    private boolean initWait = true;
 
     public MultiModel_chrno()
     {
@@ -133,8 +131,8 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.reset(f, f1, f2, f3, f4, f5, entity);
+    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.reset(f, f1, f2, f3, f4, f5, entityCaps);
     	Icewing1.setRotateAngleZ(0.8726646F);
     	Icewing2.setRotateAngleZ(1.570796F);
     	Icewing3.setRotateAngleZ(2.094395F);
@@ -148,75 +146,45 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	if(31.41593F >= mh_abs(f2)) {
     		f2 %= 31.41593F;
     	}
     	Icewing1.setRotateAngleX(Icewing2.setRotateAngleX(Icewing3.setRotateAngleX(mh_sin(f * f * 0.6662F) * 0.15F)));
     	Icewing4.setRotateAngleX(Icewing5.setRotateAngleX(Icewing6.setRotateAngleX(mh_sin(f * f * 0.6662F) * 0.15F)));
-    	if(getCapsValueFloat(caps_onGround) > -9990F && !getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Icewing1.setRotateAngleY(Icewing2.setRotateAngleY(Icewing3.setRotateAngleY(((Modchu_ModelRenderer) bipedBody).getRotateAngleY())));
     		Icewing4.setRotateAngleY(Icewing5.setRotateAngleY(Icewing6.setRotateAngleY(((Modchu_ModelRenderer) bipedBody).getRotateAngleY())));
     	}
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
-    		if (!initWait) {
-    			initWait = true;
-    			Rightarm1.isHidden = false;
-    			Rightarm2.isHidden = false;
-    			Leftarm1.isHidden = false;
-    			Leftarm2.isHidden = false;
-    			setCapsValue(caps_visible, Leftarm1, true);
-    			setCapsValue(caps_visible, Leftarm2, true);
-    			setCapsValue(caps_visible, Rightarm1, true);
-    			setCapsValue(caps_visible, Rightarm2, true);
-    			((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-    			((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[2]);
-    			((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
-    			((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[3]);
-    			Rightarm2.addChild(Arms[0]);
-    			Rightarm2.addChild(Arms[2]);
-    			Leftarm2.addChild(Arms[1]);
-    			Leftarm2.addChild(Arms[3]);
-    			Arms[0].setRotationPoint(-5.0F, 0.0F, 0F);
-    		}
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
+    		setCapsValue(caps_visible, Leftarm1, true);
+    		setCapsValue(caps_visible, Leftarm2, true);
+    		setCapsValue(caps_visible, Rightarm1, true);
+    		setCapsValue(caps_visible, Rightarm2, true);
     		setCapsValue(caps_visible, bipedRightArm, false);
     		setCapsValue(caps_visible, bipedLeftArm, false);
+    		Arms[0].setRotationPoint(-5.0F, 0.0F, 0F);
     		Icewing3.setRotateAngleX(Icewing6.setRotateAngleX(mh_sin(f2 * f2 * 0.6662F) * 0.2F));
-    		((Modchu_ModelRenderer) bipedRightArm).setRotateAngleX(0.0F);
-    		((Modchu_ModelRenderer) bipedRightArm).setRotateAngleY(0.0F);
-    		((Modchu_ModelRenderer) bipedRightArm).setRotateAngleZ(0.0F);
+    		bipedRightArm.setRotateAngleX(0.0F);
+    		bipedRightArm.setRotateAngleY(0.0F);
+    		bipedRightArm.setRotateAngleZ(0.0F);
     		Rightarm1.rotationPointY = Rightarm2.rotationPointY =
     				Leftarm1.rotationPointY = Leftarm2.rotationPointY = mh_sin(f2 * 0.05F) * 0.2F - 4.0F;
     	} else {
-    		if (initWait) {
-    			initWait = false;
-    			Rightarm1.isHidden = true;
-    			Rightarm2.isHidden = true;
-    			Leftarm1.isHidden = true;
-    			Leftarm2.isHidden = true;
-    			setCapsValue(caps_visible, Leftarm1, false);
-    			setCapsValue(caps_visible, Leftarm2, false);
-    			setCapsValue(caps_visible, Rightarm1, false);
-    			setCapsValue(caps_visible, Rightarm2, false);
-    			setCapsValue(caps_visible, bipedRightArm, true);
-    			setCapsValue(caps_visible, bipedLeftArm, true);
-    			Rightarm2.removeChild(Arms[0]);
-    			Rightarm2.removeChild(Arms[2]);
-    			Leftarm2.removeChild(Arms[1]);
-    			Leftarm2.removeChild(Arms[3]);
-    			bipedRightArm.addChild(Arms[0]);
-    			bipedRightArm.addChild(Arms[2]);
-    			bipedLeftArm.addChild(Arms[1]);
-    			bipedLeftArm.addChild(Arms[3]);
-    			Arms[0].setRotationPoint(0.5F, 6.5F, 0F);
-    		}
+    		setCapsValue(caps_visible, Leftarm1, false);
+    		setCapsValue(caps_visible, Leftarm2, false);
+    		setCapsValue(caps_visible, Rightarm1, false);
+    		setCapsValue(caps_visible, Rightarm2, false);
+    		setCapsValue(caps_visible, bipedRightArm, true);
+    		setCapsValue(caps_visible, bipedLeftArm, true);
+    		Arms[0].setRotationPoint(0.5F, 6.5F, 0F);
     	}
-    	if(getCapsValueBoolean(caps_aimedBow)) {
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeL, true);
     		setCapsValue(caps_visible, eyeR, false);
     	} else {
-    		if(0.0D > (double)(mh_sin(f2 * 0.1F) * 0.3F) + Math.random() * 0.10000000149011612D + 0.18000000715255737D) {
+    		if(0.0D > (mh_sin(f2 * 0.1F) * 0.3F) + Math.random() * 0.10000000149011612D + 0.18000000715255737D) {
     			setCapsValue(caps_visible, eyeL, false);
     			setCapsValue(caps_visible, eyeR, false);
     		} else {
@@ -227,8 +195,8 @@ public class MultiModel_chrno extends MultiModel {
     }
 
 	@Override
-	public void actionInit1() {
-		super.actionInit1();
+	public void actionInit1(MMM_IModelCaps entityCaps) {
+		super.actionInit1(entityCaps);
 		bipedLeftArm.isHidden = true;
 		bipedRightArm.isHidden = true;
 		bipedLeftLeg.isHidden = true;
@@ -256,8 +224,8 @@ public class MultiModel_chrno extends MultiModel {
 	}
 
 	@Override
-	public void actionRelease1() {
-		super.actionRelease1();
+	public void actionRelease1(MMM_IModelCaps entityCaps) {
+		super.actionRelease1(entityCaps);
 		bipedLeftArm.isHidden = false;
 		bipedRightArm.isHidden = false;
 		bipedLeftLeg.isHidden = false;
@@ -274,34 +242,34 @@ public class MultiModel_chrno extends MultiModel {
 		setCapsValue(caps_visible, bipedLeftArm, true);
 	}
 
-    public float getWidth()
+    @Override
+	public float getWidth()
     {
     	return 0.8F;
     }
 
-    public ModelRenderer getBipedRightArm() {
-    	if (getCapsValueBoolean(caps_shortcutKeysAction)
-    			&& getCapsValueInt(caps_runActionNumber) == 0
-    			| getCapsValueInt(caps_runActionNumber) == 1) {
-    		if (getCapsValueInt(caps_dominantArm) == 0) return rightArm;
+    @Override
+    public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_shortcutKeysAction)
+    			&& Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_runActionNumber) == 0
+    			| Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_runActionNumber) == 1) {
+    		if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     		return leftArm;
-    	}
-    	else {
-    		if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow))
-    		{
-    			if (getCapsValueInt(caps_dominantArm) == 0) return Rightarm1;
+    	} else {
+    		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
+    			if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return Rightarm1;
     			return Leftarm1;
     		} else {
-    			if (getCapsValueInt(caps_dominantArm) == 0) return bipedRightArm;
+    			if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return bipedRightArm;
     			return bipedLeftArm;
     		}
     	}
     }
 
     @Override
-    public void setArmorBipedRightArmShowModel(boolean b) {
-    	super.setArmorBipedRightArmShowModel(b);
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+    public void setArmorBipedRightArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedRightArmShowModel(entityCaps, b);
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Rightarm1.isHidden = b;
     		Rightarm2.isHidden = b;
     	} else {
@@ -311,14 +279,19 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void setArmorBipedLeftArmShowModel(boolean b) {
-    	super.setArmorBipedLeftArmShowModel(b);
-    	if(getCapsValueBoolean(caps_getIsWait) && !getCapsValueBoolean(caps_aimedBow)) {
+    public void setArmorBipedLeftArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    	super.setArmorBipedLeftArmShowModel(entityCaps, b);
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Leftarm1.isHidden = b;
     		Leftarm2.isHidden = b;
     	} else {
     		Leftarm1.isHidden = !b;
     		Leftarm2.isHidden = !b;
     	}
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

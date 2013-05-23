@@ -85,7 +85,7 @@ public class MultiModel_Mabel extends MultiModel {
     	innerLeftLeg.setRotationPoint(0.0F, 0.0F, -0.2F);
     	bipedLeftLeg.addChild(innerLeftLeg);
     	Skirt = new Modchu_ModelRenderer(this, 0, 24);
-    	if (!getCapsValueBoolean(caps_skirtFloats)) Skirt.addBox(-2F, 0.0F, -2F, 4, 4, 4, f + 2.0F);
+    	Skirt.addBox(-2F, 0.0F, -2F, 4, 4, 4, f + 2.0F);
     	Skirt.setRotationPoint(0.0F, 7F, 0.0F);
     	bipedBody.addChild(Skirt);
     	innerSkirt = new Modchu_ModelRenderer(this, 16, 26);
@@ -242,7 +242,7 @@ public class MultiModel_Mabel extends MultiModel {
 
     @Override
     public void skirtFloatsInit(float f, float f1) {
-    	if(!getCapsValueBoolean(caps_skirtFloats)) return;
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	//スカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 4, 24);
     	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 4, 4, 0, f + 2.0F);
@@ -307,8 +307,8 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Arms[0].setRotationPoint(-0.5F, 4.5F, 0F);
     	Arms[1].setRotationPoint(0.5F, 4.5F, 0F);
     	bipedBody.rotationPointY -= 3.5F;
@@ -331,20 +331,20 @@ public class MultiModel_Mabel extends MultiModel {
     	SideTailL.rotateAngleZ = -f6;
     	Tail.rotateAngleX = f6;
     	SideTailL.rotateAngleX = SideTailR.rotateAngleX = -bipedHead.rotateAngleX / 2.0F;
-    	if(getCapsValueBoolean(caps_getIsSneak))
+    	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
     	{
     		// しゃがみ
     		Skirt.rotateAngleX += 0.4F;
     		Skirt.rotationPointZ = 0.0F;
     	}
-    	skirtFloats(f, f1, f2, f3, f4, f5, entity);
+    	skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-    	super.skirtFloats(f, f1, f2, f3, f4, f5, entity);
-    	if (!getCapsValueBoolean(caps_skirtFloats)) return;
-    	float motionY = getCapsValueFloat(caps_motionY);
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
     	SkirtBack.rotateAngleX = SkirtRight.rotateAngleX = SkirtLeft.rotateAngleX = SkirtFront.rotateAngleX = 0.0F;
     	SkirtBack.rotateAngleY = SkirtRight.rotateAngleY = SkirtLeft.rotateAngleY = SkirtFront.rotateAngleY = 0.0F;
     	SkirtBack.rotateAngleZ = SkirtRight.rotateAngleZ = SkirtLeft.rotateAngleZ = SkirtFront.rotateAngleZ = 0.0F;
@@ -414,25 +414,25 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore() {
-    	super.defaultPartsSettingBefore();
+    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    	super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"innerSkirtTop", "innerSkirtFront", "innerSkirtRight", "innerSkirtLeft", "innerSkirtLeft"
 		};
-		showPartsHideListadd(s);
+		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
     	String[] s1 = {
     			"aboveHeadwear" , "innerRightLeg", "innerLeftLeg", "bipedHeadwearB"
     	};
     	String[] s2 = {
     			"a_Headwear" , "innerRLeg", "innerLLeg", "HeadwearB"
     	};
-    	addShowPartsReneme(s1, s2);
+    	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
 
     @Override
-    public void showModelSettingReflects() {
-    	super.showModelSettingReflects();
-    	if (getCapsValueBoolean(caps_skirtFloats)) {
+    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    	super.showModelSettingReflects(entityCaps);
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) == 2) {
     		setCapsValue(caps_visible, innerSkirt, false);
     	}
     }
@@ -450,8 +450,8 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void actionInit1() {
-    	super.actionInit1();
+    public void actionInit1(MMM_IModelCaps entityCaps) {
+    	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedLeftLeg).removeChild(innerLeftLeg);
     	((Modchu_ModelRenderer) bipedRightLeg).removeChild(innerRightLeg);
     	leftLeg.addChild(innerLeftLeg);
@@ -461,8 +461,8 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void actionRelease1() {
-    	super.actionRelease1();
+    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    	super.actionRelease1(entityCaps);
     	bipedLeftLeg.addChild(innerLeftLeg);
     	bipedRightLeg.addChild(innerRightLeg);
     	((Modchu_ModelRenderer) leftLeg).removeChild(innerLeftLeg);
@@ -472,16 +472,21 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void action1(Entity entity) {
-    	super.action1(entity);
-    	float f1 = bipedBody.rotateAngleZ;
-    	if (f1 > 0.0F) {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f1 * 1.30889264F);
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+    	float f6 = bipedBody.rotateAngleZ;
+    	if (f6 > 0.0F) {
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F + (f6 * 1.30889264F);
     	} else {
-    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f1 * 1.30889264F);
+    		bipedHead.rotationPointY = bipedBody.rotationPointY + 0.5F - (f6 * 1.30889264F);
     	}
     	bipedHead.rotationPointX = 0.0F;
     	Arms[0].setRotationPoint(0.5F, 0.0F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 0.0F, 0F);
+    }
+
+    @Override
+    public String getUsingTexture() {
+    	return null;
     }
 }

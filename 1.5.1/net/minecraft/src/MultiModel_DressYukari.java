@@ -41,7 +41,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 
 		Glass = new Modchu_ModelRenderer(this, 24, 0);
 		Glass.addPlate(-8.0F, -4.0F, 0F, 16, 8, 0, psize);
-		Glass.setRotationPointLM(0.0F, -4.0F, -4.0F);
+		Glass.setRotationPoint(0.0F, -4.0F, -4.0F);
 		bipedHead.addChild(Glass);
 		Glass.setScale(0.5F,0.5F,1.0F);
 
@@ -69,7 +69,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 
 		Ahoge = new Modchu_ModelRenderer(this, 0, 1);
 		Ahoge.addBox(0F, 0F, 0F, 0, 3, 4,psize);
-		Ahoge.setRotationPointLM(0F, -7F, -4F);
+		Ahoge.setRotationPoint(0F, -7F, -4F);
 		bipedHead.addChild(Ahoge);
 
 		pink = new Modchu_ModelRenderer(this,0,1);
@@ -89,18 +89,30 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void setLivingAnimationsLM(EntityLiving entityliving, float f, float f1, float f2) {
-		super.setLivingAnimationsLM(entityliving, f, f1, f2);
+	public void skirtFloatsInit(float f, float f1) {
+	}
+
+	@Override
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	}
+
+	@Override
+	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+		super.setLivingAnimations(entityCaps, f, f1, f2);
+		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		if (entityliving != null) ;else return;
 		IdOffset=entityliving.entityId;
-		if (getCapsValueBoolean(caps_isLookSuger))
+		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger))
 			pink.setVisible(true);
 		else
 			pink.setVisible(false);
 	}
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entity);
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
+		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		if (entity != null) ;else return;
 
 		float t;
 		if(isRiding
@@ -119,8 +131,16 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 		if(isRiding) {
 			Skirt.rotationPointY-=0.2f;
 			Skirt.rotationPointZ+=1.0f;
-			Skirt.rotateAngleX = getCapsValueFloat(caps_convertDegtoRad, -25F);
+			Skirt.rotateAngleX = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_convertDegtoRad, -25F);
 		}
+	}
+
+	@Override
+	public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+		super.showModelSettingReflects(entityCaps);
+		int i = Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_showPartsMapBoolean, "Skirt", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType));
+		boolean b = i != 0;
+		setCapsValue(caps_visible, specialModel[0], b);
 	}
 
 	@Override
