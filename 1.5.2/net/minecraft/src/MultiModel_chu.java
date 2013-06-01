@@ -63,7 +63,7 @@ public class MultiModel_chu extends MultiModel {
         super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
         CatTail.setRotateAngleX(mh_sin(f * 0.6662F) * 0.5F - 4.363323F);
 
-        if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
+        if(onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
             CatTail.setRotateAngleY(((Modchu_ModelRenderer) bipedBody).getRotateAngleY());
         }
 

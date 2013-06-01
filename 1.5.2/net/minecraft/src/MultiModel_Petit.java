@@ -29,6 +29,7 @@ public class MultiModel_Petit extends MultiModel {
 
     public MultiModel_Petit(float f, float f1, int i, int j) {
     	super(f, f1, i, j);
+    	HeadTop.setRotationPoint(0.0F, -7.75F, 0.0F);
     }
 
     @Override
@@ -230,7 +231,7 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 15.6F, 0.0F);
     	bipedHeadwear.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedBody.setRotationPoint(0.0F, 14.6F, 0.0F);
@@ -400,11 +401,6 @@ public class MultiModel_Petit extends MultiModel {
     @Override
     public float getMountedYOffset() {
     	return 1.6F;
-    }
-
-    @Override
-    public void equippedItemPositionFlower() {
-    	GL11.glTranslatef(0.0F, -0.25F, 0.0F);
     }
 
     @Override

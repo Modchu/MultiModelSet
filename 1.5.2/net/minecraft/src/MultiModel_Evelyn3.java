@@ -386,7 +386,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
 	{
-    	reset(f, f1, f2, f3, f4, f5, entityCaps);
+		setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
 		//heading
 		bipedHead.rotateAngleY = f3 / 57.29578F;
 		bipedHead.rotateAngleX = f4 / 57.29578F;
@@ -513,7 +513,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 			if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
 			{
 				// ã|ç\Ç¶
-				float f6 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) * 3.141593F);
+				float f6 = MathHelper.sin(onGrounds[dominantArm] * 3.141593F);
 				float f7 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
 				bipedRightArm.rotateAngleZ = MathHelper.cos(f2 * 0.09F) * 0.05F + 0.05F;
 				bipedLeftArm.rotateAngleZ = -MathHelper.cos(f2 * 0.09F) * 0.05F + 0.05F;
@@ -686,7 +686,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHeadwear.setRotationPoint(0.0F, -1.0F, 2.0F);
     	bipedHeadwear2.setRotationPoint(0.0F, 5.0F, 0.0F);

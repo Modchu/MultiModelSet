@@ -132,7 +132,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Cwave.setVisible(false);
 
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
+    	if(onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		Antena.rotationPointY = 4F;
     	}

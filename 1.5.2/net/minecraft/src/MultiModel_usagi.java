@@ -121,7 +121,7 @@ public class MultiModel_usagi extends MultiModel {
     		UsaEL.rotationPointZ = UsaER.rotationPointZ = mh_cos(f2 * 0.05F) * 0.5F + 8F;
     		Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.5F);
     	}
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) Usasippo.rotateAngleY = mh_sin(f * 0.2F) * 0.5F;
+    	if(onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) Usasippo.rotateAngleY = mh_sin(f * 0.2F) * 0.5F;
 
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) Usasippo.setRotateAngleY(0.0F);
 
