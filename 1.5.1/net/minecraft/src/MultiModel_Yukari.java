@@ -676,12 +676,13 @@ public class MultiModel_Yukari extends MultiModel_Aug
     public void skirtFloatsInit(float f, float f1) {
     }
 
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    @Override
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
-    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
     		setCapsValue(caps_visible, Cheek_R, true);
     		setCapsValue(caps_visible, Cheek_L, true);
     		RabbitEar_R3.rotateAngleZ = mh_sin(f3 * 0.09F) * 0.09F + 0.87F;
@@ -694,6 +695,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	}
     }
 
+    @Override
     public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
     {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);

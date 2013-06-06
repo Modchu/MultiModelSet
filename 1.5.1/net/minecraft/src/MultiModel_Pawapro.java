@@ -301,17 +301,13 @@ public class MultiModel_Pawapro extends MultiModel {
     	setCapsValue(caps_visible, leftLegPlus, b);
     	setCapsValue(caps_visible, leftLegPlus2, b);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[2]);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
-    	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[3]);
     	((Modchu_ModelRenderer) bipedBody).removeChild(bipedRightLeg);
     	((Modchu_ModelRenderer) bipedBody).removeChild(bipedLeftLeg);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(HandR);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(HandL);
     	rightHand.addChild(Arms[0]);
-    	rightHand.addChild(Arms[2]);
     	leftHand.addChild(Arms[1]);
-    	leftHand.addChild(Arms[3]);
     	rightHand.addChild(HandR);
     	leftHand.addChild(HandL);
     	rightLeg2.addChild(bipedRightLeg);
@@ -354,13 +350,9 @@ public class MultiModel_Pawapro extends MultiModel {
     	setCapsValue(caps_visible, leftLegPlus2, b);
 
     	bipedRightArm.addChild(Arms[0]);
-    	bipedRightArm.addChild(Arms[2]);
     	bipedLeftArm.addChild(Arms[1]);
-    	bipedLeftArm.addChild(Arms[3]);
     	((Modchu_ModelRenderer) rightHand).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) rightHand).removeChild(Arms[2]);
     	((Modchu_ModelRenderer) leftHand).removeChild(Arms[1]);
-    	((Modchu_ModelRenderer) leftHand).removeChild(Arms[3]);
     	Arms[0].setRotationPoint(0.5F, 6.5F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 6.5F, 0F);
 

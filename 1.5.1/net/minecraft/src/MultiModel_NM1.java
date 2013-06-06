@@ -434,9 +434,9 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	Arms[0].setRotationPoint(0.5F, 9.0F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 9.0F, 0F);
     	Arms[0].rotateAngleX = 0F;
@@ -602,7 +602,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	}
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
-    		float f7 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) * (float)Math.PI);
+    		float f7 = MathHelper.sin(onGrounds[dominantArm] * (float)Math.PI);
     		float f9 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * (float)Math.PI);
     		bipedRightArm.rotateAngleZ = 0.0F;
     		bipedLeftArm.rotateAngleZ = 0.0F;

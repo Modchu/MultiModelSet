@@ -221,9 +221,10 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     	setCapsValue(caps_visible, SkirtL, false);
     }
 
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+	@Override
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
     	int i = MathHelper.floor_double(entityliving.posX);
@@ -249,6 +250,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
 
     }
 
+	@Override
     public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
     {
     	setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);

@@ -112,8 +112,8 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
@@ -132,7 +132,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Cwave.setVisible(false);
 
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
+    	if(onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		Antena.rotationPointY = 4F;
     	}

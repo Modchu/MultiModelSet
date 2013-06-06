@@ -451,10 +451,10 @@ public class MultiModel_ch extends MultiModel_SR2
 	}
 
     @Override
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
-    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
     		Cheek_R.setVisible(true);
     		Cheek_L.setVisible(true);
     	} else {

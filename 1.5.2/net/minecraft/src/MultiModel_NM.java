@@ -251,9 +251,10 @@ public class MultiModel_NM extends MultiModel_SR2
     	actionPartsInit(f, f1);
     }
 
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    @Override
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
@@ -328,7 +329,7 @@ public class MultiModel_NM extends MultiModel_SR2
     		}
     	}
     	float f7 = 0.0F;
-    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
     		f3 *= 8F;
     		f7 = -0.2F;
     		Cheek_R.setVisible(true);

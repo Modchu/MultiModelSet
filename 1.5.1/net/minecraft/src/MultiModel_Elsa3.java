@@ -213,7 +213,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHeadwear.setRotationPoint(0F, 0F, 0F);
     	bipedBody.setRotationPoint(0F, bodyPosY, 0F);
 
@@ -337,7 +337,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
      */
     @Override
     public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	reset(f, f1, f2, f3, f4, f5, entityCaps);
+    	setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
     	//“ª•”
     	bipedHead.rotateAngleY += f3 / 57.29578F;
     	bipedHead.rotateAngleX += f4 / 57.29578F;
@@ -450,10 +450,6 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     			bipedLeftArm.rotateAngleX -= MathHelper.sin(f2 * 0.067F) * 0.05F;
     		}
     	}
-
-    	//
-    	((Modchu_ModelRenderer) Arms[2]).setRotateAngle(-0.78539816339744830961566084581988F - ((Modchu_ModelRenderer) bipedRightArm).getRotateAngleX(), 0F, 0F);
-    	((Modchu_ModelRenderer) Arms[3]).setRotateAngle(-0.78539816339744830961566084581988F - ((Modchu_ModelRenderer) bipedLeftArm).getRotateAngleX(), 0F, 0F);
     	skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
     }
 

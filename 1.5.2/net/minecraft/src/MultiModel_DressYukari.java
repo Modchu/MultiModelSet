@@ -97,12 +97,12 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
-		super.setLivingAnimations(entityCaps, f, f1, f2);
+	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 		IdOffset=entityliving.entityId;
-		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger))
+		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger))
 			pink.setVisible(true);
 		else
 			pink.setVisible(false);

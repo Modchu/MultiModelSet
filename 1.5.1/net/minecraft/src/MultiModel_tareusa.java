@@ -84,7 +84,7 @@ public class MultiModel_tareusa extends MultiModel {
 		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
 			Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.5F);
 		}
-		if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
+		if (onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
 			Usasippo.rotateAngleY = mh_sin(f2 * 0.2F) * 0.2F;
 			Usasippo.setRotateAngleX(0.0F);
 		}

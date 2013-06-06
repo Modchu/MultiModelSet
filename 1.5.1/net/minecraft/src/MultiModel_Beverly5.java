@@ -88,7 +88,6 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
     	bipedHead.setTextureOffset(28, 39).addBox(-5F, -7F, 0.2F, 1, 3, 3, f);		// ChignonR
     	((Modchu_ModelRenderer) bipedHead).setMirror(true);
     	bipedHead.setTextureOffset(28, 45).addBox(4F, -7F, 0.2F, 1, 3, 3, f);		// ChignonL
-    	bipedHead.addChild(HeadMount);
     	bipedHead.addChild(eyeR);
     	bipedHead.addChild(eyeL);
     	bipedHead.addChild(Ponytail);
@@ -190,13 +189,9 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
     public void armsinit(float f, float f1) {
     	super.armsinit(f, f1);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[2]);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
-    	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[3]);
     	rightArm2.addChild(Arms[0]);
-    	rightArm2.addChild(Arms[2]);
     	leftArm2.addChild(Arms[1]);
-    	leftArm2.addChild(Arms[3]);
     }
 
     @Override
@@ -247,8 +242,8 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 	 * Žp¨§ŒäE‰Šú‰»
 	 */
 	@Override
-	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
-		super.setLivingAnimations(entityCaps, f, f1, f2);
+	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 		// ”w•‰‚í‚ê
@@ -317,7 +312,7 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
 	{
-		reset(f, f1, f2, f3, f4, f5, entityCaps);
+		setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
 
 		//ŠçŒü‚«
 		bipedHead.rotateAngleY += f3 / 57.29578F;
@@ -525,10 +520,6 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 			}
 		}
 
-		//
-		((Modchu_ModelRenderer) Arms[2]).setRotateAngle(-0.78539816339744830961566084581988F - ((Modchu_ModelRenderer) rightArm).getRotateAngleX(), 0F, 0F);
-		((Modchu_ModelRenderer) Arms[3]).setRotateAngle(-0.78539816339744830961566084581988F - ((Modchu_ModelRenderer) leftArm).getRotateAngleX(), 0F, 0F);
-
 		//‹r•”’Ç]
 		float sinBody1X = MathHelper.sin(bipedBody.rotateAngleX);
 		float cosBody1X = 1F - MathHelper.cos(bipedBody.rotateAngleX);
@@ -542,7 +533,7 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 	}
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		//INIT POSITION
 		bipedHead.setRotationPoint (0F, headPosY, 0F);
 		 HeadMount.setRotationPoint (0F, 0F, 0F);
@@ -658,48 +649,35 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 
     @Override
     public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	float[] lgrounds = null;
-    	float onGroundR = 0;
-    	float onGroundL = 0;
-    	if (entityCaps != null) {
-    		lgrounds = (float[])getCapsValue(caps_Grounds, entityCaps);
-    		if (lgrounds != null) {
-    			onGroundR = lgrounds[0];
-    			onGroundL = lgrounds[1];
-    		}
-    	}
-    	if (lgrounds == null) {
-    		onGroundR = onGround;
-    	}
-    	if ((onGroundR > -9990F || onGroundL > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+    	if ((onGrounds[0] > -9990F || onGrounds[1] > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
     		// ˜rU‚è
     		float f6, f7, f8;
-    		f6 = MathHelper.sin(MathHelper.sqrt_float(onGroundR) * (float)Math.PI * 2.0F);
-    		f7 = MathHelper.sin(MathHelper.sqrt_float(onGroundL) * (float)Math.PI * 2.0F);
+    		f6 = MathHelper.sin(MathHelper.sqrt_float(onGrounds[0]) * (float)Math.PI * 2.0F);
+    		f7 = MathHelper.sin(MathHelper.sqrt_float(onGrounds[1]) * (float)Math.PI * 2.0F);
     		bipedBody.rotateAngleY = (f6 - f7) * 0.2F;
     		// R
-    		if (onGroundR > 0F) {
-    			f6 = 1.0F - onGroundR;
+    		if (onGrounds[0] > 0F) {
+    			f6 = 1.0F - onGrounds[0];
     			f6 *= f6;
     			f6 *= f6;
     			f6 = 1.0F - f6;
     			f7 = MathHelper.sin(f6 * (float)Math.PI);
-    			f8 = MathHelper.sin(onGroundR * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			f8 = MathHelper.sin(onGrounds[0] * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			rightArm.rotateAngleX -= (double)f7 * 1.2D + (double)f8;
     			rightArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-    			rightArm.rotateAngleZ = MathHelper.sin(onGroundR * 3.141593F) * -0.4F;
+    			rightArm.rotateAngleZ = MathHelper.sin(onGrounds[0] * 3.141593F) * -0.4F;
     		}
     		// L
-    		if (onGroundL > 0F) {
-    			f6 = 1.0F - onGroundL;
+    		if (onGrounds[1] > 0F) {
+    			f6 = 1.0F - onGrounds[1];
     			f6 *= f6;
     			f6 *= f6;
     			f6 = 1.0F - f6;
     			f7 = MathHelper.sin(f6 * (float)Math.PI);
-    			f8 = MathHelper.sin(onGroundL * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			f8 = MathHelper.sin(onGrounds[1] * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			leftArm.rotateAngleX -= (double)f7 * 1.2D + (double)f8;
     			leftArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-    			leftArm.rotateAngleZ = MathHelper.sin(onGroundL * 3.141593F) * 0.4F;
+    			leftArm.rotateAngleZ = MathHelper.sin(onGrounds[1] * 3.141593F) * 0.4F;
     		}
     	}
     }
@@ -816,15 +794,23 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
     @Override
     public void action4(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	// —¼Žè‚ð‘O‚Éo‚·ƒ‚[ƒVƒ‡ƒ“
-    	if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm)) > 0.0F) {
-    		rightArm.rotateAngleX += leftArm.rotateAngleX += -1.57F;
-    		rightArm.rotateAngleY = leftArm.rotateAngleY = 0.0F;
-    		rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
+    	if (onGrounds[dominantArm] > 0F) {
+    		switch(dominantArm) {
+    		case 0:
+    			rightArm.rotateAngleX += -1.57F;
+    			leftArm.rotateAngleX = -1.57F;
+    			break;
+    		case 1:
+    			leftArm.rotateAngleX += -1.57F;
+    			rightArm.rotateAngleX = -1.57F;
+    			break;
+    		}
     	} else {
     		rightArm.rotateAngleX = leftArm.rotateAngleX = -1.57F;
-    		rightArm.rotateAngleY = leftArm.rotateAngleY = 0.0F;
-    		rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
     	}
+    	rightArm2.rotateAngleX = leftArm2.rotateAngleX = 0.0F;
+    	rightArm.rotateAngleY = leftArm.rotateAngleY = 0.0F;
+    	rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
     }
 
     public float getRidingHeight()

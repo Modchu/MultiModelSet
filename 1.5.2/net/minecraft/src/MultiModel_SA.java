@@ -297,11 +297,11 @@ public class MultiModel_SA extends MultiModel_Aug {
 	}
 
 	@Override
-	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
-		super.setLivingAnimations(entityCaps, f, f1, f2);
+	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
-		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
+		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
 			Cheek_R.setVisible(true);
 			Cheek_L.setVisible(true);
 		} else {
@@ -311,7 +311,7 @@ public class MultiModel_SA extends MultiModel_Aug {
 		float f3 = (float) entityliving.ticksExisted + f2
 				+ Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
 		float f4 = 0.0F;
-		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) {
+		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
 			f3 *= 8.0F;
 			f4 = -0.2F;
 		} else {

@@ -131,8 +131,8 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	super.reset(f, f1, f2, f3, f4, f5, entityCaps);
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
     	Icewing1.setRotateAngleZ(0.8726646F);
     	Icewing2.setRotateAngleZ(1.570796F);
     	Icewing3.setRotateAngleZ(2.094395F);
@@ -153,7 +153,7 @@ public class MultiModel_chrno extends MultiModel {
     	}
     	Icewing1.setRotateAngleX(Icewing2.setRotateAngleX(Icewing3.setRotateAngleX(mh_sin(f * f * 0.6662F) * 0.15F)));
     	Icewing4.setRotateAngleX(Icewing5.setRotateAngleX(Icewing6.setRotateAngleX(mh_sin(f * f * 0.6662F) * 0.15F)));
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
+    	if(onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Icewing1.setRotateAngleY(Icewing2.setRotateAngleY(Icewing3.setRotateAngleY(((Modchu_ModelRenderer) bipedBody).getRotateAngleY())));
     		Icewing4.setRotateAngleY(Icewing5.setRotateAngleY(Icewing6.setRotateAngleY(((Modchu_ModelRenderer) bipedBody).getRotateAngleY())));
     	}
@@ -212,13 +212,9 @@ public class MultiModel_chrno extends MultiModel {
 		setCapsValue(caps_visible, bipedRightArm, false);
 		setCapsValue(caps_visible, bipedLeftArm, false);
 		((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-		((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[2]);
 		((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
-		((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[3]);
 		Rightarm2.removeChild(Arms[0]);
-		Rightarm2.removeChild(Arms[2]);
 		Leftarm2.removeChild(Arms[1]);
-		Leftarm2.removeChild(Arms[3]);
 		if (Arms[0] != null) Arms[0].setRotationPoint(0.5F, 0.0F, 0F);
 		if (Arms[1] != null) Arms[1].setRotationPoint(-0.5F, 0.0F, 0F);
 	}

@@ -276,33 +276,31 @@ public class MultiModel_Elsa2 extends MultiModel_SR2 {
     		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - 0.3141593F * (float)heldItemRight;
     	}
 
-    	float onGroundR = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, 0);
-    	float onGroundL = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps, 1);
-    	if ((onGroundR > -9990F || onGroundL > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+    	if ((onGrounds[0] > -9990F || onGrounds[1] > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
     		// ˜rU‚è
     		float f6, f7, f8;
-    		f6 = MathHelper.sin(MathHelper.sqrt_float(onGroundR) * (float)Math.PI * 2.0F);
-    		f7 = MathHelper.sin(MathHelper.sqrt_float(onGroundL) * (float)Math.PI * 2.0F);
+    		f6 = MathHelper.sin(MathHelper.sqrt_float(onGrounds[0]) * (float)Math.PI * 2.0F);
+    		f7 = MathHelper.sin(MathHelper.sqrt_float(onGrounds[1]) * (float)Math.PI * 2.0F);
     		// R
-    		if (onGroundR > 0F) {
-    			f6 = 1.0F - onGroundR;
+    		if (onGrounds[0] > 0F) {
+    			f6 = 1.0F - onGrounds[0];
     			f6 *= f6;
     			f6 *= f6;
     			f6 = 1.0F - f6;
     			f7 = MathHelper.sin(f6 * (float)Math.PI);
-    			f8 = MathHelper.sin(onGroundR * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			f8 = MathHelper.sin(onGrounds[0] * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			bipedRightArm.rotateAngleX -= (double)f7 * 1.2D + (double)f8;
     		} else {
     			bipedRightArm.rotateAngleX += bipedBody.rotateAngleY;
     		}
     		// L
-    		if (onGroundL > 0F) {
-    			f6 = 1.0F - onGroundL;
+    		if (onGrounds[1] > 0F) {
+    			f6 = 1.0F - onGrounds[1];
     			f6 *= f6;
     			f6 *= f6;
     			f6 = 1.0F - f6;
     			f7 = MathHelper.sin(f6 * (float)Math.PI);
-    			f8 = MathHelper.sin(onGroundL * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			f8 = MathHelper.sin(onGrounds[1] * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			bipedLeftArm.rotateAngleX -= (double)f7 * 1.2D + (double)f8;
     		} else {
     			bipedLeftArm.rotateAngleX += bipedBody.rotateAngleY;

@@ -701,8 +701,9 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
     public void skirtFloatsInit(float f, float f1) {
     }
 
-	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
-		super.setLivingAnimations(entityCaps, f, f1, f2);
+    @Override
+	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 

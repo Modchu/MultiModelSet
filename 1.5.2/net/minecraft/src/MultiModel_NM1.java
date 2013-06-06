@@ -434,9 +434,9 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
-    	super.setLivingAnimations(entityCaps, f, f1, f2);
+    	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	Arms[0].setRotationPoint(0.5F, 9.0F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 9.0F, 0F);
     	Arms[0].rotateAngleX = 0F;

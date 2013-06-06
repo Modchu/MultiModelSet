@@ -71,6 +71,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 
 	public MultiModel_ChibiNeko(float f, float f1, int i, int j) {
 		super(f, f1, i, j);
+		HeadTop.setRotationPoint(0.0F, -7.1F, 0.0F);
 	}
 
 	@Override
@@ -517,22 +518,21 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 1.0F, 0.0F);
     	bipedBody.setRotationPoint(0.0F, -3.0F*Scale, 0.0F);
     	bipedRightLeg.setRotationPoint(-0.9F, 15.0F + Scale, 0.0F);
     	bipedLeftLeg.setRotationPoint(0.9F, 15.0F + Scale, 0.0F);
-    	HeadMount.setRotationPoint(0.0F, -21.0F, 0.0F);
     }
 
 	@Override
-	public void setLivingAnimations(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
 	{
-		super.setLivingAnimations(entityCaps, f, f1, f2);
+		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 
-		setCapsValue(caps_visible, pink, (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)));
+		setCapsValue(caps_visible, pink, (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)));
 		float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
 		if (0.0F > mh_sin(f3 * 0.17F) + mh_sin(f3 * 0.17F + 0.02F) + mh_sin(f3 * 0.11F) + mh_sin(f3 * 0.7F) + 3.1F) {
 			EarL1.rotateAngleZ = EarR1.rotateAngleZ = EarLi1.rotateAngleZ = EarRi1.rotateAngleZ = -0.5235988F;
@@ -557,7 +557,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 
 		float t = f2;
 		float idFactor = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
-		if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isLookSuger)) t *= 2F;
+		if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) t *= 2F;
 		Ahoge.rotateAngleY = MathHelper.cos(t * 0.2F + MathHelper.cos(t * 0.05F + idFactor) * 1.0F) * 0.2F;
 		Ahoge.rotateAngleX = MathHelper.cos(t * 0.02F + MathHelper.cos(t*0.05F + idFactor) * 1.0F) * 0.0015F;
 		Ahoge.rotateAngleZ = 0.02F;
@@ -586,7 +586,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 		Shippo5.rotateAngleZ = 0.2F * MathHelper.sin(-t*0.3F+0.00002F+idFactor);
 		Shippo6.rotateAngleZ = 0.2F * MathHelper.sin(-t*0.3F+0.000025F+idFactor);
 
-		if (Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
+		if (onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
 		{
 			bipedRightArm.rotationPointZ = MathHelper.sin(bipedBody.rotateAngleY) * 4F;
 			bipedRightArm.rotationPointX = -MathHelper.cos(bipedBody.rotateAngleY) * 4F + 1.0F+2.0F*Scale;
@@ -735,11 +735,6 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	@Override
 	public float getyOffset() {
 	    return 1.07F;
-	}
-
-	@Override
-	public void equippedItemPositionFlower() {
-		GL11.glTranslatef(0.0F, 0.9F, 0.0F);
 	}
 
 	@Override

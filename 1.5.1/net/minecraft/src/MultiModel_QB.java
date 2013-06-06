@@ -34,6 +34,7 @@ public class MultiModel_QB extends MultiModel {
 	public MultiModel_QB(float f, float f1, int i, int j) {
 		super(f, f1, i, j);
 		HeadMount.setRotationPoint(0F, 2.51F, 0F);
+		HeadTop.setRotationPoint(0.0F, -8.3F, 0.0F);
 	}
 
     @Override
@@ -248,7 +249,7 @@ public class MultiModel_QB extends MultiModel {
     	}
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		// ‹|\‚¦
-    		float f13 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) * 3.141593F);
+    		float f13 = MathHelper.sin(onGrounds[dominantArm] * 3.141593F);
     		float f14 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))
     				* (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
     		bipedRightArm.rotateAngleZ = 0.0F;
@@ -344,56 +345,43 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void reset(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     }
 
     public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	float[] lgrounds = null;
-    	float onGroundR = 0;
-    	float onGroundL = 0;
-    	if (entityCaps != null) {
-    		lgrounds = (float[])getCapsValue(caps_Grounds, entityCaps);
-    		if (lgrounds != null) {
-    			onGroundR = lgrounds[0];
-    			onGroundL = lgrounds[1];
-    		}
-    	}
-    	if (lgrounds == null) {
-    		onGroundR = onGround;
-    	}
-    	if ((onGroundR > -9990F || onGroundL > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+    	if ((onGrounds[0] > -9990F || onGrounds[1] > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
     		// ˜rU‚è
     		float f6, f7, f8;
-    		f6 = MathHelper.sin(MathHelper.sqrt_float(onGroundR) * (float)Math.PI * 2.0F);
-    		f7 = MathHelper.sin(MathHelper.sqrt_float(onGroundL) * (float)Math.PI * 2.0F);
+    		f6 = MathHelper.sin(MathHelper.sqrt_float(onGrounds[0]) * (float)Math.PI * 2.0F);
+    		f7 = MathHelper.sin(MathHelper.sqrt_float(onGrounds[1]) * (float)Math.PI * 2.0F);
     		bipedBody.rotateAngleY = (f6 - f7) * 0.2F;
     		bipedRightArm.rotateAngleY += bipedBody.rotateAngleY;
     		bipedLeftArm.rotateAngleY += bipedBody.rotateAngleY;
     		// R
-    		if (onGroundR > 0F) {
-    			f6 = 1.0F - onGroundR;
+    		if (onGrounds[0] > 0F) {
+    			f6 = 1.0F - onGrounds[0];
     			f6 *= f6;
     			f6 *= f6;
     			f6 = 1.0F - f6;
     			f7 = MathHelper.sin(f6 * (float)Math.PI);
-    			f8 = MathHelper.sin(onGroundR * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			f8 = MathHelper.sin(onGrounds[0] * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			bipedRightArm.rotateAngleX -= (double)f7 * 1.2D + (double)f8;
     			bipedRightArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-    			bipedRightArm.rotateAngleZ = MathHelper.sin(onGroundR * 3.141593F) * -0.4F;
+    			bipedRightArm.rotateAngleZ = MathHelper.sin(onGrounds[0] * 3.141593F) * -0.4F;
     		} else {
     			bipedRightArm.rotateAngleX += bipedBody.rotateAngleY;
     		}
     		// L
-    		if (onGroundL > 0F) {
-    			f6 = 1.0F - onGroundL;
+    		if (onGrounds[1] > 0F) {
+    			f6 = 1.0F - onGrounds[1];
     			f6 *= f6;
     			f6 *= f6;
     			f6 = 1.0F - f6;
     			f7 = MathHelper.sin(f6 * (float)Math.PI);
-    			f8 = MathHelper.sin(onGroundL * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
+    			f8 = MathHelper.sin(onGrounds[1] * (float)Math.PI) * -(bipedHead.rotateAngleX - 0.7F) * 0.75F;
     			bipedLeftArm.rotateAngleX -= (double)f7 * 1.2D + (double)f8;
     			bipedLeftArm.rotateAngleY += bipedBody.rotateAngleY * 2.0F;
-    			bipedLeftArm.rotateAngleZ = MathHelper.sin(onGroundL * 3.141593F) * 0.4F;
+    			bipedLeftArm.rotateAngleZ = MathHelper.sin(onGrounds[1] * 3.141593F) * 0.4F;
     		} else {
     			bipedLeftArm.rotateAngleX += bipedBody.rotateAngleY;
     		}
@@ -527,12 +515,6 @@ public class MultiModel_QB extends MultiModel {
     @Override
     public float getMountedYOffset() {
     	return 1.4F;
-    }
-
-    @Override
-    public void equippedItemPositionFlower()
-    {
-    	GL11.glTranslatef(0.0F, -0.3F, 0.0F);
     }
 
     @Override

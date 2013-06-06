@@ -347,7 +347,7 @@ public class MultiModel_Kelo extends MultiModel {
     		bipedRightLeg.rotateAngleY = 0.3141593F;
     		bipedLeftLeg.rotateAngleY = -0.3141593F;
     	}
-    	if(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround, entityCaps) > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
+    	if(onGrounds[dominantArm] > -9990F && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		bipedRightArm.rotationPointZ = MathHelper.sin(bipedBody.rotateAngleY) * 4F;
     		bipedRightArm.rotationPointX = -MathHelper.cos(bipedBody.rotateAngleY) * 3.5F + 1.0F;
