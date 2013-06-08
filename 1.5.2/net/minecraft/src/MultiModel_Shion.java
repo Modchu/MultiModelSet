@@ -216,6 +216,13 @@ public class MultiModel_Shion extends MultiModel {
     				setCapsValue(caps_visible, sodeR, false);
     				setCapsValue(caps_visible, WsodeL, true);
     				setCapsValue(caps_visible, WsodeR, true);
+    			} else {
+    				bipedRightArm.rotateAngleX = MathHelper.sin(f2 * 0.062F) * 0.05F - 0.7F;
+    				bipedRightArm.rotateAngleY = 0.0F;
+    				bipedRightArm.rotateAngleZ = -0.4F;
+    				bipedLeftArm.rotateAngleX = MathHelper.sin(f2 * 0.062F) * 0.05F - 0.7F;
+    				bipedLeftArm.rotateAngleY = 0.0F;
+    				bipedLeftArm.rotateAngleZ = 0.4F;
     			}
     		} else {
     			bipedHead.rotationPointZ = 0.0F;
@@ -249,19 +256,27 @@ public class MultiModel_Shion extends MultiModel {
     		setCapsValue(caps_visible, eyeL, true);
     		setCapsValue(caps_visible, eyeR, true);
     	}
+    	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_shortcutKeysAction)) {
+    		setCapsValue(caps_visible, sodeL, true);
+    		setCapsValue(caps_visible, sodeR, true);
+    		setCapsValue(caps_visible, WsodeL, false);
+    		setCapsValue(caps_visible, WsodeR, false);
+    	}
     }
 
     @Override
     public void actionInit1(MMM_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
+    	setCapsValue(caps_visible, sodeL, false);
+    	setCapsValue(caps_visible, sodeR, false);
+    	setCapsValue(caps_visible, WsodeL, false);
+    	setCapsValue(caps_visible, WsodeR, false);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(sodeR);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(sodeL);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(WsodeR);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(WsodeL);
     	rightArm.addChild(sodeR);
     	leftArm.addChild(sodeL);
-    	rightArm.addChild(WsodeR);
-    	leftArm.addChild(WsodeL);
     }
 
     @Override
@@ -269,12 +284,20 @@ public class MultiModel_Shion extends MultiModel {
     	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightArm).removeChild(sodeR);
     	((Modchu_ModelRenderer) leftArm).removeChild(sodeL);
-    	((Modchu_ModelRenderer) rightArm).removeChild(WsodeR);
-    	((Modchu_ModelRenderer) leftArm).removeChild(WsodeL);
     	bipedRightArm.addChild(sodeR);
     	bipedLeftArm.addChild(sodeL);
     	bipedRightArm.addChild(WsodeR);
     	bipedLeftArm.addChild(WsodeL);
+    	sodeL.rotationPointY = 0.0F;
+    	sodeR.rotationPointY = 0.0F;
+    }
+
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
+    	((Modchu_ModelRenderer) bipedRightArm).removeChild(sodeR);
+    	((Modchu_ModelRenderer) bipedLeftArm).removeChild(sodeL);
+    	sodeL.rotationPointY = -0.5F;
+    	sodeR.rotationPointY = -0.5F;
     }
 
     @Override

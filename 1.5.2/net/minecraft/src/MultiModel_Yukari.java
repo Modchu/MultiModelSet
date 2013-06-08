@@ -693,6 +693,33 @@ public class MultiModel_Yukari extends MultiModel_Aug
     		RabbitEar_R3.rotateAngleZ = ((float)Math.PI / 4F);
     		RabbitEar_L3.rotateAngleZ = -((float)Math.PI / 4F);
     	}
+
+    	if (entityCaps.getCapsValue(caps_currentArmor, 3) != null)
+    	{
+    		Parka_1.setVisible(false);
+    		Parka_2.setVisible(false);
+    		RabbitEar_RB1.setVisible(false);
+    		RabbitEar_RB2.setVisible(false);
+    		RabbitEar_LB1.setVisible(false);
+    		RabbitEar_LB2.setVisible(false);
+    		sensor1.setVisible(false);
+    		sensor2.setVisible(false);
+    		sensor3.setVisible(false);
+    		sensor4.setVisible(false);
+    	}
+    	else
+    	{
+    		Parka_1.setVisible(true);
+    		Parka_2.setVisible(true);
+    		RabbitEar_RB1.setVisible(true);
+    		RabbitEar_RB2.setVisible(true);
+    		RabbitEar_LB1.setVisible(true);
+    		RabbitEar_LB2.setVisible(true);
+    		sensor1.setVisible(true);
+    		sensor2.setVisible(true);
+    		sensor3.setVisible(true);
+    		sensor4.setVisible(true);
+    	}
     }
 
     @Override

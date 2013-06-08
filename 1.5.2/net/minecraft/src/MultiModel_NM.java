@@ -252,6 +252,14 @@ public class MultiModel_NM extends MultiModel_SR2
     }
 
     @Override
+    public void skirtFloatsInit(float f, float f1) {
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	textureWidth = 64;
+    	textureHeight = 64;
+    	super.skirtFloatsInit(f, f1);
+    }
+
+    @Override
     public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);

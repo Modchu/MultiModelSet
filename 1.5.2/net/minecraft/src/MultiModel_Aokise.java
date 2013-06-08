@@ -226,5 +226,13 @@ public class MultiModel_Aokise extends MultiModel_SR2
 		ribon4.rotateAngleZ=0.4363323F;
 
 		actionPartsInit(f, f1);
-    }
+	}
+
+	@Override
+	public void skirtFloatsInit(float f, float f1) {
+	}
+
+	@Override
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	}
 }

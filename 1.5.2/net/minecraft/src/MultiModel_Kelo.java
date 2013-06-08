@@ -526,11 +526,6 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public double getSleepingyOffset() {
-    	return -0.95D;
-    }
-
-    @Override
     public float ridingViewCorrection() {
     	return -0.75F;
     }

@@ -33,8 +33,8 @@ public class MultiModel_QB extends MultiModel {
 
 	public MultiModel_QB(float f, float f1, int i, int j) {
 		super(f, f1, i, j);
-		HeadMount.setRotationPoint(0F, 2.51F, 0F);
-		HeadTop.setRotationPoint(0.0F, -8.3F, 0.0F);
+		HeadMount.setRotationPoint(0F, 3.5F, 0F);
+		HeadTop.setRotationPoint(0.0F, -2.5F, 0.0F);
 	}
 
     @Override

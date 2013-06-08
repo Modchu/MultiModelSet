@@ -1,7 +1,5 @@
 package net.minecraft.src;
 
-import org.lwjgl.opengl.GL11;
-
 public class MultiModel_Beverly4 extends MultiModel_SR2
 {
 
@@ -164,29 +162,32 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     	setCapsValue(caps_sleepingBan, false);
     }
 
+    @Override
     public void skirtFloatsInit(float f, float f1) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	textureWidth = 64;
+    	textureHeight = 64;
     	//SkirtR ã
     	SkirtTop = new Modchu_ModelRenderer(this, 47, 20);
-    	((Modchu_ModelRenderer) SkirtTop).addPlate(-2.5F, 0.0F, -3.5F, 5, 7, 0);
+    	SkirtTop.addPlate(-2.5F, 0.0F, -3.5F, 5, 7, 0);
     	SkirtTop.setRotationPoint(0.0F, 8.0F, 0.0F);
     	rightLeg.addChild(SkirtTop);
 
     	//SkirtR ‘O
     	SkirtFront = new Modchu_ModelRenderer(this, 47, 27);
-    	((Modchu_ModelRenderer) SkirtFront).addPlate(0.0F, 0.0F, 0.0F, 5, 12, 0);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 5, 12, 0);
     	SkirtFront.setRotationPoint(0.0F, 8.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//SkirtR ‰E
     	SkirtRight = new Modchu_ModelRenderer(this, 40, 27);
-    	((Modchu_ModelRenderer) SkirtRight).addPlate(-3.5F, 0.0F, -6.0F, 7, 12, 1);
+    	SkirtRight.addPlate(-3.5F, 0.0F, -6.0F, 7, 12, 1);
     	SkirtRight.setRotationPoint(0.0F, 8.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//SkirtR Œã‚ë
     	SkirtBack = new Modchu_ModelRenderer(this, 58, 27);
-    	((Modchu_ModelRenderer) SkirtBack).addPlate(0.0F, 0.0F, 0.0F, 5, 12, 0);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 5, 12, 0);
     	SkirtBack.setRotationPoint(0.0F, 8.0F, 0.0F);
     	SkirtTop.addChild(SkirtBack);
 
@@ -686,33 +687,40 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     	rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
     }
 
-    public float getHeight()
+    @Override
+	public float getHeight()
     {
     	return 1.99F;
     }
 
-    public float getWidth()
+    @Override
+	public float getWidth()
     {
     	return 0.6F;
     }
 
-    public float getRidingHeight()
+    @Override
+	public float getRidingHeight()
     {
     	return 0.99F;
     }
 
+	@Override
 	public float getyOffset() {
 	    return 1.81F;
 	}
 
+	@Override
 	public float getRidingyOffset() {
 	    return 1.61F;
 	}
 
+	@Override
 	public float getMountedYOffset() {
 		return 0.7F;
 	}
 
+	@Override
 	public double getSittingyOffset() {
 		return -0.5D;
 	}

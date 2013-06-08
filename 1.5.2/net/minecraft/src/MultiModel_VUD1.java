@@ -575,6 +575,8 @@ public class MultiModel_VUD1 extends MultiModel_Aug
 
     public void skirtFloatsInit(float f, float f1) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	textureWidth = 64;
+    	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 8, 18);
     	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);

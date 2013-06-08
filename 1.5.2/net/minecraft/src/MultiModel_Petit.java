@@ -29,7 +29,8 @@ public class MultiModel_Petit extends MultiModel {
 
     public MultiModel_Petit(float f, float f1, int i, int j) {
     	super(f, f1, i, j);
-    	HeadTop.setRotationPoint(0.0F, -7.75F, 0.0F);
+    	HeadMount.setRotationPoint(0F, 0.5F, 0F);
+    	HeadTop.setRotationPoint(0.0F, -4.0F, 0.0F);
     }
 
     @Override
@@ -282,7 +283,7 @@ public class MultiModel_Petit extends MultiModel {
     	}
 
     	if( 0 > mh_sin(f2 * 0.1F) * 0.3F + (Math.random() * 0.1F) + 0.18F) {
-    		setCapsValue(caps_visible, eyeL, true);
+    		setCapsValue(caps_visible, eyeL, false);
     		setCapsValue(caps_visible, eyeR, false);
     		setCapsValue(caps_visible, FaceL, false);
     		setCapsValue(caps_visible, FaceR, false);

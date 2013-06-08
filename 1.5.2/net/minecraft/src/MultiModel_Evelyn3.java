@@ -215,12 +215,12 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     	leftLeg2.addBox(-1F, 0.5F, -1.5F, 2, 8, 3, f+0.2F);
     	leftLeg.addChild(leftLeg2);
 
-		mainFrame = new Modchu_ModelRenderer(this, 0, 0);
-		mainFrame.setRotationPoint(0F, 0F + f1, 0F);
-		mainFrame.addChild(bipedHead);
-		mainFrame.addChild(bipedBody);
+    	mainFrame = new Modchu_ModelRenderer(this, 0, 0);
+    	mainFrame.setRotationPoint(0F, 0F + f1, 0F);
+    	mainFrame.addChild(bipedHead);
+    	mainFrame.addChild(bipedBody);
 
-		actionPartsInit(f, f1);
+    	actionPartsInit(f, f1);
     }
 
 	@Override
@@ -277,6 +277,8 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		leftHand.setRotationPoint(0.0F, 4.0F, 0.0F);
 		leftArm2.addChild(leftHand);
 
+		bipedRightLeg = new Modchu_ModelRenderer(this);
+		bipedLeftLeg = new Modchu_ModelRenderer(this);
 		rightHand.showModel = leftHand.showModel =
 				rightArm.showModel = leftArm.showModel =
 						rightArm2.showModel = leftArm2.showModel =
@@ -289,8 +291,11 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		setCapsValue(caps_sleepingBan, false);
 	}
 
+	@Override
 	public void skirtFloatsInit(float f, float f1) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+		textureWidth = 64;
+		textureHeight = 64;
 		//SkirtR ã
 		SkirtTop = new Modchu_ModelRenderer(this, 5, 40);
 		((Modchu_ModelRenderer) SkirtTop).addPlate(-2.5F, 0.0F, -2.5F, 5, 5, 0);
@@ -446,11 +451,11 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		}
 
 		// ƒAƒCƒeƒ€Ž‚Á‚Ä‚é‚Æ‚«‚Ì˜rU‚è‚ð—}‚¦‚é
-		if(heldItemLeft != 0) {
-			bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - 0.3141593F * (float)heldItemLeft;
+		if (heldItem[1] != 0 && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+			bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - 0.3141593F * (float)heldItem[1];
 		}
-		if(heldItemRight != 0) {
-			bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - 0.3141593F * (float)heldItemRight;
+		if (heldItem[0] != 0 && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+			bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - 0.3141593F * (float)heldItem[0];
 		}
 
 		BodyR.rotateAngleX = BodyL.rotateAngleX = 0.4F;
@@ -476,8 +481,8 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 			Skirt.rotateAngleX -= 0.2F;
 			Skirt.rotationPointY = -1.0F;
 			Skirt.rotationPointZ = 0.5F;
-			rightLeg.rotateAngleX -= 0.6F + bipedBody.rotateAngleX;
-			leftLeg.rotateAngleX -= 0.6F + bipedBody.rotateAngleX;
+			rightLeg.rotateAngleX -= 0.6F;
+			leftLeg.rotateAngleX -= 0.6F;
 			rightLeg.rotationPointZ = 0F + 1.5F;
 			leftLeg.rotationPointZ = 0F + 1.5F;
 			bipedHead.rotationPointZ = 0F - 2.5F;

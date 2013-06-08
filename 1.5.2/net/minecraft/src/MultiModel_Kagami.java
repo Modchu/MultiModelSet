@@ -114,4 +114,10 @@ public class MultiModel_Kagami extends MultiModel_SR2
 		tailLBA.rotateAngleZ = 0.2268928F;
 		actionPartsInit(f, f1);
 	}
+
+	public void skirtFloatsInit(float f, float f1) {
+		textureWidth = 64;
+		textureHeight = 64;
+		super.skirtFloatsInit(f, f1);
+	}
 }
