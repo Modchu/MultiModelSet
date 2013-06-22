@@ -57,7 +57,7 @@ public class MultiModel_DogAngel extends MultiModel_SR2 {
 
 	public MultiModel_DogAngel(float f, float f1, int i, int j) {
 		super(f, f1, i, j);
-		HeadMount.setRotationPoint(0.0F, 1.0F, 0.0F);
+		HeadTop.setRotationPoint(0.0F, -7.0F, 0.0F);
 	}
 
 	@Override

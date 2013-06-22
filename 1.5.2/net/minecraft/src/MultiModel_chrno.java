@@ -164,7 +164,8 @@ public class MultiModel_chrno extends MultiModel {
     		setCapsValue(caps_visible, Rightarm2, true);
     		setCapsValue(caps_visible, bipedRightArm, false);
     		setCapsValue(caps_visible, bipedLeftArm, false);
-    		Arms[0].setRotationPoint(-5.0F, 0.0F, 0F);
+    		Arms[0].setRotationPoint(0.0F, 0.0F, 0.0F);
+    		Arms[1].setRotationPoint(0.0F, 0.0F, 0.0F);
     		Icewing3.setRotateAngleX(Icewing6.setRotateAngleX(mh_sin(f2 * f2 * 0.6662F) * 0.2F));
     		bipedRightArm.setRotateAngleX(0.0F);
     		bipedRightArm.setRotateAngleY(0.0F);
@@ -178,7 +179,8 @@ public class MultiModel_chrno extends MultiModel {
     		setCapsValue(caps_visible, Rightarm2, false);
     		setCapsValue(caps_visible, bipedRightArm, true);
     		setCapsValue(caps_visible, bipedLeftArm, true);
-    		Arms[0].setRotationPoint(0.5F, 6.5F, 0F);
+    		Arms[0].setRotationPoint(0.5F, 6.5F, 0.0F);
+    		Arms[1].setRotationPoint(-0.5F, 6.5F, 0.0F);
     	}
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		setCapsValue(caps_visible, eyeL, true);

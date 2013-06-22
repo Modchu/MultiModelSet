@@ -71,7 +71,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 
 	public MultiModel_ChibiNeko(float f, float f1, int i, int j) {
 		super(f, f1, i, j);
-		HeadTop.setRotationPoint(0.0F, -7.1F, 0.0F);
+		HeadTop.setRotationPoint(0.0F, -6.0F, 0.0F);
 	}
 
 	@Override
