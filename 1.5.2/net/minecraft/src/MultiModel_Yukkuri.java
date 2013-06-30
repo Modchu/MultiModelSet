@@ -572,8 +572,8 @@ public class MultiModel_Yukkuri extends MultiModel {
     	}
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		float f6 = MathHelper.sin(onGrounds[dominantArm] * 3.141593F);
-    		float f7 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))
-    				* (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
+    		float f7 = MathHelper.sin((1.0F - (1.0F - onGrounds[dominantArm])
+    				* (1.0F - onGrounds[dominantArm])) * 3.141593F);
     		bipedRightArm.rotateAngleZ = 0.0F;
     		bipedLeftArm.rotateAngleZ = 0.0F;
     		bipedRightArm.rotateAngleY = -(0.1F - f6 * 0.6F)

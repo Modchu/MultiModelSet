@@ -250,8 +250,8 @@ public class MultiModel_QB extends MultiModel {
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		// ã|ç\Ç¶
     		float f13 = MathHelper.sin(onGrounds[dominantArm] * 3.141593F);
-    		float f14 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))
-    				* (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
+    		float f14 = MathHelper.sin((1.0F - (1.0F - onGrounds[dominantArm])
+    				* (1.0F - onGrounds[dominantArm])) * 3.141593F);
     		bipedRightArm.rotateAngleZ = 0.0F;
     		bipedLeftArm.rotateAngleZ = 0.0F;
     		bipedRightArm.rotateAngleY = -(0.1F - f13 * 0.6F)

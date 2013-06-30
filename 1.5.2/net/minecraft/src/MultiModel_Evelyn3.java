@@ -519,7 +519,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 			{
 				// ã|ç\Ç¶
 				float f6 = MathHelper.sin(onGrounds[dominantArm] * 3.141593F);
-				float f7 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
+				float f7 = MathHelper.sin((1.0F - (1.0F - onGrounds[dominantArm]) * (1.0F - onGrounds[dominantArm])) * 3.141593F);
 				bipedRightArm.rotateAngleZ = MathHelper.cos(f2 * 0.09F) * 0.05F + 0.05F;
 				bipedLeftArm.rotateAngleZ = -MathHelper.cos(f2 * 0.09F) * 0.05F + 0.05F;
 				bipedRightArm.rotateAngleY = f6 * 0.6F - 0.1F + bipedHead.rotateAngleY;

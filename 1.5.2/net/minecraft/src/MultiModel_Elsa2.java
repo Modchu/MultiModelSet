@@ -322,8 +322,8 @@ public class MultiModel_Elsa2 extends MultiModel_SR2 {
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		// ã|ç\Ç¶
-    		float f6 = MathHelper.sin(Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround) * 3.141593F);
-    		float f7 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * 3.141593F);
+    		float f6 = MathHelper.sin(onGrounds[dominantArm] * 3.141593F);
+    		float f7 = MathHelper.sin((1.0F - (1.0F - onGrounds[dominantArm])) * 3.141593F);
     		bipedRightArm.rotateAngleX = -1.470796F;
     		bipedRightArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
     		bipedRightArm.rotateAngleX += MathHelper.sin(f2 * 0.067F) * 0.05F;

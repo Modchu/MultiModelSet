@@ -603,7 +603,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow))
     	{
     		float f7 = MathHelper.sin(onGrounds[dominantArm] * (float)Math.PI);
-    		float f9 = MathHelper.sin((1.0F - (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround)) * (1.0F - Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_onGround))) * (float)Math.PI);
+    		float f9 = MathHelper.sin((1.0F - (1.0F - onGrounds[dominantArm]) * (1.0F - onGrounds[dominantArm])) * (float)Math.PI);
     		bipedRightArm.rotateAngleZ = 0.0F;
     		bipedLeftArm.rotateAngleZ = 0.0F;
     		bipedRightArm.rotateAngleY = -(0.1F - f7 * 0.6F);
