@@ -646,7 +646,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
+    	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt1.setRotateAngle(-0.7853982F, 0.2268928F, 0.8203047F);
 		Skirt2.setRotateAngle(-0.7853982F, 0.9075712F, 0.8203047F);
 		Skirt3.setRotateAngle(-0.7853982F, 1.308997F, 0.715585F);

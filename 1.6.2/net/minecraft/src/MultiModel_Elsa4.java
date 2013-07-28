@@ -369,13 +369,13 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     	}
 
     	// アイテム持ってるときの腕振りを抑える+表示角オフセット
-    	if (heldItemLeft != 0)
+    	if (heldItem[1] != 0)
     	{
-    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemLeft;
+    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[1];
     	}
-    	if (heldItemRight != 0)
+    	if (heldItem[0] != 0)
     	{
-    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemRight;
+    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[0];
     	}
     	armSwing(f, f1, f2, f3, f4, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))

@@ -678,7 +678,7 @@ public class MultiModel_Angel extends MultiModel_SR2 {
 	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
+    	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt1.setRotateAngleDeg(-118F, 113F, 47F);
 		Skirt2.setRotateAngleDeg(-65F, 113F, 47F);
 		Skirt3.setRotateAngleDeg(-122F, 158F, 47F);

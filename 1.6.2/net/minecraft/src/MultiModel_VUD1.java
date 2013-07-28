@@ -579,33 +579,32 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 8, 18);
-    	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);
-    	SkirtTop.setRotationPoint(-4.0F, -4.0F, 4.0F);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.setRotationPoint(-4.0F, -4.0F, -4.0F);
     	if (Skirt != null) Skirt.addChild(SkirtTop);
 
     	//ふんわりスカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 8, 24);
-    	((Modchu_ModelRenderer) SkirtFront).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);
-    	SkirtFront.setRotationPoint(0.0F, 8.0F, 0.0F);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//ふんわりスカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 2, 24);
-    	((Modchu_ModelRenderer) SkirtRight).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 1);
-    	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.setRotationPoint(8.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//ふんわりスカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 16, 24);
-    	((Modchu_ModelRenderer) SkirtLeft).setMirror(true);
-    	((Modchu_ModelRenderer) SkirtLeft).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 1);
-    	SkirtLeft.setRotationPoint(8.0F, 8.0F, 0.0F);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//ふんわりスカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 22, 24);
-    	((Modchu_ModelRenderer) SkirtBack).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);
-    	SkirtBack.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.setRotationPoint(0.0F, 0.0F, 8.0F);
     	SkirtTop.addChild(SkirtBack);
     	if (Skirt != null) ((Modchu_ModelRenderer) Skirt).setVisible(false);
     }

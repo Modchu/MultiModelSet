@@ -537,14 +537,14 @@ public class MultiModel_NM1 extends MultiModel_SR2
     		bipedLeftLeg.rotateAngleY = -((float)Math.PI / 10F);
     	}
 
-    	if (heldItemLeft != 0)
+    	if (heldItem[1] != 0)
     	{
-    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItemLeft;
+    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItem[1];
     	}
 
-    	if (heldItemRight != 0)
+    	if (heldItem[0] != 0)
     	{
-    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItemRight;
+    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItem[0];
     	}
 
     	bipedRightArm.rotateAngleY = 0.0F;

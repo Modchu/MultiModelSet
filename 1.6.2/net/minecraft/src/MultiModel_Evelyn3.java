@@ -231,7 +231,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		bipedBody.addChild(rightArm);
 
 		rightArmPlus = new Modchu_ModelRenderer(this);
-		((Modchu_ModelRenderer) rightArmPlus.setTextureOffset(52, 0)).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
+		rightArmPlus.setTextureOffset(52, 0).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
 		rightArmPlus.rotateAngleX = 1.570796313F;
 		rightArm.addChild(rightArmPlus);
 
@@ -241,8 +241,8 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		rightArm.addChild(rightArm2);
 
 		rightArmPlus2 = new Modchu_ModelRenderer(this);
-		((Modchu_ModelRenderer) rightArmPlus2.setTextureOffset(52, 0)).addPlate(-1.0F, -1.0F, 0.01F, 2, 2, 4, f);
-		((Modchu_ModelRenderer) rightArmPlus2.setTextureOffset(52, 0)).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
+		rightArmPlus2.setTextureOffset(52, 0).addPlate(-1.0F, -1.0F, 0.01F, 2, 2, 4, f);
+		rightArmPlus2.setTextureOffset(52, 0).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
 		rightArmPlus2.rotateAngleX = 1.570796313F;
 		rightArm2.addChild(rightArmPlus2);
 
@@ -257,7 +257,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		bipedBody.addChild(leftArm);
 
 		leftArmPlus = new Modchu_ModelRenderer(this);
-		((Modchu_ModelRenderer) leftArmPlus.setTextureOffset(60, 0)).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
+		leftArmPlus.setTextureOffset(60, 0).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
 		leftArmPlus.rotateAngleX = 1.570796313F;
 		leftArm.addChild(leftArmPlus);
 
@@ -267,8 +267,8 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		leftArm.addChild(leftArm2);
 
 		leftArmPlus2 = new Modchu_ModelRenderer(this);
-		((Modchu_ModelRenderer) leftArmPlus2.setTextureOffset(60, 0)).addPlate(-1.0F, -1.0F, 0.01F, 2, 2, 4, f);
-		((Modchu_ModelRenderer) leftArmPlus2.setTextureOffset(60, 0)).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
+		leftArmPlus2.setTextureOffset(60, 0).addPlate(-1.0F, -1.0F, 0.01F, 2, 2, 4, f);
+		leftArmPlus2.setTextureOffset(60, 0).addPlate(-1.0F, -1.0F, -3.01F, 2, 2, 4, f);
 		leftArmPlus2.rotateAngleX = 1.570796313F;
 		leftArm2.addChild(leftArmPlus2);
 
@@ -298,62 +298,80 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		textureHeight = 64;
 		//SkirtR 上
 		SkirtTop = new Modchu_ModelRenderer(this, 5, 40);
-		((Modchu_ModelRenderer) SkirtTop).addPlate(-2.5F, 0.0F, -2.5F, 5, 5, 0);
+		SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTop.setRotationPoint(-3.0F, -2.5F, -2.5F);
 		Skirt1.addChild(SkirtTop);
-
-		//SkirtR 上後
-		SkirtTopBack = new Modchu_ModelRenderer(this, 5, 52);
-		SkirtTopBack.addPlate(-2.5F, 0.0F, -2.5F, 5, 5, 0);
-		Skirt3.addChild(SkirtTopBack);
 
 		//SkirtR 前
 		SkirtFront = new Modchu_ModelRenderer(this, 5, 45);
-		((Modchu_ModelRenderer) SkirtFront).addPlate(0.0F, 0.0F, 0.0F, 5, 7, 0);
+		SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYFront);
+		SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTop.addChild(SkirtFront);
 
 		//SkirtR 右前
 		SkirtRightFront = new Modchu_ModelRenderer(this, 0, 45);
-		SkirtRightFront.addPlate(-2.5F, 0.0F, -3.5F, 5, 7, 1);
+		SkirtRightFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYRight);
+		SkirtRightFront.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTop.addChild(SkirtRightFront);
+
+		//SkirtR 上後
+		SkirtTopBack = new Modchu_ModelRenderer(this, 5, 52);
+		SkirtTopBack.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTopBack.setRotationPoint(-5.0F, -2.5F, -1.0F);
+		Skirt3.addChild(SkirtTopBack);
 
 		//SkirtR 右後
 		SkirtRightBack = new Modchu_ModelRenderer(this, 0, 57);
-		SkirtRightBack.addPlate(-2.5F, 0.0F, -3.5F, 5, 7, 1);
+		SkirtRightBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYRight);
+		SkirtRightBack.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTopBack.addChild(SkirtRightBack);
 
 		//SkirtR 後ろ
 		SkirtBack = new Modchu_ModelRenderer(this, 15, 57);
-		((Modchu_ModelRenderer) SkirtBack).addPlate(0.0F, 0.0F, 0.0F, 5, 7, 0);
+		SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYBack);
+		SkirtBack.setRotationPoint(0.0F, 0.0F, 5.0F);
 		SkirtTopBack.addChild(SkirtBack);
 
 		//SkirtL 上前
 		SkirtTopL = new Modchu_ModelRenderer(this, 25, 40);
-		SkirtTopL.addPlate(-2.5F, 0.0F, -2.5F, 5, 5, 0);
+		SkirtTopL.mirror = true;
+		SkirtTopL.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTopL.setRotationPoint(-1.0F, -2.5F, -2.5F);
 		Skirt2.addChild(SkirtTopL);
-
-		//SkirtL 上後
-		SkirtTopBackL = new Modchu_ModelRenderer(this, 25, 52);
-		SkirtTopBackL.addPlate(-2.5F, 0.0F, -2.5F, 5, 5, 0);
-		Skirt4.addChild(SkirtTopBackL);
 
 		//SkirtL 前
 		SkirtFrontL = new Modchu_ModelRenderer(this, 25, 45);
-		SkirtFrontL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, 0);
+		SkirtFrontL.mirror = true;
+		SkirtFrontL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYFront);
+		SkirtFrontL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTopL.addChild(SkirtFrontL);
 
 		//SkirtL 左前
 		SkirtLeftFront = new Modchu_ModelRenderer(this, 20, 45);
-		SkirtLeftFront.addPlate(-2.5F, 0.0F, -3.5F, 5, 7, 1);
+		SkirtLeftFront.mirror = true;
+		SkirtLeftFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYLeft);
+		SkirtLeftFront.setRotationPoint(5.0F, 0.0F, 0.0F);
 		SkirtTopL.addChild(SkirtLeftFront);
+
+		//SkirtL 上後
+		SkirtTopBackL = new Modchu_ModelRenderer(this, 25, 52);
+		SkirtTopBackL.mirror = true;
+		SkirtTopBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTopBackL.setRotationPoint(0.0F, -2.5F, -1.0F);
+		Skirt4.addChild(SkirtTopBackL);
 
 		//SkirtL 左後
 		SkirtLeftBack = new Modchu_ModelRenderer(this, 20, 57);
-		SkirtLeftBack.addPlate(-2.5F, 0.0F, -3.5F, 5, 7, 1);
+		SkirtLeftBack.mirror = true;
+		SkirtLeftBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYLeft);
+		SkirtLeftBack.setRotationPoint(5.0F, 0.0F, 0.0F);
 		SkirtTopBackL.addChild(SkirtLeftBack);
 
 		//SkirtL 後ろ
 		SkirtBackL = new Modchu_ModelRenderer(this, 35, 57);
-		SkirtBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, 0);
+		SkirtBackL.mirror = true;
+		SkirtBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYBack);
+		SkirtBackL.setRotationPoint(0.0F, 0.0F, 5.0F);
 		SkirtTopBackL.addChild(SkirtBackL);
 		setCapsValue(caps_visible, Skirt1, false);
 		setCapsValue(caps_visible, Skirt2, false);
@@ -580,82 +598,28 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-		float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
-		SkirtTop.setRotationPoint(-1.0F, 1.0F, 2.0F);
-		SkirtTopBack.setRotationPoint(-5.5F, -3.5F, 1.5F);
-		SkirtFront.setRotationPoint(-2.5F, 4.5F, -2.5F);
-		SkirtRightFront.setRotationPoint(0.0F, 1.5F, -3.0F);
-		SkirtRightBack.setRotationPoint(-1.0F, 2.5F, -2.5F);
-		SkirtBack.setRotationPoint(-2.5F, 0.0F, -2.5F);
+		float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 
-		SkirtTopL.setRotationPoint(1.0F, 1.0F, 2.0F);
-		SkirtTopBackL.setRotationPoint(5.5F, 1.0F, 1.5F);
-		SkirtFrontL.setRotationPoint(-2.5F, 4.8F, -2.5F);
-		SkirtLeftFront.setRotationPoint(5.0F, 1.5F, -2.5F);
-		SkirtLeftBack.setRotationPoint(1.0F, 2.5F, -2.5F);
-		SkirtBackL.setRotationPoint(-2.5F, 0.0F, -2.5F);
+		SkirtFront.rotationPointX = motionY * 4.0F;
+		SkirtBack.rotationPointX = motionY * 4.0F;
+		SkirtRightFront.rotationPointZ = motionY * 4.0F;
+		SkirtRightBack.rotationPointZ = motionY * 4.0F;
 
-		SkirtTop.rotateAngleX = 4.712388966F;
-		SkirtTop.rotateAngleY = 0.0F;
-		SkirtTop.rotateAngleZ = 0.0F;
-		SkirtTopBack.rotateAngleX = 1.570796313F;
-		SkirtTopBack.rotateAngleY = 1.570796313F;
-		SkirtTopBack.rotateAngleZ = 0.0F;
-		SkirtTopL.rotateAngleX = 4.712388966F;
-		SkirtTopL.rotateAngleY = 0.0F;
-		SkirtTopL.rotateAngleZ = 0.0F;
-		SkirtTopBackL.rotateAngleX = -1.570796313F;
-		SkirtTopBackL.rotateAngleY = 1.570796313F;
-		SkirtTopBackL.rotateAngleZ = 0.0F;
-		SkirtRightFront.rotateAngleX = 1.570796313F;
-		SkirtRightFront.rotateAngleY = 0.0F;
-		SkirtRightFront.rotateAngleZ = 0.0F;
-		SkirtRightBack.rotateAngleX = -1.570796313F;
-		SkirtRightBack.rotateAngleY = 0.0F;
-		SkirtRightBack.rotateAngleZ = 1.570796313F;
-		SkirtFront.rotateAngleX = 1.570796313F;
-		SkirtFront.rotateAngleY = 0.0F;
-		SkirtFront.rotateAngleZ = 0.0F;
-		SkirtBack.rotateAngleX = -1.570796313F;
-		SkirtBack.rotateAngleY = 0.0F;
-		SkirtBack.rotateAngleZ = 1.570796313F;
-		SkirtFrontL.rotateAngleX = 1.570796313F;
-		SkirtFrontL.rotateAngleY = 0.0F;
-		SkirtFrontL.rotateAngleZ = 0.0F;
-		SkirtBackL.rotateAngleX = 1.570796313F;
-		SkirtBackL.rotateAngleY = 0.0F;
-		SkirtBackL.rotateAngleZ = 1.570796313F;
-		SkirtLeftFront.rotateAngleX = 1.570796313F;
-		SkirtLeftFront.rotateAngleY = 0.0F;
-		SkirtLeftFront.rotateAngleZ = 0.0F;
-		SkirtLeftBack.rotateAngleX = 1.570796313F;
-		SkirtLeftBack.rotateAngleY = 0.0F;
-		SkirtLeftBack.rotateAngleZ = 1.570796313F;
+		SkirtFrontL.rotationPointX = motionY * 4.0F;
+		SkirtBackL.rotationPointX = motionY * 4.0F;
+		SkirtLeftFront.rotationPointZ = motionY * 4.0F;
+		SkirtLeftBack.rotationPointZ = motionY * 4.0F;
 
-		SkirtFront.rotationPointX += motionY * 2.0F;
-		//SkirtBack.rotationPointX += motionY * 5.0F;
+		SkirtFront.rotateAngleX = motionY;
+		SkirtRightFront.rotateAngleZ = -motionY;
+		SkirtRightBack.rotateAngleZ = -motionY;
+		SkirtBack.rotateAngleX = -motionY;
+		SkirtFrontL.rotateAngleX = motionY;
+		SkirtLeftFront.rotateAngleZ = motionY;
+		SkirtLeftBack.rotateAngleZ = motionY;
+		SkirtBackL.rotateAngleX = -motionY;
 
-		SkirtRightFront.rotationPointZ -= motionY * 4.0F;
-		SkirtRightBack.rotationPointZ += motionY * 5.0F;
-
-		SkirtFrontL.rotationPointX += motionY * 2.0F;
-		//SkirtBackL.rotationPointX += motionY * 5.0F;
-		SkirtLeftFront.rotationPointZ += motionY * 4.0F;
-		SkirtLeftBack.rotationPointZ -= motionY * 5.0F;
-
-		SkirtFront.rotateAngleX += motionY;
-
-		SkirtRightFront.rotateAngleX -= motionY / 4.0F;
-		SkirtRightFront.rotateAngleY += motionY * 1.2F;
-		SkirtRightBack.rotateAngleX -= motionY / 4.0F;
-		SkirtRightBack.rotateAngleY -= motionY * 1.2F;
-		SkirtBack.rotateAngleX -= motionY;
-		SkirtFrontL.rotateAngleX += motionY;
-		SkirtLeftFront.rotateAngleY -= motionY * 1.2F;
-		SkirtLeftBack.rotateAngleY += motionY * 1.2F;
-		SkirtBackL.rotateAngleX += motionY;
-
-		((Modchu_ModelRenderer) SkirtFront).scaleX = ((Modchu_ModelRenderer) SkirtBack).scaleX =
+		SkirtFront.scaleX = SkirtBack.scaleX =
 				SkirtFrontL.scaleX = SkirtBackL.scaleX = 1.0F - (motionY * 1.2F);
 		SkirtLeftFront.scaleZ = SkirtLeftBack.scaleZ =
 				SkirtRightFront.scaleZ = SkirtRightBack.scaleZ = 1.0F - (motionY * 1.5F);

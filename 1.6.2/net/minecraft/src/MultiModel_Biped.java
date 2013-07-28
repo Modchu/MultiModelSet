@@ -206,12 +206,12 @@ public class MultiModel_Biped extends MultiModelSkirtFloats
 			bipedLeftLeg.rotateAngleY = -((float) Math.PI / 10F);
 		}
 
-		if (heldItemLeft != 0 && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
-			bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float) Math.PI / 10F) * (float) heldItemLeft;
+		if (heldItem[1] != 0 && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+			bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float) Math.PI / 10F) * (float) heldItem[1];
 		}
 
-		if (heldItemRight != 0 && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
-			bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float) Math.PI / 10F) * (float) heldItemRight;
+		if (heldItem[0] != 0 && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
+			bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float) Math.PI / 10F) * (float) heldItem[0];
 		}
 
 		bipedRightArm.rotateAngleY = 0.0F;

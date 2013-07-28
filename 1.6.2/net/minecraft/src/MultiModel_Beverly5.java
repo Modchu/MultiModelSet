@@ -457,15 +457,15 @@ public class MultiModel_Beverly5 extends MultiModel_SR2 {
 		}
 
 		// アイテム持ってるときの腕振りを抑える+表示角オフセット
-		if (heldItemLeft != 0)
+		if (heldItem[1] != 0)
 		{
 			leftArm.rotateAngleX
-				= leftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemLeft;
+				= leftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[1];
 		}
-		if (heldItemRight != 0)
+		if (heldItem[0] != 0)
 		{
 			rightArm.rotateAngleX
-				= rightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemRight;
+				= rightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[0];
 		}
 		armSwing(f, f1, f2, f3, f4, f5, entityCaps);
 

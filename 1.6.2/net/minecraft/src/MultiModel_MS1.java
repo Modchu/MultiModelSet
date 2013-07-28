@@ -194,7 +194,7 @@ public class MultiModel_MS1 extends MultiModel_SR2
     public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	super.skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
+    	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
     	SkirtTop.setRotationPoint(-3.5F, -2.5F, 3.0F);
     	SkirtFront.setRotationPoint(0.0F, 6.0F, 0.0F);
     	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
