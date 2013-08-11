@@ -266,13 +266,13 @@ public class MultiModel_NM extends MultiModel_SR2
     	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
-    	if (mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entityliving)
+    	if (mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid != null
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid.isInstance(entityliving)
     			&& !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		boolean isWorkingDelay = Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isWorkingDelay);
     		if (isWorkingDelay) {
 //-@-125
-    			int maidMode = (Integer)Modchu_Reflect.getFieldObject(mod_Modchu_ModchuLib.LMM_EntityLittleMaid, "getMaidModeInt", entityliving);
+    			int maidMode = (Integer)Modchu_Reflect.getFieldObject(mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid, "getMaidModeInt", entityliving);
     			int i = 0x0080;
     			int i1 = 0x0021;
     			int i2 = 0x0083;
@@ -343,7 +343,7 @@ public class MultiModel_NM extends MultiModel_SR2
     		Cheek_R.setVisible(true);
     		Cheek_L.setVisible(true);
     	} else {
-    		f7 = (1.0F - (Float) Modchu_Reflect.invokeMethod("EntityLivingBase", "func_110143_aJ", entityliving) / 20F) * 0.5F;
+    		f7 = (1.0F - Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_health ) / 20F) * 0.5F;
     		Cheek_R.setVisible(false);
     		Cheek_L.setVisible(false);
     	}

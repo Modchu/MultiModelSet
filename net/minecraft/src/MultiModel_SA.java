@@ -323,7 +323,7 @@ public class MultiModel_SA extends MultiModel_Aug {
 			f3 *= 8.0F;
 			f4 = -0.2F;
 		} else {
-			f4 = (1F - (Float) Modchu_Reflect.invokeMethod("EntityLivingBase", "func_110143_aJ", entityliving) / 20F) * 0.5F;
+			f4 = (1F - Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_health ) / 20F) * 0.5F;
 		}
 		sensor1.rotateAngleX = 0.0F;
 		sensor1.rotateAngleY = -((float) Math.PI * 2F / 9F);

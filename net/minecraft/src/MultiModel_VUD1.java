@@ -670,8 +670,8 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     	}
     	Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entity != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entity)) {
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid != null
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid.isInstance(entity)) {
     		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     			setCapsValue(caps_visible, Negi1, true);
     			setCapsValue(caps_visible, Negi2, true);

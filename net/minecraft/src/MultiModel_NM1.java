@@ -468,13 +468,13 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	bipedLeftLeg.showModel = bipedRightLeg.showModel = false;
     	bootR1.showModel = bootR2.showModel = false;
     	bootL1.showModel = bootL2.showModel = false;
-    	if (mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entityliving)
+    	if (mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid != null
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid.isInstance(entityliving)
     			&& !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		boolean isWorkingDelay = Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isWorkingDelay);
     		if (isWorkingDelay) {
 //-@-125
-    			int maidMode = (Integer)Modchu_Reflect.invokeMethod(mod_Modchu_ModchuLib.LMM_EntityLittleMaid, "getMaidModeInt", entityliving);
+    			int maidMode = (Integer)Modchu_Reflect.invokeMethod(mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid, "getMaidModeInt", entityliving);
     			int i = 0x00C0;
     			int i1 = 0x0021;
 //@-@125
