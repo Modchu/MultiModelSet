@@ -680,34 +680,6 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
-    	if (entity != null
-    			&& getCapsValue(entityCaps, entityCaps.caps_currentEquippedItem) != null) {
-    		//ínê}ÇéùÇ¡ÇƒÇ¢ÇÈéû
-    		rightArm.rotationPointX = 0.0F;
-    		rightArm.rotationPointY = 1.5F;
-    		rightArm.rotationPointZ = 0.0F;
-    		leftArm.rotationPointX = -9.5F;
-    		leftArm.rotationPointY = 2.0F;
-    		leftArm.rotationPointZ = 0.0F;
-    	} else {
-    		//ëféËéû
-    		rightArm.rotateAngleX = 0.0F;
-    		rightArm.rotateAngleY = 0.0F;
-    		rightArm.rotateAngleZ = 0.5F;
-    		leftArm.rotateAngleX = 0.0F;
-    		leftArm.rotateAngleY = 0.0F;
-    		leftArm.rotateAngleZ = 0.0F;
-
-    		rightArm.rotationPointY = 4.0F;
-    		leftArm.rotationPointX = 4.0F;
-    		leftArm.rotationPointY = 8.0F;
-    		leftArm.rotationPointZ = -2.0F;
-    	}
-    }
-
-    @Override
     public void actionInit1(MMM_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	boolean b = true;

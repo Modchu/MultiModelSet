@@ -388,31 +388,29 @@ public class MultiModel_QB extends MultiModel {
 
     @Override
     public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    	super.setRotationAnglesfirstPerson(f, f1, f2, f3, f4, f5, entityCaps);
+    	MMM_ModelRenderer arm = getBipedRightArm(entityCaps);
     	Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entity != null
     			&& getCapsValue(entityCaps, entityCaps.caps_currentEquippedItem) != null) {
     		//ínê}ÇéùÇ¡ÇƒÇ¢ÇÈéû
-    		bipedRightArm.rotationPointX = -8.0F;
-    		bipedRightArm.rotationPointY = 5.5F;
-    		bipedRightArm.rotationPointZ = 0.0F;
-    		bipedLeftArm.rotationPointX = -7.5F;
-    		bipedLeftArm.rotationPointY = 5.5F;
-    		bipedLeftArm.rotationPointZ = 0.0F;
+    		if (dominantArm == 0) {
+    			arm.rotationPointX = -8.0F;
+    			arm.rotationPointY = 5.5F;
+    			arm.rotationPointZ = 0.0F;
+    		} else {
+    			arm.rotationPointX = -7.5F;
+    			arm.rotationPointY = 5.5F;
+    			arm.rotationPointZ = 0.0F;
+    		}
     	} else {
     		//ëféËéû
-    		//setOnGround(((EntityPlayer) entity).getSwingProgress(1.0F));
-    		bipedRightArm.rotateAngleX = 0.0F;
-    		bipedRightArm.rotateAngleY = 0.0F;
-    		bipedRightArm.rotateAngleZ = 0.5F;
-    		bipedLeftArm.rotateAngleX = 0.0F;
-    		bipedLeftArm.rotateAngleY = 0.0F;
-    		bipedLeftArm.rotateAngleZ = 0.0F;
-
-    		bipedRightArm.rotationPointY = 4.0F;
-    		bipedRightArm.rotationPointX = -4.0F;
-    		bipedLeftArm.rotationPointX = 4.0F;
-    		bipedLeftArm.rotationPointY = 8.0F;
-    		bipedLeftArm.rotationPointZ = -2.0F;
+    		if (dominantArm == 0) {
+    			arm.rotationPointY += 3.0F;
+    		} else {
+    			arm.rotationPointX -= 4.0F;
+    			arm.rotationPointY += 1.0F;
+    		}
     	}
     }
 
