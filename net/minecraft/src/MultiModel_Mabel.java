@@ -394,13 +394,13 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public float getHeight()
+    public float getHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 1.35F;
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.6F;
     }

@@ -636,40 +636,40 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-	public float getHeight()
+	public float getHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 1.99F;
     }
 
     @Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.6F;
     }
 
     @Override
-	public float getRidingHeight()
+	public float getRidingHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 0.99F;
     }
 
 	@Override
-	public float getyOffset() {
+	public float getyOffset(MMM_IModelCaps pEntityCaps) {
 	    return 1.81F;
 	}
 
 	@Override
-	public float getRidingyOffset() {
+	public float getRidingyOffset(MMM_IModelCaps pEntityCaps) {
 	    return 1.61F;
 	}
 
 	@Override
-	public float getMountedYOffset() {
+	public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
 		return 0.7F;
 	}
 
 	@Override
-	public double getSittingyOffset() {
+	public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
 		return -0.5D;
 	}
 
@@ -683,6 +683,12 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     	return leftArm;
+    }
+
+    @Override
+    public MMM_ModelRenderer getNotDominantArm(MMM_IModelCaps entityCaps) {
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_dominantArm, getCapsValue(caps_armorType)) == 0) return leftArm;
+    	return rightArm;
     }
 
     @Override

@@ -494,23 +494,23 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     }
 
     @Override
-    public float getHeight() {
+    public float getHeight(MMM_IModelCaps pEntityCaps) {
     	return 1.58F;
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.5F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 }

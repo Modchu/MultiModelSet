@@ -362,29 +362,29 @@ public class MultiModel_Petit extends MultiModel {
     }
 
     @Override
-    public float getHeight()
+    public float getHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 0.9F;
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.5F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.7F;
     }
 
     @Override
-    public float getRidingyOffset() {
+    public float getRidingyOffset(MMM_IModelCaps pEntityCaps) {
     	return getyOffset() + 0.4F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.6F;
     }
 

@@ -489,27 +489,27 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public float getHeight() {
+    public float getHeight(MMM_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 
     @Override
-    public float getWidth() {
+    public float getWidth(MMM_IModelCaps pEntityCaps) {
     	return 0.7F;
     }
 
     @Override
-    public float getRidingHeight() {
+    public float getRidingHeight(MMM_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.47F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 

@@ -144,13 +144,13 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public float getHeight()
+	public float getHeight(MMM_IModelCaps pEntityCaps)
 	{
 		return 1.35F;
 	}
 
 	@Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}

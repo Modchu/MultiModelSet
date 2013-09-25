@@ -218,13 +218,13 @@ public class MultiModel_ExtraArms extends MultiModel {
     	};
     	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
-
+/*
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.8F;
     }
-
+*/
     @Override
     public String getUsingTexture() {
     	return null;

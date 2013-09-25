@@ -727,13 +727,13 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
 	@Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}
 
 	@Override
-	public float getyOffset() {
+	public float getyOffset(MMM_IModelCaps pEntityCaps) {
 	    return 1.07F;
 	}
 

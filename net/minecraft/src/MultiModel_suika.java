@@ -177,7 +177,7 @@ public class MultiModel_suika extends MultiModel {
     	Tuno1.rotateAngleY = Tuno2.rotateAngleY = Tuno3.rotateAngleY = Tuno4.rotateAngleY = 1.570796F;
     }
 
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.8F;
     }
