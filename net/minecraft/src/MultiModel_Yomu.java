@@ -704,7 +704,7 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
     @Override
 	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 
 		float f4;
@@ -718,6 +718,7 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 
 		float f3 = (float)entityliving.ticksExisted + f4 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
 		int IdIndex;
+		float renderYawOffset = (Float) Modchu_Reflect.getFieldObject("EntityLivingBase", "field_70761_aq", "renderYawOffset", entityliving);
 		if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isOpenInv, entityliving)) {
 			try
 			{
@@ -729,9 +730,9 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 			{
 				IdList.add(entityliving.entityId);
 				AngleYList.add(HanreiC.rotateAngleY);
-				YawOffsetList.add(entityliving.renderYawOffset);//renderYawOffset);
+				YawOffsetList.add(renderYawOffset);//renderYawOffset);
 				IdIndex=IdList.indexOf(entityliving.entityId);
-				AY=entityliving.renderYawOffset;//renderYawOffset;
+				AY=renderYawOffset;//renderYawOffset;
 			}
 			finally
 			{
@@ -749,12 +750,12 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 				IdList.add(entityliving.entityId);
 				AngleYList.add(HanreiC.rotateAngleY);
 			//	YawOffsetList.add(entityliving.renderYawOffset);
-				YawOffsetList.add(entityliving.renderYawOffset);
+				YawOffsetList.add(renderYawOffset);
 				IdIndex=IdList.indexOf(entityliving.entityId);
-				AY=entityliving.renderYawOffset;//renderYawOffset;
+				AY=renderYawOffset;//renderYawOffset;
 			}
 
-			float r1=(entityliving.renderYawOffset)/180F*(float)Math.PI;
+			float r1=(renderYawOffset)/180F*(float)Math.PI;
 
 			float move=r1-AY/180F*(float)Math.PI;
 
@@ -773,14 +774,14 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 			}
 			Hanrei4.rotateAngleY=Hanrei5.rotateAngleY=HanreiC.rotateAngleY;
 			AngleYList.set(IdIndex, HanreiC.rotateAngleY);
-			YawOffsetList.set(IdIndex, entityliving.renderYawOffset);
+			YawOffsetList.set(IdIndex, renderYawOffset);
 		}
 	}
 
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
 	{
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
-		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entity != null) ;else return;
 		shiftArray(HanreiC.rotationPointX, HanreiC.rotationPointY, HanreiC.rotationPointZ);
 
@@ -833,7 +834,7 @@ public class MultiModel_Yomu extends MultiModel_SR2 {
 	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
+    	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt1.setRotateAngleDeg(-118F, 113F, 42F);
 		Skirt2.setRotateAngleDeg(-65F, 113F, 42F);
 		Skirt3.setRotateAngleDeg(-122F, 158F, 42F);

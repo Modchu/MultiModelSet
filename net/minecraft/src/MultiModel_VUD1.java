@@ -364,80 +364,80 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     	Ribon3_T.setRotateAngleZ(-((float)Math.PI / 2F));
     	Ribon3_T.setRotateAngleY(0.174533F);
     	Headwear_F = new Modchu_ModelRenderer(this, 24, 16);
-    	Headwear_F.addPlate(-4F, 0.0F, 0.0F, 8, 4, 0, f);
+    	Headwear_F.addPlate(-4F, 0.0F, 0.0F, 8, 4, 16, f);
     	Headwear_F.setRotationPoint(0.0F, 0.0F, -4F);
     	Headwear_B = new Modchu_ModelRenderer(this, 24, 20);
-    	Headwear_B.addPlate(-4F, 0.0F, 0.0F, 8, 4, 4, f);
+    	Headwear_B.addPlate(-4F, 0.0F, 0.0F, 8, 4, 20, f);
     	Headwear_B.setRotationPoint(0.0F, 0.0F, 4F);
     	Headwear_R = new Modchu_ModelRenderer(this, 44, 0);
-    	Headwear_R.addPlate(0.0F, 0.0F, 0.0F, 4, 4, 5, f);
+    	Headwear_R.addPlate(0.0F, 0.0F, 0.0F, 4, 4, 17, f);
     	Headwear_R.setRotationPoint(-4F, 0.0F, 0.0F);
     	Headwear_L = new Modchu_ModelRenderer(this, 44, 4);
-    	Headwear_L.addPlate(0.0F, 0.0F, 0.0F, 4, 4, 1, f);
+    	Headwear_L.addPlate(0.0F, 0.0F, 0.0F, 4, 4, 21, f);
     	Headwear_L.setRotationPoint(4F, 0.0F, 0.0F);
     	Shaggy_F = new Modchu_ModelRenderer(this, 34, 0);
-    	Shaggy_F.addPlate(-5F, 0.0F, 0.0F, 10, 4, 0, f);
+    	Shaggy_F.addPlate(-5F, 0.0F, 0.0F, 10, 4, 16, f);
     	Shaggy_F.setRotationPoint(0.0F, -1.0F, -4F);
     	Shaggy_F.setRotateAngleX(-0.4F);
     	shaggyB = new Modchu_ModelRenderer(this, 24, 0);
-    	shaggyB.addPlate(-5F, 0.0F, 0.0F, 10, 4, 4, f);
+    	shaggyB.addPlate(-5F, 0.0F, 0.0F, 10, 4, 20, f);
     	shaggyB.setRotationPoint(0.0F, -1.0F, 4F);
     	shaggyB.setRotateAngleX(0.4F);
     	shaggyR = new Modchu_ModelRenderer(this, 24, 4);
-    	shaggyR.addPlate(0.0F, 0.0F, -5F, 10, 4, 5, f);
+    	shaggyR.addPlate(0.0F, 0.0F, -5F, 10, 4, 17, f);
     	shaggyR.setRotationPoint(-4F, -1.0F, 0.0F);
     	shaggyR.setRotateAngleZ(0.4F);
     	shaggyL = new Modchu_ModelRenderer(this, 34, 4);
-    	shaggyL.addPlate(0.0F, 0.0F, -5F, 10, 4, 1, f);
+    	shaggyL.addPlate(0.0F, 0.0F, -5F, 10, 4, 21, f);
     	shaggyL.setRotationPoint(4F, -1.0F, 0.0F);
     	shaggyL.setRotateAngleZ(-0.4F);
     	sidetailUpperR = new Modchu_ModelRenderer(this);
     	sidetailUpperL = new Modchu_ModelRenderer(this);
     	LongHair_F = new Modchu_ModelRenderer(this, 34, 32);
-    	LongHair_F.addPlate(-5F, 0.0F, 0.0F, 10, 8, 0, f);
+    	LongHair_F.addPlate(-5F, 0.0F, 0.0F, 10, 8, 16, f);
     	LongHair_F.setRotationPoint(0.0F, -1.0F, -4F);
     	LongHair_F.setRotateAngleX(-0.202458F);
     	LongHair_B = new Modchu_ModelRenderer(this, 24, 32);
-    	LongHair_B.addPlate(-5F, 0.0F, 0.0F, 10, 8, 4, f);
+    	LongHair_B.addPlate(-5F, 0.0F, 0.0F, 10, 8, 20, f);
     	LongHair_B.setRotationPoint(0.0F, -1.0F, 4F);
     	LongHair_B.setRotateAngleX(0.202458F);
     	LongHair_R = new Modchu_ModelRenderer(this, 44, 32);
-    	LongHair_R.addPlate(0.0F, 0.0F, -5F, 10, 8, 5, f);
+    	LongHair_R.addPlate(0.0F, 0.0F, -5F, 10, 8, 17, f);
     	LongHair_R.setRotationPoint(-4F, -1.0F, 0.0F);
     	LongHair_R.setRotateAngleZ(0.202458F);
     	LongHair_L = new Modchu_ModelRenderer(this, 54, 32);
-    	LongHair_L.addPlate(0.0F, 0.0F, -5F, 10, 8, 1, f);
+    	LongHair_L.addPlate(0.0F, 0.0F, -5F, 10, 8, 21, f);
     	LongHair_L.setRotationPoint(4F, -1.0F, 0.0F);
     	LongHair_L.setRotateAngleZ(-0.202458F);
     	sensor1 = new Modchu_ModelRenderer(this, 0, 0);
-    	sensor1.addPlate(-8F, -4F, 0.0F, 8, 4, 0, f);
+    	sensor1.addPlate(-8F, -4F, 0.0F, 8, 4, 16, f);
     	sensor1.setRotationPoint(0.0F, -8F, 0.0F);
     	sensor2 = new Modchu_ModelRenderer(this, 0, 4);
-    	sensor2.addPlate(0.0F, -4F, 0.0F, 8, 4, 0, f);
+    	sensor2.addPlate(0.0F, -4F, 0.0F, 8, 4, 16, f);
     	sensor2.setRotationPoint(0.0F, -8F, 0.0F);
     	sensor3 = new Modchu_ModelRenderer(this, 0, 20);
-    	sensor3.addPlate(0.0F, -4F, -0F, 8, 4, 1, f);
+    	sensor3.addPlate(0.0F, -4F, -0F, 8, 4, 21, f);
     	sensor3.setRotationPoint(0.0F, -8F, 0.0F);
     	sensor4 = new Modchu_ModelRenderer(this, 0, 16);
-    	sensor4.addPlate(0.0F, -4F, -8F, 8, 4, 1, f);
+    	sensor4.addPlate(0.0F, -4F, -8F, 8, 4, 21, f);
     	sensor4.setRotationPoint(0.0F, -8F, 0.0F);
     	eyeR = new Modchu_ModelRenderer(this, 42, 19);
-    	eyeR.addPlate(-4F, -5F, -4.001F, 4, 4, 0, f);
+    	eyeR.addPlate(-4F, -5F, -4.001F, 4, 4, 16, f);
     	eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	eyeL = new Modchu_ModelRenderer(this, 46, 19);
-    	eyeL.addPlate(0.0F, -5F, -4.001F, 4, 4, 0, f);
+    	eyeL.addPlate(0.0F, -5F, -4.001F, 4, 4, 16, f);
     	eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Cheek_R = new Modchu_ModelRenderer(this, 32, 8);
-    	Cheek_R.addPlate(-4.5F, -4.5F, -4.002F, 4, 4, 0, f);
+    	Cheek_R.addPlate(-4.5F, -4.5F, -4.002F, 4, 4, 16, f);
     	Cheek_R.setRotationPoint(0.0F, 1.0F, 0.0F);
     	Cheek_L = new Modchu_ModelRenderer(this, 32, 19);
-    	Cheek_L.addPlate(0.5F, -4.5F, -4.002F, 4, 4, 0, f);
+    	Cheek_L.addPlate(0.5F, -4.5F, -4.002F, 4, 4, 16, f);
     	Cheek_L.setRotationPoint(0.0F, 1.0F, 0.0F);
     	Body_F = new Modchu_ModelRenderer(this, 56, 16);
-    	Body_F.addPlate(-2.5F, 0.0F, -2.001F, 5, 7, 0, f);
+    	Body_F.addPlate(-2.5F, 0.0F, -2.001F, 5, 7, 16, f);
     	Body_F.setRotationPoint(0.0F, -3.5F, 0.0F);
     	Body_B = new Modchu_ModelRenderer(this, 18, 44);
-    	Body_B.addPlate(-2.5F, 0.0F, 2.001F, 5, 7, 0, f);
+    	Body_B.addPlate(-2.5F, 0.0F, 2.001F, 5, 7, 20, f);
     	Body_B.setRotationPoint(0.0F, -3.5F, 0.0F);
     	Breast1 = new Modchu_ModelRenderer(this, 18, 52);
     	Breast1.addBox(0.0F, -2.5F, 0.0F, 2, 5, 1, f);
@@ -579,33 +579,32 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 8, 18);
-    	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);
-    	SkirtTop.setRotationPoint(-4.0F, -4.0F, 4.0F);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.setRotationPoint(-4.0F, -4.0F, -4.0F);
     	if (Skirt != null) Skirt.addChild(SkirtTop);
 
     	//ふんわりスカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 8, 24);
-    	((Modchu_ModelRenderer) SkirtFront).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);
-    	SkirtFront.setRotationPoint(0.0F, 8.0F, 0.0F);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//ふんわりスカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 2, 24);
-    	((Modchu_ModelRenderer) SkirtRight).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 1);
-    	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.setRotationPoint(8.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//ふんわりスカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 16, 24);
-    	((Modchu_ModelRenderer) SkirtLeft).setMirror(true);
-    	((Modchu_ModelRenderer) SkirtLeft).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 1);
-    	SkirtLeft.setRotationPoint(8.0F, 8.0F, 0.0F);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//ふんわりスカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 22, 24);
-    	((Modchu_ModelRenderer) SkirtBack).addPlate(0.0F, 0.0F, 0.0F, 8, 8, 0);
-    	SkirtBack.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.setRotationPoint(0.0F, 0.0F, 8.0F);
     	SkirtTop.addChild(SkirtBack);
     	if (Skirt != null) ((Modchu_ModelRenderer) Skirt).setVisible(false);
     }
@@ -625,11 +624,15 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     @Override
     public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
+    	Number.setRotationPoint(-2.0F, 1.0F, 0.0F);
 
     	SideTailR_R.setRotateAngleX(-((Modchu_ModelRenderer) bipedHead).getRotateAngleX());
     	SideTailR_L.setRotateAngleX(-((Modchu_ModelRenderer) bipedHead).getRotateAngleX());
     	DropTail.setRotateAngleX(0.1745292F - ((Modchu_ModelRenderer) bipedHead).getRotateAngleX());
     	sensor1.rotationPointY = -8.0F;
+    	sensor2.rotationPointY = -8.0F;
+    	sensor3.rotationPointY = -9.0F;
+    	sensor4.rotationPointY = -8.0F;
     	//if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) == 2) Skirt.rotationPointY -= 2.0F;
     	Skirt.rotationPointZ = 0.0F;
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
@@ -665,10 +668,10 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     		Tail_U.setRotateAngleX(0.0F);
     		Tail_B.setRotateAngleX(-((Modchu_ModelRenderer) bipedHead).getRotateAngleX() + ((Modchu_ModelRenderer) Skirt).getRotateAngleX());
     	}
-    	EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    	Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entity != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entity)) {
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid != null
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid.isInstance(entity)) {
     		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     			setCapsValue(caps_visible, Negi1, true);
     			setCapsValue(caps_visible, Negi2, true);

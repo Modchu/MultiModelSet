@@ -164,53 +164,54 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	Skirt_L.addBox(-1.31F, 0.19F, -2F, 3, 2, 4, f + 0.2F);
     	Skirt_L.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Skirt_RF = new Modchu_ModelRenderer(this, 26, 44);
-    	Skirt_RF.addPlate(-2.69F, 0.0F, -3F, 5, 3, 0, f - 0.798F);
-    	Skirt_RF.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_RF.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYFront, f - 0.798F);
+    	Skirt_RF.setRotationPoint(-2.71F, 0.0F, -3.0F);
     	Skirt_RB = new Modchu_ModelRenderer(this, 37, 44);
-    	Skirt_RB.addPlate(-2.69F, 0.0F, 3F, 5, 3, 4, f - 0.798F);
-    	Skirt_RB.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_RB.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYBack, f - 0.798F);
+    	Skirt_RB.setRotationPoint(0.0F, 0.0F, 6.0F);
     	Skirt_RR = new Modchu_ModelRenderer(this, 20, 44);
-    	Skirt_RR.addPlate(-2.69F, 0.0F, -3F, 6, 3, 5, f - 0.798F);
-    	Skirt_RR.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_RR.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYRight, f - 0.798F);
+    	Skirt_RR.setRotationPoint(3.39F, 0.0F, 0.0F);
     	Skirt_RL = new Modchu_ModelRenderer(this, 31, 44);
-    	Skirt_RL.addPlate(2.31F, 0.0F, -3F, 6, 3, 1, f - 0.798F);
-    	Skirt_RL.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_RL.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYLeft, f - 0.798F);
+    	Skirt_RL.setRotationPoint(1.61F, 0.0F, 0.0F);
     	Skirt_LF = new Modchu_ModelRenderer(this, 48, 44);
-    	Skirt_LF.addPlate(-2.31F, 0.0F, -3F, 5, 3, 0, f - 0.798F);
-    	Skirt_LF.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_LF.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYFront, f - 0.798F);
+    	Skirt_LF.setRotationPoint(-2.29F, 0.0F, -3.0F);
     	Skirt_LB = new Modchu_ModelRenderer(this, 59, 44);
-    	Skirt_LB.addPlate(-2.31F, 0.0F, 3F, 5, 3, 4, f - 0.798F);
-    	Skirt_LB.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_LB.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYBack, f - 0.798F);
+    	Skirt_LB.setRotationPoint(0.0F, 0.0F, 6.0F);
     	Skirt_LR = new Modchu_ModelRenderer(this, 54, 44);
-    	Skirt_LR.addPlate(-1.31F, 0.0F, -3F, 6, 3, 5, f - 0.798F);
-    	Skirt_LR.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_LR.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYRight, f - 0.798F);
+    	Skirt_LR.setRotationPoint(3.39F, 0.0F, 0.0F);
     	Skirt_LL = new Modchu_ModelRenderer(this, 53, 44);
-    	Skirt_LL.addPlate(2.69F, 0.0F, -3F, 6, 3, 1, f - 0.798F);
-    	Skirt_LL.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Skirt_LL.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYLeft, f - 0.798F);
+    	Skirt_LL.setRotationPoint(1.61F, 0.0F, 0.0F);
     	Arm_RF = new Modchu_ModelRenderer(this, 32, 47);
-    	Arm_RF.addPlate(-2F, 3.0F, -2F, 4, 3, 0, f - 0.999F);
-    	Arm_RF.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Arm_RF.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYFront, f - 0.999F);
+    	Arm_RF.setRotationPoint(-2.0F, 3.0F, -2.0F);
     	Arm_RB = new Modchu_ModelRenderer(this, 36, 47);
-    	Arm_RB.addPlate(-2F, 3.0F, 2.0F, 4, 3, 4, f - 0.999F);
-    	Arm_RB.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Arm_RB.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYBack, f - 0.999F);
+    	Arm_RB.setRotationPoint(0.0F, 0.0F, 4.0F);
     	Arm_RR = new Modchu_ModelRenderer(this, 40, 47);
-    	Arm_RR.addPlate(-2F, 3.0F, -2F, 4, 3, 5, f - 0.999F);
+    	Arm_RR.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYRight, f - 0.999F);
     	Arm_RR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Arm_RL = new Modchu_ModelRenderer(this, 44, 47);
-    	Arm_RL.addPlate(2.0F, 3.0F, -2F, 4, 3, 1, f - 0.999F);
-    	Arm_RL.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Arm_RL.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYLeft, f - 0.999F);
+    	Arm_RL.setRotationPoint(4.0F, 0.0F, 0.0F);
+
     	Arm_LF = new Modchu_ModelRenderer(this, 48, 47);
-    	Arm_LF.addPlate(-2F, 3.0F, -2F, 4, 3, 0, f - 0.999F);
-    	Arm_LF.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Arm_LF.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYFront, f - 0.999F);
+    	Arm_LF.setRotationPoint(-2.0F, 3.0F, -2.0F);
     	Arm_LB = new Modchu_ModelRenderer(this, 52, 47);
-    	Arm_LB.addPlate(-2F, 3.0F, 2.0F, 4, 3, 4, f - 0.999F);
-    	Arm_LB.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Arm_LB.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYBack, f - 0.999F);
+    	Arm_LB.setRotationPoint(0.0F, 0.0F, 4.0F);
     	Arm_LR = new Modchu_ModelRenderer(this, 56, 47);
-    	Arm_LR.addPlate(-2F, 3.0F, -2F, 4, 3, 5, f - 0.999F);
+    	Arm_LR.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYRight, f - 0.999F);
     	Arm_LR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Arm_LL = new Modchu_ModelRenderer(this, 60, 47);
-    	Arm_LL.addPlate(2F, 3.0F, -2F, 4, 3, 1, f - 0.999F);
-    	Arm_LL.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	Arm_LL.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYLeft, f - 0.999F);
+    	Arm_LL.setRotationPoint(4.0F, 0.0F, 0.0F);
     	Parka_1 = new Modchu_ModelRenderer(this, 13, 32);
     	Parka_1.addBox(-3.5F, 0.0F, 0.0F, 7, 6, 1, f - 0.5F);
     	Parka_1.setRotationPoint(0.0F, -3.0F, 2.0F);
@@ -226,10 +227,10 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	Parka_B.setRotationPoint(0.0F, 3.5F, 4.5F);
     	Parka_R = new Modchu_ModelRenderer(this, 24, 39);
     	Parka_R.addPlate(0.0F, -2.5F, -4.5F, 9, 5, 5, f - 2.495F);
-    	Parka_R.setRotationPoint(-5.5F, 3.5F, 0.0F);
+    	Parka_R.setRotationPoint(-1.51F, 3.5F, 0.0F);
     	Parka_L = new Modchu_ModelRenderer(this, 44, 39);
     	Parka_L.addPlate(0.0F, -2.5F, -4.5F, 9, 5, 1, f - 2.495F);
-    	Parka_L.setRotationPoint(5.5F, 3.5F, 0.0F);
+    	Parka_L.setRotationPoint(1.51F, 3.5F, 0.0F);
     	RabbitEar_RB1 = new Modchu_ModelRenderer(this, 0, 44);
     	RabbitEar_RB1.addBox(-1.5F, -0.25F, -0.25F, 3, 5, 1, f - 0.75F);
     	RabbitEar_RB1.setRotationPoint(-2.5F, 3.0F, 1.0F);
@@ -361,19 +362,19 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	Accessory_HB2.addPlate(-2.5F, -2.5F, -3.8F, 5, 5, 0, f - 1.85F);
     	Accessory_HB2.setRotationPoint(0.0F, 0.0F, 0.0F);
     	ArmAccessory_RF = new Modchu_ModelRenderer(this, 16, 47);
-    	ArmAccessory_RF.addPlate(-2.0F, 0.0F, -2F, 4, 3, 0, f - 0.95F);
+    	ArmAccessory_RF.addPlate(-2.0F, 0.0F, -2F, 4, 3, MMM_ModelPlate.planeXYFront, f - 0.95F);
     	ArmAccessory_RF.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_RB = new Modchu_ModelRenderer(this, 20, 47);
-    	ArmAccessory_RB.addPlate(-2.0F, 0.0F, 2.0F, 4, 3, 4, f - 0.95F);
+    	ArmAccessory_RB.addPlate(-2.0F, 0.0F, 2.0F, 4, 3, MMM_ModelPlate.planeXYBack, f - 0.95F);
     	ArmAccessory_RB.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_RR = new Modchu_ModelRenderer(this, 24, 47);
-    	ArmAccessory_RR.addPlate(0.1F, 0.0F, -2F, 4, 3, 5, f - 0.95F);
+    	ArmAccessory_RR.addPlate(0.1F, 0.0F, -2F, 4, 3, MMM_ModelPlate.planeZYRight, f - 0.95F);
     	ArmAccessory_RR.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_RL = new Modchu_ModelRenderer(this, 28, 47);
-    	ArmAccessory_RL.addPlate(-0.1F, 0.0F, -2F, 4, 3, 1, f - 0.95F);
+    	ArmAccessory_RL.addPlate(-0.1F, 0.0F, -2F, 4, 3, MMM_ModelPlate.planeZYLeft, f - 0.95F);
     	ArmAccessory_RL.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_R = new Modchu_ModelRenderer(this, 45, 36);
-    	ArmAccessory_R.addPlate(0.0F, 0.0F, 0.0F, 3, 3, 0, f - 0.95F);
+    	ArmAccessory_R.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeXYFront, f - 0.95F);
     	ArmAccessory_R.setRotationPoint(-1.5F, 0.36F, -1.97F);
     	ArmAccessory_R.setRotateAngleY(0.01745292F);
     	Belt_R = new Modchu_ModelRenderer(this, 0, 57);
@@ -406,9 +407,6 @@ public class MultiModel_Yukari extends MultiModel_Aug
 
     	//不要パーツ（削除するとエラー）
     	shaggyB = new Modchu_ModelRenderer(this, 32, 0);
-    	shaggyB.addPlate(-3.5F, 0.0F, 0.0F, 7, 2, 4, f);
-    	shaggyB.setRotationPoint(0.0F, -8.0F, 4F);
-    	shaggyB.setRotateAngleX(0.1745292F);
     	//ここまで
 
 		Shaggy_B1 = new Modchu_ModelRenderer(this, 32, 0);
@@ -434,9 +432,6 @@ public class MultiModel_Yukari extends MultiModel_Aug
 
     	//不要パーツ（削除するとエラー）
     	shaggyR = new Modchu_ModelRenderer(this, 40, 0);
-    	shaggyR.addPlate(0.0F, 0.0F, -4F, 8, 2, 5, f);
-    	shaggyR.setRotationPoint(-4F, -8.0F, 0.0F);
-    	shaggyR.setRotateAngleZ(0.1745292F);
     	//ここまで
 
 		Shaggy_R1 = new Modchu_ModelRenderer(this, 40, 0);
@@ -462,9 +457,6 @@ public class MultiModel_Yukari extends MultiModel_Aug
 
     	//不要パーツ（削除するとエラー）
     	shaggyL = new Modchu_ModelRenderer(this, 24, 0);
-    	shaggyL.addPlate(0.0F, 0.0F, -4F, 8, 2, 1, f);
-    	shaggyL.setRotationPoint(4F, -8.0F, 0.0F);
-    	shaggyL.setRotateAngleZ(-0.1745292F);
     	//ここまで
 
 		Shaggy_L1 = new Modchu_ModelRenderer(this, 24, 0);
@@ -564,21 +556,21 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	bipedRightLeg.addChild(Skirt_R);
     	bipedLeftLeg.addChild(Skirt_L);
     	Skirt_R.addChild(Skirt_RF);
-    	Skirt_R.addChild(Skirt_RB);
-    	Skirt_R.addChild(Skirt_RR);
-    	Skirt_R.addChild(Skirt_RL);
+    	Skirt_RF.addChild(Skirt_RB);
+    	Skirt_RF.addChild(Skirt_RR);
+    	Skirt_RF.addChild(Skirt_RL);
     	Skirt_L.addChild(Skirt_LF);
-    	Skirt_L.addChild(Skirt_LB);
-    	Skirt_L.addChild(Skirt_LR);
-    	Skirt_L.addChild(Skirt_LL);
+    	Skirt_LF.addChild(Skirt_LB);
+    	Skirt_LF.addChild(Skirt_LR);
+    	Skirt_LF.addChild(Skirt_LL);
     	bipedRightArm.addChild(Arm_RF);
-    	bipedRightArm.addChild(Arm_RB);
-    	bipedRightArm.addChild(Arm_RR);
-    	bipedRightArm.addChild(Arm_RL);
+    	Arm_RF.addChild(Arm_RB);
+    	Arm_RF.addChild(Arm_RR);
+    	Arm_RF.addChild(Arm_RL);
     	bipedLeftArm.addChild(Arm_LF);
-    	bipedLeftArm.addChild(Arm_LB);
-    	bipedLeftArm.addChild(Arm_LR);
-    	bipedLeftArm.addChild(Arm_LL);
+    	Arm_LF.addChild(Arm_LB);
+    	Arm_LF.addChild(Arm_LR);
+    	Arm_LF.addChild(Arm_LL);
     	bipedBody.addChild(Parka_1);
     	Parka_1.addChild(Parka_2);
     	Parka_1.addChild(RabbitEar_RB1);
@@ -679,7 +671,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     @Override
     public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
@@ -980,6 +972,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	((Modchu_ModelRenderer) Breast_RB).setVisible(b);
     	((Modchu_ModelRenderer) Breast_LB).setVisible(b);
     	Breast_C.rotationPointZ = -2.35F;
+    	//Skirt_LR.setRotationPoint(3.39F, 0.0F, 0.0F);
     }
 
     @Override

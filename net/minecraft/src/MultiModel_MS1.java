@@ -129,35 +129,36 @@ public class MultiModel_MS1 extends MultiModel_SR2
 
 	public void skirtFloatsInit(float f, float f1) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	textureWidth = 64;
+    	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 6, 16);
-    	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 7, 6, 0);
-    	SkirtTop.setRotationPoint(-4.0F, -4.0F, 4.0F);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 7, 6, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.setRotationPoint(-3.5F, -2.0F, -3.0F);
     	Skirt.addChild(SkirtTop);
 
     	//ふんわりスカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 6, 22);
-    	((Modchu_ModelRenderer) SkirtFront).addPlate(0.0F, 0.0F, 0.0F, 7, 7, 0);
-    	SkirtFront.setRotationPoint(0.0F, 8.0F, 0.0F);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 7, 7, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//ふんわりスカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 0, 22);
-    	((Modchu_ModelRenderer) SkirtRight).addPlate(0.0F, 0.0F, 0.0F, 6, 7, 1);
-    	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 6, 7, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.setRotationPoint(7.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//ふんわりスカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 13, 22);
-    	((Modchu_ModelRenderer) SkirtLeft).setMirror(true);
-    	((Modchu_ModelRenderer) SkirtLeft).addPlate(0.0F, 0.0F, 0.0F, 6, 7, 1);
-    	SkirtLeft.setRotationPoint(8.0F, 8.0F, 0.0F);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 6, 7, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//ふんわりスカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 18, 22);
-    	((Modchu_ModelRenderer) SkirtBack).addPlate(0.0F, 0.0F, 0.0F, 7, 7, 0);
-    	SkirtBack.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 7, 7, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.setRotationPoint(0.0F, 0.0F, 6.0F);
     	SkirtTop.addChild(SkirtBack);
     	setCapsValue(caps_visible, Skirt, false);
     }
@@ -188,22 +189,6 @@ public class MultiModel_MS1 extends MultiModel_SR2
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)) {
     		Skirt.rotateAngleX += 0.3F;
     	}
-    }
-
-    @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	super.skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
-    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
-    	SkirtTop.setRotationPoint(-3.5F, -2.5F, 3.0F);
-    	SkirtFront.setRotationPoint(0.0F, 6.0F, 0.0F);
-    	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
-    	SkirtLeft.setRotationPoint(7.0F, 6.0F, 0.0F);
-    	SkirtBack.setRotationPoint(0.0F, 0.0F, 0.0F);
-    	SkirtFront.rotationPointX += motionY * 4.0F;
-    	SkirtBack.rotationPointX += motionY * 4.0F;
-    	SkirtRight.rotationPointY += motionY * 4.0F;
-    	SkirtLeft.rotationPointY -= motionY * 4.0F;
     }
 
 	@Override

@@ -351,6 +351,42 @@ public class MultiModel_st extends MultiModel_SR2
 										leftLeg.isHidden = leftLeg2.isHidden = true;
 	}
 
+	public void skirtFloatsInit(float f, float f1) {
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
+    	textureWidth = 64;
+    	textureHeight = 64;
+    	//ふんわりスカート上
+    	SkirtTop = new Modchu_ModelRenderer(this, 5,20);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 7, 5, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.setRotationPoint(-3.5F, -2.0F, -2.5F);
+    	Skirt.addChild(SkirtTop);
+
+    	//ふんわりスカート前
+    	SkirtFront = new Modchu_ModelRenderer(this, 5, 25);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 7, 4, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtTop.addChild(SkirtFront);
+
+    	//ふんわりスカート右
+    	SkirtRight = new Modchu_ModelRenderer(this, 0, 25);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 5, 4, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.setRotationPoint(7.0F, 0.0F, 0.0F);
+    	SkirtTop.addChild(SkirtRight);
+
+    	//ふんわりスカート左
+    	SkirtLeft = new Modchu_ModelRenderer(this, 19, 25);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 5, 4, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtTop.addChild(SkirtLeft);
+
+    	//ふんわりスカート後ろ
+    	SkirtBack = new Modchu_ModelRenderer(this, 12, 25);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 7, 4, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.setRotationPoint(0.0F, 0.0F, 5.0F);
+    	SkirtTop.addChild(SkirtBack);
+    	setCapsValue(caps_visible, Skirt, false);
+    }
+
     @Override
     public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
     {

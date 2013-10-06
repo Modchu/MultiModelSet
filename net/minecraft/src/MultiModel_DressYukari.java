@@ -99,7 +99,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	@Override
 	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 		IdOffset=entityliving.entityId;
 		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger))
@@ -111,7 +111,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
-		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entity != null) ;else return;
 
 		float t;
@@ -144,13 +144,13 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public float getHeight()
+	public float getHeight(MMM_IModelCaps pEntityCaps)
 	{
 		return 1.35F;
 	}
 
 	@Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}

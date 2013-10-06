@@ -231,7 +231,7 @@ public class MultiModel_Shion extends MultiModel {
     			bipedLeftArm.rotationPointZ = 0.0F;
     		}
     		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
-    			EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    			Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     			if (entity != null
     					&& entity.ridingEntity != null) {
     				bipedRightArm.rotateAngleX += -0.6283185F;

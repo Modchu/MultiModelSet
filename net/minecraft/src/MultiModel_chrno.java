@@ -239,13 +239,13 @@ public class MultiModel_chrno extends MultiModel {
 		setCapsValue(caps_visible, bipedRightArm, true);
 		setCapsValue(caps_visible, bipedLeftArm, true);
 	}
-
+/*
     @Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.8F;
     }
-
+*/
     @Override
     public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_shortcutKeysAction)

@@ -445,7 +445,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	Arms[1].rotateAngleX = 0F;
     	Arms[1].rotateAngleY = 0F;
     	Arms[1].rotateAngleZ = 0F;
-    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
 
@@ -468,13 +468,13 @@ public class MultiModel_NM1 extends MultiModel_SR2
     	bipedLeftLeg.showModel = bipedRightLeg.showModel = false;
     	bootR1.showModel = bootR2.showModel = false;
     	bootL1.showModel = bootL2.showModel = false;
-    	if (mod_Modchu_ModchuLib.LMM_EntityLittleMaid != null
-    			&& mod_Modchu_ModchuLib.LMM_EntityLittleMaid.isInstance(entityliving)
+    	if (mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid != null
+    			&& mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid.isInstance(entityliving)
     			&& !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		boolean isWorkingDelay = Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_isWorkingDelay);
     		if (isWorkingDelay) {
 //-@-125
-    			int maidMode = (Integer)Modchu_Reflect.invokeMethod(mod_Modchu_ModchuLib.LMM_EntityLittleMaid, "getMaidModeInt", entityliving);
+    			int maidMode = (Integer)Modchu_Reflect.invokeMethod(mod_Modchu_ModchuLib.modchu_Main.LMM_EntityLittleMaid, "getMaidModeInt", entityliving);
     			int i = 0x00C0;
     			int i1 = 0x0021;
 //@-@125
@@ -537,14 +537,14 @@ public class MultiModel_NM1 extends MultiModel_SR2
     		bipedLeftLeg.rotateAngleY = -((float)Math.PI / 10F);
     	}
 
-    	if (heldItemLeft != 0)
+    	if (heldItem[1] != 0)
     	{
-    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItemLeft;
+    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItem[1];
     	}
 
-    	if (heldItemRight != 0)
+    	if (heldItem[0] != 0)
     	{
-    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItemRight;
+    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float)Math.PI / 10F) * (float)heldItem[0];
     	}
 
     	bipedRightArm.rotateAngleY = 0.0F;

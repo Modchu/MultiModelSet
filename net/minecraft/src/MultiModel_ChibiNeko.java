@@ -529,7 +529,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
 	{
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 
 		setCapsValue(caps_visible, pink, (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)));
@@ -646,7 +646,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
+    	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt21.setRotateAngleDeg(-118F, 113F, 47F);
 		Skirt22.setRotateAngleDeg(-65F, 113F, 47F);
 		Skirt23.setRotateAngleDeg(-122F, 158F, 47F);
@@ -727,13 +727,13 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
 	@Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}
 
 	@Override
-	public float getyOffset() {
+	public float getyOffset(MMM_IModelCaps pEntityCaps) {
 	    return 1.07F;
 	}
 

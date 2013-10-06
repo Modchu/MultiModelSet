@@ -114,7 +114,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     @Override
     public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-    	EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+    	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
     	float f3 = (float)entityliving.ticksExisted + f2 + Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_entityIdFactor);
     	// –Úƒpƒ`
@@ -218,13 +218,13 @@ public class MultiModel_ExtraArms extends MultiModel {
     	};
     	setCapsValue(entityCaps, caps_showPartsRenemeMap, s1, s2);
     }
-
+/*
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.8F;
     }
-
+*/
     @Override
     public String getUsingTexture() {
     	return null;

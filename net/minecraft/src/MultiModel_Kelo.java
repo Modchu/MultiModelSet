@@ -498,35 +498,35 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public float getHeight()
+    public float getHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 1.6F;
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.7F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.2F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	float d = 0.85F;
     	return d;
     }
 
     @Override
-    public double getSittingyOffset() {
+    public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
     	return -0.5D;
     }
 
     @Override
-    public float ridingViewCorrection() {
+    public float ridingViewCorrection(MMM_IModelCaps pEntityCaps) {
     	return -0.75F;
     }
 

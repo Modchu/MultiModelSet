@@ -226,13 +226,13 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
 	@Override
-	public float getHeight()
+	public float getHeight(MMM_IModelCaps pEntityCaps)
 	{
 		return 1.99F;
 	}
 
 	@Override
-	public float getWidth()
+	public float getWidth(MMM_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}
@@ -243,7 +243,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 	@Override
 	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 		// îwïâÇÌÇÍ
 		this.isRidingMaster = entityliving.ridingEntity instanceof EntityPlayer;
@@ -456,13 +456,13 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 		}
 
 		// ÉAÉCÉeÉÄéùÇ¡ÇƒÇÈÇ∆Ç´ÇÃòrêUÇËÇó}Ç¶ÇÈ+ï\é¶äpÉIÉtÉZÉbÉg
-		if (heldItemLeft != 0)
+		if (heldItem[1] != 0)
 		{
-			leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemLeft;
+			leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[1];
 		}
-		if (heldItemRight != 0)
+		if (heldItem[0] != 0)
 		{
-			rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemRight;
+			rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[0];
 		}
 		armSwing(f, f1, f2, f3, f4, f5, entityCaps);
 
@@ -680,34 +680,6 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
-    	EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
-    	if (entity != null
-    			&& ((EntityPlayer) entity).inventory.getCurrentItem() != null) {
-    		//ínê}ÇéùÇ¡ÇƒÇ¢ÇÈéû
-    		rightArm.rotationPointX = 0.0F;
-    		rightArm.rotationPointY = 1.5F;
-    		rightArm.rotationPointZ = 0.0F;
-    		leftArm.rotationPointX = -9.5F;
-    		leftArm.rotationPointY = 2.0F;
-    		leftArm.rotationPointZ = 0.0F;
-    	} else {
-    		//ëféËéû
-    		rightArm.rotateAngleX = 0.0F;
-    		rightArm.rotateAngleY = 0.0F;
-    		rightArm.rotateAngleZ = 0.5F;
-    		leftArm.rotateAngleX = 0.0F;
-    		leftArm.rotateAngleY = 0.0F;
-    		leftArm.rotateAngleZ = 0.0F;
-
-    		rightArm.rotationPointY = 4.0F;
-    		leftArm.rotationPointX = 4.0F;
-    		leftArm.rotationPointY = 8.0F;
-    		leftArm.rotationPointZ = -2.0F;
-    	}
-    }
-
-    @Override
     public void actionInit1(MMM_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	boolean b = true;
@@ -810,24 +782,29 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     	rightArm.rotateAngleZ = leftArm.rotateAngleZ = 0.0F;
     }
 
-    public float getRidingHeight()
+    @Override
+    public float getRidingHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 0.99F;
     }
 
-    public float getyOffset() {
+    @Override
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.81F;
     }
 
-    public float getRidingyOffset() {
+    @Override
+    public float getRidingyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.61F;
     }
 
-    public float getMountedYOffset() {
+    @Override
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.7F;
     }
 
-    public double getSittingyOffset() {
+    @Override
+    public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
     	return -0.5D;
     }
 
@@ -841,6 +818,12 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     	return leftArm;
+    }
+
+    @Override
+    public MMM_ModelRenderer getNotDominantArm(MMM_IModelCaps entityCaps) {
+    	if (Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_dominantArm, getCapsValue(caps_armorType)) == 0) return leftArm;
+    	return rightArm;
     }
 
     @Override

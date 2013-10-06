@@ -304,18 +304,18 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.55F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 

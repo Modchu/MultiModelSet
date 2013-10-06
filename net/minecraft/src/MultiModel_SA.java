@@ -307,7 +307,7 @@ public class MultiModel_SA extends MultiModel_Aug {
 	@Override
 	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
-		EntityLiving entityliving = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
 		if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
 			Cheek_R.setVisible(true);
@@ -323,7 +323,7 @@ public class MultiModel_SA extends MultiModel_Aug {
 			f3 *= 8.0F;
 			f4 = -0.2F;
 		} else {
-			f4 = (1F - (float) entityliving.health / 20F) * 0.5F;
+			f4 = (1F - Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_health ) / 20F) * 0.5F;
 		}
 		sensor1.rotateAngleX = 0.0F;
 		sensor1.rotateAngleY = -((float) Math.PI * 2F / 9F);

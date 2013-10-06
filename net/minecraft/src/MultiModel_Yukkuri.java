@@ -732,24 +732,24 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public float getHeight()
+    public float getHeight(MMM_IModelCaps pEntityCaps)
     {
     	return 0.999F;
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 1.2F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.4F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	float d = 1.4F;
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
     		d -= 0.1F;

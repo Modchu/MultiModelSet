@@ -184,7 +184,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
 
     	leftLegPlus = new Modchu_ModelRenderer(this);
     	leftLegPlus.mirror = true;
-    	((Modchu_ModelRenderer) leftLegPlus.setTextureOffset(36, 19)).addPlate(-1.5F, -2.0F, -4.01F, 3, 4, 4, f);
+    	leftLegPlus.setTextureOffset(36, 19).addPlate(-1.5F, -2.0F, -4.01F, 3, 4, 4, f);
     	leftLegPlus.rotateAngleX = 1.570796313F;
     	leftLeg.addChild(leftLegPlus);
 
@@ -280,7 +280,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
 		bipedBody.rotateAngleY = 0F;
 
 		//ふわりスカート
-		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entity != null) ;else return;
 		float velY = (float)entity.motionY + 0.1F;
 
@@ -302,33 +302,33 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	//上
     	SkirtTop = new Modchu_ModelRenderer(this, 6, 16);
-    	((Modchu_ModelRenderer) SkirtTop).addPlate(0.0F, 0.0F, 0.0F, 8, 6, 0);
-    	SkirtTop.setRotationPoint(0.0F, 8.0F, 0.0F);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 8, 6, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.setRotationPoint(-4.0F, -3.0F, -3.0F);
     	Skirt.addChild(SkirtTop);
 
     	//前
     	SkirtFront = new Modchu_ModelRenderer(this, 6, 22);
-    	((Modchu_ModelRenderer) SkirtFront).addPlate(0.0F, 0.0F, 0.0F, 8, 10, 0);
-    	SkirtFront.setRotationPoint(0.0F, 8.0F, 0.0F);
-    	Skirt.addChild(SkirtFront);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 8, 10, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtTop.addChild(SkirtFront);
 
     	//右
     	SkirtRight = new Modchu_ModelRenderer(this, 0, 22);
-    	((Modchu_ModelRenderer) SkirtRight).addPlate(-4.0F, 0.0F, -6.0F, 6, 10, 1);
-    	SkirtRight.setRotationPoint(0.0F, 8.0F, 0.0F);
-    	Skirt.addChild(SkirtRight);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 6, 10, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.setRotationPoint(8.0F, 0.0F, 0.0F);
+    	SkirtTop.addChild(SkirtRight);
 
     	//左
     	SkirtLeft = new Modchu_ModelRenderer(this, 14, 22);
-    	((Modchu_ModelRenderer) SkirtLeft).addPlate(4.0F, 0.0F, -6.0F, 6, 10, 1);
-    	SkirtLeft.setRotationPoint(0.0F, 8.0F, 0.0F);
-    	Skirt.addChild(SkirtLeft);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 6, 10, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
+    	SkirtTop.addChild(SkirtLeft);
 
     	//後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 20, 22);
-    	((Modchu_ModelRenderer) SkirtBack).addPlate(0.0F, 0.0F, 0.0F, 8, 10, 0);
-    	SkirtBack.setRotationPoint(0.0F, 8.0F, 0.0F);
-    	Skirt.addChild(SkirtBack);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 8, 10, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.setRotationPoint(0.0F, 0.0F, 6.0F);
+    	SkirtTop.addChild(SkirtBack);
     	setCapsValue(caps_visible, Skirt, false);
     }
 
@@ -374,15 +374,15 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     	}
 
     	// アイテム持ってるときの腕振りを抑える+表示角オフセット
-    	if (heldItemLeft != 0)
+    	if (heldItem[1] != 0)
     	{
     		bipedLeftArm.rotateAngleX
-    			= bipedLeftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemLeft;
+    			= bipedLeftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[1];
     	}
-    	if (heldItemRight != 0)
+    	if (heldItem[0] != 0)
     	{
     		bipedRightArm.rotateAngleX
-    			= bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemRight;
+    			= bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[0];
     	}
     	armSwing(f, f1, f2, f3, f4, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
@@ -456,33 +456,21 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     @Override
     public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
-    	float motionY = Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_motionY);
+    	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
     	Skirt.rotationPointY = 9.0F;
-    	SkirtBack.rotateAngleX = SkirtRight.rotateAngleX = SkirtLeft.rotateAngleX = SkirtFront.rotateAngleX = 0.0F;
-    	SkirtBack.rotateAngleY = SkirtRight.rotateAngleY = SkirtLeft.rotateAngleY = SkirtFront.rotateAngleY = 0.0F;
-    	SkirtBack.rotateAngleZ = SkirtRight.rotateAngleZ = SkirtLeft.rotateAngleZ = SkirtFront.rotateAngleZ = 0.0F;
 
-    	SkirtTop.setRotationPoint(-4.0F, -3.0F, 3.0F);
-    	SkirtFront.setRotationPoint(-4.0F, -3.0F, -2.5F);
-    	SkirtRight.setRotationPoint(-8.0F, -3.0F, -2.5F);
-    	SkirtLeft.setRotationPoint(0.0F, -3.0F, 3.0F);
-    	SkirtBack.setRotationPoint(-4.0F, -3.0F, 3.0F);
-    	SkirtFront.rotationPointX += motionY * 4.0F;
-    	SkirtBack.rotationPointX += motionY * 4.0F;
-    	SkirtRight.rotationPointY += motionY * 2.0F;
-    	SkirtRight.rotationPointZ += motionY * 4.0F;
-    	SkirtLeft.rotationPointY -= motionY * 2.0F;
-    	SkirtLeft.rotationPointZ -= motionY * 4.0F;
+    	SkirtFront.rotationPointX =
+    			SkirtBack.rotationPointX = motionY * 4.0F;
+    	SkirtRight.rotationPointZ = motionY * 4.0F;
+    	SkirtLeft.rotationPointZ = motionY * 4.0F;
 
-    	SkirtRight.rotateAngleY = 3.141592653F;
-    	SkirtTop.rotateAngleX = -1.570796313F;
-    	SkirtFront.rotateAngleX += motionY;
-    	SkirtRight.rotateAngleZ += -motionY / 2.0F;
-    	SkirtLeft.rotateAngleZ += motionY / 2.0F;
-    	SkirtBack.rotateAngleX += -motionY;
+    	SkirtFront.rotateAngleX = motionY;
+    	SkirtRight.rotateAngleZ = motionY / 2.0F;
+    	SkirtLeft.rotateAngleZ = -motionY / 2.0F;
+    	SkirtBack.rotateAngleX = -motionY;
 
-    	((Modchu_ModelRenderer) SkirtFront).scaleX = ((Modchu_ModelRenderer) SkirtBack).scaleX = 1.0F - (motionY * 1.0F);
-    	((Modchu_ModelRenderer) SkirtRight).scaleZ = ((Modchu_ModelRenderer) SkirtLeft).scaleZ = 1.0F - (motionY * 1.0F);
+    	SkirtFront.scaleX = SkirtBack.scaleX = 1.0F - (motionY * 1.0F);
+    	SkirtRight.scaleZ = SkirtLeft.scaleZ = 1.0F - (motionY * 1.0F);
     }
 
     @Override
@@ -506,23 +494,23 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {
     }
 
     @Override
-    public float getHeight() {
+    public float getHeight(MMM_IModelCaps pEntityCaps) {
     	return 1.58F;
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.5F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 }

@@ -303,7 +303,7 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
 		bipedBody.rotateAngleY = 0F;
 
 		//ふわりスカート
-		EntityLiving entity = (EntityLiving) getCapsValue(entityCaps, entityCaps.caps_Entity);
+		Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entity != null) ;else return;
 		float velY = (float)entity.motionY + 0.1F;
 
@@ -369,13 +369,13 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     	}
 
     	// アイテム持ってるときの腕振りを抑える+表示角オフセット
-    	if (heldItemLeft != 0)
+    	if (heldItem[1] != 0)
     	{
-    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemLeft;
+    		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[1];
     	}
-    	if (heldItemRight != 0)
+    	if (heldItem[0] != 0)
     	{
-    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItemRight;
+    		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - (float)Math.PI * 0.1F * heldItem[0];
     	}
     	armSwing(f, f1, f2, f3, f4, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak))
@@ -478,18 +478,18 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     }
 
     @Override
-    public float getWidth()
+    public float getWidth(MMM_IModelCaps pEntityCaps)
     {
     	return 0.5F;
     }
 
     @Override
-    public float getyOffset() {
+    public float getyOffset(MMM_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float getMountedYOffset() {
+    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 
