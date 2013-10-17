@@ -108,7 +108,7 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
@@ -201,7 +201,7 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Arms[0].setRotationPoint(0.5F, 9.0F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 9.0F, 0F);
@@ -253,7 +253,7 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "ChignonB", "Tail", "d"
@@ -262,7 +262,7 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedRightLeg).removeChild(RightSkirt);
     	((Modchu_ModelRenderer) bipedLeftLeg).removeChild(LeftSkirt);
@@ -271,7 +271,7 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightLeg).removeChild(RightSkirt);
     	((Modchu_ModelRenderer) leftLeg).removeChild(LeftSkirt);
@@ -280,7 +280,7 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
 	@Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	float f6 = bipedBody.rotateAngleZ;
     	if (f6 > 0.0F) {
@@ -304,18 +304,18 @@ public class MultiModel_Elsie extends MultiModel {
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.55F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 

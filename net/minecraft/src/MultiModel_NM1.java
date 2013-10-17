@@ -430,11 +430,11 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	Arms[0].setRotationPoint(0.5F, 9.0F, 0F);
@@ -509,7 +509,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
     {
     	bipedHead.rotateAngleY = f3 / (180F / (float)Math.PI);
     	bipedHead.rotateAngleX = f4 / (180F / (float)Math.PI);
@@ -635,7 +635,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingAfter(Modchu_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//bipedRightLeg Default off
     	setCapsValue(entityCaps, caps_defaultShowPartsMap, "bipedRightLeg", i, false);
@@ -664,7 +664,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	boolean b = bipedRightLeg.showModel;
     	boolean b1 = bipedLeftLeg.showModel;
     	super.actionInit1(entityCaps);
@@ -723,7 +723,7 @@ public class MultiModel_NM1 extends MultiModel_SR2
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	bipedRightArm.addChild(ArmR1);
     	bipedRightArm.addChild(HandR1);

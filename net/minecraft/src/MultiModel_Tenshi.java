@@ -817,7 +817,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
     }
 
     @Override
-	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+	public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 
 		ItemStack is;
@@ -851,7 +851,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
 
 	}
 
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsSneak)){
 			Skirt.rotationPointZ = -0.5F;
@@ -864,7 +864,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
 		float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt1.setRotateAngleDeg(-118F, 113F, 47F);
@@ -994,7 +994,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
 	}
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
@@ -1009,7 +1009,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(Patch1);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Patch2);
@@ -1018,7 +1018,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	bipedRightArm.addChild(Patch1);
     	bipedLeftArm.addChild(Patch2);
@@ -1027,7 +1027,7 @@ public class MultiModel_Tenshi extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorSkirtShowModel(entityCaps, b);
     	Skirt.isHidden = !b;
     }

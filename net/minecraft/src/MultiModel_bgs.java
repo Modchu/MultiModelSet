@@ -348,7 +348,7 @@ public class MultiModel_bgs extends MultiModel_SR2
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
     {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	bipedHead.rotationPointY -= 4.0F;
@@ -360,7 +360,7 @@ public class MultiModel_bgs extends MultiModel_SR2
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	bipedLeftArm.isHidden = true;
     	bipedRightArm.isHidden = true;
@@ -374,7 +374,7 @@ public class MultiModel_bgs extends MultiModel_SR2
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	bipedLeftArm.isHidden = false;
     	bipedRightArm.isHidden = false;
@@ -402,7 +402,7 @@ public class MultiModel_bgs extends MultiModel_SR2
     }
 
 	@Override
-	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+	public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
 		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"
@@ -411,7 +411,7 @@ public class MultiModel_bgs extends MultiModel_SR2
 	}
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	//Modchu_Debug.mDebug("action1");
     	float f6 = bipedBody.rotateAngleZ;

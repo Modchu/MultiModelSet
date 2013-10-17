@@ -260,7 +260,7 @@ public class MultiModel_NM extends MultiModel_SR2
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
@@ -354,7 +354,7 @@ public class MultiModel_NM extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingAfter(Modchu_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//RightArm2 Default off
     	setCapsValue(entityCaps, caps_defaultShowPartsMap, "RightArm2", i, false);

@@ -245,61 +245,61 @@ public class MultiModel_Mabel extends MultiModel {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	//スカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 4, 24);
-    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 4, 4, MMM_ModelPlate.planeXZTop, f + 2.0F);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 4, 4, Modchu_ModelPlate.planeXZTop, f + 2.0F);
     	SkirtTop.setRotationPoint(-2.0F, 0.0F, -2.0F);
     	Skirt.addChild(SkirtTop);
 
     	//スカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 4, 28);
-    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 4, 4, MMM_ModelPlate.planeXYFront, f + 2.0F);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 4, 4, Modchu_ModelPlate.planeXYFront, f + 2.0F);
     	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//スカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 0, 28);
-    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 4, 4, MMM_ModelPlate.planeZYRight, f + 2.0F);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 4, 4, Modchu_ModelPlate.planeZYRight, f + 2.0F);
     	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//スカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 8, 28);
-    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 4, 4, MMM_ModelPlate.planeZYLeft, f + 2.0F);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 4, 4, Modchu_ModelPlate.planeZYLeft, f + 2.0F);
     	SkirtLeft.setRotationPoint(4.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//スカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 12, 28);
-    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 4, 4, MMM_ModelPlate.planeXYBack, f + 2.0F);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 4, 4, Modchu_ModelPlate.planeXYBack, f + 2.0F);
     	SkirtBack.setRotationPoint(0.0F, 0.0F, 4.0F);
     	SkirtTop.addChild(SkirtBack);
 
     	//インナースカート上
     	innerSkirtTop = new Modchu_ModelRenderer(this, 4, 24);
-    	innerSkirtTop.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeXZTop, f + 1.6F);
+    	innerSkirtTop.addPlate(0.0F, 0.0F, 0.0F, 3, 3, Modchu_ModelPlate.planeXZTop, f + 1.6F);
     	innerSkirtTop.setRotationPoint(-1.5F, 0.0F, -1.5F);
     	innerSkirt.addChild(innerSkirtTop);
 
     	//インナースカート前
     	innerSkirtFront = new Modchu_ModelRenderer(this, 19, 29);
-    	innerSkirtFront.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeXYFront, f + 1.6F);
+    	innerSkirtFront.addPlate(0.0F, 0.0F, 0.0F, 3, 3, Modchu_ModelPlate.planeXYFront, f + 1.6F);
     	innerSkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	innerSkirtTop.addChild(innerSkirtFront);
 
     	//インナースカート右
     	innerSkirtRight = new Modchu_ModelRenderer(this, 16, 29);
-    	innerSkirtRight.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeZYRight, f + 1.6F);
+    	innerSkirtRight.addPlate(0.0F, 0.0F, 0.0F, 3, 3, Modchu_ModelPlate.planeZYRight, f + 1.6F);
     	innerSkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
     	innerSkirtTop.addChild(innerSkirtRight);
 
     	//インナースカート左
     	innerSkirtLeft = new Modchu_ModelRenderer(this, 22, 29);
-    	innerSkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeZYLeft, f + 1.6F);
+    	innerSkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 3, 3, Modchu_ModelPlate.planeZYLeft, f + 1.6F);
     	innerSkirtLeft.setRotationPoint(3.0F, 0.0F, 0.0F);
     	innerSkirtTop.addChild(innerSkirtLeft);
 
     	//インナースカート後ろ
     	innerSkirtBack = new Modchu_ModelRenderer(this, 25, 29);
-    	innerSkirtBack.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeXYBack, f + 1.6F);
+    	innerSkirtBack.addPlate(0.0F, 0.0F, 0.0F, 3, 3, Modchu_ModelPlate.planeXYBack, f + 1.6F);
     	innerSkirtBack.setRotationPoint(0.0F, 0.0F, 3.0F);
     	innerSkirtTop.addChild(innerSkirtBack);
     	setCapsValue(caps_visible, Skirt, false);
@@ -307,7 +307,7 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Arms[0].setRotationPoint(-0.5F, 4.5F, 0F);
     	Arms[1].setRotationPoint(0.5F, 4.5F, 0F);
@@ -341,7 +341,7 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
@@ -370,7 +370,7 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"innerSkirtTop", "innerSkirtFront", "innerSkirtRight", "innerSkirtLeft", "innerSkirtLeft"
@@ -386,7 +386,7 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) == 2) {
     		setCapsValue(caps_visible, innerSkirt, false);
@@ -394,19 +394,19 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public float getHeight(MMM_IModelCaps pEntityCaps)
+    public float getHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 1.35F;
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.6F;
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedLeftLeg).removeChild(innerLeftLeg);
     	((Modchu_ModelRenderer) bipedRightLeg).removeChild(innerRightLeg);
@@ -417,7 +417,7 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	bipedLeftLeg.addChild(innerLeftLeg);
     	bipedRightLeg.addChild(innerRightLeg);
@@ -428,7 +428,7 @@ public class MultiModel_Mabel extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	float f6 = bipedBody.rotateAngleZ;
     	if (f6 > 0.0F) {

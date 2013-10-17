@@ -164,53 +164,53 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	Skirt_L.addBox(-1.31F, 0.19F, -2F, 3, 2, 4, f + 0.2F);
     	Skirt_L.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Skirt_RF = new Modchu_ModelRenderer(this, 26, 44);
-    	Skirt_RF.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYFront, f - 0.798F);
+    	Skirt_RF.addPlate(0.0F, 0.0F, 0.0F, 5, 3, Modchu_ModelPlate.planeXYFront, f - 0.798F);
     	Skirt_RF.setRotationPoint(-2.71F, 0.0F, -3.0F);
     	Skirt_RB = new Modchu_ModelRenderer(this, 37, 44);
-    	Skirt_RB.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYBack, f - 0.798F);
+    	Skirt_RB.addPlate(0.0F, 0.0F, 0.0F, 5, 3, Modchu_ModelPlate.planeXYBack, f - 0.798F);
     	Skirt_RB.setRotationPoint(0.0F, 0.0F, 6.0F);
     	Skirt_RR = new Modchu_ModelRenderer(this, 20, 44);
-    	Skirt_RR.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYRight, f - 0.798F);
+    	Skirt_RR.addPlate(0.0F, 0.0F, 0.0F, 6, 3, Modchu_ModelPlate.planeZYRight, f - 0.798F);
     	Skirt_RR.setRotationPoint(3.39F, 0.0F, 0.0F);
     	Skirt_RL = new Modchu_ModelRenderer(this, 31, 44);
-    	Skirt_RL.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYLeft, f - 0.798F);
+    	Skirt_RL.addPlate(0.0F, 0.0F, 0.0F, 6, 3, Modchu_ModelPlate.planeZYLeft, f - 0.798F);
     	Skirt_RL.setRotationPoint(1.61F, 0.0F, 0.0F);
     	Skirt_LF = new Modchu_ModelRenderer(this, 48, 44);
-    	Skirt_LF.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYFront, f - 0.798F);
+    	Skirt_LF.addPlate(0.0F, 0.0F, 0.0F, 5, 3, Modchu_ModelPlate.planeXYFront, f - 0.798F);
     	Skirt_LF.setRotationPoint(-2.29F, 0.0F, -3.0F);
     	Skirt_LB = new Modchu_ModelRenderer(this, 59, 44);
-    	Skirt_LB.addPlate(0.0F, 0.0F, 0.0F, 5, 3, MMM_ModelPlate.planeXYBack, f - 0.798F);
+    	Skirt_LB.addPlate(0.0F, 0.0F, 0.0F, 5, 3, Modchu_ModelPlate.planeXYBack, f - 0.798F);
     	Skirt_LB.setRotationPoint(0.0F, 0.0F, 6.0F);
     	Skirt_LR = new Modchu_ModelRenderer(this, 54, 44);
-    	Skirt_LR.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYRight, f - 0.798F);
+    	Skirt_LR.addPlate(0.0F, 0.0F, 0.0F, 6, 3, Modchu_ModelPlate.planeZYRight, f - 0.798F);
     	Skirt_LR.setRotationPoint(3.39F, 0.0F, 0.0F);
     	Skirt_LL = new Modchu_ModelRenderer(this, 53, 44);
-    	Skirt_LL.addPlate(0.0F, 0.0F, 0.0F, 6, 3, MMM_ModelPlate.planeZYLeft, f - 0.798F);
+    	Skirt_LL.addPlate(0.0F, 0.0F, 0.0F, 6, 3, Modchu_ModelPlate.planeZYLeft, f - 0.798F);
     	Skirt_LL.setRotationPoint(1.61F, 0.0F, 0.0F);
     	Arm_RF = new Modchu_ModelRenderer(this, 32, 47);
-    	Arm_RF.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYFront, f - 0.999F);
+    	Arm_RF.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeXYFront, f - 0.999F);
     	Arm_RF.setRotationPoint(-2.0F, 3.0F, -2.0F);
     	Arm_RB = new Modchu_ModelRenderer(this, 36, 47);
-    	Arm_RB.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYBack, f - 0.999F);
+    	Arm_RB.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeXYBack, f - 0.999F);
     	Arm_RB.setRotationPoint(0.0F, 0.0F, 4.0F);
     	Arm_RR = new Modchu_ModelRenderer(this, 40, 47);
-    	Arm_RR.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYRight, f - 0.999F);
+    	Arm_RR.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeZYRight, f - 0.999F);
     	Arm_RR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Arm_RL = new Modchu_ModelRenderer(this, 44, 47);
-    	Arm_RL.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYLeft, f - 0.999F);
+    	Arm_RL.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeZYLeft, f - 0.999F);
     	Arm_RL.setRotationPoint(4.0F, 0.0F, 0.0F);
 
     	Arm_LF = new Modchu_ModelRenderer(this, 48, 47);
-    	Arm_LF.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYFront, f - 0.999F);
+    	Arm_LF.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeXYFront, f - 0.999F);
     	Arm_LF.setRotationPoint(-2.0F, 3.0F, -2.0F);
     	Arm_LB = new Modchu_ModelRenderer(this, 52, 47);
-    	Arm_LB.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeXYBack, f - 0.999F);
+    	Arm_LB.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeXYBack, f - 0.999F);
     	Arm_LB.setRotationPoint(0.0F, 0.0F, 4.0F);
     	Arm_LR = new Modchu_ModelRenderer(this, 56, 47);
-    	Arm_LR.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYRight, f - 0.999F);
+    	Arm_LR.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeZYRight, f - 0.999F);
     	Arm_LR.setRotationPoint(0.0F, 0.0F, 0.0F);
     	Arm_LL = new Modchu_ModelRenderer(this, 60, 47);
-    	Arm_LL.addPlate(0.0F, 0.0F, 0.0F, 4, 3, MMM_ModelPlate.planeZYLeft, f - 0.999F);
+    	Arm_LL.addPlate(0.0F, 0.0F, 0.0F, 4, 3, Modchu_ModelPlate.planeZYLeft, f - 0.999F);
     	Arm_LL.setRotationPoint(4.0F, 0.0F, 0.0F);
     	Parka_1 = new Modchu_ModelRenderer(this, 13, 32);
     	Parka_1.addBox(-3.5F, 0.0F, 0.0F, 7, 6, 1, f - 0.5F);
@@ -362,19 +362,19 @@ public class MultiModel_Yukari extends MultiModel_Aug
     	Accessory_HB2.addPlate(-2.5F, -2.5F, -3.8F, 5, 5, 0, f - 1.85F);
     	Accessory_HB2.setRotationPoint(0.0F, 0.0F, 0.0F);
     	ArmAccessory_RF = new Modchu_ModelRenderer(this, 16, 47);
-    	ArmAccessory_RF.addPlate(-2.0F, 0.0F, -2F, 4, 3, MMM_ModelPlate.planeXYFront, f - 0.95F);
+    	ArmAccessory_RF.addPlate(-2.0F, 0.0F, -2F, 4, 3, Modchu_ModelPlate.planeXYFront, f - 0.95F);
     	ArmAccessory_RF.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_RB = new Modchu_ModelRenderer(this, 20, 47);
-    	ArmAccessory_RB.addPlate(-2.0F, 0.0F, 2.0F, 4, 3, MMM_ModelPlate.planeXYBack, f - 0.95F);
+    	ArmAccessory_RB.addPlate(-2.0F, 0.0F, 2.0F, 4, 3, Modchu_ModelPlate.planeXYBack, f - 0.95F);
     	ArmAccessory_RB.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_RR = new Modchu_ModelRenderer(this, 24, 47);
-    	ArmAccessory_RR.addPlate(0.1F, 0.0F, -2F, 4, 3, MMM_ModelPlate.planeZYRight, f - 0.95F);
+    	ArmAccessory_RR.addPlate(0.1F, 0.0F, -2F, 4, 3, Modchu_ModelPlate.planeZYRight, f - 0.95F);
     	ArmAccessory_RR.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_RL = new Modchu_ModelRenderer(this, 28, 47);
-    	ArmAccessory_RL.addPlate(-0.1F, 0.0F, -2F, 4, 3, MMM_ModelPlate.planeZYLeft, f - 0.95F);
+    	ArmAccessory_RL.addPlate(-0.1F, 0.0F, -2F, 4, 3, Modchu_ModelPlate.planeZYLeft, f - 0.95F);
     	ArmAccessory_RL.setRotationPoint(0.0F, 5.0F, 0.0F);
     	ArmAccessory_R = new Modchu_ModelRenderer(this, 45, 36);
-    	ArmAccessory_R.addPlate(0.0F, 0.0F, 0.0F, 3, 3, MMM_ModelPlate.planeXYFront, f - 0.95F);
+    	ArmAccessory_R.addPlate(0.0F, 0.0F, 0.0F, 3, 3, Modchu_ModelPlate.planeXYFront, f - 0.95F);
     	ArmAccessory_R.setRotationPoint(-1.5F, 0.36F, -1.97F);
     	ArmAccessory_R.setRotateAngleY(0.01745292F);
     	Belt_R = new Modchu_ModelRenderer(this, 0, 57);
@@ -669,7 +669,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2) {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
@@ -715,7 +715,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
     {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Skirt.rotationPointY -= 2.0F;
@@ -742,11 +742,11 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Cheek_R", "Cheek_L"
@@ -776,7 +776,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	((Modchu_ModelRenderer) bipedRightLeg).removeChild(Skirt_R);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arm_RF);
@@ -822,7 +822,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightLeg).removeChild(Skirt_R);
     	((Modchu_ModelRenderer) rightArm2).removeChild(Arm_RF);
@@ -868,7 +868,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedHeadShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
     	super.setArmorBipedHeadShowModel(entityCaps, b);
     	((Modchu_ModelRenderer) RabbitEar_R1).setVisible(b);
@@ -919,7 +919,7 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedBodyShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedBodyShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedBodyShowModel(entityCaps, b);
     	((Modchu_ModelRenderer) Arm_RF).setVisible(b);
     	((Modchu_ModelRenderer) Arm_RB).setVisible(b);
@@ -976,13 +976,13 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedRightArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightArmShowModel(entityCaps, b);
     	bipedRightArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorSkirtShowModel(entityCaps, b);
     	Skirt.isHidden = !b;
     	((Modchu_ModelRenderer) Skirt_R).setVisible(b);
@@ -998,19 +998,19 @@ public class MultiModel_Yukari extends MultiModel_Aug
     }
 
     @Override
-    public void setArmorBipedLeftArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftArmShowModel(entityCaps, b);
     	bipedLeftArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedRightLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightLegShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightLegShowModel(entityCaps, b);
     	bipedRightLeg.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedLeftLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftLegShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftLegShowModel(entityCaps, b);
     	bipedLeftLeg.isHidden = !b;
     }

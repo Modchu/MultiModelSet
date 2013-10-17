@@ -150,7 +150,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
@@ -234,7 +234,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	bipedHead.rotationPointY += 1.0F;
     	bipedBody.rotationPointY -= 3.0F;
@@ -276,7 +276,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	boolean b = false;
     	setCapsValue(caps_visible, bipedLeftArm, b);
@@ -300,8 +300,8 @@ public class MultiModel_Pawapro extends MultiModel {
     	leftLeg2.isHidden = !b;
     	setCapsValue(caps_visible, leftLegPlus, b);
     	setCapsValue(caps_visible, leftLegPlus2, b);
-    	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
+    	((Modchu_ModelRenderer) bipedRightArm).removeChild((Modchu_ModelRenderer) Arms[0]);
+    	((Modchu_ModelRenderer) bipedLeftArm).removeChild((Modchu_ModelRenderer) Arms[1]);
     	((Modchu_ModelRenderer) bipedBody).removeChild(bipedRightLeg);
     	((Modchu_ModelRenderer) bipedBody).removeChild(bipedLeftLeg);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(HandR);
@@ -320,7 +320,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, false);
     	setCapsValue(caps_sneakBan, false);
     	setCapsValue(caps_waitBan, false);
@@ -351,8 +351,8 @@ public class MultiModel_Pawapro extends MultiModel {
 
     	bipedRightArm.addChild(Arms[0]);
     	bipedLeftArm.addChild(Arms[1]);
-    	((Modchu_ModelRenderer) rightHand).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) leftHand).removeChild(Arms[1]);
+    	((Modchu_ModelRenderer) rightHand).removeChild((Modchu_ModelRenderer) Arms[0]);
+    	((Modchu_ModelRenderer) leftHand).removeChild((Modchu_ModelRenderer) Arms[1]);
     	Arms[0].setRotationPoint(0.5F, 6.5F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 6.5F, 0F);
 
@@ -376,7 +376,7 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	float f6 = bipedBody.rotateAngleZ;
     	if (f6 > 0.0F) {
@@ -392,13 +392,13 @@ public class MultiModel_Pawapro extends MultiModel {
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedHeadShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
     	super.setArmorBipedHeadShowModel(entityCaps, b);
     }
 
     @Override
-    public void setArmorBipedBodyShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedBodyShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedBodyShowModel(entityCaps, b);
     	setCapsValue(caps_visible, Logo2, b);
     }

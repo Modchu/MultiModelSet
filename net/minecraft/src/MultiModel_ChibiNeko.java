@@ -518,7 +518,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
     }
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 1.0F, 0.0F);
     	bipedBody.setRotationPoint(0.0F, -3.0F*Scale, 0.0F);
     	bipedRightLeg.setRotationPoint(-0.9F, 15.0F + Scale, 0.0F);
@@ -526,7 +526,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
     }
 
 	@Override
-	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+	public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
 	{
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
@@ -552,7 +552,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
 		float t = f2;
@@ -644,7 +644,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt21.setRotateAngleDeg(-118F, 113F, 47F);
@@ -694,7 +694,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt21", "Skirt22", "Skirt23", "Skirt24", "Skirt25",
@@ -706,7 +706,7 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
     }
 
 	@Override
-	public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.action1(f, f1, f2, f3, f4, f5, entityCaps);
 		rightArm2.rotationPointX = 1.0F - (1.0F * Scale);
 		leftArm2.rotationPointX = 0.0F - (1.0F * Scale);
@@ -727,24 +727,24 @@ public class MultiModel_ChibiNeko extends MultiModel_SR2 {
 	}
 
 	@Override
-	public float getWidth(MMM_IModelCaps pEntityCaps)
+	public float getWidth(Modchu_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}
 
 	@Override
-	public float getyOffset(MMM_IModelCaps pEntityCaps) {
+	public float getyOffset(Modchu_IModelCaps pEntityCaps) {
 	    return 1.07F;
 	}
 
 	@Override
-	public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
+	public void setArmorBipedHeadShowModel(Modchu_IModelCaps entityCaps, boolean b) {
 		bipedHead.isHidden = !b;
 		super.setArmorBipedHeadShowModel(entityCaps, b);
 	}
 
 	@Override
-	public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+	public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
 		super.setArmorSkirtShowModel(entityCaps, b);
 		Skirt.isHidden = !b;
 	}

@@ -362,7 +362,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	SideTailL.rotateAngleX = SideTailR.rotateAngleX = -0.262F;
     	ChignonL.rotateAngleX = ChignonR.rotateAngleX = 0.262F;
@@ -610,7 +610,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	if ((onGrounds[0] > -9990F || onGrounds[1] > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
     		// òrêUÇË
     		float f6, f7, f8;
@@ -649,11 +649,11 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s1 = {
     			"MariribonL", "MariribonR", "MariribonC", "RSidehair1", "RSidehair2",
@@ -671,7 +671,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	setCapsValue(caps_sneakBan, true);
     	setCapsValue(caps_waitBan, true);
@@ -679,7 +679,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, false);
     	setCapsValue(caps_sneakBan, false);
     	setCapsValue(caps_waitBan, false);
@@ -696,7 +696,7 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	float speed = Modchu_ModelCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 10;
     	if (speed < 0.0F) return;
 
@@ -732,24 +732,24 @@ public class MultiModel_Yukkuri extends MultiModel {
     }
 
     @Override
-    public float getHeight(MMM_IModelCaps pEntityCaps)
+    public float getHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.999F;
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 1.2F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 0.4F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	float d = 1.4F;
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsRiding)) {
     		d -= 0.1F;

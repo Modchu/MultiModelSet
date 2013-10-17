@@ -611,7 +611,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
     public void skirtFloatsInit(float f, float f1) {
     }
 
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
 		WingLroot.rotateAngleX=1.570796313F;
@@ -644,7 +644,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt1.setRotateAngle(-0.7853982F, 0.2268928F, 0.8203047F);
@@ -699,7 +699,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void actionInit1(MMM_IModelCaps entityCaps) {
+	public void actionInit1(Modchu_IModelCaps entityCaps) {
 		super.actionInit1(entityCaps);
 		((Modchu_ModelRenderer) bipedLeftArm).removeChild(CS1);
 		((Modchu_ModelRenderer) bipedLeftArm).removeChild(CS2);
@@ -738,7 +738,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
 	}
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightLeg2).removeChild(RightShoo);
     	((Modchu_ModelRenderer) leftLeg2).removeChild(Circle1);
@@ -775,7 +775,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
@@ -786,7 +786,7 @@ public class MultiModel_Utsuho extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorSkirtShowModel(entityCaps, b);
     	Skirt.isHidden = !b;
     }

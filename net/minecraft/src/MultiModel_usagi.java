@@ -104,7 +104,7 @@ public class MultiModel_usagi extends MultiModel {
 		Usasippo.setRotationPointZ(2.0F);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	UsaER.rotateAngleX = UsaEL.rotateAngleX = 0.6981317F;
     	UsaEL.rotationPointX = 0.0F;

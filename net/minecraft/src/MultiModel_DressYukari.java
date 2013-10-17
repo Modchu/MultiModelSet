@@ -93,11 +93,11 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 	}
 
 	@Override
-	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+	public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
@@ -109,7 +109,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entity != null) ;else return;
@@ -136,7 +136,7 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+	public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
 		super.showModelSettingReflects(entityCaps);
 		int i = Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_showPartsMapBoolean, "Skirt", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType));
 		boolean b = i != 0;
@@ -144,13 +144,13 @@ public class MultiModel_DressYukari extends MultiModel_SR2 {
 	}
 
 	@Override
-	public float getHeight(MMM_IModelCaps pEntityCaps)
+	public float getHeight(Modchu_IModelCaps pEntityCaps)
 	{
 		return 1.35F;
 	}
 
 	@Override
-	public float getWidth(MMM_IModelCaps pEntityCaps)
+	public float getWidth(Modchu_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}

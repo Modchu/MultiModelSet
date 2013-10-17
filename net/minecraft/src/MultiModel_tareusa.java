@@ -76,7 +76,7 @@ public class MultiModel_tareusa extends MultiModel {
 		setCapsValue(caps_visible, bipedHeadwear, false);
 	}
 
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
 		Usasippo.setRotateAngleY(mh_sin(f * 0.6662F) * 0.3F);
@@ -126,7 +126,7 @@ public class MultiModel_tareusa extends MultiModel {
 	}
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "d"
@@ -135,7 +135,7 @@ public class MultiModel_tareusa extends MultiModel {
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, bipedHeadwear, false);
     }

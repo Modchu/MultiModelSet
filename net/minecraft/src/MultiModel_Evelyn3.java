@@ -298,79 +298,79 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 		textureHeight = 64;
 		//SkirtR 上
 		SkirtTop = new Modchu_ModelRenderer(this, 5, 40);
-		SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 5, 5, Modchu_ModelPlate.planeXZTop);
 		SkirtTop.setRotationPoint(-3.0F, -2.5F, -2.5F);
 		Skirt1.addChild(SkirtTop);
 
 		//SkirtR 前
 		SkirtFront = new Modchu_ModelRenderer(this, 5, 45);
-		SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYFront);
+		SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeXYFront);
 		SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTop.addChild(SkirtFront);
 
 		//SkirtR 右前
 		SkirtRightFront = new Modchu_ModelRenderer(this, 0, 45);
-		SkirtRightFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYRight);
+		SkirtRightFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeZYRight);
 		SkirtRightFront.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTop.addChild(SkirtRightFront);
 
 		//SkirtR 上後
 		SkirtTopBack = new Modchu_ModelRenderer(this, 5, 52);
-		SkirtTopBack.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTopBack.addPlate(0.0F, 0.0F, 0.0F, 5, 5, Modchu_ModelPlate.planeXZTop);
 		SkirtTopBack.setRotationPoint(-5.0F, -2.5F, -1.0F);
 		Skirt3.addChild(SkirtTopBack);
 
 		//SkirtR 右後
 		SkirtRightBack = new Modchu_ModelRenderer(this, 0, 57);
-		SkirtRightBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYRight);
+		SkirtRightBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeZYRight);
 		SkirtRightBack.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTopBack.addChild(SkirtRightBack);
 
 		//SkirtR 後ろ
 		SkirtBack = new Modchu_ModelRenderer(this, 15, 57);
-		SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYBack);
+		SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeXYBack);
 		SkirtBack.setRotationPoint(0.0F, 0.0F, 5.0F);
 		SkirtTopBack.addChild(SkirtBack);
 
 		//SkirtL 上前
 		SkirtTopL = new Modchu_ModelRenderer(this, 25, 40);
 		SkirtTopL.mirror = true;
-		SkirtTopL.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTopL.addPlate(0.0F, 0.0F, 0.0F, 5, 5, Modchu_ModelPlate.planeXZTop);
 		SkirtTopL.setRotationPoint(-1.0F, -2.5F, -2.5F);
 		Skirt2.addChild(SkirtTopL);
 
 		//SkirtL 前
 		SkirtFrontL = new Modchu_ModelRenderer(this, 25, 45);
 		SkirtFrontL.mirror = true;
-		SkirtFrontL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYFront);
+		SkirtFrontL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeXYFront);
 		SkirtFrontL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		SkirtTopL.addChild(SkirtFrontL);
 
 		//SkirtL 左前
 		SkirtLeftFront = new Modchu_ModelRenderer(this, 20, 45);
 		SkirtLeftFront.mirror = true;
-		SkirtLeftFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYLeft);
+		SkirtLeftFront.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeZYLeft);
 		SkirtLeftFront.setRotationPoint(5.0F, 0.0F, 0.0F);
 		SkirtTopL.addChild(SkirtLeftFront);
 
 		//SkirtL 上後
 		SkirtTopBackL = new Modchu_ModelRenderer(this, 25, 52);
 		SkirtTopBackL.mirror = true;
-		SkirtTopBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 5, MMM_ModelPlate.planeXZTop);
+		SkirtTopBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 5, Modchu_ModelPlate.planeXZTop);
 		SkirtTopBackL.setRotationPoint(0.0F, -2.5F, -1.0F);
 		Skirt4.addChild(SkirtTopBackL);
 
 		//SkirtL 左後
 		SkirtLeftBack = new Modchu_ModelRenderer(this, 20, 57);
 		SkirtLeftBack.mirror = true;
-		SkirtLeftBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeZYLeft);
+		SkirtLeftBack.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeZYLeft);
 		SkirtLeftBack.setRotationPoint(5.0F, 0.0F, 0.0F);
 		SkirtTopBackL.addChild(SkirtLeftBack);
 
 		//SkirtL 後ろ
 		SkirtBackL = new Modchu_ModelRenderer(this, 35, 57);
 		SkirtBackL.mirror = true;
-		SkirtBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXYBack);
+		SkirtBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeXYBack);
 		SkirtBackL.setRotationPoint(0.0F, 0.0F, 5.0F);
 		SkirtTopBackL.addChild(SkirtBackL);
 		setCapsValue(caps_visible, Skirt1, false);
@@ -380,7 +380,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	}
 
 	@Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
         super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
@@ -407,7 +407,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
 	{
 		setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
 		//heading
@@ -596,7 +596,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
    }
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
 		float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 
@@ -626,7 +626,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
 	}
 
 	@Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"SkirtTopBack", "SkirtTopL", "SkirtTopBackL", "SkirtFrontL", "SkirtLeftFront",
@@ -644,7 +644,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) == 2) {
     		setCapsValue(caps_visible, Skirt1, false);
@@ -655,7 +655,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);
     	bipedHeadwear.setRotationPoint(0.0F, -1.0F, 2.0F);
     	bipedHeadwear2.setRotationPoint(0.0F, 5.0F, 0.0F);
@@ -702,7 +702,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	boolean b = true;
     	if (rightLeg != null) setCapsValue(caps_visible, rightLeg, b);
@@ -724,7 +724,7 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	float f6 = bipedBody.rotateAngleZ;
     	if (f6 > 0.0F) {
@@ -751,40 +751,40 @@ public class MultiModel_Evelyn3 extends MultiModel_SR2 {
     }
 
     @Override
-    public float getHeight(MMM_IModelCaps pEntityCaps)
+    public float getHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 1.99F;
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.5F;
     }
 
     @Override
-    public float getRidingHeight(MMM_IModelCaps pEntityCaps)
+    public float getRidingHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.99F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.6F;
     }
 
     @Override
-    public float getRidingyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getRidingyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.61F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	return 0.7F;
     }
 
     @Override
-    public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
+    public double getSittingyOffset(Modchu_IModelCaps pEntityCaps) {
     	return -0.5D;
     }
 }

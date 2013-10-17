@@ -357,38 +357,38 @@ public class MultiModel_st extends MultiModel_SR2
     	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 5,20);
-    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 7, 5, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 7, 5, Modchu_ModelPlate.planeXZTop);
     	SkirtTop.setRotationPoint(-3.5F, -2.0F, -2.5F);
     	Skirt.addChild(SkirtTop);
 
     	//ふんわりスカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 5, 25);
-    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 7, 4, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 7, 4, Modchu_ModelPlate.planeXYFront);
     	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//ふんわりスカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 0, 25);
-    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 5, 4, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 5, 4, Modchu_ModelPlate.planeZYRight);
     	SkirtRight.setRotationPoint(7.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//ふんわりスカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 19, 25);
-    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 5, 4, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 5, 4, Modchu_ModelPlate.planeZYLeft);
     	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//ふんわりスカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 12, 25);
-    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 7, 4, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 7, 4, Modchu_ModelPlate.planeXYBack);
     	SkirtBack.setRotationPoint(0.0F, 0.0F, 5.0F);
     	SkirtTop.addChild(SkirtBack);
     	setCapsValue(caps_visible, Skirt, false);
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
         super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
@@ -401,7 +401,7 @@ public class MultiModel_st extends MultiModel_SR2
     }
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
 	{
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Skirt.rotationPointY -= 1.0F;
@@ -415,7 +415,7 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
 	@Override
-	public void actionInit1(MMM_IModelCaps entityCaps) {
+	public void actionInit1(Modchu_IModelCaps entityCaps) {
 		super.actionInit1(entityCaps);
 		bipedLeftArm.isHidden = true;
 		bipedRightArm.isHidden = true;
@@ -429,7 +429,7 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
 	@Override
-	public void actionRelease1(MMM_IModelCaps entityCaps) {
+	public void actionRelease1(Modchu_IModelCaps entityCaps) {
 		super.actionRelease1(entityCaps);
 		bipedLeftArm.isHidden = false;
 		bipedRightArm.isHidden = false;
@@ -446,7 +446,7 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
 	@Override
-	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+	public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
 		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"
@@ -455,7 +455,7 @@ public class MultiModel_st extends MultiModel_SR2
 	}
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	LegAR.rotationPointY = -11.0F;
     	LegAL.rotationPointY = -11.0F;

@@ -131,7 +131,7 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
     	Icewing1.setRotateAngleZ(0.8726646F);
     	Icewing2.setRotateAngleZ(1.570796F);
@@ -146,7 +146,7 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	if(31.41593F >= mh_abs(f2)) {
     		f2 %= 31.41593F;
@@ -197,7 +197,7 @@ public class MultiModel_chrno extends MultiModel {
     }
 
 	@Override
-	public void actionInit1(MMM_IModelCaps entityCaps) {
+	public void actionInit1(Modchu_IModelCaps entityCaps) {
 		super.actionInit1(entityCaps);
 		bipedLeftArm.isHidden = true;
 		bipedRightArm.isHidden = true;
@@ -213,16 +213,16 @@ public class MultiModel_chrno extends MultiModel {
 		setCapsValue(caps_visible, Rightarm2, true);
 		setCapsValue(caps_visible, bipedRightArm, false);
 		setCapsValue(caps_visible, bipedLeftArm, false);
-		((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-		((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
-		Rightarm2.removeChild(Arms[0]);
-		Leftarm2.removeChild(Arms[1]);
+		((Modchu_ModelRenderer) bipedRightArm).removeChild((Modchu_ModelRenderer) Arms[0]);
+		((Modchu_ModelRenderer) bipedLeftArm).removeChild((Modchu_ModelRenderer) Arms[1]);
+		Rightarm2.removeChild((Modchu_ModelRenderer) Arms[0]);
+		Leftarm2.removeChild((Modchu_ModelRenderer) Arms[1]);
 		if (Arms[0] != null) Arms[0].setRotationPoint(0.5F, 0.0F, 0F);
 		if (Arms[1] != null) Arms[1].setRotationPoint(-0.5F, 0.0F, 0F);
 	}
 
 	@Override
-	public void actionRelease1(MMM_IModelCaps entityCaps) {
+	public void actionRelease1(Modchu_IModelCaps entityCaps) {
 		super.actionRelease1(entityCaps);
 		bipedLeftArm.isHidden = false;
 		bipedRightArm.isHidden = false;
@@ -241,13 +241,13 @@ public class MultiModel_chrno extends MultiModel {
 	}
 /*
     @Override
-	public float getWidth(MMM_IModelCaps pEntityCaps)
+	public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.8F;
     }
 */
     @Override
-    public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
+    public Modchu_ModelRenderer getBipedRightArm(Modchu_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_shortcutKeysAction)
     			&& Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_runActionNumber) == 0
     			| Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_runActionNumber) == 1) {
@@ -265,7 +265,7 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void setArmorBipedRightArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightArmShowModel(entityCaps, b);
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Rightarm1.isHidden = b;
@@ -277,7 +277,7 @@ public class MultiModel_chrno extends MultiModel {
     }
 
     @Override
-    public void setArmorBipedLeftArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftArmShowModel(entityCaps, b);
     	if(Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_getIsWait) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
     		Leftarm1.isHidden = b;

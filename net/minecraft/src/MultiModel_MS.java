@@ -23,7 +23,7 @@ public class MultiModel_MS extends MultiModel_MS1
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, Modchu_IModelCaps entityCaps)
     {
     	super.setRotationAnglesLM(f, f1, ticksExisted, pheadYaw, pheadPitch, f5, entityCaps);
     	Goggles1A.setVisible(false);

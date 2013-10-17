@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.List;
+
 public class MultiModel_Custom1 extends MultiModelCustom {
 
 	public MultiModel_Custom1()
@@ -22,7 +24,7 @@ public class MultiModel_Custom1 extends MultiModelCustom {
 		Modchu_Debug.Debug("MultiModel_Custom1 init");
 		String s = getClass().getSimpleName();
 		s = s.substring(s.lastIndexOf("_Custom") + 7);
-		customModel = new Modchu_CustomModel(this, s, null, f, f1);
+		customModel = new Modchu_CustomModel(this, s, (List)null, f, f1);
 	}
 
 	@Override

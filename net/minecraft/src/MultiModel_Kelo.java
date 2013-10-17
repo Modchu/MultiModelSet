@@ -329,7 +329,7 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
     {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
@@ -403,11 +403,11 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "ChignonB", "Tail", "d"
@@ -423,7 +423,7 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, bipedHeadwear, false);
     	setCapsValue(caps_visible, ChignonB, false);
@@ -431,7 +431,7 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	setCapsValue(caps_visible, rightHandPlus, true);
     	setCapsValue(caps_visible, leftHandPlus, true);
@@ -446,7 +446,7 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	rightHandPlus.showModel = leftHandPlus.showModel = false;
     	bipedRightArm.addChild(SleeveR);
@@ -464,7 +464,7 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
 		float f6 = bipedBody.rotateAngleZ;
 		if (f6 > 0.0F) {
@@ -498,35 +498,35 @@ public class MultiModel_Kelo extends MultiModel {
     }
 
     @Override
-    public float getHeight(MMM_IModelCaps pEntityCaps)
+    public float getHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 1.6F;
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.7F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.2F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	float d = 0.85F;
     	return d;
     }
 
     @Override
-    public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
+    public double getSittingyOffset(Modchu_IModelCaps pEntityCaps) {
     	return -0.5D;
     }
 
     @Override
-    public float ridingViewCorrection(MMM_IModelCaps pEntityCaps) {
+    public float ridingViewCorrection(Modchu_IModelCaps pEntityCaps) {
     	return -0.75F;
     }
 

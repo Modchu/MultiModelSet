@@ -117,7 +117,7 @@ public class MultiModel_mahoro extends MultiModel {
     	((Modchu_ModelRenderer) bipedHead).removeChild(SideTailL);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
     	// ì¡éÍÉÇÅ[ÉVÉáÉì
@@ -142,7 +142,7 @@ public class MultiModel_mahoro extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"SideTailR", "SideTailL", "Tail"

@@ -187,8 +187,8 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     @Override
     public void armsinit(float f, float f1) {
     	super.armsinit(f, f1);
-    	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
+    	((Modchu_ModelRenderer) bipedRightArm).removeChild((Modchu_ModelRenderer) Arms[0]);
+    	((Modchu_ModelRenderer) bipedLeftArm).removeChild((Modchu_ModelRenderer) Arms[1]);
     	rightArm2.addChild(Arms[0]);
     	leftArm2.addChild(Arms[1]);
     }
@@ -226,13 +226,13 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
 	@Override
-	public float getHeight(MMM_IModelCaps pEntityCaps)
+	public float getHeight(Modchu_IModelCaps pEntityCaps)
 	{
 		return 1.99F;
 	}
 
 	@Override
-	public float getWidth(MMM_IModelCaps pEntityCaps)
+	public float getWidth(Modchu_IModelCaps pEntityCaps)
 	{
 		return 0.5F;
 	}
@@ -241,7 +241,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 	 * Žp¨§ŒäE‰Šú‰»
 	 */
 	@Override
-	public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+	public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
 		if (entityliving != null) ;else return;
@@ -309,7 +309,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 	 * Žp¨§ŒäEXV·•ª
 	 */
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
 	{
 		setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
 
@@ -530,7 +530,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 	}
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		//INIT POSITION
 		bipedHead.setRotationPoint (0F, headPosY, 0F);
 		 HeadMount.setRotationPoint (0F, 0F, 0F);
@@ -568,7 +568,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 		//INIT ROTATION
 		bipedHead.rotateAngleX = 0F;
 		bipedHead.rotateAngleY = 0F;
-		bipedHead.rotateAngleZ = 0F;
+		//bipedHead.rotateAngleZ = 0F;
 		 Ponytail.rotateAngleX = 0.05F;
 		 Ponytail.rotateAngleY = 0F;
 		 Ponytail.rotateAngleZ = 0F;
@@ -645,7 +645,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	if ((onGrounds[0] > -9990F || onGrounds[1] > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
     		// ˜rU‚è
     		float f6, f7, f8;
@@ -680,7 +680,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	boolean b = true;
     	setCapsValue(caps_visible, rightArm, b);
@@ -699,7 +699,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, false);
     	boolean b = true;
     	setCapsValue(caps_visible, rightArm, b);
@@ -729,7 +729,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	bipedRightArm.rotationPointX = rightArm.rotationPointX;
     	bipedRightArm.rotationPointY = rightArm.rotationPointY;
     	bipedRightArm.rotationPointZ = rightArm.rotationPointZ;
@@ -761,7 +761,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
 	}
 
     @Override
-    public void action4(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action4(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	// —¼Žè‚ð‘O‚Éo‚·ƒ‚[ƒVƒ‡ƒ“
     	if (onGrounds[dominantArm] > 0F) {
     		switch(dominantArm) {
@@ -783,51 +783,51 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public float getRidingHeight(MMM_IModelCaps pEntityCaps)
+    public float getRidingHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.99F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.81F;
     }
 
     @Override
-    public float getRidingyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getRidingyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.61F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	return 0.7F;
     }
 
     @Override
-    public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
+    public double getSittingyOffset(Modchu_IModelCaps pEntityCaps) {
     	return -0.5D;
     }
 
     @Override
-    public void renderFirstPersonHand(MMM_IModelCaps entityCaps, float f) {
+    public void renderFirstPersonHand(Modchu_IModelCaps entityCaps, float f) {
     	bipedBody.postRender(f);
     	getBipedRightArm(entityCaps).render(f);
     }
 
     @Override
-    public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
+    public Modchu_ModelRenderer getBipedRightArm(Modchu_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     	return leftArm;
     }
 
     @Override
-    public MMM_ModelRenderer getNotDominantArm(MMM_IModelCaps entityCaps) {
+    public Modchu_ModelRenderer getNotDominantArm(Modchu_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_dominantArm, getCapsValue(caps_armorType)) == 0) return leftArm;
     	return rightArm;
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedHeadShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
     	super.setArmorBipedHeadShowModel(entityCaps, b);
     	Ponytail.isHidden = !b;
@@ -836,7 +836,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorBipedBodyShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedBodyShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedBodyShowModel(entityCaps, b);
     	breastR.isHidden = !b;
     	breastL.isHidden = !b;
@@ -844,19 +844,19 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorBipedRightArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightArmShowModel(entityCaps, b);
     	rightArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedLeftArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftArmShowModel(entityCaps, b);
     	leftArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedRightLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightLegShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightLegShowModel(entityCaps, b);
     	setCapsValue(caps_visible, hemSkirtR1, b);
     	setCapsValue(caps_visible, hemSkirtR2, b);
@@ -866,7 +866,7 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorBipedLeftLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftLegShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftLegShowModel(entityCaps, b);
     	setCapsValue(caps_visible, hemSkirtL1, b);
     	setCapsValue(caps_visible, hemSkirtL2, b);
@@ -876,14 +876,14 @@ public class MultiModel_Beverly6 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	setCapsValue(caps_visible, Skirt, b);
     	Skirt.isHidden = !b;
     	//Modchu_Debug.mDebug("setArmorSkirtShowModel b="+b);
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"hemSkirtR1", "hemSkirtL1", "hemSkirtR2", "hemSkirtL2"

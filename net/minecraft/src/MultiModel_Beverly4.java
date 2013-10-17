@@ -32,8 +32,8 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
 
     public MultiModel_Beverly4(float f, float f1, int i, int j) {
     	super(f, f1, i, j);
-    	((Modchu_ModelRenderer) bipedRightArm).removeChild(Arms[0]);
-    	((Modchu_ModelRenderer) bipedLeftArm).removeChild(Arms[1]);
+    	((Modchu_ModelRenderer) bipedRightArm).removeChild((Modchu_ModelRenderer) Arms[0]);
+    	((Modchu_ModelRenderer) bipedLeftArm).removeChild((Modchu_ModelRenderer) Arms[1]);
     	rightArm2.addChild(Arms[0]);
     	leftArm2.addChild(Arms[1]);
     }
@@ -169,49 +169,49 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     	textureHeight = 64;
     	//SkirtR 上
     	SkirtTop = new Modchu_ModelRenderer(this, 47, 20);
-    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeXZTop);
     	SkirtTop.setRotationPoint(-3.0F, -3.5F, -3.5F);
     	rightLeg.addChild(SkirtTop);
 
     	//SkirtR 前
     	SkirtFront = new Modchu_ModelRenderer(this, 47, 27);
-    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 5, 12, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 5, 12, Modchu_ModelPlate.planeXYFront);
     	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//SkirtR 右
     	SkirtRight = new Modchu_ModelRenderer(this, 40, 27);
-    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 7, 12, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 7, 12, Modchu_ModelPlate.planeZYRight);
     	SkirtRight.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//SkirtR 後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 58, 27);
-    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 5, 12, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 5, 12, Modchu_ModelPlate.planeXYBack);
     	SkirtBack.setRotationPoint(0.0F, 0.0F, 7.0F);
     	SkirtTop.addChild(SkirtBack);
 
     	//SkirtL 上
     	SkirtTopL = new Modchu_ModelRenderer(this, 47, 39);
-    	SkirtTopL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, MMM_ModelPlate.planeXZTop);
+    	SkirtTopL.addPlate(0.0F, 0.0F, 0.0F, 5, 7, Modchu_ModelPlate.planeXZTop);
     	SkirtTopL.setRotationPoint(-2.0F, -3.5F, -3.5F);
     	leftLeg.addChild(SkirtTopL);
 
     	//SkirtL 前
     	SkirtFrontL = new Modchu_ModelRenderer(this, 47, 46);
-    	SkirtFrontL.addPlate(0.0F, 0.0F, 0.0F, 5, 12, MMM_ModelPlate.planeXYFront);
+    	SkirtFrontL.addPlate(0.0F, 0.0F, 0.0F, 5, 12, Modchu_ModelPlate.planeXYFront);
     	SkirtFrontL.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTopL.addChild(SkirtFrontL);
 
     	//SkirtL 左
     	SkirtLeftL = new Modchu_ModelRenderer(this, 53, 46);
-    	SkirtLeftL.addPlate(0.0F, 0.0F, 0.0F, 7, 12, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeftL.addPlate(0.0F, 0.0F, 0.0F, 7, 12, Modchu_ModelPlate.planeZYLeft);
     	SkirtLeftL.setRotationPoint(5.0F, 0.0F, 0.0F);
     	SkirtTopL.addChild(SkirtLeftL);
 
     	//SkirtL 後ろ
     	SkirtBackL = new Modchu_ModelRenderer(this, 58, 46);
-    	SkirtBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 12, MMM_ModelPlate.planeXYBack);
+    	SkirtBackL.addPlate(0.0F, 0.0F, 0.0F, 5, 12, Modchu_ModelPlate.planeXYBack);
     	SkirtBackL.setRotationPoint(0.0F, 0.0F, 7.0F);
     	SkirtTopL.addChild(SkirtBackL);
 
@@ -226,7 +226,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
 	@Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
@@ -255,7 +255,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
 	@Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps)
     {
     	setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
     	bipedHead.rotateAngleX = f4 / (180F / (float)Math.PI);
@@ -429,7 +429,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 
@@ -456,7 +456,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	bipedHead.setRotationPoint(0.0F, -2.0F, 0.0F);
     	bipedBody.setRotationPoint(0.0F, -3.5F, 0.0F);
     	Headwear.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -495,7 +495,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "SkirtR", "SkirtL", "SkirtTopL", "SkirtFrontL",
@@ -505,7 +505,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_indexOfAllVisible, "ightArm", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType), bipedRightArm.showModel);
     	setCapsValue(caps_indexOfAllVisible, "eftArm", Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType), bipedLeftArm.showModel);
@@ -518,7 +518,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	boolean b = true;
     	setCapsValue(caps_visible, rightArm, b);
@@ -545,7 +545,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
 	@Override
-	public void actionRelease1(MMM_IModelCaps entityCaps) {
+	public void actionRelease1(Modchu_IModelCaps entityCaps) {
 		setCapsValue(caps_shortcutKeysAction, false);
 		boolean b = true;
 		setCapsValue(caps_visible, rightArm, b);
@@ -579,7 +579,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
 	}
 
 	@Override
-	public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.action1(f, f1, f2, f3, f4, f5, entityCaps);
 		//Modchu_Debug.mDebug("action1");
 		float f6 = bipedBody.rotateAngleZ;
@@ -614,7 +614,7 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
 	}
 
     @Override
-    public void action4(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action4(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	// 両手を前に出すモーション
     	if (onGrounds[dominantArm] > 0F) {
     		switch(dominantArm) {
@@ -636,93 +636,93 @@ public class MultiModel_Beverly4 extends MultiModel_SR2
     }
 
     @Override
-	public float getHeight(MMM_IModelCaps pEntityCaps)
+	public float getHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 1.99F;
     }
 
     @Override
-	public float getWidth(MMM_IModelCaps pEntityCaps)
+	public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.6F;
     }
 
     @Override
-	public float getRidingHeight(MMM_IModelCaps pEntityCaps)
+	public float getRidingHeight(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.99F;
     }
 
 	@Override
-	public float getyOffset(MMM_IModelCaps pEntityCaps) {
+	public float getyOffset(Modchu_IModelCaps pEntityCaps) {
 	    return 1.81F;
 	}
 
 	@Override
-	public float getRidingyOffset(MMM_IModelCaps pEntityCaps) {
+	public float getRidingyOffset(Modchu_IModelCaps pEntityCaps) {
 	    return 1.61F;
 	}
 
 	@Override
-	public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+	public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
 		return 0.7F;
 	}
 
 	@Override
-	public double getSittingyOffset(MMM_IModelCaps pEntityCaps) {
+	public double getSittingyOffset(Modchu_IModelCaps pEntityCaps) {
 		return -0.5D;
 	}
 
 	@Override
-	public void renderFirstPersonHand(MMM_IModelCaps entityCaps, float f) {
+	public void renderFirstPersonHand(Modchu_IModelCaps entityCaps, float f) {
 		bipedBody.postRender(f);
 		getBipedRightArm(entityCaps).render(f);
 	}
 
     @Override
-    public MMM_ModelRenderer getBipedRightArm(MMM_IModelCaps entityCaps) {
+    public Modchu_ModelRenderer getBipedRightArm(Modchu_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
     	return leftArm;
     }
 
     @Override
-    public MMM_ModelRenderer getNotDominantArm(MMM_IModelCaps entityCaps) {
+    public Modchu_ModelRenderer getNotDominantArm(Modchu_IModelCaps entityCaps) {
     	if (Modchu_ModelCapsHelper.getCapsValueInt(entityCaps, caps_dominantArm, getCapsValue(caps_armorType)) == 0) return leftArm;
     	return rightArm;
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedHeadShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
     	super.setArmorBipedHeadShowModel(entityCaps, b);
     }
 
     @Override
-    public void setArmorBipedBodyShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedBodyShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedBodyShowModel(entityCaps, b);
     	Body2.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedRightArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightArmShowModel(entityCaps, b);
     	rightArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedLeftArmShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftArmShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftArmShowModel(entityCaps, b);
     	leftArm.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedRightLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedRightLegShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedRightLegShowModel(entityCaps, b);
     	rightLeg.isHidden = !b;
     }
 
     @Override
-    public void setArmorBipedLeftLegShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedLeftLegShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorBipedLeftLegShowModel(entityCaps, b);
     	leftLeg.isHidden = !b;
     }

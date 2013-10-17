@@ -579,38 +579,38 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 8, 18);
-    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 8, 8, Modchu_ModelPlate.planeXZTop);
     	SkirtTop.setRotationPoint(-4.0F, -4.0F, -4.0F);
     	if (Skirt != null) Skirt.addChild(SkirtTop);
 
     	//ふんわりスカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 8, 24);
-    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 8, 8, Modchu_ModelPlate.planeXYFront);
     	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//ふんわりスカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 2, 24);
-    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 8, 8, Modchu_ModelPlate.planeZYRight);
     	SkirtRight.setRotationPoint(8.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//ふんわりスカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 16, 24);
-    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 8, 8, Modchu_ModelPlate.planeZYLeft);
     	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//ふんわりスカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 22, 24);
-    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 8, 8, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 8, 8, Modchu_ModelPlate.planeXYBack);
     	SkirtBack.setRotationPoint(0.0F, 0.0F, 8.0F);
     	SkirtTop.addChild(SkirtBack);
     	if (Skirt != null) ((Modchu_ModelRenderer) Skirt).setVisible(false);
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2) {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
     		Cheek_R.setVisible(true);
@@ -622,7 +622,7 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Number.setRotationPoint(-2.0F, 1.0F, 0.0F);
 
@@ -694,7 +694,7 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Cheek_R", "Cheek_L"
@@ -716,7 +716,7 @@ public class MultiModel_VUD1 extends MultiModel_Aug
     }
 
     @Override
-    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingAfter(Modchu_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//Negi Default off
     	setCapsValue(entityCaps, caps_defaultShowPartsMap, "Negi1", i, false);

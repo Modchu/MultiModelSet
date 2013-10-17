@@ -112,7 +112,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2) {
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2) {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	Entity entityliving = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entityliving != null) ;else return;
@@ -128,7 +128,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
     	Cwave.setVisible(false);
 
@@ -202,7 +202,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"bipedHeadwear", "d"
@@ -220,7 +220,7 @@ public class MultiModel_ExtraArms extends MultiModel {
     }
 /*
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.8F;
     }

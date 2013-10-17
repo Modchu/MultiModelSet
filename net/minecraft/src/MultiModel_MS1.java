@@ -133,38 +133,38 @@ public class MultiModel_MS1 extends MultiModel_SR2
     	textureHeight = 64;
     	//ふんわりスカート上
     	SkirtTop = new Modchu_ModelRenderer(this, 6, 16);
-    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 7, 6, MMM_ModelPlate.planeXZTop);
+    	SkirtTop.addPlate(0.0F, 0.0F, 0.0F, 7, 6, Modchu_ModelPlate.planeXZTop);
     	SkirtTop.setRotationPoint(-3.5F, -2.0F, -3.0F);
     	Skirt.addChild(SkirtTop);
 
     	//ふんわりスカート前
     	SkirtFront = new Modchu_ModelRenderer(this, 6, 22);
-    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 7, 7, MMM_ModelPlate.planeXYFront);
+    	SkirtFront.addPlate(0.0F, 0.0F, 0.0F, 7, 7, Modchu_ModelPlate.planeXYFront);
     	SkirtFront.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtFront);
 
     	//ふんわりスカート右
     	SkirtRight = new Modchu_ModelRenderer(this, 0, 22);
-    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 6, 7, MMM_ModelPlate.planeZYRight);
+    	SkirtRight.addPlate(0.0F, 0.0F, 0.0F, 6, 7, Modchu_ModelPlate.planeZYRight);
     	SkirtRight.setRotationPoint(7.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtRight);
 
     	//ふんわりスカート左
     	SkirtLeft = new Modchu_ModelRenderer(this, 13, 22);
-    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 6, 7, MMM_ModelPlate.planeZYLeft);
+    	SkirtLeft.addPlate(0.0F, 0.0F, 0.0F, 6, 7, Modchu_ModelPlate.planeZYLeft);
     	SkirtLeft.setRotationPoint(0.0F, 0.0F, 0.0F);
     	SkirtTop.addChild(SkirtLeft);
 
     	//ふんわりスカート後ろ
     	SkirtBack = new Modchu_ModelRenderer(this, 18, 22);
-    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 7, 7, MMM_ModelPlate.planeXYBack);
+    	SkirtBack.addPlate(0.0F, 0.0F, 0.0F, 7, 7, Modchu_ModelPlate.planeXYBack);
     	SkirtBack.setRotationPoint(0.0F, 0.0F, 6.0F);
     	SkirtTop.addChild(SkirtBack);
     	setCapsValue(caps_visible, Skirt, false);
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
         super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
@@ -177,7 +177,7 @@ public class MultiModel_MS1 extends MultiModel_SR2
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, MMM_IModelCaps entityCaps)
+    public void setRotationAnglesLM(float f, float f1, float ticksExisted, float pheadYaw, float pheadPitch, float f5, Modchu_IModelCaps entityCaps)
     {
     	super.setRotationAnglesLM(f, f1, ticksExisted, pheadYaw, pheadPitch, f5, entityCaps);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow)) {
@@ -192,7 +192,7 @@ public class MultiModel_MS1 extends MultiModel_SR2
     }
 
 	@Override
-	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+	public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
 		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"
@@ -201,14 +201,14 @@ public class MultiModel_MS1 extends MultiModel_SR2
 	}
 
     @Override
-    public void defaultPartsSettingAfter(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingAfter(Modchu_IModelCaps entityCaps) {
     	int i = Modchu_ModelCapsHelper.getCapsValueInt(this, caps_armorType);
     	//GogglesA Default off
     	setCapsValue(entityCaps, caps_defaultShowPartsMap, "GogglesA", i, false);
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, Tail, false);
     	setCapsValue(caps_visible, SideTailR, false);

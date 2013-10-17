@@ -128,11 +128,11 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 
     	bipedRightLeg.rotateAngleX = (MathHelper.cos(f * 0.6662F) * 1.4F * f1) / 1.5F;
@@ -265,7 +265,7 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	super.actionInit1(entityCaps);
     	setCapsValue(caps_visible, sodeL, false);
     	setCapsValue(caps_visible, sodeR, false);
@@ -280,7 +280,7 @@ public class MultiModel_Shion extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	super.actionRelease1(entityCaps);
     	((Modchu_ModelRenderer) rightArm).removeChild(sodeR);
     	((Modchu_ModelRenderer) leftArm).removeChild(sodeL);
@@ -292,7 +292,7 @@ public class MultiModel_Shion extends MultiModel {
     	sodeR.rotationPointY = 0.0F;
     }
 
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	((Modchu_ModelRenderer) bipedRightArm).removeChild(sodeR);
     	((Modchu_ModelRenderer) bipedLeftArm).removeChild(sodeL);

@@ -59,7 +59,7 @@ public class MultiModel_chu extends MultiModel {
 		CatTail.setRotateAngleX(-4.363323F);
     }
 
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
         super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
         CatTail.setRotateAngleX(mh_sin(f * 0.6662F) * 0.5F - 4.363323F);
 

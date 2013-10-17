@@ -232,7 +232,7 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     }
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	bipedHeadwear.setRotationPoint(0F, 0F, 0F);
     	bipedBody.setRotationPoint(0F, bodyPosY, 0F);
 
@@ -328,7 +328,7 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
      * Žp¨§ŒäEXV·•ª
      */
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);
     	//“ª•”
     	bipedHead.rotateAngleY += f3 / 57.29578F;
@@ -449,11 +449,11 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     }
 
     @Override
-    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.action1(f, f1, f2, f3, f4, f5, entityCaps);
     	float f6 = bipedBody.rotateAngleZ;
     	if (f6 > 0.0F) {
@@ -478,23 +478,23 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps)
+    public float getWidth(Modchu_IModelCaps pEntityCaps)
     {
     	return 0.5F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 
     @Override
-    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	setCapsValue(caps_visible, Skirt, b);
     	setCapsValue(caps_visible, hemSkirt, b);
     	Skirt.isHidden = !b;
@@ -502,7 +502,7 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"hemSkirt"

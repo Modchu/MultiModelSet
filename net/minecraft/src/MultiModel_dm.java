@@ -296,7 +296,7 @@ public class MultiModel_dm extends MultiModel_SR2
     }
 
     @Override
-    public void setLivingAnimationsLM(MMM_IModelCaps entityCaps, float f, float f1, float f2)
+    public void setLivingAnimationsLM(Modchu_IModelCaps entityCaps, float f, float f1, float f2)
     {
     	super.setLivingAnimationsLM(entityCaps, f, f1, f2);
     	if (Modchu_ModelCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
@@ -309,7 +309,7 @@ public class MultiModel_dm extends MultiModel_SR2
     }
 
 	@Override
-	public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+	public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
 		super.defaultPartsSettingBefore(entityCaps);
 		String[] s = {
 				"Cheek_R", "Cheek_L"

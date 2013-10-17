@@ -64,7 +64,7 @@ public class MultiModel_twinD extends MultiModel_SR2
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Tail", "SideTailL", "SideTailR", "ChignonB"
@@ -73,7 +73,7 @@ public class MultiModel_twinD extends MultiModel_SR2
     }
 
     @Override
-    public void showModelSettingReflects(MMM_IModelCaps entityCaps) {
+    public void showModelSettingReflects(Modchu_IModelCaps entityCaps) {
     	super.showModelSettingReflects(entityCaps);
     	setCapsValue(caps_visible, Tail, false);
     	setCapsValue(caps_visible, SideTailL, false);

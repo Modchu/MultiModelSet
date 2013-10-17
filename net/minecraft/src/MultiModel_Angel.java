@@ -641,7 +641,7 @@ public class MultiModel_Angel extends MultiModel_SR2 {
     }
 
 	@Override
-	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Ribon0.setRotationPoint(0F, 0.8F, 1.5F);
 
@@ -676,7 +676,7 @@ public class MultiModel_Angel extends MultiModel_SR2 {
 	}
 
 	@Override
-	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
 		if (Modchu_ModelCapsHelper.getCapsValueInt(this, caps_skirtFloats) < 2) return;
     	float motionY = (float) Modchu_ModelCapsHelper.getCapsValueDouble(this, caps_motionY);
 		Skirt1.setRotateAngleDeg(-118F, 113F, 47F);
@@ -806,7 +806,7 @@ public class MultiModel_Angel extends MultiModel_SR2 {
 	}
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s = {
     			"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
@@ -821,13 +821,13 @@ public class MultiModel_Angel extends MultiModel_SR2 {
     }
 
     @Override
-    public void setArmorBipedHeadShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorBipedHeadShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	bipedHead.isHidden = !b;
     	super.setArmorBipedHeadShowModel(entityCaps, b);
     }
 
     @Override
-    public void setArmorSkirtShowModel(MMM_IModelCaps entityCaps, boolean b) {
+    public void setArmorSkirtShowModel(Modchu_IModelCaps entityCaps, boolean b) {
     	super.setArmorSkirtShowModel(entityCaps, b);
     	Skirt.isHidden = !b;
     }

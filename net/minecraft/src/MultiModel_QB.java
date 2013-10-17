@@ -119,7 +119,7 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	float ff1 = mh_sin(f2 * 0.09F) * 0.05F;
     	Arms[0].setRotationPoint(0.5F, 3.0F, 0F);
     	Arms[1].setRotationPoint(-0.5F, 3.0F, 0F);
@@ -343,10 +343,10 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     }
 
-    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void armSwing(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	if ((onGrounds[0] > -9990F || onGrounds[1] > -9990F) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_aimedBow) && !Modchu_ModelCapsHelper.getCapsValueBoolean(this, caps_oldwalking)) {
     		// òrêUÇË
     		float f6, f7, f8;
@@ -387,9 +387,9 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	super.setRotationAnglesfirstPerson(f, f1, f2, f3, f4, f5, entityCaps);
-    	MMM_ModelRenderer arm = getBipedRightArm(entityCaps);
+    	Modchu_ModelRenderer arm = getBipedRightArm(entityCaps);
     	Entity entity = (Entity) getCapsValue(entityCaps, entityCaps.caps_Entity);
     	if (entity != null
     			&& getCapsValue(entityCaps, entityCaps.caps_currentEquippedItem) != null) {
@@ -415,7 +415,7 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void defaultPartsSettingBefore(MMM_IModelCaps entityCaps) {
+    public void defaultPartsSettingBefore(Modchu_IModelCaps entityCaps) {
     	super.defaultPartsSettingBefore(entityCaps);
     	String[] s1 = {
     			"rightLegbottom", "leftLegbottom", "rightearhair", "leftearhair"
@@ -427,7 +427,7 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void actionInit1(MMM_IModelCaps entityCaps) {
+    public void actionInit1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, true);
     	setCapsValue(caps_sneakBan, true);
     	setCapsValue(caps_waitBan, true);
@@ -435,7 +435,7 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void actionRelease1(MMM_IModelCaps entityCaps) {
+    public void actionRelease1(Modchu_IModelCaps entityCaps) {
     	setCapsValue(caps_shortcutKeysAction, false);
     	setCapsValue(caps_sneakBan, false);
     	setCapsValue(caps_waitBan, false);
@@ -452,7 +452,7 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public void action1(float f, float f1, float f2, float f3, float f4, float f5, MMM_IModelCaps entityCaps) {
+    public void action1(float f, float f1, float f2, float f3, float f4, float f5, Modchu_IModelCaps entityCaps) {
     	float speed = Modchu_ModelCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 10;
     	if (speed < 0.0F) return;
 
@@ -489,32 +489,32 @@ public class MultiModel_QB extends MultiModel {
     }
 
     @Override
-    public float getHeight(MMM_IModelCaps pEntityCaps) {
+    public float getHeight(Modchu_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 
     @Override
-    public float getWidth(MMM_IModelCaps pEntityCaps) {
+    public float getWidth(Modchu_IModelCaps pEntityCaps) {
     	return 0.7F;
     }
 
     @Override
-    public float getRidingHeight(MMM_IModelCaps pEntityCaps) {
+    public float getRidingHeight(Modchu_IModelCaps pEntityCaps) {
     	return 0.85F;
     }
 
     @Override
-    public float getyOffset(MMM_IModelCaps pEntityCaps) {
+    public float getyOffset(Modchu_IModelCaps pEntityCaps) {
     	return 0.47F;
     }
 
     @Override
-    public float getMountedYOffset(MMM_IModelCaps pEntityCaps) {
+    public float getMountedYOffset(Modchu_IModelCaps pEntityCaps) {
     	return 1.4F;
     }
 
     @Override
-    public float Physical_Hammer(MMM_IModelCaps entityCaps) {
+    public float Physical_Hammer(Modchu_IModelCaps entityCaps) {
     	return Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_Physical_Hammer) == 1.0F ? 1.2F : Modchu_ModelCapsHelper.getCapsValueFloat(this, caps_Physical_Hammer);
     }
 
