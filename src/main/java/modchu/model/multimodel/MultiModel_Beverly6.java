@@ -107,8 +107,7 @@ public class MultiModel_Beverly6 extends MultiModelBeverlyBase {	//added field
 		bipedBody.clearChildModels();
 		bipedBody.addChild(bipedHead);
 		bipedBody.addChild(rightArm);
-		bipedBody.addChild(leftArm);
-		upperBody.clearBoneChildModels();
+		bipedBody.addChild(leftArm);		bipedBody.addChild(Skirt);		upperBody.clearBoneChildModels();
 		upperBody.addBoneChild(bipedBody);
 		lowerBody.clearBoneChildModels();
 		lowerBody.addBoneChild(Skirt);
