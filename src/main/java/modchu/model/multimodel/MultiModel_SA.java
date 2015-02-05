@@ -286,7 +286,7 @@ import modchu.model.multimodel.base.MultiModel_Aug;public class MultiModel_SA 
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entityliving != null) ;else return;
+		if (entityliving != null); else return;
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)) {
 			Cheek_R.setVisible(true);
 			Cheek_L.setVisible(true);

@@ -358,7 +358,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM1
 		Arms[1].rotateAngleY =
 		Arms[1].rotateAngleZ = 0F;
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entityliving != null) ;else return;
+		if (entityliving != null); else return;
 		int ticksExisted = Modchu_AS.getInt(Modchu_AS.entityTicksExisted, entityliving);
 		float f3 = (float)ticksExisted + f2 + Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_entityIdFactor);		eyeR.showModel = eyeL.showModel =
 		eyeR1.showModel = eyeL1.showModel = false;

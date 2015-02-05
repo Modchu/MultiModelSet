@@ -158,7 +158,7 @@ public class MultiModel_Beverly5 extends MultiModelBeverlyBase {	//added field
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entityliving != null) ;else return;
+		if (entityliving != null); else return;
 		//ふわりスカート
 		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_motionY) + 0.1F;		float fwBuf10 = velY * 1F;
 		fwBuf10 = fwBuf10 > 0.5F ? 0.5F : fwBuf10;

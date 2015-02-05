@@ -381,7 +381,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Chi
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = Modchu_EntityCapsHelper.getCapsValue(entityCaps, entityCaps.caps_Entity);
-		if (entityliving != null) ;else return;		setCapsValue(entityCaps, caps_visible, pink, (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)));
+		if (entityliving != null); else return;		setCapsValue(entityCaps, caps_visible, pink, (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger)));
 		int ticksExisted = Modchu_AS.getInt(Modchu_AS.entityTicksExisted, entityliving);
 		float f3 = (float)ticksExisted + f2 + Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_entityIdFactor);
 		if (0.0F > mh_sin(f3 * 0.17F) + mh_sin(f3 * 0.17F + 0.02F) + mh_sin(f3 * 0.11F) + mh_sin(f3 * 0.7F) + 3.1F) {

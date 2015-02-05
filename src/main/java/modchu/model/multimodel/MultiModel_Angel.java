@@ -1,9 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.ModchuModel_ModelRendererMaster;
-import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Angel extends MultiModel_SR2 {	public Modchu_ModelRenderer Prim;
+package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.characteristic.Modchu_AS;import modchu.lib.characteristic.Modchu_ModelRenderer;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRendererMaster;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Angel extends MultiModel_SR2 {	public Modchu_ModelRenderer Prim;
 	public Modchu_ModelRenderer WingLroot;
 	public Modchu_ModelRenderer WingL2;
 	public Modchu_ModelRenderer WingL3;

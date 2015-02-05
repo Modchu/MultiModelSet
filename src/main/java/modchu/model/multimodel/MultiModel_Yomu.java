@@ -557,7 +557,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Yom
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entityliving != null) ;else return;
+		if (entityliving != null); else return;
 		float f4;		Object ridingEntity = Modchu_AS.get(Modchu_AS.entityRidingEntity, entityliving);
 		int ticksExisted = Modchu_AS.getInt(Modchu_AS.entityTicksExisted, entityliving);
 		if (isRiding
@@ -615,7 +615,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Yom
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entity != null) ;else return;
+		if (entity != null); else return;
 		int entityId = Modchu_AS.getInt(Modchu_AS.entityEntityID, entity);
 		shiftArray(HanreiC.rotationPointX, HanreiC.rotationPointY, HanreiC.rotationPointZ);
 		HeadMount.setRotationPoint(0.0F, 1.0F, 0.0F);		Hanrei4.rotationPointX = pastX[4];

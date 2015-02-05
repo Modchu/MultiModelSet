@@ -82,7 +82,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Dre
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entityliving != null) ;else return;
+		if (entityliving != null); else return;
 		int entityId = Modchu_AS.getInt(Modchu_AS.entityEntityID, entityliving);
 		IdOffset = entityId;
 		pink.setVisible(Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isLookSuger));
@@ -90,7 +90,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Dre
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entity != null) ;else return;		float t;
+		if (entity != null); else return;		float t;
 		Object ridingEntity = Modchu_AS.get(Modchu_AS.entityRidingEntity, entity);
 		int ticksExisted = Modchu_AS.getInt(Modchu_AS.entityTicksExisted, entity);
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsRiding)

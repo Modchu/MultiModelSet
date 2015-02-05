@@ -1,9 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.ModchuModel_ModelRendererMaster;
-import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_DogAngel extends MultiModel_SR2 {	public Modchu_ModelRenderer EarL1;
+package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.characteristic.Modchu_AS;import modchu.lib.characteristic.Modchu_ModelRenderer;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRendererMaster;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_DogAngel extends MultiModel_SR2 {	public Modchu_ModelRenderer EarL1;
 	public Modchu_ModelRenderer EarL2;
 	public Modchu_ModelRenderer EarR1;
 	public Modchu_ModelRenderer EarR2;
@@ -360,14 +355,14 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Dog
 		Skirt11.rotateAngleZ += motionY;
 		Skirt12.rotateAngleX += motionY;
 		Skirt12.rotateAngleZ += motionY;
-	}    @Override
-    public void defaultPartsSettingBefore(ModchuModel_IEntityCaps entityCaps) {
-    	super.defaultPartsSettingBefore(entityCaps);
-    	String[] s = {
-    			"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
-    			"Skirt6", "Skirt7", "Skirt8", "Skirt9", "Skirt10",
-    			"Skirt11", "Skirt12"
-    	};
-    	setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
-    }
-}
+	}	@Override
+	public void defaultPartsSettingBefore(ModchuModel_IEntityCaps entityCaps) {
+		super.defaultPartsSettingBefore(entityCaps);
+		String[] s = {
+				"Skirt1", "Skirt2", "Skirt3", "Skirt4", "Skirt5",
+				"Skirt6", "Skirt7", "Skirt8", "Skirt9", "Skirt10",
+				"Skirt11", "Skirt12"
+		};
+		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
+	}
+	@Override	public void setArmorBipedHeadShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		bipedHead.isHidden = !b;		super.setArmorBipedHeadShowModel(entityCaps, b);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		super.setArmorSkirtShowModel(entityCaps, b);		Skirt.isHidden = !b;	}}
