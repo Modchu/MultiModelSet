@@ -495,7 +495,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Chi
 	}	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) return;
-		float motionY = (float) getMotionY();
+		float motionY = (float) Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY);;
 		Skirt21.setRotateAngleDeg(-118F, 113F, 47F);
 		Skirt22.setRotateAngleDeg(-65F, 113F, 47F);
 		Skirt23.setRotateAngleDeg(-122F, 158F, 47F);

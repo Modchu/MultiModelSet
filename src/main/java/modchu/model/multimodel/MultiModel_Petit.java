@@ -204,7 +204,7 @@ import modchu.model.ModchuModel_ModelPlate;public class MultiModel_Petit exten
 	}	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_skirtFloats) < 2) return;
-		float motionY = (float) getMotionY();
+		float motionY = (float) Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY);;
 		SkirtFront.rotationPointX = SkirtBack.rotationPointX = motionY * 6.0F;
 		SkirtRight.rotationPointZ = SkirtLeft.rotationPointZ = motionY * 2.0F;		SkirtFront.rotationPointY = motionY * 2.0F;
 		SkirtFront.rotationPointZ = -motionY * 6.0F;

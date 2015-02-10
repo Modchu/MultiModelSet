@@ -514,7 +514,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM1
 				bipedLeftArm.rotateAngleX -= Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;
 			}
 		}
-		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
+		breastFloats(f, f1, f2, f3, f4, f5, entityCaps);		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
 	}	@Override
 	public void defaultPartsSettingAfter(ModchuModel_IEntityCaps entityCaps) {
 		int i = Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_armorType);

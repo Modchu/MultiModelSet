@@ -386,4 +386,4 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo exten
 	public String getUsingTexture() {
 		return null;
 	}
-}
+	@Override	public String[] getBreastName() {		return null;	}}

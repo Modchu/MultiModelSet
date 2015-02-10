@@ -314,7 +314,7 @@ import modchu.model.multimodel.base.MultiModel_Aug;public class MultiModel_SA 
 		sensor4.rotateAngleX = mh_sin(f3 * 0.067F) * 0.05F + f4;
 		sensor4.rotateAngleY = mh_cos(f3 * 0.09F) * 0.5F;
 		sensor4.rotateAngleZ = mh_sin(f3 * 0.09F) * 0.2F;
-	}	@Override
+	}	@Override	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {		super.setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);		Breast1.setRotationPoint(0.0F, -2.5F, -2F);		Breast2.setRotationPoint(0.0F, -2.5F, -2F);	}	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		SideTailR.rotateAngleX = SideTailL.rotateAngleX = 0.0F;

@@ -222,7 +222,7 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_Mabel e
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_skirtFloats) < 2) return;
-		float motionY = (float) getMotionY();		SkirtFront.rotationPointX = SkirtBack.rotationPointX =
+		float motionY = (float) Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY);;		SkirtFront.rotationPointX = SkirtBack.rotationPointX =
 				innerSkirtFront.rotationPointX = innerSkirtBack.rotationPointX =
 				innerSkirtLeft.rotationPointY = innerSkirtRight.rotationPointY = motionY * 2.0F;
 		SkirtRight.rotationPointZ = SkirtLeft.rotationPointZ =

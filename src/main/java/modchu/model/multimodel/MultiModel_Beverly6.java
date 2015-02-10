@@ -161,7 +161,7 @@ public class MultiModel_Beverly6 extends MultiModelBeverlyBase {	//added field
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
 		if (entityliving != null); else return;
 		//ふわりスカート
-		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_motionY) + 0.1F;		float fwBuf10 = velY * 1F;
+		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY) + 0.1F;		float fwBuf10 = velY * 1F;
 		fwBuf10 = fwBuf10 > 0.5F ? 0.5F : fwBuf10;
 		fwBuf10 = fwBuf10 < -0.5F ? -0.5F : fwBuf10;
 		Skirt.rotationPointY += fwBuf10;		float fwBuf11 = velY * 3F;
@@ -377,7 +377,7 @@ public class MultiModel_Beverly6 extends MultiModelBeverlyBase {	//added field
 		float sinBody2Y = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, bipedBody.rotateAngleY + hipBody.rotateAngleY);
 		float cosBody2Y = 1F - Modchu_AS.getFloat(Modchu_AS.mathHelperCos, bipedBody.rotateAngleY + hipBody.rotateAngleY);		bipedHead.rotationPointZ -= -headPosY * sinBody1X;
 		bipedHead.rotationPointY += -headPosY * cosBody1X;
-		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
+		breastFloats(f, f1, f2, f3, f4, f5, entityCaps);		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
 	}	@Override
 	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		//INIT POSITION

@@ -375,7 +375,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_st 
 				leftArm.isHidden = rightArm2.isHidden = leftArm2.isHidden =
 				rightLeg.isHidden = rightLeg2.isHidden = leftLeg.isHidden =
 				leftLeg2.isHidden = false;
-	}	@Override
+	}	@Override	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {		super.setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);		Breast1.setRotationPoint(0.0F, 1.0F, -2F);	}	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
 		Skirt.rotationPointY -= 2.0F;

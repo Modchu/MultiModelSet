@@ -136,7 +136,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {	public Modchu_ModelRend
 		bipedBody.rotateAngleY = 0F;		//ふわりスカート
 		Object entity = getCapsValue((ModchuModel_IEntityCaps) entityCaps, ((ModchuModel_IEntityCaps) entityCaps).caps_Entity);
 		if (entity != null); else return;
-		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_motionY) + 0.1F;		float fwBuf1 = velY * 5F;
+		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY) + 0.1F;		float fwBuf1 = velY * 5F;
 		fwBuf1 = fwBuf1 > 1F ? 1F : fwBuf1;
 		fwBuf1 = fwBuf1 < -2.5F ? -2.5F : fwBuf1;
 		Skirt.rotationPointY += fwBuf1;		float fwBuf2 = velY * 2F;
@@ -275,7 +275,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {	public Modchu_ModelRend
 	}	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) return;
-		float motionY = (float) getMotionY();
+		float motionY = (float) Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY);;
 		Skirt.rotationPointY = 10.0F;		SkirtFront.rotationPointX = SkirtBack.rotationPointX = motionY * 4.0F;
 		SkirtRight.rotationPointZ = motionY * 4.0F;
 		SkirtLeft.rotationPointZ = motionY * 4.0F;		SkirtFront.rotateAngleX = motionY;

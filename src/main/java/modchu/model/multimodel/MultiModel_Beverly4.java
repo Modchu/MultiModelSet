@@ -340,11 +340,11 @@ package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.
 			}
 		}
 		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
-		skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
+		breastFloats(f, f1, f2, f3, f4, f5, entityCaps);		skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
 	}	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) return;
-		float motionY = (float) getMotionY();		SkirtFront.rotationPointX = SkirtBack.rotationPointX = motionY * 5.0F;
+		float motionY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY);		SkirtFront.rotationPointX = SkirtBack.rotationPointX = motionY * 5.0F;
 		SkirtFrontL.rotationPointX = SkirtBackL.rotationPointX = motionY * 2.0F;
 		SkirtRight.rotationPointZ = motionY * 2.0F;
 		SkirtLeftL.rotationPointZ = motionY * 2.0F;
@@ -491,4 +491,4 @@ package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.
 		setCapsValue(entityCaps, caps_visible, Headwear, b);	}	@Override
 	public void setArmorBipedBodyShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {
 		super.setArmorBipedBodyShowModel(entityCaps, b);
-		setCapsValue(entityCaps, caps_visible, Body2, b);		setCapsValue(entityCaps, caps_visible, Body3, b);		setCapsValue(entityCaps, caps_visible, Bodywear, b);		setCapsValue(entityCaps, caps_visible, shield, b);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		if (Skirt != null) {			if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) {				setCapsValue(entityCaps, caps_visible, SkirtR, b);				setCapsValue(entityCaps, caps_visible, SkirtL, b);			} else {				setCapsValue(entityCaps, caps_visible, SkirtTop, b);				setCapsValue(entityCaps, caps_visible, SkirtFront, b);				setCapsValue(entityCaps, caps_visible, SkirtRight, b);				setCapsValue(entityCaps, caps_visible, SkirtLeft, b);				setCapsValue(entityCaps, caps_visible, SkirtBack, b);				setCapsValue(entityCaps, caps_visible, SkirtTopL, b);				setCapsValue(entityCaps, caps_visible, SkirtFrontL, b);				setCapsValue(entityCaps, caps_visible, SkirtLeftL, b);				setCapsValue(entityCaps, caps_visible, SkirtBackL, b);			}		}	}}
+		setCapsValue(entityCaps, caps_visible, Body2, b);		setCapsValue(entityCaps, caps_visible, Body3, b);		setCapsValue(entityCaps, caps_visible, Bodywear, b);		setCapsValue(entityCaps, caps_visible, shield, b);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		if (Skirt != null) {			if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) {				setCapsValue(entityCaps, caps_visible, SkirtR, b);				setCapsValue(entityCaps, caps_visible, SkirtL, b);			} else {				setCapsValue(entityCaps, caps_visible, SkirtTop, b);				setCapsValue(entityCaps, caps_visible, SkirtFront, b);				setCapsValue(entityCaps, caps_visible, SkirtRight, b);				setCapsValue(entityCaps, caps_visible, SkirtLeft, b);				setCapsValue(entityCaps, caps_visible, SkirtBack, b);				setCapsValue(entityCaps, caps_visible, SkirtTopL, b);				setCapsValue(entityCaps, caps_visible, SkirtFrontL, b);				setCapsValue(entityCaps, caps_visible, SkirtLeftL, b);				setCapsValue(entityCaps, caps_visible, SkirtBackL, b);			}		}	}	@Override	public String[] getBreastName() {		return new String[]{ "body2" };	}}

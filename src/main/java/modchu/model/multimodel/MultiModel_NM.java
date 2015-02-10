@@ -235,7 +235,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM 
 		bipedLeftArm.addChild(LeftArm3);
 		bipedLeftLeg.addChild(LeftLeg);
 		bipedRightLeg.addChild(RightLeg);
-	}	@Override
+	}	@Override	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {		super.setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);		Breast1.setRotationPoint(0.0F, -3.0F, -2F);		BreastA.setRotationPoint(0.0F, 1.0F, -2F);	}	@Override
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);

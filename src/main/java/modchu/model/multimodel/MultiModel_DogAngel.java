@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.characteristic.Modchu_AS;import modchu.lib.characteristic.Modchu_ModelRenderer;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRendererMaster;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_DogAngel extends MultiModel_SR2 {	public Modchu_ModelRenderer EarL1;
+package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.characteristic.Modchu_AS;import modchu.lib.characteristic.Modchu_ModelRenderer;import modchu.model.ModchuModel_ConfigData;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRendererMaster;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_DogAngel extends MultiModel_SR2 {	public Modchu_ModelRenderer EarL1;
 	public Modchu_ModelRenderer EarL2;
 	public Modchu_ModelRenderer EarR1;
 	public Modchu_ModelRenderer EarR2;
@@ -285,12 +285,10 @@ package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.
 		Skirt.addChild(Skirt12);
 	}	@Override
 	public void defaultSkirtFloatsAddChild() {
-	}	@Override
+	}	@Override	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {		super.setDefaultPause(f, f1, f2, f3, f4, f5, entityCaps);		HeadTop.setRotationPoint(0.0F, -7.0F, 0.0F);		Bust1.setRotationPoint(-2.0F, -3.5F, -1.5F);		Bust2.setRotationPoint(-2.0F, -2.6F, -0.5F);	}	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
-		HeadTop.setRotationPoint(0.0F, -7.0F, 0.0F);
-		Bust1.setRotationPoint(-2.0F, -3.5F, -1.5F);
-		Bust2.setRotationPoint(-2.0F, -2.6F, -0.5F);		WingLroot.rotateAngleX=1.570796313F;
+		WingLroot.rotateAngleX=1.570796313F;
 		WingRroot.rotateAngleX=1.570796313F;
 		WingLroot.rotateAngleY=Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f2 * 0.5F) * 0.22F + 0.35F;
 		WingRroot.rotateAngleY=-WingLroot.rotateAngleY;
@@ -304,12 +302,10 @@ package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.
 			WingLroot.rotateAngleY= -0.3F;
 			WingRroot.rotateAngleY= 0.3F;
 		}
-		Skirt.rotationPointY = 3.5F;
-		skirtFloats(f, f1, f2, f3, f4, f5, entityCaps);
-	}	@Override
+		Skirt.rotationPointY = 3.5F;	}	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) return;
-    	float motionY = (float) getMotionY();
+    	float motionY = (float) Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY);;
 		Skirt1.setRotateAngle(-0.7853982F, 0.2268928F, 0.8203047F);
 		Skirt2.setRotateAngle(-0.7853982F, 0.9075712F, 0.8203047F);
 		Skirt3.setRotateAngle(-0.7853982F, 1.308997F, 0.715585F);
@@ -365,4 +361,4 @@ package modchu.model.multimodel;import modchu.lib.Modchu_Debug;import modchu.
 		};
 		setCapsValue(entityCaps, caps_showPartsHideList, (Object) s);
 	}
-	@Override	public void setArmorBipedHeadShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		bipedHead.isHidden = !b;		super.setArmorBipedHeadShowModel(entityCaps, b);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		super.setArmorSkirtShowModel(entityCaps, b);		Skirt.isHidden = !b;	}}
+	@Override	public void setArmorBipedHeadShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		bipedHead.isHidden = !b;		super.setArmorBipedHeadShowModel(entityCaps, b);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		super.setArmorSkirtShowModel(entityCaps, b);		Skirt.isHidden = !b;	}	@Override	public String[] getBreastName() {		return new String[]{ "bust" };	}}

@@ -153,7 +153,7 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {	public Modchu_ModelRend
 		bipedBody.rotateAngleY = 0F;		//ふわりスカート
 		Object entity = Modchu_EntityCapsHelper.getCapsValue(entityCaps, ((ModchuModel_IEntityCaps) entityCaps).caps_Entity);
 		if (entity != null); else return;
-		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_motionY) + 0.1F;		float fwBuf1 = velY * 5F;
+		float velY = (float)Modchu_EntityCapsHelper.getCapsValueDouble(this, entityCaps, caps_skirtFloatsMotionY) + 0.1F;		float fwBuf1 = velY * 5F;
 		fwBuf1 = fwBuf1 > 1F ? 1F : fwBuf1;
 		fwBuf1 = fwBuf1 < -2.5F ? -2.5F : fwBuf1;
 		Skirt.rotationPointY += fwBuf1;		float fwBuf2 = velY * 2F;
