@@ -1,20 +1,18 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_chrno extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer RibonL;
-	public Modchu_ModelRenderer RibonR;
-	public Modchu_ModelRenderer CatEL;
-	public Modchu_ModelRenderer CatER;
-	public Modchu_ModelRenderer Icewing1;
-	public Modchu_ModelRenderer Icewing2;
-	public Modchu_ModelRenderer Icewing3;
-	public Modchu_ModelRenderer Icewing4;
-	public Modchu_ModelRenderer Icewing5;
-	public Modchu_ModelRenderer Icewing6;
-	public Modchu_ModelRenderer Prim;
-	public Modchu_ModelRenderer Rightarm1;
-	public Modchu_ModelRenderer Rightarm2;
-	public Modchu_ModelRenderer Leftarm1;
-	public Modchu_ModelRenderer Leftarm2;	public MultiModel_chrno() {
+package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_chrno extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer RibonL;
+	public ModchuModel_ModelRenderer RibonR;
+	public ModchuModel_ModelRenderer CatEL;
+	public ModchuModel_ModelRenderer CatER;
+	public ModchuModel_ModelRenderer Icewing1;
+	public ModchuModel_ModelRenderer Icewing2;
+	public ModchuModel_ModelRenderer Icewing3;
+	public ModchuModel_ModelRenderer Icewing4;
+	public ModchuModel_ModelRenderer Icewing5;
+	public ModchuModel_ModelRenderer Icewing6;
+	public ModchuModel_ModelRenderer Prim;
+	public ModchuModel_ModelRenderer Rightarm1;
+	public ModchuModel_ModelRenderer Rightarm2;
+	public ModchuModel_ModelRenderer Leftarm1;
+	public ModchuModel_ModelRenderer Leftarm2;	public MultiModel_chrno() {
 		this(0.0F);
 	}	public MultiModel_chrno(float f) {
 		this(f, 0.0F);
@@ -25,61 +23,61 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_chrno exte
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		Skirt = new Modchu_ModelRenderer(this, 0, 16);
+		Skirt = new ModchuModel_ModelRenderer(this, 0, 16);
 		Skirt.addBox(-4F, -4F, -4F, 8, 8, 8, f);
-		Skirt.setRotationPoint(0.0F, -4F + f1, 0.0F);		RibonL = new Modchu_ModelRenderer(this, 52, 10);
+		Skirt.setRotationPoint(0.0F, -4F + f1, 0.0F);		RibonL = new ModchuModel_ModelRenderer(this, 52, 10);
 		RibonL.setMirror(true);
 		RibonL.addBox(-5F, -10F, 3.5F, 4, 4, 2, f);
 		RibonL.setRotationPoint(0.0F, 0.0F + f1, 0.0F);
 		RibonL.rotateAngleX = 6.108653F;
-		RibonR = new Modchu_ModelRenderer(this, 52, 10);
+		RibonR = new ModchuModel_ModelRenderer(this, 52, 10);
 		RibonR.setMirror(true);
 		RibonR.addBox(1.0F, -10F, 3.5F, 4, 4, 2, f);
 		RibonR.setRotationPoint(0.0F, 0.0F + f1, 0.0F);
 		RibonR.rotateAngleX = 6.108653F;
-		CatEL = new Modchu_ModelRenderer(this, 0, 0);
+		CatEL = new ModchuModel_ModelRenderer(this, 0, 0);
 		CatEL.addBox(1.0F, -4F, 7F, 3, 3, 1, f);
 		CatEL.setRotationPoint(0.0F, 0.0F + f1, 0.0F);
 		CatEL.rotateAngleX = -5.934119F;
-		CatER = new Modchu_ModelRenderer(this, 0, 4);
+		CatER = new ModchuModel_ModelRenderer(this, 0, 4);
 		CatER.addBox(-4F, -4F, 7F, 3, 3, 1, f);
 		CatER.setRotationPoint(0.0F, 0.0F + f1, 0.0F);
 		CatER.rotateAngleX = -5.934119F;
-		Prim = new Modchu_ModelRenderer(this, 24, 16);
+		Prim = new ModchuModel_ModelRenderer(this, 24, 16);
 		Prim.addBox(-2F, -8.7F, -3.5F, 4, 1, 0, f);
 		Prim.setRotationPoint(0.0F, 0.0F + f1, 0.0F);
-		Icewing1 = new Modchu_ModelRenderer(this, 0, 16);
+		Icewing1 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Icewing1.setMirror(true);
 		Icewing1.addBox(-1F, 5F, 4F, 2, 5, 1, f);
 		Icewing1.setRotationPoint(0.0F, -2.5F + f1, 0.0F);
-		Icewing2 = new Modchu_ModelRenderer(this, 0, 16);
+		Icewing2 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Icewing2.setMirror(true);
 		Icewing2.addBox(-1F, 5F, 4F, 2, 5, 1, f);
 		Icewing2.setRotationPoint(0.0F, -2.5F + f1, 0.0F);
-		Icewing3 = new Modchu_ModelRenderer(this, 0, 16);
+		Icewing3 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Icewing3.addBox(-1F, 5F, 4F, 2, 5, 1, f);
 		Icewing3.setRotationPoint(0.0F, -2.5F + f1, 0.0F);
-		Icewing4 = new Modchu_ModelRenderer(this, 0, 16);
+		Icewing4 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Icewing4.setMirror(true);
 		Icewing4.addBox(-1F, 5F, 4F, 2, 5, 1, f);
 		Icewing4.setRotationPoint(0.0F, -2.5F + f1, 0.0F);
-		Icewing5 = new Modchu_ModelRenderer(this, 0, 16);
+		Icewing5 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Icewing5.setMirror(true);
 		Icewing5.addBox(-1F, 5F, 4F, 2, 5, 1, f);
 		Icewing5.setRotationPoint(0.0F, -2.5F + f1, 0.0F);
-		Icewing6 = new Modchu_ModelRenderer(this, 0, 16);
+		Icewing6 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Icewing6.addBox(-1F, 5F, 4F, 2, 5, 1, f);
 		Icewing6.setRotationPoint(0.0F, -2.5F + f1, 0.0F);
-		Rightarm1 = new Modchu_ModelRenderer(this, 48, 0);
+		Rightarm1 = new ModchuModel_ModelRenderer(this, 48, 0);
 		Rightarm1.addBox(-2F, 2.8F, -1F, 2, 5, 2);
 		Rightarm1.setRotationPoint(0.0F, -4.0F + f1, 0.0F);
-		Rightarm2 = new Modchu_ModelRenderer(this, 48, 5);
+		Rightarm2 = new ModchuModel_ModelRenderer(this, 48, 5);
 		Rightarm2.addBox(-6.8F, -3.8F, -0.98F, 2, 3, 2);
 		Rightarm2.setRotationPoint(0.0F, -4.0F + f1, 0.0F);
-		Leftarm1 = new Modchu_ModelRenderer(this, 56, 0);
+		Leftarm1 = new ModchuModel_ModelRenderer(this, 56, 0);
 		Leftarm1.addBox(0.0F, 2.8F, -1F, 2, 5, 2);
 		Leftarm1.setRotationPoint(0.0F, -4.0F + f1, 0.0F);
-		Leftarm2 = new Modchu_ModelRenderer(this, 56, 5);
+		Leftarm2 = new ModchuModel_ModelRenderer(this, 56, 5);
 		Leftarm2.addBox(4.8F, -3.8F, -0.98F, 2, 3, 2);
 		Leftarm2.setRotationPoint(0.0F, -4.0F + f1, 0.0F);
 		if (isAfterInit) afterInit(f, f1);
@@ -167,10 +165,10 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_chrno exte
 		setCapsValue(entityCaps, caps_visible, Rightarm2, true);
 		setCapsValue(entityCaps, caps_visible, bipedRightArm, false);
 		setCapsValue(entityCaps, caps_visible, bipedLeftArm, false);
-		bipedRightArm.removeChild((Modchu_ModelRenderer) Arms[0]);
-		bipedLeftArm.removeChild((Modchu_ModelRenderer) Arms[1]);
-		Rightarm2.removeChild((Modchu_ModelRenderer) Arms[0]);
-		Leftarm2.removeChild((Modchu_ModelRenderer) Arms[1]);
+		bipedRightArm.removeChild((ModchuModel_ModelRenderer) Arms[0]);
+		bipedLeftArm.removeChild((ModchuModel_ModelRenderer) Arms[1]);
+		Rightarm2.removeChild((ModchuModel_ModelRenderer) Arms[0]);
+		Leftarm2.removeChild((ModchuModel_ModelRenderer) Arms[1]);
 		if (Arms[0] != null) Arms[0].setRotationPoint(0.5F, 0.0F, 0F);
 		if (Arms[1] != null) Arms[1].setRotationPoint(-0.5F, 0.0F, 0F);
 	}	@Override
@@ -198,7 +196,7 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_chrno exte
 	}
 */
 	@Override
-	public Modchu_ModelRenderer getDominantArm(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getDominantArm(ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_actionFlag) && Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_actionRequestNumber) == 1 | Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_actionRequestNumber) == 6) {
 			if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
 			return leftArm;

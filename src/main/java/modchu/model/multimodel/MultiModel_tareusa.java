@@ -1,16 +1,14 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_tareusa extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer ChignonR;
-	public Modchu_ModelRenderer ChignonL;
-	public Modchu_ModelRenderer ChignonB;
-	public Modchu_ModelRenderer SideTailR;
-	public Modchu_ModelRenderer SideTailL;
-	public Modchu_ModelRenderer Prim;
-	public Modchu_ModelRenderer UsaEL;
-	public Modchu_ModelRenderer UsaER;
-	public Modchu_ModelRenderer UsaEL1;
-	public Modchu_ModelRenderer UsaER1;
-	public Modchu_ModelRenderer Usasippo;	public MultiModel_tareusa() {
+package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_tareusa extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer ChignonR;
+	public ModchuModel_ModelRenderer ChignonL;
+	public ModchuModel_ModelRenderer ChignonB;
+	public ModchuModel_ModelRenderer SideTailR;
+	public ModchuModel_ModelRenderer SideTailL;
+	public ModchuModel_ModelRenderer Prim;
+	public ModchuModel_ModelRenderer UsaEL;
+	public ModchuModel_ModelRenderer UsaER;
+	public ModchuModel_ModelRenderer UsaEL1;
+	public ModchuModel_ModelRenderer UsaER1;
+	public ModchuModel_ModelRenderer Usasippo;	public MultiModel_tareusa() {
 		this(0.0F);
 	}	public MultiModel_tareusa(float f) {
 		this(f, 0.0F);
@@ -21,29 +19,29 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_tareusa ex
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		Prim = new Modchu_ModelRenderer(this, 24, 16);
+		Prim = new ModchuModel_ModelRenderer(this, 24, 16);
 		Prim.addBox(-2F, -8.7F, -3.5F, 4, 1, 0, f);
 		Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
-		UsaEL = new Modchu_ModelRenderer(this, 0, 0);
+		UsaEL = new ModchuModel_ModelRenderer(this, 0, 0);
 		UsaEL.setMirror(true);
 		UsaEL.addBox(-1.5F, 0F, 2F, 3, 6, 1, f + 0.1F);
 		UsaEL.setRotationPoint(0F, 0F, 0F);
-		UsaER = new Modchu_ModelRenderer(this, 0, 0);
+		UsaER = new ModchuModel_ModelRenderer(this, 0, 0);
 		UsaER.addBox(-1.5F, 0F, 2F, 3, 6, 1, f + 0.1F);
 		UsaER.setRotationPoint(0.0F, 0.0F, 0.0F);
-		UsaEL1 = new Modchu_ModelRenderer(this, 0, 0);
+		UsaEL1 = new ModchuModel_ModelRenderer(this, 0, 0);
 		UsaEL1.setMirror(true);
 		UsaEL1.addBox(-1.5F, 0F, -1F, 3, 3, 1, f + 0.1F);
 		UsaEL1.setRotationPoint(0F, 0F, 0F);
-		UsaER1 = new Modchu_ModelRenderer(this, 0, 0);
+		UsaER1 = new ModchuModel_ModelRenderer(this, 0, 0);
 		UsaER1.addBox(-1.5F, 0F, -1F, 3, 3, 1, f + 0.1F);
-		UsaER1.setRotationPoint(0.0F, 0.0F, 0.0F);		Usasippo = new Modchu_ModelRenderer(this, 24, 0);
+		UsaER1.setRotationPoint(0.0F, 0.0F, 0.0F);		Usasippo = new ModchuModel_ModelRenderer(this, 24, 0);
 		Usasippo.addBox(-1.5F, -0.1F, 0.0F, 3, 3, 3, f);
 		Usasippo.setRotationPoint(0.0F, 1.5F, 0.0F);
-		eyeL = new Modchu_ModelRenderer(this, 32, 19);
+		eyeL = new ModchuModel_ModelRenderer(this, 32, 19);
 		eyeL.addBox(-1F, -1F, -4.001F, 2, 2, 1, f + 0.1F);
 		eyeL.setRotationPoint(-2.0F, -3.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 42, 19);
+		eyeR = new ModchuModel_ModelRenderer(this, 42, 19);
 		eyeR.addBox(-1F, -1F, -4.001F, 2, 2, 1, f + 0.1F);
 		eyeR.setRotationPoint(2.0F, -3.0F, 0.0F);		Usasippo.setRotationPointZ(2.0F);
 		if (isAfterInit) afterInit(f, f1);

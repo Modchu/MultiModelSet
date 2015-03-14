@@ -1,9 +1,7 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_naz extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer CatEL;
-	public Modchu_ModelRenderer CatER;
-	public Modchu_ModelRenderer CatTail;
-	public Modchu_ModelRenderer Prim;	public MultiModel_naz() {
+package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_naz extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer CatEL;
+	public ModchuModel_ModelRenderer CatER;
+	public ModchuModel_ModelRenderer CatTail;
+	public ModchuModel_ModelRenderer Prim;	public MultiModel_naz() {
 		this(0.0F);
 	}	public MultiModel_naz(float f) {
 		this(f, 0.0F);
@@ -14,22 +12,22 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_naz extend
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		CatEL = new Modchu_ModelRenderer(this, 0, 4);
+		CatEL = new ModchuModel_ModelRenderer(this, 0, 4);
 		CatEL.addBox(2.0F, -11F, -2F, 3, 3, 1, f);
 		CatEL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		CatER = new Modchu_ModelRenderer(this, 0, 0);
+		CatER = new ModchuModel_ModelRenderer(this, 0, 0);
 		CatER.addBox(-5F, -11F, -2F, 3, 3, 1, f);
 		CatER.setRotationPoint(0.0F, 0.0F, 0.0F);
-		CatTail = new Modchu_ModelRenderer(this, 0, 16);
+		CatTail = new ModchuModel_ModelRenderer(this, 0, 16);
 		CatTail.addBox(-0.5F, 0.0F, 0.0F, 1, 7, 1, f);
 		CatTail.setRotationPoint(0.0F, 4.0F, 2.0F);
-		Prim = new Modchu_ModelRenderer(this, 24, 16);
+		Prim = new ModchuModel_ModelRenderer(this, 24, 16);
 		Prim.addBox(-2F, -8.7F, -3.5F, 4, 1, 0, f);
 		Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
-		eyeL = new Modchu_ModelRenderer(this, 58, 16);
+		eyeL = new ModchuModel_ModelRenderer(this, 58, 16);
 		eyeL.addBox(-1F, -1F, -4.001F, 2, 2, 1, f + 0.1F);
 		eyeL.setRotationPoint(-2.0F, -3.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 60, 16);
+		eyeR = new ModchuModel_ModelRenderer(this, 60, 16);
 		eyeR.addBox(-1F, -1F, -4.001F, 2, 2, 1, f + 0.1F);
 		eyeR.setRotationPoint(2.0F, -3.0F, 0.0F);
 		CatTail.setRotateAngleX(-4.363323F);

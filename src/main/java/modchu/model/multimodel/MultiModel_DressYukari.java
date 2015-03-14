@@ -1,12 +1,8 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_DressYukari extends MultiModel_SR2 {	public Modchu_ModelRenderer Ahoge;
-	public Modchu_ModelRenderer overHear;
-	public Modchu_ModelRenderer Glass;
-	public Modchu_ModelRenderer specialModel[];
-	public Modchu_ModelRenderer pink;	private int IdOffset = 0;	public MultiModel_DressYukari() {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_DressYukari extends MultiModel_SR2 {	public ModchuModel_ModelRenderer Ahoge;
+	public ModchuModel_ModelRenderer overHear;
+	public ModchuModel_ModelRenderer Glass;
+	public ModchuModel_ModelRenderer specialModel[];
+	public ModchuModel_ModelRenderer pink;	private int IdOffset = 0;	public MultiModel_DressYukari() {
 		this(0.0F);
 	}	public MultiModel_DressYukari(float f) {
 		this(f, 0.0F);
@@ -20,26 +16,26 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Dre
 		textureHeight = 64;
 		textureWidth = 64;
 		super.initModel(f, f1, false);
-		f1 += 8F;		Glass = new Modchu_ModelRenderer(this, 24, 0);
+		f1 += 8F;		Glass = new ModchuModel_ModelRenderer(this, 24, 0);
 		Glass.addPlate(-8.0F, -4.0F, 0F, 16, 8, 0, f);
 		Glass.setRotationPoint(0.0F, -4.0F, -4.0F);
-		Glass.setScale(0.5F, 0.5F, 1.0F);		overHear = new Modchu_ModelRenderer(this, 0, 16);
+		Glass.setScale(0.5F, 0.5F, 1.0F);		overHear = new ModchuModel_ModelRenderer(this, 0, 16);
 		overHear.addBox(-4f, -9f, -4f, 8, 9, 8, f + 0.3f);
-		overHear.setRotationPoint(0f, 1f, 0f);		SideTailL = new Modchu_ModelRenderer(this, 46, 26);
+		overHear.setRotationPoint(0f, 1f, 0f);		SideTailL = new ModchuModel_ModelRenderer(this, 46, 26);
 		SideTailL.addBox(4.7F, -6F, 1F, 1, 1, 1, f + 0.2F);
 		SideTailL.setRotationPoint(0F, 0F, 0F);
-		SideTailL.isHidden = true;		SideTailR = new Modchu_ModelRenderer(this, 50, 26);
+		SideTailL.isHidden = true;		SideTailR = new ModchuModel_ModelRenderer(this, 50, 26);
 		SideTailR.addBox(-5.7F, -6F, 1F, 1, 1, 1, f + 0.2F);
 		SideTailR.setRotationPoint(0F, 0F, 0F);
-		SideTailR.isHidden = true;		Tail = new Modchu_ModelRenderer(this, 46, 19);
+		SideTailR.isHidden = true;		Tail = new ModchuModel_ModelRenderer(this, 46, 19);
 		Tail.addBox(-1F, -7F, 4.8F, 2, 2, 2, f + 0.1F);
-		Tail.setRotationPoint(0F, 0F, 0F);		Ahoge = new Modchu_ModelRenderer(this, 0, 1);
+		Tail.setRotationPoint(0F, 0F, 0F);		Ahoge = new ModchuModel_ModelRenderer(this, 0, 1);
 		Ahoge.addBox(0F, 0F, 0F, 0, 3, 4, f);
-		Ahoge.setRotationPoint(0F, -7F, -4F);		pink = new Modchu_ModelRenderer(this, 0, 1);
+		Ahoge.setRotationPoint(0F, -7F, -4F);		pink = new ModchuModel_ModelRenderer(this, 0, 1);
 		pink.addPlate(1.6F, 0F, 0F, 2, 1, 0, f - 0.1f);
 		pink.addPlate(-3.6F, 0F, 0F, 2, 1, 0, f - 0.1f);
 		pink.setRotationPoint(0f, -1.9f, -4.3f);		//		loadModel=new ModchuModel_ModelRenderer[4];
-		//		loadModel[0]=new ModchuModel_ModelRenderer(this);		Skirt = new Modchu_ModelRenderer(this);
+		//		loadModel[0]=new ModchuModel_ModelRenderer(this);		Skirt = new ModchuModel_ModelRenderer(this);
 		initSpecialModel(f);
 		if (isAfterInit) afterInit(f, f1);
 	}	@Override
@@ -114,7 +110,7 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Dre
 		int i = Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_showPartsMapBoolean, "Skirt", Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_armorType));
 		boolean b = i != 0;
 		setCapsValue(entityCaps, caps_visible, specialModel[0], b);
-	}	@Override
+		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_skirtFloats) > 1) {			setCapsValue(entityCaps, caps_visible, Skirt, true);		}	}	@Override
 	public float getHeight(ModchuModel_IEntityCaps entityCaps) {
 		return 1.35F;
 	}	@Override
@@ -1011,10 +1007,10 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Dre
 				{{4},{286,284,285},{64,64,64},{215,231,227}},
 				{{4},{286,285,282},{64,64,64},{215,227,232}}
 				};
-				specialModel=new Modchu_ModelRenderer[4];
+				specialModel=new ModchuModel_ModelRenderer[4];
 //				loadModel[0] = new ModchuModel_ModelRenderer(this);
 				for(int i=0;i<specialModel.length;i++)
-					specialModel[i] = new Modchu_ModelRenderer(this);				for(int i=0;i<v.length;i++){
+					specialModel[i] = new ModchuModel_ModelRenderer(this);				for(int i=0;i<v.length;i++){
 					float expandX = v[i][0]*psize*0.2f;
 					float expandY = v[i][1]*psize*0.2f;
 					float expandZ = v[i][2]*psize*0.2f;

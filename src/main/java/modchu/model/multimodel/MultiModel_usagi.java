@@ -1,12 +1,10 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_usagi extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer WTail;
-	public Modchu_ModelRenderer CatEL;
-	public Modchu_ModelRenderer CatER;
-	public Modchu_ModelRenderer Prim;
-	public Modchu_ModelRenderer Usasippo;
-	public Modchu_ModelRenderer UsaEL;
-	public Modchu_ModelRenderer UsaER;
+package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_usagi extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer WTail;
+	public ModchuModel_ModelRenderer CatEL;
+	public ModchuModel_ModelRenderer CatER;
+	public ModchuModel_ModelRenderer Prim;
+	public ModchuModel_ModelRenderer Usasippo;
+	public ModchuModel_ModelRenderer UsaEL;
+	public ModchuModel_ModelRenderer UsaER;
 	private boolean isTaremimi = false;
 	private boolean isTareRightmimi;	public MultiModel_usagi() {
 		this(0.0F);
@@ -19,42 +17,42 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_usagi exte
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		ChignonR = new Modchu_ModelRenderer(this, 24, 18);
+		ChignonR = new ModchuModel_ModelRenderer(this, 24, 18);
 		ChignonR.addBox(-5F, -7F, 0.2F, 1, 3, 3, f);
 		ChignonR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonL = new Modchu_ModelRenderer(this, 24, 18);
+		ChignonL = new ModchuModel_ModelRenderer(this, 24, 18);
 		ChignonL.addBox(4F, -7F, 0.2F, 1, 3, 3, f);
 		ChignonL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonB = new Modchu_ModelRenderer(this, 52, 10);
+		ChignonB = new ModchuModel_ModelRenderer(this, 52, 10);
 		ChignonB.addBox(-2F, -7.2F, 4F, 4, 4, 2, f);
 		ChignonB.setRotationPoint(0.0F, 0.0F, 0.0F);
-		WTail = new Modchu_ModelRenderer(this, 46, 19);
+		WTail = new ModchuModel_ModelRenderer(this, 46, 19);
 		WTail.addBox(-2F, -7.1F, 3F, 4, 11, 2, f);
 		WTail.setRotationPoint(0.0F, 0.0F, 0.0F);
-		SideTailR = new Modchu_ModelRenderer(this, 58, 21);
+		SideTailR = new ModchuModel_ModelRenderer(this, 58, 21);
 		SideTailR.addBox(-4.2F, -5.8F, -3F, 1, 8, 2, f);
 		SideTailR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		SideTailL = new Modchu_ModelRenderer(this, 58, 21);
+		SideTailL = new ModchuModel_ModelRenderer(this, 58, 21);
 		SideTailL.mirror = true;
 		SideTailL.addBox(3.2F, -5.8F, -3F, 1, 8, 2, f);
 		SideTailL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		CatEL = new Modchu_ModelRenderer(this, 0, 1);
+		CatEL = new ModchuModel_ModelRenderer(this, 0, 1);
 		CatEL.mirror = true;
 		CatEL.addBox(0.5F, -11F, 1.0F, 3, 5, 1, f);
 		CatEL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		CatER = new Modchu_ModelRenderer(this, 0, 1);
+		CatER = new ModchuModel_ModelRenderer(this, 0, 1);
 		CatER.addBox(-3.5F, -11F, 1.0F, 3, 5, 1, f);
 		CatER.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Prim = new Modchu_ModelRenderer(this, 24, 16);
+		Prim = new ModchuModel_ModelRenderer(this, 24, 16);
 		Prim.addBox(-2F, -8.7F, -3.5F, 4, 1, 0, f);
 		Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Usasippo = new Modchu_ModelRenderer(this, 20, 8);
+		Usasippo = new ModchuModel_ModelRenderer(this, 20, 8);
 		Usasippo.addBox(-1.5F, -0.1F, 0.0F, 3, 3, 3, f);
 		Usasippo.setRotationPoint(0.0F, 1.5F, 0.0F);
-		UsaER = new Modchu_ModelRenderer(this, 0, 0);
+		UsaER = new ModchuModel_ModelRenderer(this, 0, 0);
 		UsaER.addBox(-3.4F, -15.5F, 4.5F, 3, 6, 1, f);
 		UsaER.setRotationPoint(0.0F, 0.0F, 0.0F);
-		UsaEL = new Modchu_ModelRenderer(this, 0, 0);
+		UsaEL = new ModchuModel_ModelRenderer(this, 0, 0);
 		UsaEL.mirror = true;
 		UsaEL.addBox(0.5F, -15.5F, 4.5F, 3, 6, 1, f);
 		UsaEL.setRotationPoint(0.0F, 0.0F, 0.0F);		Usasippo.setRotationPointZ(2.0F);

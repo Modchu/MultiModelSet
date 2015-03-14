@@ -1,5 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_MS extends MultiModel_MS1 {	public MultiModel_MS() {
+package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_MS extends MultiModel_MS1 {	public MultiModel_MS() {
 		this(0.0F);
 	}	public MultiModel_MS(float f) {
 		this(f, 0.0F);

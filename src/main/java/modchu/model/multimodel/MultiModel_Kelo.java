@@ -1,26 +1,23 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer tailL1;
-	public Modchu_ModelRenderer tailL2;
-	public Modchu_ModelRenderer tailR1;
-	public Modchu_ModelRenderer tailR2;
-	public Modchu_ModelRenderer BreastPocket;
-	public Modchu_ModelRenderer LsidePocket;
-	public Modchu_ModelRenderer RsidePocket;
-	public Modchu_ModelRenderer Backpack;
-	public Modchu_ModelRenderer BackpackPocket;
-	public Modchu_ModelRenderer Zipper;
-	public Modchu_ModelRenderer SleeveR;
-	public Modchu_ModelRenderer SleeveL;
-	public Modchu_ModelRenderer ShoesL;
-	public Modchu_ModelRenderer ShoesR;
-	public Modchu_ModelRenderer KeloeyeL1;
-	public Modchu_ModelRenderer KeloeyeR1;
-	public Modchu_ModelRenderer KeloeyeL2;
-	public Modchu_ModelRenderer KeloeyeR2;	public Modchu_ModelRenderer headwear;
-	public Modchu_ModelRenderer rightHandPlus;
-	public Modchu_ModelRenderer leftHandPlus;	public MultiModel_Kelo() {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_Kelo extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer tailL1;
+	public ModchuModel_ModelRenderer tailL2;
+	public ModchuModel_ModelRenderer tailR1;
+	public ModchuModel_ModelRenderer tailR2;
+	public ModchuModel_ModelRenderer BreastPocket;
+	public ModchuModel_ModelRenderer LsidePocket;
+	public ModchuModel_ModelRenderer RsidePocket;
+	public ModchuModel_ModelRenderer Backpack;
+	public ModchuModel_ModelRenderer BackpackPocket;
+	public ModchuModel_ModelRenderer Zipper;
+	public ModchuModel_ModelRenderer SleeveR;
+	public ModchuModel_ModelRenderer SleeveL;
+	public ModchuModel_ModelRenderer ShoesL;
+	public ModchuModel_ModelRenderer ShoesR;
+	public ModchuModel_ModelRenderer KeloeyeL1;
+	public ModchuModel_ModelRenderer KeloeyeR1;
+	public ModchuModel_ModelRenderer KeloeyeL2;
+	public ModchuModel_ModelRenderer KeloeyeR2;	public ModchuModel_ModelRenderer headwear;
+	public ModchuModel_ModelRenderer rightHandPlus;
+	public ModchuModel_ModelRenderer leftHandPlus;	public MultiModel_Kelo() {
 		this(0.0F);
 	}	public MultiModel_Kelo(float f) {
 		this(f, 0.0F);
@@ -31,157 +28,157 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo exten
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		tailL1 = new Modchu_ModelRenderer(this, 0, 0);
+		tailL1 = new ModchuModel_ModelRenderer(this, 0, 0);
 		tailL1.addBox(1.5F, -2.5F, 3.5F, 2, 2, 2, f);
 		tailL1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		tailL2 = new Modchu_ModelRenderer(this, 27, 16);
+		tailL2 = new ModchuModel_ModelRenderer(this, 27, 16);
 		tailL2.addBox(2F, -1F, 4.5F, 3, 3, 3, f);
 		tailL2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		tailR1 = new Modchu_ModelRenderer(this, 0, 4);
+		tailR1 = new ModchuModel_ModelRenderer(this, 0, 4);
 		tailR1.addBox(-3.5F, -2.5F, 3.5F, 2, 2, 2, f);
 		tailR1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		tailR2 = new Modchu_ModelRenderer(this, 48, 19);
+		tailR2 = new ModchuModel_ModelRenderer(this, 48, 19);
 		tailR2.addBox(-5F, -1F, 4.5F, 3, 3, 3, f);
 		tailR2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		SideTailL = new Modchu_ModelRenderer(this, 56, 3);
+		SideTailL = new ModchuModel_ModelRenderer(this, 56, 3);
 		SideTailL.mirror = true;
 		SideTailL.addBox(3.1F, -4.1F, -3.5F, 1, 4, 1, f);
 		SideTailL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		SideTailR = new Modchu_ModelRenderer(this, 60, 3);
+		SideTailR = new ModchuModel_ModelRenderer(this, 60, 3);
 		SideTailR.addBox(-4.1F, -4.1F, -3.5F, 1, 4, 1, f);
 		SideTailR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		headwear = new Modchu_ModelRenderer(this, 32, 0);
+		headwear = new ModchuModel_ModelRenderer(this, 32, 0);
 		headwear.addBox(-4F, -8F, -4.5F, 8, 4, 8, f + 0.5F);
 		headwear.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonR = new Modchu_ModelRenderer(this, 24, 2);
+		ChignonR = new ModchuModel_ModelRenderer(this, 24, 2);
 		ChignonR.addBox(-5F, -11F, -2.5F, 4, 3, 3, f);
 		ChignonR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonL = new Modchu_ModelRenderer(this, 24, 2);
+		ChignonL = new ModchuModel_ModelRenderer(this, 24, 2);
 		ChignonL.addBox(1F, -11F, -2.5F, 4, 3, 3, f);
 		ChignonL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		KeloeyeL1 = new Modchu_ModelRenderer(this, 28, 0);
+		KeloeyeL1 = new ModchuModel_ModelRenderer(this, 28, 0);
 		KeloeyeL1.addBox(2F, -10F, -2.5F, 2, 2, 0, f - 0.2F);
 		KeloeyeL1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		KeloeyeR1 = new Modchu_ModelRenderer(this, 24, 0);
+		KeloeyeR1 = new ModchuModel_ModelRenderer(this, 24, 0);
 		KeloeyeR1.addBox(-4F, -10F, -2.5F, 2, 2, 0, f - 0.2F);
 		KeloeyeR1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		KeloeyeL2 = new Modchu_ModelRenderer(this, 36, 0);
+		KeloeyeL2 = new ModchuModel_ModelRenderer(this, 36, 0);
 		KeloeyeL2.addBox(2F, -9.5F, -2.5F, 2, 1, 0, f - 0.2F);
 		KeloeyeL2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		KeloeyeR2 = new Modchu_ModelRenderer(this, 32, 0);
+		KeloeyeR2 = new ModchuModel_ModelRenderer(this, 32, 0);
 		KeloeyeR2.addBox(-4F, -9.5F, -2.5F, 2, 1, 0, f - 0.2F);
 		KeloeyeR2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		bipedBody = new Modchu_ModelRenderer(this, 12, 19);
+		bipedBody = new ModchuModel_ModelRenderer(this, 12, 19);
 		bipedBody.addBox(-3.0F, 0.0F, -2.0F, 6, 10, 3, f + 0.3F);
 		bipedBody.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Backpack = new Modchu_ModelRenderer(this, 48, 25);
+		Backpack = new ModchuModel_ModelRenderer(this, 48, 25);
 		Backpack.addBox(-2F, 1F, 1F, 4, 5, 2, f + 0.3F);
 		Backpack.setRotationPoint(0.0F, 0.0F, 0.0F);
-		BackpackPocket = new Modchu_ModelRenderer(this, 48, 27);
+		BackpackPocket = new ModchuModel_ModelRenderer(this, 48, 27);
 		BackpackPocket.addBox(-2F, 3.2F, 0.5F, 4, 2, 2, f + 0.6F);
 		BackpackPocket.setRotationPoint(0.0F, 0.0F, 0.0F);
-		BreastPocket = new Modchu_ModelRenderer(this, 24, 16);
+		BreastPocket = new ModchuModel_ModelRenderer(this, 24, 16);
 		BreastPocket.addBox(1F, 2F, -2.5F, 2, 2, 1, f);
 		BreastPocket.setRotationPoint(0.0F, 0.0F, 0.0F);
-		LsidePocket = new Modchu_ModelRenderer(this, 32, 12);
+		LsidePocket = new ModchuModel_ModelRenderer(this, 32, 12);
 		LsidePocket.addBox(2.5F, 6F, -2.5F, 1, 2, 2, f);
 		LsidePocket.setRotationPoint(0.0F, 0.0F, 0.0F);
-		RsidePocket = new Modchu_ModelRenderer(this, 32, 12);
+		RsidePocket = new ModchuModel_ModelRenderer(this, 32, 12);
 		RsidePocket.addBox(-3.5F, 6F, -2.5F, 1, 2, 2, f);
 		RsidePocket.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Zipper = new Modchu_ModelRenderer(this, 30, 22);
+		Zipper = new ModchuModel_ModelRenderer(this, 30, 22);
 		Zipper.addBox(-1.5F, -1F, -1.5F, 3, 10, 0, f - 1F);
 		Zipper.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Skirt = new Modchu_ModelRenderer(this, 46, 12);
+		Skirt = new ModchuModel_ModelRenderer(this, 46, 12);
 		Skirt.addBox(-3F, -2F, -2F, 6, 2, 3, f + 0.8F);
 		Skirt.setRotationPoint(0.0F, 0.0F, 0.0F);
-		bipedRightArm = new Modchu_ModelRenderer(this, 36, 19);
+		bipedRightArm = new ModchuModel_ModelRenderer(this, 36, 19);
 		bipedRightArm.addBox(-1.5F, 0.0F, -1.5F, 3, 10, 3, f - 0.3F);
 		bipedRightArm.setRotationPoint(-3.0F, 4.5F, 0.5F);
-		SleeveR = new Modchu_ModelRenderer(this, 36, 14);
+		SleeveR = new ModchuModel_ModelRenderer(this, 36, 14);
 		SleeveR.addBox(-3F, 3.5F, -2F, 3, 2, 3, f + 0.1F);
 		SleeveR.setRotationPoint(1.5F, 2.0F, 0.5F);
-		bipedLeftArm = new Modchu_ModelRenderer(this, 36, 19);
+		bipedLeftArm = new ModchuModel_ModelRenderer(this, 36, 19);
 		bipedLeftArm.mirror = true;
 		bipedLeftArm.addBox(-1.5F, 0.0F, -1.5F, 3, 10, 3, f - 0.3F);
 		bipedLeftArm.setRotationPoint(3.5F, 0.0F, 0.5F);
-		SleeveL = new Modchu_ModelRenderer(this, 36, 14);
+		SleeveL = new ModchuModel_ModelRenderer(this, 36, 14);
 		SleeveL.mirror = true;
 		SleeveL.addBox(0F, 3.5F, -2F, 3, 2, 3, f + 0.1F);
 		SleeveL.setRotationPoint(-1.5F, 2.0F, 0.5F);
-		bipedRightLeg = new Modchu_ModelRenderer(this, 0, 19);
+		bipedRightLeg = new ModchuModel_ModelRenderer(this, 0, 19);
 		bipedRightLeg.addBox(-1.5F, 0.0F, -1.5F, 3, 10, 3, f);
 		bipedRightLeg.setRotationPoint(-1.5F, 0.0F, 0.0F);
-		bipedLeftLeg = new Modchu_ModelRenderer(this, 0, 19);
+		bipedLeftLeg = new ModchuModel_ModelRenderer(this, 0, 19);
 		bipedLeftLeg.mirror = true;
 		bipedLeftLeg.addBox(-1.5F, 0.0F, -1.5F, 3, 10, 3, f);
 		bipedLeftLeg.setRotationPoint(1.5F, 0.0F, 0.0F);
-		ShoesR = new Modchu_ModelRenderer(this, 0, 16);
+		ShoesR = new ModchuModel_ModelRenderer(this, 0, 16);
 		ShoesR.addBox(-2F, 8F, -3F, 3, 2, 1, f);
 		ShoesR.setRotationPoint(0.5F, 0.0F, 0.5F);
-		ShoesL = new Modchu_ModelRenderer(this, 0, 16);
+		ShoesL = new ModchuModel_ModelRenderer(this, 0, 16);
 		ShoesL.mirror = true;
 		ShoesL.addBox(-2F, 8F, -3F, 3, 2, 1, f);
 		ShoesL.setRotationPoint(0.5F, 0.0F, 0.5F);
-		eyeL = new Modchu_ModelRenderer(this, 16, 16);
+		eyeL = new ModchuModel_ModelRenderer(this, 16, 16);
 		eyeL.addBox(0F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
 		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 8, 16);
+		eyeR = new ModchuModel_ModelRenderer(this, 8, 16);
 		eyeR.addBox(-4F, -4F, -4.001F, 4, 3, 0, f + 0.001F);
 		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);		mainFrame.setRotationPoint(0.0F, 0.0F, 0.0F);
 		if (isAfterInit) afterInit(f, f1);
 	}	@Override
 	public void actionPartsInit(float f, float f1) {
-		rightArm = new Modchu_ModelRenderer(this, 36, 19);
+		rightArm = new ModchuModel_ModelRenderer(this, 36, 19);
 		rightArm.addBox(-1.0F, 0.0F, -1.0F, 3, 4, 3, f - 0.3F);
-		rightArm.setRotationPoint(-3.0F, 1.5F + f1, 0.0F);		rightArmPlus = new Modchu_ModelRenderer(this);
-		rightArmPlus.setTextureOffset(39, 19).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
-		rightArmPlus.rotateAngleX = 1.570796313F;		rightArm2 = new Modchu_ModelRenderer(this, 36, 23);
+		rightArm.setRotationPoint(-3.0F, 1.5F + f1, 0.0F);		rightArmPlus = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) rightArmPlus.setTextureOffset(39, 19)).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
+		rightArmPlus.rotateAngleX = 1.570796313F;		rightArm2 = new ModchuModel_ModelRenderer(this, 36, 23);
 		rightArm2.addBox(-1.0F, 0.0F, -1.0F, 3, 4, 3, f - 0.3F);
-		rightArm2.setRotationPoint(0.0F, -5.0F + f1, 0.0F);		rightArmPlus2 = new Modchu_ModelRenderer(this);
-		rightArmPlus2.setTextureOffset(39, 19).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, 0.01F, 3, 3, 4, f - 0.3F);
-		rightArmPlus2.setTextureOffset(42, 19).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
-		rightArmPlus2.rotateAngleX = 1.570796313F;		rightHand = new Modchu_ModelRenderer(this, 36, 26);
+		rightArm2.setRotationPoint(0.0F, -5.0F + f1, 0.0F);		rightArmPlus2 = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) rightArmPlus2.setTextureOffset(39, 19)).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, 0.01F, 3, 3, 4, f - 0.3F);
+		((ModchuModel_ModelRenderer) rightArmPlus2.setTextureOffset(42, 19)).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
+		rightArmPlus2.rotateAngleX = 1.570796313F;		rightHand = new ModchuModel_ModelRenderer(this, 36, 26);
 		rightHand.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, f - 0.3F);
-		rightHand.setRotationPoint(0.0F, 4.0F, 0.0F);		rightHandPlus = new Modchu_ModelRenderer(this);
-		rightHandPlus.setTextureOffset(39, 29).addPlate(-1.5F, -1.5F, 0.01F + 1.5F, 3, 3, 4, f - 0.3F);
-		rightHandPlus.setTextureOffset(39, 29).addPlate(-1.5F, -1.5F, -3.01F + 2.1F, 3, 3, 4, f - 0.3F);
-		rightHandPlus.rotateAngleX = 1.570796313F;		leftArm = new Modchu_ModelRenderer(this, 36, 19);
+		rightHand.setRotationPoint(0.0F, 4.0F, 0.0F);		rightHandPlus = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) rightHandPlus.setTextureOffset(39, 29)).addPlate(-1.5F, -1.5F, 0.01F + 1.5F, 3, 3, 4, f - 0.3F);
+		((ModchuModel_ModelRenderer) rightHandPlus.setTextureOffset(39, 29)).addPlate(-1.5F, -1.5F, -3.01F + 2.1F, 3, 3, 4, f - 0.3F);
+		rightHandPlus.rotateAngleX = 1.570796313F;		leftArm = new ModchuModel_ModelRenderer(this, 36, 19);
 		leftArm.addBox(-1.0F, 0.0F, -1.0F, 3, 4, 3, f - 0.3F);
-		leftArm.setRotationPoint(3.0F, 1.5F + f1, 0.0F);		leftArmPlus = new Modchu_ModelRenderer(this);
-		leftArmPlus.setTextureOffset(39, 19).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
-		leftArmPlus.rotateAngleX = 1.570796313F;		leftArm2 = new Modchu_ModelRenderer(this, 36, 23);
+		leftArm.setRotationPoint(3.0F, 1.5F + f1, 0.0F);		leftArmPlus = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) leftArmPlus.setTextureOffset(39, 19)).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
+		leftArmPlus.rotateAngleX = 1.570796313F;		leftArm2 = new ModchuModel_ModelRenderer(this, 36, 23);
 		leftArm2.addBox(-1.0F, 0.0F, -1.0F, 3, 4, 3, f - 0.3F);
-		leftArm2.setRotationPoint(0.0F, -5.0F + f1, 0.0F);		leftArmPlus2 = new Modchu_ModelRenderer(this);
-		leftArmPlus2.setTextureOffset(39, 19).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, 0.01F, 3, 3, 4, f - 0.3F);
-		leftArmPlus2.setTextureOffset(42, 19).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
-		leftArmPlus2.rotateAngleX = 1.570796313F;		leftHand = new Modchu_ModelRenderer(this, 36, 26);
+		leftArm2.setRotationPoint(0.0F, -5.0F + f1, 0.0F);		leftArmPlus2 = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) leftArmPlus2.setTextureOffset(39, 19)).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, 0.01F, 3, 3, 4, f - 0.3F);
+		((ModchuModel_ModelRenderer) leftArmPlus2.setTextureOffset(42, 19)).addPlate(-1.5F + 0.5F, -1.5F + 0.5F, -3.01F - 0.4F, 3, 3, 4, f - 0.3F);
+		leftArmPlus2.rotateAngleX = 1.570796313F;		leftHand = new ModchuModel_ModelRenderer(this, 36, 26);
 		leftHand.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, f - 0.3F);
-		leftHand.setRotationPoint(0.0F, 4.0F, 0.0F);		leftHandPlus = new Modchu_ModelRenderer(this);
-		leftHandPlus.setTextureOffset(39, 29).addPlate(-1.5F, -1.5F, 0.01F + 1.5F, 3, 3, 4, f - 0.3F);
-		leftHandPlus.setTextureOffset(39, 29).addPlate(-1.5F, -1.5F, -3.01F + 2.1F, 3, 3, 4, f - 0.3F);
-		leftHandPlus.rotateAngleX = 1.570796313F;		rightLeg = new Modchu_ModelRenderer(this, 0, 19);
+		leftHand.setRotationPoint(0.0F, 4.0F, 0.0F);		leftHandPlus = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) leftHandPlus.setTextureOffset(39, 29)).addPlate(-1.5F, -1.5F, 0.01F + 1.5F, 3, 3, 4, f - 0.3F);
+		((ModchuModel_ModelRenderer) leftHandPlus.setTextureOffset(39, 29)).addPlate(-1.5F, -1.5F, -3.01F + 2.1F, 3, 3, 4, f - 0.3F);
+		leftHandPlus.rotateAngleX = 1.570796313F;		rightLeg = new ModchuModel_ModelRenderer(this, 0, 19);
 		rightLeg.addBox(-1.5F, 0.0F, -2.0F, 3, 5, 3, f);
-		rightLeg.setRotationPoint(0.0F, 8.0F, 0.0F);		rightLegPlus = new Modchu_ModelRenderer(this);
-		rightLegPlus.setTextureOffset(3, 24).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
-		rightLegPlus.rotateAngleX = 1.570796313F;		rightLeg2 = new Modchu_ModelRenderer(this, 0, 24);
+		rightLeg.setRotationPoint(0.0F, 8.0F, 0.0F);		rightLegPlus = new ModchuModel_ModelRenderer(this);
+		((ModchuModel_ModelRenderer) rightLegPlus.setTextureOffset(3, 24)).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
+		rightLegPlus.rotateAngleX = 1.570796313F;		rightLeg2 = new ModchuModel_ModelRenderer(this, 0, 24);
 		rightLeg2.addBox(-1.5F, 0.0F, -2.0F, 3, 5, 3, f);
-		rightLeg2.setRotationPoint(0.0F, 8.0F, 0.0F);		rightLegPlus2 = new Modchu_ModelRenderer(this);
+		rightLeg2.setRotationPoint(0.0F, 8.0F, 0.0F);		rightLegPlus2 = new ModchuModel_ModelRenderer(this);
 		//rightLegPlus2.setTextureOffset(3, 24).addPlate(-1.5F, -1.5F - 0.5F, 0.01F, 3, 3, 4, f);
-		rightLegPlus2.setTextureOffset(6, 19).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
-		rightLegPlus2.rotateAngleX = 1.570796313F;		leftLeg = new Modchu_ModelRenderer(this, 0, 19);
+		((ModchuModel_ModelRenderer) rightLegPlus2.setTextureOffset(6, 19)).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
+		rightLegPlus2.rotateAngleX = 1.570796313F;		leftLeg = new ModchuModel_ModelRenderer(this, 0, 19);
 		leftLeg.mirror = true;
 		leftLeg.addBox(-1.5F, 0.0F, -2.0F, 3, 5, 3, f);
-		leftLeg.setRotationPoint(0.0F, 8.0F, 0.0F);		leftLegPlus = new Modchu_ModelRenderer(this);
+		leftLeg.setRotationPoint(0.0F, 8.0F, 0.0F);		leftLegPlus = new ModchuModel_ModelRenderer(this);
 		leftLegPlus.mirror = true;
-		leftLegPlus.setTextureOffset(3, 24).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
-		leftLegPlus.rotateAngleX = 1.570796313F;		leftLeg2 = new Modchu_ModelRenderer(this, 0, 24);
+		((ModchuModel_ModelRenderer) leftLegPlus.setTextureOffset(3, 24)).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
+		leftLegPlus.rotateAngleX = 1.570796313F;		leftLeg2 = new ModchuModel_ModelRenderer(this, 0, 24);
 		leftLeg2.mirror = true;
 		leftLeg2.addBox(-1.5F, 0.0F, -2.0F, 3, 5, 3, f);
-		leftLeg2.setRotationPoint(0.0F, 8.0F, 0.0F);		leftLegPlus2 = new Modchu_ModelRenderer(this);
+		leftLeg2.setRotationPoint(0.0F, 8.0F, 0.0F);		leftLegPlus2 = new ModchuModel_ModelRenderer(this);
 		leftLegPlus2.mirror = true;
 		//leftLegPlus2.setTextureOffset(3, 24).addPlate(-1.5F, -1.5F, 0.01F, 3, 3, 4, f);
-		leftLegPlus2.setTextureOffset(6, 19).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
+		((ModchuModel_ModelRenderer) leftLegPlus2.setTextureOffset(6, 19)).addPlate(-1.5F, -1.5F - 0.5F, -5.01F, 3, 3, 4, f);
 		leftLegPlus2.rotateAngleX = 1.570796313F;		rightHand.showModel = leftHand.showModel = rightArm.showModel =
 				leftArm.showModel = rightArmPlus.showModel = rightArmPlus2.showModel =
 				leftArmPlus.showModel = leftArmPlus2.showModel = rightLegPlus.showModel =
@@ -223,7 +220,7 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo exten
 	}	@Override
 	public void setRotationAnglesLM(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesLM(f, f1, f2, f3, f4, f5, entityCaps);
-		mainFrame.setRotationPoint(0F, 0F, 0F);
+		mainFrame.setRotationPoint(0F, -2F, 0F);
 		bipedRightLeg.rotateAngleX = (Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f * 0.6662F) * 1.4F * f1) / 1.5F;
 		bipedLeftLeg.rotateAngleX = (Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f * 0.6662F + 3.141593F) * 1.4F * f1) / 1.5F;
 		setCapsValue(entityCaps, caps_visible, KeloeyeL1, true);
@@ -251,7 +248,7 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo exten
 		bipedLeftLeg.rotationPointY = 10.0F;
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsSneak)) {
 			upperBody.rotateAngleX = 0.5F;
-			bipedBody.rotationPointY = 5.0F;
+			bipedBody.rotationPointY = 7.0F;
 			bipedRightLeg.rotationPointZ =
 					bipedLeftLeg.rotationPointZ -= 0.6F;
 			bipedRightLeg.rotationPointY =
@@ -294,7 +291,7 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo exten
 		setCapsValue(entityCaps, caps_visible, bipedHeadwear, false);
 		setCapsValue(entityCaps, caps_visible, ChignonB, false);
 		setCapsValue(entityCaps, caps_visible, Tail, false);
-	}	@Override
+		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_skirtFloats) > 1) {			setCapsValue(entityCaps, caps_visible, Skirt, true);		}	}	@Override
 	public void actionPartsAddChild() {
 		super.actionPartsAddChild();
 		setCapsValue(null, caps_visible, rightHandPlus, true);
@@ -329,18 +326,18 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_Kelo exten
 	public void action1(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.action1(f, f1, f2, f3, f4, f5, entityCaps);
 		bipedHead.rotationPointX = 0.0F;
-		bipedBody.rotationPointY = 3.0F;
+		bipedBody.rotationPointY = 6.0F;
 		//rightArm.rotationPointY = 1.0F;
 		rightArm2.rotationPointX = 0.5F;
 		//rightArm2.rotationPointY = 3.5F;
-		rightLeg.rotationPointX -= 0.5F;
+		//rightLeg.rotationPointX -= 0.5F;
 		//rightLeg2.rotationPointY -= 5.0F;
 		rightHand.rotationPointX = rightArm2.rotationPointX;
 		//rightHand.rotationPointY = rightArm2.rotationPointY;
 		rightHand.rotationPointZ = rightArm2.rotationPointZ + 0.5F;		//leftArm.rotationPointY = 1.0F;
 		leftArm2.rotationPointX = 0.0F;
 		//leftArm2.rotationPointY = 4.5F;
-		leftLeg.rotationPointX += 0.5F;
+		//leftLeg.rotationPointX += 0.5F;
 		//leftLeg2.rotationPointY -= 5.0F;
 		leftHand.rotationPointX = leftArm2.rotationPointX + 0.5F;
 		leftHand.rotationPointY = leftArm2.rotationPointY;

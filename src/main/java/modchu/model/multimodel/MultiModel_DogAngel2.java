@@ -1,5 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_ModelRendererMaster;public class MultiModel_DogAngel2 extends MultiModel_DogAngel {	public MultiModel_DogAngel2()
+package modchu.model.multimodel;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_DogAngel2 extends MultiModel_DogAngel {	public MultiModel_DogAngel2()
 	{
 		this(0.0F);
 	}	public MultiModel_DogAngel2(float f)
@@ -13,30 +12,30 @@ import modchu.model.ModchuModel_ModelRendererMaster;public class MultiModel_Do
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, isAfterInit);
-		((Modchu_ModelRenderer) Skirt).clearCubeList();
-		Skirt1 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		((ModchuModel_ModelRenderer) Skirt).clearCubeList();
+		Skirt1 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt1.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt1.setRotationPoint(2.4F, -3.0F, -0.6F);		Skirt2 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt1.setRotationPoint(2.4F, -3.0F, -0.6F);		Skirt2 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt2.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt2.setRotationPoint(2F,-3F,-1.2F);		Skirt3 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
+		Skirt2.setRotationPoint(2F,-3F,-1.2F);		Skirt3 = new ModchuModel_ModelRenderer(this, -6, 32);
 		Skirt3.addBox(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt3.setRotationPoint(0F,-4F,0F);		Skirt4 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
+		Skirt3.setRotationPoint(0F,-4F,0F);		Skirt4 = new ModchuModel_ModelRenderer(this, -6, 32);
 		Skirt4.addBox(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt4.setRotationPoint(0F,-4F,0F);		Skirt5 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt4.setRotationPoint(0F,-4F,0F);		Skirt5 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt5.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt5.setRotationPoint(-2F,-3F,-1.2F);		Skirt6 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt5.setRotationPoint(-2F,-3F,-1.2F);		Skirt6 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt6.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt6.setRotationPoint(-2.4F, -3F, -0.6F);		Skirt7 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt6.setRotationPoint(-2.4F, -3F, -0.6F);		Skirt7 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt7.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt7.setRotationPoint(-2.4F,-3F,0.6F);		Skirt8 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt7.setRotationPoint(-2.4F,-3F,0.6F);		Skirt8 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt8.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt8.setRotationPoint(-2F,-3F,1.2F);		Skirt9 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
+		Skirt8.setRotationPoint(-2F,-3F,1.2F);		Skirt9 = new ModchuModel_ModelRenderer(this, -6, 32);
 		Skirt9.addBox(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt9.setRotationPoint(0F,-4F,0F);		Skirt10 = new Modchu_ModelRenderer(this, -6, 32, Skirt);
+		Skirt9.setRotationPoint(0F,-4F,0F);		Skirt10 = new ModchuModel_ModelRenderer(this, -6, 32);
 		Skirt10.addBox(0F, 0F, 0F, 16, 4, 4,f);
-		Skirt10.setRotationPoint(0F,-4F,0F);		Skirt11 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt10.setRotationPoint(0F,-4F,0F);		Skirt11 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt11.addBox(0F, 0F, 0F, 12, 4, 4,f);
-		Skirt11.setRotationPoint(2F,-3F,1.2F);		Skirt12 = new Modchu_ModelRenderer(this, -2, 32, Skirt);
+		Skirt11.setRotationPoint(2F,-3F,1.2F);		Skirt12 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt12.addBox(0F, 0F, 0F,  12, 4, 4,f);
 		Skirt12.setRotationPoint(2.4F,-3F,0.6F);		Skirt1.setRotateAngle(-0.7853982F, 0.2268928F, 0.8203047F);
 		Skirt2.setRotateAngle(-0.7853982F, 0.9075712F, 0.8203047F);
@@ -49,7 +48,7 @@ import modchu.model.ModchuModel_ModelRendererMaster;public class MultiModel_Do
 		Skirt9.setRotateAngle(-0.7853982F, -1.885828F, 0.715585F);
 		Skirt10.setRotateAngle(-0.7853982F, -1.33954F, 0.715585F);
 		Skirt11.setRotateAngle(-0.7853982F, -0.9677851F, 0.8203047F);
-		Skirt12.setRotateAngle(-0.7853982F, -0.299324F, 0.8203047F);		int i = ModchuModel_ModelRendererMaster.YZX;
+		Skirt12.setRotateAngle(-0.7853982F, -0.299324F, 0.8203047F);		int i = ModchuModel_ModelRenderer.YZX;
 		Skirt1.setRotatePriority(i);
 		Skirt2.setRotatePriority(i);
 		Skirt3.setRotatePriority(i);

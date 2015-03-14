@@ -1,11 +1,11 @@
 package modchu.model.multimodel;
 
+import modchu.lib.Modchu_AS;
 import modchu.lib.Modchu_EntityCapsHelper;
 import modchu.lib.Modchu_Main;
 import modchu.lib.Modchu_Reflect;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
 import modchu.model.ModchuModel_IEntityCaps;
+import modchu.model.ModchuModel_ModelRenderer;
 import modchu.model.multimodel.base.MultiModel_SR2;
 
 public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
@@ -35,10 +35,10 @@ public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
 		int y;
 		int z;
 		if (Modchu_Main.getMinecraftVersion() < 180) { 
-			x = (int) Modchu_AS.getDouble(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving));
+			x = Modchu_AS.getInt(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving));
 			Object boundingBox = Modchu_AS.get(Modchu_AS.entityBoundingBox, entityliving);
-			y = (int) Modchu_AS.getDouble(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityBoundingBoxMaxY, boundingBox) + 1.0D);
-			z = (int) Modchu_AS.getDouble(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityPosZ, entityliving));
+			y = Modchu_AS.getInt(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityBoundingBoxMaxY, boundingBox) + 1.0D);
+			z = Modchu_AS.getInt(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityPosZ, entityliving));
 		} else {
 			x = (int) Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving);
 			y = (int) Modchu_AS.getDouble(Modchu_AS.entityPosY, entityliving) + 2;
@@ -122,34 +122,34 @@ public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
 	}
 
 	@Override
-	public Modchu_ModelRenderer getDominantArm(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getDominantArm(ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm) == 0) return rightArm;
 		return leftArm;
 	}
 
 	@Override
-	public Modchu_ModelRenderer getNotDominantArm(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getNotDominantArm(ModchuModel_IEntityCaps entityCaps) {
 		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_dominantArm, getCapsValue(caps_armorType)) == 0) return leftArm;
 		return rightArm;
 	}
 
 	@Override
-	public Modchu_ModelRenderer getBipedRightArm(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getBipedRightArm(ModchuModel_IEntityCaps entityCaps) {
 		return rightArm;
 	}
 
 	@Override
-	public Modchu_ModelRenderer getBipedLeftArm(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getBipedLeftArm(ModchuModel_IEntityCaps entityCaps) {
 		return leftArm;
 	}
 
 	@Override
-	public Modchu_ModelRenderer getBipedRightLeg(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getBipedRightLeg(ModchuModel_IEntityCaps entityCaps) {
 		return rightLeg;
 	}
 
 	@Override
-	public Modchu_ModelRenderer getBipedLeftLeg(ModchuModel_IEntityCaps entityCaps) {
+	public ModchuModel_ModelRenderer getBipedLeftLeg(ModchuModel_IEntityCaps entityCaps) {
 		return leftLeg;
 	}
 

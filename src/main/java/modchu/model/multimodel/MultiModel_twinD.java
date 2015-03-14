@@ -1,10 +1,8 @@
-package modchu.model.multimodel;import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_twinD extends MultiModel_SR2 {
-	public Modchu_ModelRenderer longhearR;
-	public Modchu_ModelRenderer longhearL;
-	public Modchu_ModelRenderer kamidomeR;
-	public Modchu_ModelRenderer kamidomeL;	public MultiModel_twinD() {
+package modchu.model.multimodel;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_twinD extends MultiModel_SR2 {
+	public ModchuModel_ModelRenderer longhearR;
+	public ModchuModel_ModelRenderer longhearL;
+	public ModchuModel_ModelRenderer kamidomeR;
+	public ModchuModel_ModelRenderer kamidomeL;	public MultiModel_twinD() {
 		this(0.0F);
 	}	public MultiModel_twinD(float f) {
 		this(f, 0.0F);
@@ -15,13 +13,13 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_twi
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		longhearR = new Modchu_ModelRenderer(this, 52, 13);
+		longhearR = new ModchuModel_ModelRenderer(this, 52, 13);
 		longhearR.addBox(2.5F, -8F, 7.4F, 2, 18, 1);
-		longhearR.setRotationPoint(0F, 0F, 0F);		longhearL = new Modchu_ModelRenderer(this, 58, 13);
+		longhearR.setRotationPoint(0F, 0F, 0F);		longhearL = new ModchuModel_ModelRenderer(this, 58, 13);
 		longhearL.addBox(-4.5F, -8F, 7.4F, 2, 18, 1);
-		longhearL.setRotationPoint(0F, 0F, 0F);		kamidomeR = new Modchu_ModelRenderer(this, 46, 19);
+		longhearL.setRotationPoint(0F, 0F, 0F);		kamidomeR = new ModchuModel_ModelRenderer(this, 46, 19);
 		kamidomeR.addBox(1F, -7F, 6.5F, 2, 2, 1);
-		kamidomeR.setRotationPoint(0F, 0F, 0F);		kamidomeL = new Modchu_ModelRenderer(this, 46, 22);
+		kamidomeR.setRotationPoint(0F, 0F, 0F);		kamidomeL = new ModchuModel_ModelRenderer(this, 46, 22);
 		kamidomeL.addBox(-3F, -7F, 6.5F, 2, 2, 1);
 		kamidomeL.setRotationPoint(0F, 0F, 0F);		longhearR.rotateAngleX = longhearL.rotateAngleX = kamidomeR.rotateAngleX =
 				kamidomeL.rotateAngleX = 0.296706F;

@@ -1,31 +1,26 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.Modchu_Reflect;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.multimodel.base.MultiModel;public class MultiModel_Shion extends MultiModel {	public Modchu_ModelRenderer longtail;
-	public Modchu_ModelRenderer Headwear;
-	public Modchu_ModelRenderer HeadwearR;
-	public Modchu_ModelRenderer HeadwearL;
-	public Modchu_ModelRenderer SkirtR;
-	public Modchu_ModelRenderer SkirtL;
-	public Modchu_ModelRenderer obi;
-	public Modchu_ModelRenderer sodeR;
-	public Modchu_ModelRenderer sodeL;
-	public Modchu_ModelRenderer WsodeR;
-	public Modchu_ModelRenderer WsodeL;
-	public Modchu_ModelRenderer kanzasi;
-	public Modchu_ModelRenderer osageL1;
-	public Modchu_ModelRenderer osageL2;
-	public Modchu_ModelRenderer osageL3;
-	public Modchu_ModelRenderer osageL4;
-	public Modchu_ModelRenderer osageR1;
-	public Modchu_ModelRenderer osageR2;
-	public Modchu_ModelRenderer osageR3;
-	public Modchu_ModelRenderer osageR4;
-	public Modchu_ModelRenderer osageLRib;
-	public Modchu_ModelRenderer eyeL;
-	public Modchu_ModelRenderer eyeR;
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel;public class MultiModel_Shion extends MultiModel {	public ModchuModel_ModelRenderer longtail;
+	public ModchuModel_ModelRenderer Headwear;
+	public ModchuModel_ModelRenderer HeadwearR;
+	public ModchuModel_ModelRenderer HeadwearL;
+	public ModchuModel_ModelRenderer SkirtR;
+	public ModchuModel_ModelRenderer SkirtL;
+	public ModchuModel_ModelRenderer obi;
+	public ModchuModel_ModelRenderer sodeR;
+	public ModchuModel_ModelRenderer sodeL;
+	public ModchuModel_ModelRenderer WsodeR;
+	public ModchuModel_ModelRenderer WsodeL;
+	public ModchuModel_ModelRenderer kanzasi;
+	public ModchuModel_ModelRenderer osageL1;
+	public ModchuModel_ModelRenderer osageL2;
+	public ModchuModel_ModelRenderer osageL3;
+	public ModchuModel_ModelRenderer osageL4;
+	public ModchuModel_ModelRenderer osageR1;
+	public ModchuModel_ModelRenderer osageR2;
+	public ModchuModel_ModelRenderer osageR3;
+	public ModchuModel_ModelRenderer osageR4;
+	public ModchuModel_ModelRenderer osageLRib;
+	public ModchuModel_ModelRenderer eyeL;
+	public ModchuModel_ModelRenderer eyeR;
 	private boolean sneakSkirt;	public MultiModel_Shion() {
 		this(0.0F);
 	}	public MultiModel_Shion(float f) {
@@ -37,53 +32,53 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_Shion e
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		longtail = new Modchu_ModelRenderer(this, 46, 19);
+		longtail = new ModchuModel_ModelRenderer(this, 46, 19);
 		longtail.addBox(-1F, 0.0F, 2.0F, 2, 12, 1, f + 0.2F);
 		longtail.setRotationPoint(0.0F, -6.5F, 5F);
-		SideTailR = new Modchu_ModelRenderer(this, 24, 0);
+		SideTailR = new ModchuModel_ModelRenderer(this, 24, 0);
 		SideTailR.addBox(-4.2F, -5.5F, -4.1F, 1, 6, 2, f);
 		SideTailR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		SideTailL = new Modchu_ModelRenderer(this, 24, 0);
+		SideTailL = new ModchuModel_ModelRenderer(this, 24, 0);
 		SideTailL.mirror = true;
 		SideTailL.addBox(3.2F, -5.5F, -4.1F, 1, 6, 2, f);
 		SideTailL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Headwear = new Modchu_ModelRenderer(this, 52, 16);
+		Headwear = new ModchuModel_ModelRenderer(this, 52, 16);
 		Headwear.addBox(-1.5F, 0.0F, -3F, 3, 8, 3, f);
 		Headwear.setRotationPoint(0.0F, -1F, 4F);
-		HeadwearR = new Modchu_ModelRenderer(this, 52, 16);
+		HeadwearR = new ModchuModel_ModelRenderer(this, 52, 16);
 		HeadwearR.addBox(-4F, 0.0F, -3F, 3, 6, 3, f);
 		HeadwearR.setRotationPoint(0.0F, -1F, 4F);
-		HeadwearL = new Modchu_ModelRenderer(this, 52, 16);
+		HeadwearL = new ModchuModel_ModelRenderer(this, 52, 16);
 		HeadwearL.addBox(1.0F, 0.0F, -3F, 3, 6, 3, f);
 		HeadwearL.setRotationPoint(0.0F, -1F, 4F);
-		SkirtR = new Modchu_ModelRenderer(this, 0, 18);
+		SkirtR = new ModchuModel_ModelRenderer(this, 0, 18);
 		SkirtR.addBox(-3F, -1F, -3F, 4, 8, 6, f + 0.01F);
 		SkirtR.setRotationPoint(0.5F, 0.0F, 0.0F);
-		SkirtL = new Modchu_ModelRenderer(this, 12, 18);
+		SkirtL = new ModchuModel_ModelRenderer(this, 12, 18);
 		SkirtL.addBox(-1F, -1F, -3F, 4, 8, 6, f + 0.01F);
 		SkirtL.setRotationPoint(-0.5F, 0.0F, 0.0F);
-		obi = new Modchu_ModelRenderer(this, 52, 27);
+		obi = new ModchuModel_ModelRenderer(this, 52, 27);
 		obi.addBox(-2.5F, 2.0F, 1.5F, 5, 4, 1, f);
 		obi.setRotationPoint(0.0F, -3.5F, 0.0F);
-		sodeR = new Modchu_ModelRenderer(this, 36, 0);
+		sodeR = new ModchuModel_ModelRenderer(this, 36, 0);
 		sodeR.addBox(-2F, -1F, -1F, 4, 6, 2, f + 0.1F);
 		sodeR.setRotationPoint(1.0F, 1.5F, 0.0F);
-		sodeL = new Modchu_ModelRenderer(this, 36, 0);
+		sodeL = new ModchuModel_ModelRenderer(this, 36, 0);
 		sodeL.addBox(-2F, -1F, -1F, 4, 6, 2, f + 0.1F);
 		sodeL.setRotationPoint(-1.0F, 1.5F, 0.0F);
-		WsodeR = new Modchu_ModelRenderer(this, 36, 0);
+		WsodeR = new ModchuModel_ModelRenderer(this, 36, 0);
 		WsodeR.addBox(-2F, -1F, 1.0F, 2, 6, 2, f);
 		WsodeR.setRotationPoint(1.0F, 1.5F, 0.0F);
-		WsodeL = new Modchu_ModelRenderer(this, 36, 0);
+		WsodeL = new ModchuModel_ModelRenderer(this, 36, 0);
 		WsodeL.addBox(0.0F, -1F, 1.0F, 2, 6, 2, f);
 		WsodeL.setRotationPoint(-1.0F, 1.5F, 0.0F);
-		kanzasi = new Modchu_ModelRenderer(this, 0, 16);
+		kanzasi = new ModchuModel_ModelRenderer(this, 0, 16);
 		kanzasi.addBox(-7F, -8F, 5F, 1, 7, 1, f);
 		kanzasi.setRotationPoint(0.0F, 0.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 32, 19);
+		eyeR = new ModchuModel_ModelRenderer(this, 32, 19);
 		eyeR.addPlate(-4F, -4.9F, -4.001F, 4, 4, 0);
 		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		eyeL = new Modchu_ModelRenderer(this, 42, 19);
+		eyeL = new ModchuModel_ModelRenderer(this, 42, 19);
 		eyeL.addPlate(0.0F, -4.9F, -4.001F, 4, 4, 0);
 		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
 		setCapsValue(null, caps_visible, Skirt, false);
@@ -157,8 +152,8 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_Shion e
 		} else {
 			if (modchuRemodelingModel && sneakSkirt) {
 				sneakSkirt = false;
-				((Modchu_ModelRenderer) mainFrame).removeChild(SkirtR);
-				((Modchu_ModelRenderer) mainFrame).removeChild(SkirtL);
+				((ModchuModel_ModelRenderer) mainFrame).removeChild(SkirtR);
+				((ModchuModel_ModelRenderer) mainFrame).removeChild(SkirtL);
 				bipedRightLeg.addChild(SkirtR);
 				bipedLeftLeg.addChild(SkirtL);
 				SkirtR.setRotationPoint(0.5F, 0.0F, 0.0F);

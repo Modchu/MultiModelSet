@@ -1,22 +1,18 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.multimodel.base.MultiModel;public class MultiModel_ExtraArms extends MultiModel {	public Modchu_ModelRenderer Backpack;
-	public Modchu_ModelRenderer Antena;
-	public Modchu_ModelRenderer Cwave;
-	public Modchu_ModelRenderer FirstAidSet;
-	public Modchu_ModelRenderer FAstamp;
-	public Modchu_ModelRenderer Binoculars;
-	public Modchu_ModelRenderer BinocularsL1;
-	public Modchu_ModelRenderer BinocularsL2;
-	public Modchu_ModelRenderer BinocularsR1;
-	public Modchu_ModelRenderer BinocularsR2;
-	public Modchu_ModelRenderer Bullet1;
-	public Modchu_ModelRenderer Bullet2;
-	public Modchu_ModelRenderer Bullet3;
-	public Modchu_ModelRenderer eyeL;
-	public Modchu_ModelRenderer eyeR;	public MultiModel_ExtraArms() {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel;public class MultiModel_ExtraArms extends MultiModel {	public ModchuModel_ModelRenderer Backpack;
+	public ModchuModel_ModelRenderer Antena;
+	public ModchuModel_ModelRenderer Cwave;
+	public ModchuModel_ModelRenderer FirstAidSet;
+	public ModchuModel_ModelRenderer FAstamp;
+	public ModchuModel_ModelRenderer Binoculars;
+	public ModchuModel_ModelRenderer BinocularsL1;
+	public ModchuModel_ModelRenderer BinocularsL2;
+	public ModchuModel_ModelRenderer BinocularsR1;
+	public ModchuModel_ModelRenderer BinocularsR2;
+	public ModchuModel_ModelRenderer Bullet1;
+	public ModchuModel_ModelRenderer Bullet2;
+	public ModchuModel_ModelRenderer Bullet3;
+	public ModchuModel_ModelRenderer eyeL;
+	public ModchuModel_ModelRenderer eyeR;	public MultiModel_ExtraArms() {
 		this(0.0F);
 	}	public MultiModel_ExtraArms(float f) {
 		this(f, 0.0F);
@@ -28,49 +24,49 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_ExtraAr
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
 		f1 += 8F;
-		Backpack = new Modchu_ModelRenderer(this, 24, 0);
+		Backpack = new ModchuModel_ModelRenderer(this, 24, 0);
 		Backpack.addBox(-2.5F, -3.2F, 2.0F, 5, 5, 3, f);
 		Backpack.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Antena = new Modchu_ModelRenderer(this, 40, 0);
+		Antena = new ModchuModel_ModelRenderer(this, 40, 0);
 		Antena.addBox(0.5F, -9.5F, 4.8F, 1, 7, 1, f - 0.2F);
 		Antena.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Cwave = new Modchu_ModelRenderer(this, 48, 10);
+		Cwave = new ModchuModel_ModelRenderer(this, 48, 10);
 		Cwave.addBox(6.5F, -10.5F, 4.8F, 4, 2, 0, f);
 		Cwave.setRotationPoint(0.0F, 0.0F, 0.0F);
-		FirstAidSet = new Modchu_ModelRenderer(this, 52, 10);
+		FirstAidSet = new ModchuModel_ModelRenderer(this, 52, 10);
 		FirstAidSet.addBox(2.001F, 4F, 0.0F, 2, 3, 4, f);
 		FirstAidSet.setRotationPoint(0.0F, -4.0F, -1F);
-		FAstamp = new Modchu_ModelRenderer(this, 58, 11);
+		FAstamp = new ModchuModel_ModelRenderer(this, 58, 11);
 		FAstamp.addBox(0.5F, 3.5F, -3.002F, 3, 3, 0, f - 1.0F);
 		FAstamp.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Binoculars = new Modchu_ModelRenderer(this, 0, 2);
+		Binoculars = new ModchuModel_ModelRenderer(this, 0, 2);
 		Binoculars.addBox(-1.5F, 9F, 2.5F, 3, 2, 1, f);
 		Binoculars.setRotationPoint(-0.5F, -2.0F, -4.0F);
-		BinocularsL1 = new Modchu_ModelRenderer(this, 0, 16);
+		BinocularsL1 = new ModchuModel_ModelRenderer(this, 0, 16);
 		BinocularsL1.addBox(0.0F, 8F, 2.0F, 2, 2, 2, f - 0.5F);
 		BinocularsL1.setRotationPoint(-2.0F, 0.0F, 0.5F);
-		BinocularsL2 = new Modchu_ModelRenderer(this, 0, 0);
+		BinocularsL2 = new ModchuModel_ModelRenderer(this, 0, 0);
 		BinocularsL2.addBox(0.0F, 9.5F, 2.0F, 2, 3, 2, f);
 		BinocularsL2.setRotationPoint(-2.0F, 0.0F, 0.5F);
-		BinocularsR1 = new Modchu_ModelRenderer(this, 0, 16);
+		BinocularsR1 = new ModchuModel_ModelRenderer(this, 0, 16);
 		BinocularsR1.addBox(1.5F, 8F, 1.0F, 2, 2, 2, f - 0.3F);
 		BinocularsR1.setRotationPoint(-2.0F, 0.0F, 0.5F);
-		BinocularsR2 = new Modchu_ModelRenderer(this, 0, 0);
+		BinocularsR2 = new ModchuModel_ModelRenderer(this, 0, 0);
 		BinocularsR2.addBox(1.5F, 9.5F, 1.0F, 2, 3, 2, f);
 		BinocularsR2.setRotationPoint(-2.0F, 0.0F, 0.5F);
-		Bullet1 = new Modchu_ModelRenderer(this, 0, 6);
+		Bullet1 = new ModchuModel_ModelRenderer(this, 0, 6);
 		Bullet1.addBox(0.0F, -2F, -2F, 3, 1, 1, f);
 		Bullet1.setRotationPoint(0.0F, -3.0F, 0.0F);
-		Bullet2 = new Modchu_ModelRenderer(this, 0, 6);
+		Bullet2 = new ModchuModel_ModelRenderer(this, 0, 6);
 		Bullet2.addBox(0.0F, -1F, -3F, 3, 1, 1, f);
 		Bullet2.setRotationPoint(0.0F, -3.0F, 0.0F);
-		Bullet3 = new Modchu_ModelRenderer(this, 0, 6);
+		Bullet3 = new ModchuModel_ModelRenderer(this, 0, 6);
 		Bullet3.addBox(0.0F, 0.0F, -4F, 3, 1, 1, f);
 		Bullet3.setRotationPoint(0.0F, -3.0F, 0.0F);
-		eyeL = new Modchu_ModelRenderer(this, 32, 19);
+		eyeL = new ModchuModel_ModelRenderer(this, 32, 19);
 		eyeL.addPlate(-4.0F, -5.0F, -4.001F, 4, 4, 0, f);
 		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 42, 19);
+		eyeR = new ModchuModel_ModelRenderer(this, 42, 19);
 		eyeR.addPlate(0.0F, -5.0F, -4.001F, 4, 4, 0, f);
 		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		if (isAfterInit) afterInit(f, f1);

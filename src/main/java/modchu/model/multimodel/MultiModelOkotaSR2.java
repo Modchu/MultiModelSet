@@ -1,8 +1,8 @@
 package modchu.model.multimodel;
 
 import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
 import modchu.model.ModchuModel_IEntityCaps;
+import modchu.model.ModchuModel_ModelRenderer;
 import modchu.model.multimodel.base.MultiModel_SR2;
 
 public abstract class MultiModelOkotaSR2 extends MultiModel_SR2 {
@@ -31,10 +31,10 @@ public abstract class MultiModelOkotaSR2 extends MultiModel_SR2 {
 		super.initModel(f, f1, false);
 
 		// 追加パーツ
-		eyeL = new Modchu_ModelRenderer(this, 58, 16);
+		eyeL = new ModchuModel_ModelRenderer(this, 58, 16);
 		eyeL.addBox(-1F, -1F, -4.001F, 2, 2, 1, f + 0.1F);
 		eyeL.setRotationPoint(-2.0F, -3.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 60, 16);
+		eyeR = new ModchuModel_ModelRenderer(this, 60, 16);
 		eyeR.addBox(-1F, -1F, -4.001F, 2, 2, 1, f + 0.1F);
 		eyeR.setRotationPoint(2.0F, -3.0F, 0.0F);
 		if (isAfterInit) afterInit(f, f1);

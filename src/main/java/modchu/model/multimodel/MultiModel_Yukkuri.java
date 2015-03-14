@@ -1,53 +1,50 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer Item1;
-	public Modchu_ModelRenderer Item2;
-	public Modchu_ModelRenderer HeadR;
-	public Modchu_ModelRenderer HeadL;
-	public Modchu_ModelRenderer HeadU;
-	public Modchu_ModelRenderer HatFL;
-	public Modchu_ModelRenderer HatBL;
-	public Modchu_ModelRenderer HatFR;
-	public Modchu_ModelRenderer HatBR;
-	public Modchu_ModelRenderer Bangs1;
-	public Modchu_ModelRenderer Bangs2;
-	public Modchu_ModelRenderer Bangs3;
-	public Modchu_ModelRenderer Bangs4;
-	public Modchu_ModelRenderer MariribonL;
-	public Modchu_ModelRenderer MariribonR;
-	public Modchu_ModelRenderer MariribonC;
-	public Modchu_ModelRenderer Hat1;
-	public Modchu_ModelRenderer Hat2;
-	public Modchu_ModelRenderer Hat3;
-	public Modchu_ModelRenderer Hat4;
-	public Modchu_ModelRenderer Hat5;
-	public Modchu_ModelRenderer Hat6;
-	public Modchu_ModelRenderer Hat7;
-	public Modchu_ModelRenderer Hat8;
-	public Modchu_ModelRenderer Hat9;
-	public Modchu_ModelRenderer THat1;
-	public Modchu_ModelRenderer THat2;
-	public Modchu_ModelRenderer RSidehair1;
-	public Modchu_ModelRenderer RSidehair2;
-	public Modchu_ModelRenderer RSidehair3;
-	public Modchu_ModelRenderer RSidehair4;
-	public Modchu_ModelRenderer LSidehair1;
-	public Modchu_ModelRenderer LSidehair2;
-	public Modchu_ModelRenderer LSidehair3;
-	public Modchu_ModelRenderer LSidehair4;
-	public Modchu_ModelRenderer Backhair1;
-	public Modchu_ModelRenderer Backhair2;
-	public Modchu_ModelRenderer Backhair3;
-	public Modchu_ModelRenderer Backhair4;
-	public Modchu_ModelRenderer Backhair5;
-	public Modchu_ModelRenderer Lribon;
-	public Modchu_ModelRenderer Rribon;
-	public Modchu_ModelRenderer HaneL1;
-	public Modchu_ModelRenderer HaneL2;
-	public Modchu_ModelRenderer HaneR1;
-	public Modchu_ModelRenderer HaneR2;	public MultiModel_Yukkuri() {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;
+public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer Item1;
+	public ModchuModel_ModelRenderer Item2;
+	public ModchuModel_ModelRenderer HeadR;
+	public ModchuModel_ModelRenderer HeadL;
+	public ModchuModel_ModelRenderer HeadU;
+	public ModchuModel_ModelRenderer HatFL;
+	public ModchuModel_ModelRenderer HatBL;
+	public ModchuModel_ModelRenderer HatFR;
+	public ModchuModel_ModelRenderer HatBR;
+	public ModchuModel_ModelRenderer Bangs1;
+	public ModchuModel_ModelRenderer Bangs2;
+	public ModchuModel_ModelRenderer Bangs3;
+	public ModchuModel_ModelRenderer Bangs4;
+	public ModchuModel_ModelRenderer MariribonL;
+	public ModchuModel_ModelRenderer MariribonR;
+	public ModchuModel_ModelRenderer MariribonC;
+	public ModchuModel_ModelRenderer Hat1;
+	public ModchuModel_ModelRenderer Hat2;
+	public ModchuModel_ModelRenderer Hat3;
+	public ModchuModel_ModelRenderer Hat4;
+	public ModchuModel_ModelRenderer Hat5;
+	public ModchuModel_ModelRenderer Hat6;
+	public ModchuModel_ModelRenderer Hat7;
+	public ModchuModel_ModelRenderer Hat8;
+	public ModchuModel_ModelRenderer Hat9;
+	public ModchuModel_ModelRenderer THat1;
+	public ModchuModel_ModelRenderer THat2;
+	public ModchuModel_ModelRenderer RSidehair1;
+	public ModchuModel_ModelRenderer RSidehair2;
+	public ModchuModel_ModelRenderer RSidehair3;
+	public ModchuModel_ModelRenderer RSidehair4;
+	public ModchuModel_ModelRenderer LSidehair1;
+	public ModchuModel_ModelRenderer LSidehair2;
+	public ModchuModel_ModelRenderer LSidehair3;
+	public ModchuModel_ModelRenderer LSidehair4;
+	public ModchuModel_ModelRenderer Backhair1;
+	public ModchuModel_ModelRenderer Backhair2;
+	public ModchuModel_ModelRenderer Backhair3;
+	public ModchuModel_ModelRenderer Backhair4;
+	public ModchuModel_ModelRenderer Backhair5;
+	public ModchuModel_ModelRenderer Lribon;
+	public ModchuModel_ModelRenderer Rribon;
+	public ModchuModel_ModelRenderer HaneL1;
+	public ModchuModel_ModelRenderer HaneL2;
+	public ModchuModel_ModelRenderer HaneR1;
+	public ModchuModel_ModelRenderer HaneR2;	public MultiModel_Yukkuri() {
 		this(0.0F);
 	}	public MultiModel_Yukkuri(float f) {
 		this(f, 0.0F);
@@ -57,213 +54,213 @@ public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public Modchu_Mod
 		super(f, f1, i < 0 ? 64 : i, j < 0 ? 32 : j);
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
-		bipedHead = new Modchu_ModelRenderer(this, 0, 0);
+		bipedHead = new ModchuModel_ModelRenderer(this, 0, 0);
 		bipedHead.addBox(-5F, -8F, -5F, 10, 10, 10, f);
 		bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Tail = new Modchu_ModelRenderer(this, 0, 0);
+		Tail = new ModchuModel_ModelRenderer(this, 0, 0);
 		Tail.addBox(-5F, -8F, -4F, 10, 10, 10, f - 0.5F);
 		Tail.setRotationPoint(0.0F, 0.0F, 0.0F);
-		HeadR = new Modchu_ModelRenderer(this, 0, 0);
+		HeadR = new ModchuModel_ModelRenderer(this, 0, 0);
 		HeadR.addBox(-6F, -8F, -5F, 10, 10, 10, f - 0.5F);
 		HeadR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		HeadL = new Modchu_ModelRenderer(this, 0, 0);
+		HeadL = new ModchuModel_ModelRenderer(this, 0, 0);
 		HeadL.addBox(-4F, -8F, -5F, 10, 10, 10, f - 0.5F);
 		HeadL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		HeadU = new Modchu_ModelRenderer(this, 0, 0);
+		HeadU = new ModchuModel_ModelRenderer(this, 0, 0);
 		HeadU.addBox(-5F, -9F, -5F, 10, 10, 10, f - 0.5F);
 		HeadU.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//maegami
-		Bangs1 = new Modchu_ModelRenderer(this, 40, 0);
+		Bangs1 = new ModchuModel_ModelRenderer(this, 40, 0);
 		Bangs1.addBox(-5.3F, -7.5F, -5.5F, 3, 4, 1, f);
 		Bangs1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Bangs2 = new Modchu_ModelRenderer(this, 40, 0);
+		Bangs2 = new ModchuModel_ModelRenderer(this, 40, 0);
 		Bangs2.addBox(-2.7F, -7.5F, -5.5F, 3, 4, 1, f);
 		Bangs2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Bangs3 = new Modchu_ModelRenderer(this, 40, 0);
+		Bangs3 = new ModchuModel_ModelRenderer(this, 40, 0);
 		Bangs3.addBox(-0.1F, -7.5F, -5.5F, 3, 4, 1, f);
 		Bangs3.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Bangs4 = new Modchu_ModelRenderer(this, 40, 0);
+		Bangs4 = new ModchuModel_ModelRenderer(this, 40, 0);
 		Bangs4.addBox(2.2F, -7.5F, -5.5F, 3, 4, 1, f);
 		Bangs4.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//back hair
-		Backhair1 = new Modchu_ModelRenderer(this, 56, 0);
+		Backhair1 = new ModchuModel_ModelRenderer(this, 56, 0);
 		Backhair1.addBox(-1F, 0F, -1F, 2, 8, 2, f);
 		Backhair1.setRotationPoint(0F, 0F, 0F);
-		Backhair2 = new Modchu_ModelRenderer(this, 56, 0);
+		Backhair2 = new ModchuModel_ModelRenderer(this, 56, 0);
 		Backhair2.addBox(-1F, 0F, -1F, 2, 8, 2, f);
 		Backhair2.setRotationPoint(0F, 0F, 0.0F);
-		Backhair3 = new Modchu_ModelRenderer(this, 56, 0);
+		Backhair3 = new ModchuModel_ModelRenderer(this, 56, 0);
 		Backhair3.addBox(-1F, 0F, -1F, 2, 8, 2, f);
 		Backhair3.setRotationPoint(0F, 0F, 0.0F);
-		Backhair4 = new Modchu_ModelRenderer(this, 56, 0);
+		Backhair4 = new ModchuModel_ModelRenderer(this, 56, 0);
 		Backhair4.addBox(-1F, 0F, -1F, 2, 8, 2, f);
 		Backhair4.setRotationPoint(0F, 0F, 0.0F);
-		Backhair5 = new Modchu_ModelRenderer(this, 56, 0);
+		Backhair5 = new ModchuModel_ModelRenderer(this, 56, 0);
 		Backhair5.addBox(-1F, 0F, -1F, 2, 8, 2, f);
-		Backhair5.setRotationPoint(0F, 0F, 0.0F);		SideTailL = new Modchu_ModelRenderer(this, 26, 20);
+		Backhair5.setRotationPoint(0F, 0F, 0.0F);		SideTailL = new ModchuModel_ModelRenderer(this, 26, 20);
 		SideTailL.mirror = true;
 		SideTailL.addBox(1.0F, -13F, 1.5F, 6, 6, 2, f);
 		SideTailL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		SideTailR = new Modchu_ModelRenderer(this, 26, 20);
+		SideTailR = new ModchuModel_ModelRenderer(this, 26, 20);
 		SideTailR.addBox(-8F, -13F, 1.5F, 6, 6, 2, f);
 		SideTailR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonL = new Modchu_ModelRenderer(this, 26, 20);
+		ChignonL = new ModchuModel_ModelRenderer(this, 26, 20);
 		ChignonL.mirror = true;
 		ChignonL.addBox(-1F, -6F, 5.5F, 6, 6, 2, f - 0.5F);
 		ChignonL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonR = new Modchu_ModelRenderer(this, 26, 20);
+		ChignonR = new ModchuModel_ModelRenderer(this, 26, 20);
 		ChignonR.addBox(-6F, -6F, 5.5F, 6, 6, 2, f - 0.5F);
 		ChignonR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ChignonB = new Modchu_ModelRenderer(this, 29, 20);
+		ChignonB = new ModchuModel_ModelRenderer(this, 29, 20);
 		ChignonB.addBox(-2F, -9.5F, 4F, 3, 5, 2, f + 0.1F);
 		ChignonB.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//anko
-		bipedBody = new Modchu_ModelRenderer(this, 10, 24);
+		bipedBody = new ModchuModel_ModelRenderer(this, 10, 24);
 		bipedBody.addBox(-1F, -1F, -1F, 2, 2, 2, f + 1.0F);
 		bipedBody.setRotationPoint(0.0F, 3.0F, 0.0F);
-		Skirt = new Modchu_ModelRenderer(this, 2, 20);
+		Skirt = new ModchuModel_ModelRenderer(this, 2, 20);
 		//ago
 		Skirt.addBox(-4F, -1F, -4F, 8, 4, 8, f);
 		Skirt.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//momiage
-		bipedRightArm = new Modchu_ModelRenderer(this, 48, 10);
+		bipedRightArm = new ModchuModel_ModelRenderer(this, 48, 10);
 		bipedRightArm.addBox(0.0F, 0.0F, 0.0F, 2, 10, 2, f - 0.2F);
 		bipedRightArm.setRotationPoint(-2F, -1.5F, -1F);
-		bipedLeftArm = new Modchu_ModelRenderer(this, 56, 10);
+		bipedLeftArm = new ModchuModel_ModelRenderer(this, 56, 10);
 		bipedLeftArm.addBox(0.0F, 0.0F, 0.0F, 2, 10, 2, f - 0.2F);
 		bipedLeftArm.setRotationPoint(0.0F, -1.5F, -1F);
 		//
-		bipedRightLeg = new Modchu_ModelRenderer(this);
-		bipedLeftLeg = new Modchu_ModelRenderer(this);
+		bipedRightLeg = new ModchuModel_ModelRenderer(this);
+		bipedLeftLeg = new ModchuModel_ModelRenderer(this);
 		bipedRightLeg.isHidden = true;
-		bipedLeftLeg.isHidden = true;		eyeL = new Modchu_ModelRenderer(this, 5, 20);
+		bipedLeftLeg.isHidden = true;		eyeL = new ModchuModel_ModelRenderer(this, 5, 20);
 		eyeL.addPlate(0.0F, -6F, -5.001F, 5, 8, 0, f);
 		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		eyeR = new Modchu_ModelRenderer(this, 0, 20);
+		eyeR = new ModchuModel_ModelRenderer(this, 0, 20);
 		eyeR.addPlate(-5.0F, -6F, -5.001F, 5, 8, 0, f);
 		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//temoti
-		Item1 = new Modchu_ModelRenderer(this, 40, 18);
+		Item1 = new ModchuModel_ModelRenderer(this, 40, 18);
 		Item1.addBox(0.0F, 0.0F, 0.0F, 3, 3, 1, f);
 		Item1.setRotationPoint(0.0F, -4.5F, 0.4F);
 		Item1.rotateAngleX = -0.175F;
 		Item1.rotateAngleY = -0.524F;
 		Item1.rotateAngleZ = 0.175F;
-		Item2 = new Modchu_ModelRenderer(this, 40, 15);
+		Item2 = new ModchuModel_ModelRenderer(this, 40, 15);
 		Item2.addBox(0.0F, 0.0F, 0.0F, 3, 3, 1, f);
 		Item2.setRotationPoint(0.0F, -1.5F, 0.4F);
 		Item2.rotateAngleX = -0.175F;
 		Item2.rotateAngleY = -0.524F;
 		Item2.rotateAngleZ = 0.175F;
 		//marisa hat_tuba
-		HatFL = new Modchu_ModelRenderer(this, 30, 0);
+		HatFL = new ModchuModel_ModelRenderer(this, 30, 0);
 		HatFL.addPlate(0F, 1F, -6.5F, 10, 10, 0, f);
 		HatFL.setRotationPoint(0.0F, 0F, 0F);
 		HatFL.rotateAngleX = -1.745F;
-		HatBL = new Modchu_ModelRenderer(this, 30, 0);
+		HatBL = new ModchuModel_ModelRenderer(this, 30, 0);
 		HatBL.addPlate(0.0F, -1F, 6.5F, 10, 10, 0, f);
 		HatBL.setRotationPoint(0.0F, 0F, 0F);
 		HatBL.rotateAngleX = 1.396F;
-		HatFR = new Modchu_ModelRenderer(this, 30, 0);
+		HatFR = new ModchuModel_ModelRenderer(this, 30, 0);
 		HatFR.mirror = true;
 		HatFR.addPlate(-10F, 1F, -6.5F, 10, 10, 0, f);
 		HatFR.setRotationPoint(0F, 0F, 0F);
 		HatFR.rotateAngleX = -1.745F;
-		HatBR = new Modchu_ModelRenderer(this, 30, 0);
+		HatBR = new ModchuModel_ModelRenderer(this, 30, 0);
 		HatBR.mirror = true;
 		HatBR.addPlate(-10F, -1F, 6.5F, 10, 10, 0, f);
 		HatBR.setRotationPoint(0F, 0.0F, 0F);
 		HatBR.rotateAngleX = 1.396F;
 		//marisa hat ribon
-		MariribonL = new Modchu_ModelRenderer(this, 50, 22);
+		MariribonL = new ModchuModel_ModelRenderer(this, 50, 22);
 		MariribonL.mirror = true;
 		MariribonL.addBox(0.0F, -11F, -6.6F, 5, 4, 2, f);
 		MariribonL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		MariribonR = new Modchu_ModelRenderer(this, 50, 22);
+		MariribonR = new ModchuModel_ModelRenderer(this, 50, 22);
 		MariribonR.addBox(-5F, -11F, -6.6F, 5, 4, 2, f);
 		MariribonR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		MariribonC = new Modchu_ModelRenderer(this, 52, 22);
+		MariribonC = new ModchuModel_ModelRenderer(this, 52, 22);
 		MariribonC.addBox(-1.5F, -10.5F, -5.7F, 3, 4, 2, f);
 		MariribonC.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//marisa hat top parts
-		Hat1 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat1 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat1.addBox(-2.0F, -2.0F, 0F, 4, 4, 6, f);
 		Hat1.setRotationPoint(0F, 0F, 0.0F);
-		Hat2 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat2 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat2.addBox(-2.0F, -2.0F, 0.0F, 4, 4, 6, f);
 		Hat2.setRotationPoint(0F, 0F, 0.0F);
-		Hat3 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat3 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat3.addBox(-2.0F, -2.0F, 0.0F, 4, 4, 6, f);
 		Hat3.setRotationPoint(0F, 0F, 0.0F);
-		Hat4 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat4 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat4.addBox(-2F, -2F, 0.0F, 4, 4, 6, f);
 		Hat4.setRotationPoint(0F, 0F, 0.0F);
-		Hat5 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat5 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat5.addBox(-2.0F, -2.0F, 0.0F, 4, 4, 6, f);
 		Hat5.setRotationPoint(0F, 0F, 0.0F);
-		Hat6 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat6 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat6.addBox(-2.0F, -2.0F, 0.0F, 4, 4, 6, f);
 		Hat6.setRotationPoint(0F, 0F, 0.0F);
-		Hat7 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat7 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat7.addBox(-2F, -2F, 0.0F, 4, 4, 6, f);
 		Hat7.setRotationPoint(0F, 0F, 0.0F);
-		Hat8 = new Modchu_ModelRenderer(this, 36, 22);
+		Hat8 = new ModchuModel_ModelRenderer(this, 36, 22);
 		Hat8.addBox(-2F, -2F, 0.0F, 4, 4, 6, f);
-		Hat8.setRotationPoint(0F, 0F, 0.0F);		Hat9 = new Modchu_ModelRenderer(this, 56, 28);
+		Hat8.setRotationPoint(0F, 0F, 0.0F);		Hat9 = new ModchuModel_ModelRenderer(this, 56, 28);
 		Hat9.addBox(-0.5F, -0.5F, 0.0F, 1, 1, 2, f + 0.8F);
 		Hat9.setRotationPoint(0F, 0F, 0.0F);
 		//tengu hat
-		THat1 = new Modchu_ModelRenderer(this, 10, 20);
+		THat1 = new ModchuModel_ModelRenderer(this, 10, 20);
 		THat1.addBox(0.0F, -2F, 0.0F, 2, 2, 2, f + 0.6F);
 		THat1.setRotationPoint(0F, 0F, 0.0F);
-		THat2 = new Modchu_ModelRenderer(this, 10, 20);
+		THat2 = new ModchuModel_ModelRenderer(this, 10, 20);
 		THat2.addBox(0.0F, -2F, 0.0F, 2, 2, 2, f);
 		THat2.setRotationPoint(0F, 0F, 0.0F);
 		//side hair
-		RSidehair1 = new Modchu_ModelRenderer(this, 48, 0);
+		RSidehair1 = new ModchuModel_ModelRenderer(this, 48, 0);
 		RSidehair1.addBox(-2.0F, -1.0F, -1.0F, 2, 8, 2, f);
 		RSidehair1.setRotationPoint(0F, 0F, 0F);
-		RSidehair2 = new Modchu_ModelRenderer(this, 48, 0);
+		RSidehair2 = new ModchuModel_ModelRenderer(this, 48, 0);
 		RSidehair2.addBox(-2.0F, -1.0F, -1.0F, 2, 8, 2, f);
 		RSidehair2.setRotationPoint(0F, 0F, 0F);
-		RSidehair3 = new Modchu_ModelRenderer(this, 48, 0);
+		RSidehair3 = new ModchuModel_ModelRenderer(this, 48, 0);
 		RSidehair3.addBox(-2.0F, -1.0F, -1.0F, 2, 8, 2, f);
 		RSidehair3.setRotationPoint(0F, 0F, 0F);
-		RSidehair4 = new Modchu_ModelRenderer(this, 48, 0);
+		RSidehair4 = new ModchuModel_ModelRenderer(this, 48, 0);
 		RSidehair4.addBox(-2.0F, -1.0F, -1.0F, 2, 8, 2, f);
 		RSidehair4.setRotationPoint(0F, 0F, 0F);
-		LSidehair1 = new Modchu_ModelRenderer(this, 48, 0);
+		LSidehair1 = new ModchuModel_ModelRenderer(this, 48, 0);
 		LSidehair1.addBox(0F, -1.0F, -1.0F, 2, 8, 2, f);
 		LSidehair1.setRotationPoint(0F, 0F, 0F);
-		LSidehair2 = new Modchu_ModelRenderer(this, 48, 0);
+		LSidehair2 = new ModchuModel_ModelRenderer(this, 48, 0);
 		LSidehair2.addBox(0F, -1.0F, -1.0F, 2, 8, 2, f);
 		LSidehair2.setRotationPoint(0F, 0F, 0F);
-		LSidehair3 = new Modchu_ModelRenderer(this, 48, 0);
+		LSidehair3 = new ModchuModel_ModelRenderer(this, 48, 0);
 		LSidehair3.addBox(0F, -1.0F, -1.0F, 2, 8, 2, f);
 		LSidehair3.setRotationPoint(0F, 0F, 0F);
-		LSidehair4 = new Modchu_ModelRenderer(this, 48, 0);
+		LSidehair4 = new ModchuModel_ModelRenderer(this, 48, 0);
 		LSidehair4.addBox(0F, -1.0F, -1.0F, 2, 8, 2, f);
 		LSidehair4.setRotationPoint(0F, 0F, 0F);
 		//head side ribon
-		Rribon = new Modchu_ModelRenderer(this, 40, 10);
+		Rribon = new ModchuModel_ModelRenderer(this, 40, 10);
 		Rribon.addPlate(-8F, -5F, 0F, 8, 5, 0, f);
 		Rribon.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Lribon = new Modchu_ModelRenderer(this, 40, 5);
+		Lribon = new ModchuModel_ModelRenderer(this, 40, 5);
 		Lribon.addPlate(0F, -5F, 0F, 8, 5, 0, f);
 		Lribon.setRotationPoint(0.0F, 0.0F, 0.0F);
 		//hane
-		HaneL1 = new Modchu_ModelRenderer(this, 0, 4);
+		HaneL1 = new ModchuModel_ModelRenderer(this, 0, 4);
 		HaneL1.addPlate(0F, -3F, 0F, 10, 6, 0, f);
-		HaneL1.setRotationPoint(2F, -3F, 6F);		HaneL2 = new Modchu_ModelRenderer(this, 0, 0);
+		HaneL1.setRotationPoint(2F, -3F, 6F);		HaneL2 = new ModchuModel_ModelRenderer(this, 0, 0);
 		HaneL2.addPlate(0F, -1.5F, 0F, 8, 4, 0, f);
-		HaneL2.setRotationPoint(0.0F, 0.0F, 0.0F);		HaneR1 = new Modchu_ModelRenderer(this, 0, 4);
+		HaneL2.setRotationPoint(0.0F, 0.0F, 0.0F);		HaneR1 = new ModchuModel_ModelRenderer(this, 0, 4);
 		HaneR1.mirror = true;
 		HaneR1.addPlate(-10F, -3F, 0F, 10, 6, 0, f);
-		HaneR1.setRotationPoint(-2F, -3F, 6F);		HaneR2 = new Modchu_ModelRenderer(this, 0, 0);
+		HaneR1.setRotationPoint(-2F, -3F, 6F);		HaneR2 = new ModchuModel_ModelRenderer(this, 0, 0);
 		HaneR2.mirror = true;
 		HaneR2.addPlate(-10F, -1.5F, 0F, 8, 4, 0, f);
 		HaneR2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		mainFrame = new Modchu_ModelRenderer(this, 0, 0);
+		mainFrame = new ModchuModel_ModelRenderer(this, 0, 0);
 		mainFrame.setRotationPoint(0F, 0F + f1, 0F);
 		if (isAfterInit) afterInit(f, f1);
 	}	@Override
@@ -299,7 +296,7 @@ public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public Modchu_Mod
 		bipedLeftArm.addChild(Arms[1]);
 		Arms[0].setRotationPoint(0.5F, 6.5F, 0F);
 		Arms[1].setRotationPoint(-0.5F, 6.5F, 0F);
-		((Modchu_ModelRenderer) mainFrame).clearChildModels();
+		((ModchuModel_ModelRenderer) mainFrame).clearChildModels();
 		bipedHead.addChild(bipedBody);
 		bipedHead.addChild(Skirt);
 		bipedHead.addChild(eyeR);

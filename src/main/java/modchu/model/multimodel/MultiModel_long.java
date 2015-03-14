@@ -1,8 +1,6 @@
-package modchu.model.multimodel;import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_long extends MultiModel_SR2 {
-	public Modchu_ModelRenderer longhear;
-	public Modchu_ModelRenderer kamidome;	public MultiModel_long() {
+package modchu.model.multimodel;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_long extends MultiModel_SR2 {
+	public ModchuModel_ModelRenderer longhear;
+	public ModchuModel_ModelRenderer kamidome;	public MultiModel_long() {
 		this(0.0F);
 	}	public MultiModel_long(float f) {
 		this(f, 0.0F);
@@ -13,10 +11,10 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_lon
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		longhear = new Modchu_ModelRenderer(this, 52, 12);
+		longhear = new ModchuModel_ModelRenderer(this, 52, 12);
 		longhear.addBox(-1.5F, -9F, 7F, 3, 17, 3);
 		longhear.setRotationPoint(0F, 0F, 0F);
-		kamidome = new Modchu_ModelRenderer(this, 46, 19);
+		kamidome = new ModchuModel_ModelRenderer(this, 46, 19);
 		kamidome.addBox(-1F, -7F, 6F, 2, 2, 1);
 		kamidome.setRotationPoint(0F, 0F, 0F);		kamidome.rotateAngleX = 0.2974289F;
 		longhear.rotateAngleX = 0.2974289F;

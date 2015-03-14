@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.characteristic.Modchu_ModelRenderer;public class MultiModel_Elsa extends MultiModel_Elsa2 {	public MultiModel_Elsa() {
+package modchu.model.multimodel;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_Elsa extends MultiModel_Elsa2 {	public MultiModel_Elsa() {
 		this(0.0F);
 	}	public MultiModel_Elsa(float f) {
 		this(f, 0.0F);
@@ -27,17 +27,17 @@ package modchu.model.multimodel;import modchu.lib.characteristic.Modchu_ModelR
 	}	@Override
 	public void actionPartsInit(float f, float f1) {
 		super.actionPartsInit(f, f1);
-		rightArm = new Modchu_ModelRenderer(this, 52, 8);
+		rightArm = new ModchuModel_ModelRenderer(this, 52, 8);
 		rightArm.addBox(-1.0F, 0.0F, -1.0F, 2, 5, 2, f);
-		rightArm.setRotationPoint(-3.0F, 9.5F, 0.0F);		rightArm2 = new Modchu_ModelRenderer(this, 52, 13);
+		rightArm.setRotationPoint(-3.0F, 9.5F, 0.0F);		rightArm2 = new ModchuModel_ModelRenderer(this, 52, 13);
 		rightArm2.addBox(-1.0F, 0.0F, -1.0F, 2, 3, 2, f);
-		rightArm2.setRotationPoint(0.0F, 5.0F, 0.0F);		rightHand = new Modchu_ModelRenderer(this, 52, 16);
+		rightArm2.setRotationPoint(0.0F, 5.0F, 0.0F);		rightHand = new ModchuModel_ModelRenderer(this, 52, 16);
 		rightHand.addBox(-1.0F, -1.0F, -1.0F, 2, 2, 2, f);
-		rightHand.setRotationPoint(0.0F, 3.0F, 0.0F);		leftArm = new Modchu_ModelRenderer(this, 52, 8);
+		rightHand.setRotationPoint(0.0F, 3.0F, 0.0F);		leftArm = new ModchuModel_ModelRenderer(this, 52, 8);
 		leftArm.addBox(-1.0F, 0.0F, -1.0F, 2, 5, 2, f);
-		leftArm.setRotationPoint(3.0F, 9.5F, 0.0F);		leftArm2 = new Modchu_ModelRenderer(this, 52, 13);
+		leftArm.setRotationPoint(3.0F, 9.5F, 0.0F);		leftArm2 = new ModchuModel_ModelRenderer(this, 52, 13);
 		leftArm2.addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2, f);
-		leftArm2.setRotationPoint(0.0F, 2.0F, 0.0F);		leftHand = new Modchu_ModelRenderer(this, 52, 16);
+		leftArm2.setRotationPoint(0.0F, 2.0F, 0.0F);		leftHand = new ModchuModel_ModelRenderer(this, 52, 16);
 		leftHand.addBox(-1.0F, -1.0F, -1.0F, 2, 2, 2, f);
 		leftHand.setRotationPoint(0.0F, 3.0F, 0.0F);		rightHand.showModel = leftHand.showModel = rightArm.showModel =
 				leftArm.showModel = rightArm2.showModel = leftArm2.showModel = false;

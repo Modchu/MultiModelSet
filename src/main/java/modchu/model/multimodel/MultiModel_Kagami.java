@@ -1,19 +1,18 @@
-package modchu.model.multimodel;import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Kagami extends MultiModel_SR2 {
-	public Modchu_ModelRenderer tailR;
-	public Modchu_ModelRenderer tailRFA;
-	public Modchu_ModelRenderer tailRBA;
-	public Modchu_ModelRenderer tailRBB;
-	public Modchu_ModelRenderer kamidomeR;
-	public Modchu_ModelRenderer kamidomeRF;
-	public Modchu_ModelRenderer kamidomeRB;
-	public Modchu_ModelRenderer tailL;
-	public Modchu_ModelRenderer kamidomeL;
-	public Modchu_ModelRenderer kamidomeLF;
-	public Modchu_ModelRenderer kamidomeLB;
-	public Modchu_ModelRenderer tailLFA;
-	public Modchu_ModelRenderer tailLBA;
-	public Modchu_ModelRenderer tailLBB;	public MultiModel_Kagami() {
+package modchu.model.multimodel;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Kagami extends MultiModel_SR2 {
+	public ModchuModel_ModelRenderer tailR;
+	public ModchuModel_ModelRenderer tailRFA;
+	public ModchuModel_ModelRenderer tailRBA;
+	public ModchuModel_ModelRenderer tailRBB;
+	public ModchuModel_ModelRenderer kamidomeR;
+	public ModchuModel_ModelRenderer kamidomeRF;
+	public ModchuModel_ModelRenderer kamidomeRB;
+	public ModchuModel_ModelRenderer tailL;
+	public ModchuModel_ModelRenderer kamidomeL;
+	public ModchuModel_ModelRenderer kamidomeLF;
+	public ModchuModel_ModelRenderer kamidomeLB;
+	public ModchuModel_ModelRenderer tailLFA;
+	public ModchuModel_ModelRenderer tailLBA;
+	public ModchuModel_ModelRenderer tailLBB;	public MultiModel_Kagami() {
 		this(0.0F);
 	}	public MultiModel_Kagami(float f) {
 		this(f, 0.0F);
@@ -26,46 +25,46 @@ import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_Kag
 		textureWidth = 64;
 		textureHeight = 64;
 		super.initModel(f, f1, false);
-		tailR = new Modchu_ModelRenderer(this, 8, 40);
+		tailR = new ModchuModel_ModelRenderer(this, 8, 40);
 		tailR.addBox(3.4F, -6.5F, -0.5F, 1, 2, 2);
 		tailR.setRotationPoint(0F, 0F, 0F);
-		tailRFA = new Modchu_ModelRenderer(this, 0, 40);
+		tailRFA = new ModchuModel_ModelRenderer(this, 0, 40);
 		tailRFA.addBox(5F, -4F, -1.2F, 1, 7, 1);
 		tailRFA.setRotationPoint(0F, 0F, 0F);
-		tailRBA = new Modchu_ModelRenderer(this, 14, 40);
+		tailRBA = new ModchuModel_ModelRenderer(this, 14, 40);
 		tailRBA.addBox(4.8F, -4.2F, -2.266667F, 1, 8, 2);
 		tailRBA.setRotationPoint(0F, 0F, 0F);
-		tailRBB = new Modchu_ModelRenderer(this, 14, 50);
+		tailRBB = new ModchuModel_ModelRenderer(this, 14, 50);
 		tailRBB.addBox(5.2F, 2.2F, -1.2F, 1, 4, 1);
 		tailRBB.setRotationPoint(0F, 0F, 0F);
-		kamidomeR = new Modchu_ModelRenderer(this, 8, 34);
+		kamidomeR = new ModchuModel_ModelRenderer(this, 8, 34);
 		kamidomeR.addBox(4.4F, -6F, 0F, 1, 1, 1);
 		kamidomeR.setRotationPoint(0F, 0F, 0F);
-		kamidomeRF = new Modchu_ModelRenderer(this, 0, 34);
+		kamidomeRF = new ModchuModel_ModelRenderer(this, 0, 34);
 		kamidomeRF.addBox(5F, -3.1F, -4.7F, 1, 2, 1);
 		kamidomeRF.setRotationPoint(0F, 0F, 0F);
-		kamidomeRB = new Modchu_ModelRenderer(this, 0, 37);
+		kamidomeRB = new ModchuModel_ModelRenderer(this, 0, 37);
 		kamidomeRB.addBox(5F, -2.5F, 4.5F, 1, 2, 1);
 		kamidomeRB.setRotationPoint(0F, 0F, 0F);
-		tailL = new Modchu_ModelRenderer(this, 8, 44);
+		tailL = new ModchuModel_ModelRenderer(this, 8, 44);
 		tailL.addBox(-4.4F, -6.5F, -0.5F, 1, 2, 2);
 		tailL.setRotationPoint(0F, 0F, 0F);
-		kamidomeL = new Modchu_ModelRenderer(this, 8, 36);
+		kamidomeL = new ModchuModel_ModelRenderer(this, 8, 36);
 		kamidomeL.addBox(-5.4F, -6F, 0F, 1, 1, 1);
 		kamidomeL.setRotationPoint(0F, 0F, 0F);
-		kamidomeLF = new Modchu_ModelRenderer(this, 4, 34);
+		kamidomeLF = new ModchuModel_ModelRenderer(this, 4, 34);
 		kamidomeLF.addBox(-6.1F, -3.1F, -4.7F, 1, 2, 1);
 		kamidomeLF.setRotationPoint(0F, 0F, 0F);
-		kamidomeLB = new Modchu_ModelRenderer(this, 4, 37);
+		kamidomeLB = new ModchuModel_ModelRenderer(this, 4, 37);
 		kamidomeLB.addBox(-6F, -2.533333F, 4.5F, 1, 2, 1);
 		kamidomeLB.setRotationPoint(0F, 0F, 0F);
-		tailLFA = new Modchu_ModelRenderer(this, 4, 40);
+		tailLFA = new ModchuModel_ModelRenderer(this, 4, 40);
 		tailLFA.addBox(-6F, -4F, -1.25F, 1, 7, 1);
 		tailLFA.setRotationPoint(0F, 0F, 0F);
-		tailLBA = new Modchu_ModelRenderer(this, 20, 40);
+		tailLBA = new ModchuModel_ModelRenderer(this, 20, 40);
 		tailLBA.addBox(-5.9F, -4.2F, -2.3F, 1, 8, 2);
 		tailLBA.setRotationPoint(0F, 0F, 0F);
-		tailLBB = new Modchu_ModelRenderer(this, 20, 50);
+		tailLBB = new ModchuModel_ModelRenderer(this, 20, 50);
 		tailLBB.addBox(-6.35F, 2.2F, -1.2F, 1, 4, 1);
 		tailLBB.setRotationPoint(0F, 0F, 0F);		tailRFA.rotateAngleX = tailLFA.rotateAngleX = -0.296706F;
 		tailRFA.rotateAngleZ = kamidomeRF.rotateAngleY = kamidomeLB.rotateAngleY = -0.1745329F;

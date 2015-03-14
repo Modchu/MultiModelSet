@@ -1,21 +1,16 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_Debug;
-import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_AS;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;
-import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB extends MultiModel {	public Modchu_ModelRenderer rightLeg;
-	public Modchu_ModelRenderer leftLeg;
-	public Modchu_ModelRenderer rightear;
-	public Modchu_ModelRenderer leftear;
-	public Modchu_ModelRenderer rightLegbottom;
-	public Modchu_ModelRenderer leftLegbottom;
-	public Modchu_ModelRenderer rightearhair;
-	public Modchu_ModelRenderer leftearhair;
-	public Modchu_ModelRenderer tail1;
-	public Modchu_ModelRenderer tail2;
-	public Modchu_ModelRenderer tail3;
-	public Modchu_ModelRenderer ringR;
-	public Modchu_ModelRenderer ringL;
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB extends MultiModel {	public ModchuModel_ModelRenderer rightLeg;
+	public ModchuModel_ModelRenderer leftLeg;
+	public ModchuModel_ModelRenderer rightear;
+	public ModchuModel_ModelRenderer leftear;
+	public ModchuModel_ModelRenderer rightLegbottom;
+	public ModchuModel_ModelRenderer leftLegbottom;
+	public ModchuModel_ModelRenderer rightearhair;
+	public ModchuModel_ModelRenderer leftearhair;
+	public ModchuModel_ModelRenderer tail1;
+	public ModchuModel_ModelRenderer tail2;
+	public ModchuModel_ModelRenderer tail3;
+	public ModchuModel_ModelRenderer ringR;
+	public ModchuModel_ModelRenderer ringL;
 	private boolean sleepingInit;	public MultiModel_QB() {
 		this(0.0F);
 	}	public MultiModel_QB(float f) {
@@ -27,65 +22,65 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB exte
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		f1 += 8F;
-		bipedHead = new Modchu_ModelRenderer(this, 0, 0);
+		bipedHead = new ModchuModel_ModelRenderer(this, 0, 0);
 		bipedHead.addBox(-3.0F, -2.5F, -2.0F, 6, 5, 4, f);
 		bipedHead.setRotationPoint(-2.5F, 0.0F, 0.0F);
-		bipedBody = new Modchu_ModelRenderer(this, 0, 9);
+		bipedBody = new ModchuModel_ModelRenderer(this, 0, 9);
 		bipedBody.addBox(-2.5F, -1.0F, -3.0F, 5, 2, 6, f);
 		bipedBody.setRotationPoint(0.5F, 0.0F, 1.0F);
-		bipedRightArm = new Modchu_ModelRenderer(this, 0, 17);
+		bipedRightArm = new ModchuModel_ModelRenderer(this, 0, 17);
 		bipedRightArm.addBox(-1.001F, 0.0F, -1.001F, 2, 4, 2, f);
 		bipedRightArm.setRotationPoint(0.0F, 0.0F, 2.0F);
-		bipedLeftArm = new Modchu_ModelRenderer(this, 0, 17);
+		bipedLeftArm = new ModchuModel_ModelRenderer(this, 0, 17);
 		bipedLeftArm.mirror = true;
 		bipedLeftArm.addBox(-0.999F, 0.0F, -1.001F, 2, 4, 2, f);
 		bipedLeftArm.setRotationPoint(3.0F, 0.0F, 2.0F);
-		rightLeg = new Modchu_ModelRenderer(this, 8, 17);
+		rightLeg = new ModchuModel_ModelRenderer(this, 8, 17);
 		rightLeg.addBox(-1.001F, -1.5F, -1.501F, 2, 3, 3, f);
 		rightLeg.setRotationPoint(0.0F, 0.0F, 0.0F);
-		leftLeg = new Modchu_ModelRenderer(this, 8, 17);
+		leftLeg = new ModchuModel_ModelRenderer(this, 8, 17);
 		leftLeg.mirror = true;
 		leftLeg.addBox(-0.999F, -1.5F, -1.501F, 2, 3, 3, f);
 		leftLeg.setRotationPoint(0.0F, 0.0F, 0.0F);
-		rightLegbottom = new Modchu_ModelRenderer(this, 0, 23);
+		rightLegbottom = new ModchuModel_ModelRenderer(this, 0, 23);
 		rightLegbottom.addBox(-1.001F, -0.5F, -2.001F, 2, 1, 4, f);
 		rightLegbottom.setRotationPoint(0.0F, 0.0F, 0.0F);
-		leftLegbottom = new Modchu_ModelRenderer(this, 0, 23);
+		leftLegbottom = new ModchuModel_ModelRenderer(this, 0, 23);
 		leftLegbottom.mirror = true;
 		leftLegbottom.addBox(-0.999F, -0.5F, -2.001F, 2, 1, 4, f);
 		leftLegbottom.setRotationPoint(0.0F, 0.0F, 0.0F);
-		rightearhair = new Modchu_ModelRenderer(this, 12, 23);
+		rightearhair = new ModchuModel_ModelRenderer(this, 12, 23);
 		rightearhair.addBox(-0.5F, 0.0F, -0.5F, 1, 7, 1, f);
 		rightearhair.setRotationPoint(-1.0F, 1.0F, 1.0F);
-		leftearhair = new Modchu_ModelRenderer(this, 12, 23);
+		leftearhair = new ModchuModel_ModelRenderer(this, 12, 23);
 		leftearhair.mirror = true;
 		leftearhair.addBox(-0.5F, 0.0F, -0.5F, 1, 7, 1, f);
 		leftearhair.setRotationPoint(4.0F, 1.0F, 1.0F);
-		rightear = new Modchu_ModelRenderer(this, 16, 0);
+		rightear = new ModchuModel_ModelRenderer(this, 16, 0);
 		rightear.addBox(-1.0F, -1.0F, -1.0F, 2, 2, 2, f);
 		rightear.setRotationPoint(-1.0F, -1.0F, 1.0F);
-		leftear = new Modchu_ModelRenderer(this, 16, 0);
+		leftear = new ModchuModel_ModelRenderer(this, 16, 0);
 		leftear.mirror = true;
 		leftear.addBox(-1.0F, -1.0F, -1.0F, 2, 2, 2, f);
 		leftear.setRotationPoint(3.0F, -1.0F, 1.0F);
-		tail1 = new Modchu_ModelRenderer(this, 24, 0);
+		tail1 = new ModchuModel_ModelRenderer(this, 24, 0);
 		tail1.addBox(-1.0F, -1.0F, -1.0F, 2, 2, 3, f);
 		tail1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		tail2 = new Modchu_ModelRenderer(this, 20, 5);
+		tail2 = new ModchuModel_ModelRenderer(this, 20, 5);
 		tail2.addBox(-1.5F, -1.5F, -2.5F, 3, 3, 5, f);
 		tail2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		tail3 = new Modchu_ModelRenderer(this, 22, 13);
+		tail3 = new ModchuModel_ModelRenderer(this, 22, 13);
 		tail3.addBox(-1.0F, -1.0F, -1.0F, 2, 2, 2, f);
 		tail3.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ringR = new Modchu_ModelRenderer(this, 8, 23);
+		ringR = new ModchuModel_ModelRenderer(this, 8, 23);
 		ringR.addPlate(-1.5F, -1.5F, 0.0F, 3, 3, 0);
 		ringR.setRotationPoint(0.0F, 0.0F, 0.0F);
-		ringL = new Modchu_ModelRenderer(this, 8, 23);
+		ringL = new ModchuModel_ModelRenderer(this, 8, 23);
 		ringL.addPlate(-1.5F, -1.5F, 0.0F, 3, 3, 0);
 		ringL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		mainFrame = new Modchu_ModelRenderer(this, 0, 0);
+		mainFrame = new ModchuModel_ModelRenderer(this, 0, 0);
 		mainFrame.setRotationPoint(0F, 0F + f1, 0F);
-		Skirt = new Modchu_ModelRenderer(this);
+		Skirt = new ModchuModel_ModelRenderer(this);
 		if (isAfterInit) afterInit(f, f1);
 	}	@Override
 	public void defaultAddChildSetting() {
@@ -356,7 +351,7 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB exte
 	}	@Override
 	public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		super.setRotationAnglesfirstPerson(f, f1, f2, f3, f4, f5, entityCaps);
-		Modchu_ModelRenderer arm = getDominantArm(entityCaps);
+		ModchuModel_ModelRenderer arm = getDominantArm(entityCaps);
 		Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);
 		if (entity != null
 				&& entityCaps.getCapsValue(entityCaps.caps_currentEquippedItem) != null) {
@@ -469,4 +464,4 @@ import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB exte
 	public String getUsingTexture() {
 		return null;
 	}
-}
+	@Override	public ModchuModel_ModelRenderer getBipedRightLeg(ModchuModel_IEntityCaps entityCaps) {		return rightLeg;	}	@Override	public ModchuModel_ModelRenderer getBipedLeftLeg(ModchuModel_IEntityCaps entityCaps) {		return leftLeg;	}}

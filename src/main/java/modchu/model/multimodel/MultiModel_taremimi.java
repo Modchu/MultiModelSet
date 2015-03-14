@@ -1,18 +1,16 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;
-import modchu.lib.characteristic.Modchu_ModelRenderer;
-import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_taremimi extends MultiModelOkotaSR2 {	public Modchu_ModelRenderer ChignonR;
-	public Modchu_ModelRenderer ChignonL;
-	public Modchu_ModelRenderer ChignonB;
-	public Modchu_ModelRenderer WTail;
-	public Modchu_ModelRenderer SideTailR;
-	public Modchu_ModelRenderer SideTailL;
-	public Modchu_ModelRenderer Prim;
-	public Modchu_ModelRenderer DogEL;
-	public Modchu_ModelRenderer DogER;
-	public Modchu_ModelRenderer Wansippo1;
-	public Modchu_ModelRenderer Wansippo2;
-	public Modchu_ModelRenderer Wansippo3;
-	public Modchu_ModelRenderer Wansippo4;	public MultiModel_taremimi() {
+package modchu.model.multimodel;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_taremimi extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer ChignonR;
+	public ModchuModel_ModelRenderer ChignonL;
+	public ModchuModel_ModelRenderer ChignonB;
+	public ModchuModel_ModelRenderer WTail;
+	public ModchuModel_ModelRenderer SideTailR;
+	public ModchuModel_ModelRenderer SideTailL;
+	public ModchuModel_ModelRenderer Prim;
+	public ModchuModel_ModelRenderer DogEL;
+	public ModchuModel_ModelRenderer DogER;
+	public ModchuModel_ModelRenderer Wansippo1;
+	public ModchuModel_ModelRenderer Wansippo2;
+	public ModchuModel_ModelRenderer Wansippo3;
+	public ModchuModel_ModelRenderer Wansippo4;	public MultiModel_taremimi() {
 		this(0.0F);
 	}	public MultiModel_taremimi(float f) {
 		this(f, 0.0F);
@@ -23,29 +21,29 @@ import modchu.model.ModchuModel_IEntityCaps;public class MultiModel_taremimi e
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
 		super.initModel(f, f1, false);
-		WTail = new Modchu_ModelRenderer(this, 46, 19);
+		WTail = new ModchuModel_ModelRenderer(this, 46, 19);
 		WTail.addBox(-2F, -7.1F, 3F, 4, 11, 2, f);
 		WTail.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Prim = new Modchu_ModelRenderer(this, 24, 16);
+		Prim = new ModchuModel_ModelRenderer(this, 24, 16);
 		Prim.addBox(-2F, -8.7F, -3.5F, 4, 1, 0, f);
 		Prim.setRotationPoint(0.0F, 0.0F, 0.0F);
-		DogEL = new Modchu_ModelRenderer(this, 0, 0);
+		DogEL = new ModchuModel_ModelRenderer(this, 0, 0);
 		DogEL.setMirror(true);
 		DogEL.addBox(0.0F, -7F, 5F, 3, 6, 1, f + 0.1F);
 		DogEL.setRotationPoint(0.0F, 0.0F, 0.0F);
-		DogER = new Modchu_ModelRenderer(this, 0, 0);
+		DogER = new ModchuModel_ModelRenderer(this, 0, 0);
 		DogER.addBox(-3F, -7F, 5F, 3, 6, 1, f + 0.1F);
 		DogER.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Wansippo1 = new Modchu_ModelRenderer(this, 0, 16);
+		Wansippo1 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Wansippo1.addBox(-0.5F, 0.0F, 0.0F, 1, 2, 3, f + 0.2F);
 		Wansippo1.setRotationPoint(0.0F, 2.5F, 2.0F);
-		Wansippo2 = new Modchu_ModelRenderer(this, 0, 16);
+		Wansippo2 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Wansippo2.addBox(-0.5F, -1F, 2.0F, 1, 2, 3, f + 0.3F);
 		Wansippo2.setRotationPoint(0.0F, 2.5F, 2.0F);
-		Wansippo3 = new Modchu_ModelRenderer(this, 0, 16);
+		Wansippo3 = new ModchuModel_ModelRenderer(this, 0, 16);
 		Wansippo3.addBox(-0.5F, -4F, 4F, 1, 4, 3, f + 0.3F);
 		Wansippo3.setRotationPoint(0.0F, 2.5F, 2.0F);
-		Wansippo4 = new Modchu_ModelRenderer(this, 1, 17);
+		Wansippo4 = new ModchuModel_ModelRenderer(this, 1, 17);
 		Wansippo4.addBox(-0.5F, -4.5F, 3F, 1, 1, 2, f + 0.3F);
 		Wansippo4.setRotationPoint(0.0F, 2.5F, 2.0F);
 		DogER.rotateAngleY = -1.5708F;
