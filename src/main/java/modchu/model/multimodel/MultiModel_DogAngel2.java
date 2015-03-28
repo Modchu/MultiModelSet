@@ -8,10 +8,10 @@ package modchu.model.multimodel;import modchu.model.ModchuModel_ModelRenderer;
 	{
 		this(f, f1 , 64, 64);
 	}	public MultiModel_DogAngel2(float f, float f1, int i, int j) {
-		super(f, f1, i < 0 ? 64 : i, j < 0 ? 32 : j);
+		super(f, f1, i < 0 ? 64 : i, j < 0 ? 64 : j);
 	}	@Override
 	public void initModel(float f, float f1, boolean isAfterInit) {
-		super.initModel(f, f1, isAfterInit);
+		super.initModel(f, f1, false);
 		((ModchuModel_ModelRenderer) Skirt).clearCubeList();
 		Skirt1 = new ModchuModel_ModelRenderer(this, -2, 32);
 		Skirt1.addBox(0F, 0F, 0F, 12, 4, 4,f);
@@ -72,5 +72,5 @@ package modchu.model.multimodel;import modchu.model.ModchuModel_ModelRenderer;
 		Skirt10.setScale(0.5F, 0.5F, 0.5F);
 		Skirt11.setScale(0.5F, 0.5F, 0.5F);
 		Skirt12.setScale(0.5F, 0.5F, 0.5F);
-	}
+		if (isAfterInit) afterInit(f, f1);	}
 }
