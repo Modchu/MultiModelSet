@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM extends MultiModel_SR2 {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_Main;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM extends MultiModel_SR2 {
 	public ModchuModel_ModelRenderer hairR;
 	public ModchuModel_ModelRenderer hairL;
 	public ModchuModel_ModelRenderer Cachusya;
@@ -242,7 +242,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			boolean isWorkingDelay = Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isWorkingDelay);
 			if (isWorkingDelay) {
 //-@-125
-				int maidMode = (Integer) Modchu_Reflect.getFieldObject("LMM_EntityLittleMaid", "getMaidModeInt", entityliving);
+				int maidMode = (Integer) Modchu_Reflect.invokeMethod(ModchuModel_Main.isLMMX ? "littleMaidMobX.LMM_LittleMaidMobX" : "LMM_EntityLittleMaid", "getMaidModeInt", entityliving);
 				int i = 0x0080;
 				int i1 = 0x0021;
 				int i2 = 0x0083;
