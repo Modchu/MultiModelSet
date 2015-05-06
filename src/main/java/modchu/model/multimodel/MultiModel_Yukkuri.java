@@ -663,7 +663,7 @@ public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public ModchuMode
 		bipedHead.rotationPointZ = 0.0F;
 	}	@Override
 	public void action1(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
-		float speed = Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 10;
+		float speed = Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 25;
 		if (speed < 0.0F) return;		float f6 = bipedBody.rotateAngleZ;		bipedRightArm.rotateAngleX = -f6 * 1.86567233F;
 		bipedRightArm.rotateAngleY = 0.0F;
 		bipedRightArm.rotateAngleZ = 0.0F;

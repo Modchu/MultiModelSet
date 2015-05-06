@@ -404,7 +404,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 	}	@Override
 	public void action1(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		//Modchu_Debug.dDebug("action1 QB");
-		float speed = Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 1200;
+		float speed = Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 25;
 		if (speed < 0.0F) return;
 		//Modchu_Debug.dDebug("action1 QB speed="+speed);		int actionCount = Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_actionCount);
 		float f6 = (float) (actionCount) / 10000F;

@@ -313,7 +313,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			Cheek_R.setVisible(true);
 			Cheek_L.setVisible(true);
 		} else {
-			f7 = (1.0F - Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_health) / 20F) * 0.5F;
+			f7 = (1.0F - Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_healthFloat) / 20F) * 0.5F;
 			Cheek_R.setVisible(false);
 			Cheek_L.setVisible(false);
 		}		//float f8 = mh_sin(f3 * 0.067F) * 0.05F - f7;

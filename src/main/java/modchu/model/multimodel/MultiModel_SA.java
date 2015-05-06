@@ -297,7 +297,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			f3 *= 8.0F;
 			f4 = -0.2F;
 		} else {
-			f4 = (1F - Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_health) / 20F) * 0.5F;
+			f4 = (1F - Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_healthFloat) / 20F) * 0.5F;
 		}
 		sensor1.rotateAngleX = 0.0F;
 		sensor1.rotateAngleY = -((float) Math.PI * 2F / 9F);

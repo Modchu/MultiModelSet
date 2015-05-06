@@ -356,10 +356,10 @@ package modchu.model.multimodel;import java.util.Map;import modchu.lib.Modch
 		rightArm.removeChild(rightArmPlus);
 		rightArm2.removeChild(rightHand);
 		rightArm2.removeChild(rightArmPlus2);
-		leftArm.removeChild(leftArmPlus);
+		if (Arms[0] != null) rightArm2.addChild(Arms[0]);		leftArm.removeChild(leftArmPlus);
 		leftArm2.removeChild(leftHand);
 		leftArm2.removeChild(leftArmPlus2);
-		rightLeg.removeChild(rightLegPlus);
+		if (Arms[1] != null) leftArm2.addChild(Arms[1]);		rightLeg.removeChild(rightLegPlus);
 		rightLeg2.removeChild(rightLegPlus2);
 		leftLeg.removeChild(leftLegPlus);
 		leftLeg2.removeChild(leftLegPlus2);
