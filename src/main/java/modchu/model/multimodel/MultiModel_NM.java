@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_Main;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM extends MultiModel_SR2 {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM extends MultiModel_SR2 {
 	public ModchuModel_ModelRenderer hairR;
 	public ModchuModel_ModelRenderer hairL;
 	public ModchuModel_ModelRenderer Cachusya;
@@ -236,13 +236,12 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		Object entityliving = entityCaps.getCapsValue(entityCaps.caps_Entity);
 		if (entityliving != null); else return;
 		int ticksExisted = Modchu_AS.getInt(Modchu_AS.entityTicksExisted, entityliving);
-		float f3 = (float)ticksExisted + f2 + Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_entityIdFactor);
-		if (Modchu_EntityCapsHelper.getCapsValueByte(this, entityCaps, entityCaps.caps_EntityType) == entityCaps.entityType_LMM
-				&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
+		float f3 = (float)ticksExisted + f2 + Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_entityIdFactor);		byte entityType = Modchu_EntityCapsHelper.getCapsValueByte(this, entityCaps, entityCaps.caps_EntityType);
+		if (entityType == entityCaps.entityType_LMM				&& entityType == entityCaps.entityType_ModchuLMM						&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
 			boolean isWorkingDelay = Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_isWorkingDelay);
 			if (isWorkingDelay) {
 //-@-125
-				int maidMode = (Integer) Modchu_Reflect.invokeMethod(ModchuModel_Main.isLMMX ? "littleMaidMobX.LMM_LittleMaidMobX" : "LMM_EntityLittleMaid", "getMaidModeInt", entityliving);
+				int maidMode = (Integer) Modchu_Reflect.invokeMethod(entityliving.getClass(), "getMaidModeInt", entityliving);
 				int i = 0x0080;
 				int i1 = 0x0021;
 				int i2 = 0x0083;

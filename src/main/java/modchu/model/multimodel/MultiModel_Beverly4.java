@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_ModelPlateMaster;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_Beverly4 extends MultiModelBeverlyBase {	public ModchuModel_ModelRenderer Headwear;
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_ModelPlateMaster;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;public class MultiModel_Beverly4 extends MultiModelBeverlyBase {	public ModchuModel_ModelRenderer Headwear;
 	public ModchuModel_ModelRenderer Body2;
 	public ModchuModel_ModelRenderer Bodywear;
 	public ModchuModel_ModelRenderer Body3;
@@ -187,15 +187,15 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		float f6 = (float) Math.cos(f2 * 0.09F) * 0.05F;
 		rightArm.rotateAngleZ = 0.2F + f6;
 		leftArm.rotateAngleZ = -0.2F - f6;
-		if (heldItem[1] != 0				&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_oldwalking)) {			if (heldItem[1] == 3) {				leftArm.rotateAngleX = -0.8F;				leftArm.rotateAngleY = -0.4F;			} else {				leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - 0.3141593F * heldItem[1];			}		}		if (heldItem[0] != 0				&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_oldwalking)) {			if (heldItem[0] == 3) {				rightArm.rotateAngleX = -0.8F;				rightArm.rotateAngleY = -0.4F;			} else {				rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - 0.3141593F * heldItem[0];			}		}		boolean isRiding = Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsRiding);		if (isRiding) {
+		rightArm.rotateAngleX = 0.0F;		rightArm.rotateAngleY = 0.0F;		leftArm.rotateAngleX = 0.0F;		leftArm.rotateAngleY = 0.0F;		if (heldItem[1] != 0				&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_oldwalking)) {			if (heldItem[1] == 3) {				leftArm.rotateAngleX = -0.8F;				leftArm.rotateAngleY = -0.4F;			} else {				leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - 0.3141593F * heldItem[1];			}		}		if (heldItem[0] != 0				&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_oldwalking)) {			if (heldItem[0] == 3) {				rightArm.rotateAngleX = -0.8F;				rightArm.rotateAngleY = -0.4F;			} else {				rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - 0.3141593F * heldItem[0];			}		}		boolean isRiding = Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsRiding);		if (isRiding) {
 			//bipedHead.rotationPointY = 1.0F;
 			bipedBody.rotationPointY = 0.5F;
 			rightLeg.rotationPointY += 4.5F;
 			leftLeg.rotationPointY += 4.5F;
 			rightLeg.rotationPointZ += 1.0F;
 			leftLeg.rotationPointZ += 1.0F;
-			rightArm.rotateAngleX = -0.7F;
-			leftArm.rotateAngleX = -0.7F;
+			rightArm.rotateAngleX += -0.7F;
+			leftArm.rotateAngleX += -0.7F;
 			SkirtL.rotationPointY = -1.0F;
 			SkirtR.rotationPointY = SkirtL.rotationPointY;
 			SkirtL.rotateAngleZ = 0.0F;
@@ -221,9 +221,9 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsSneak)) {
 				upperBody.rotateAngleX = 0.35F;
 				bipedHead.rotateAngleX -= 0.35F;
-				rightArm.rotateAngleX = 0.3F;
+				rightArm.rotateAngleX += 0.3F;
 				rightArm2.rotateAngleX = -0.2F;
-				leftArm.rotateAngleX = 0.3F;
+				leftArm.rotateAngleX += 0.3F;
 				leftArm2.rotateAngleX = -0.2F;
 				rightLeg.rotationPointZ = leftLeg.rotationPointZ = 3.6F;
 				float f7 = (float) Math.cos(f * 0.8F);
@@ -242,10 +242,10 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 				float f8 = (float) Math.cos(f * 0.4F);
 				float f10 = (float) Math.cos(f * 0.4F - 1.57F);
 				float f12 = f10 >= f8 ? f10 : f8;
-				float f14 = f10 <= f8 ? f10 : f8;				rightArm.rotateAngleX = -f8 * 0.9F * f1;
+				float f14 = f10 <= f8 ? f10 : f8;				rightArm.rotateAngleX += -f8 * 0.9F * f1;
 				float f15 = rightArm.rotateAngleX > 0.0F ? rightArm.rotateAngleX : -rightArm.rotateAngleX;
 				rightArm2.rotateAngleX = -0.5F * f15;
-				leftArm.rotateAngleX = f8 * 0.9F * f1;
+				leftArm.rotateAngleX += f8 * 0.9F * f1;
 				f15 = leftArm.rotateAngleX > 0.0F ? leftArm.rotateAngleX : -leftArm.rotateAngleX;
 				leftArm2.rotateAngleX = -0.5F * f15;
 				rightLeg.rotateAngleX = f8 * 1.2F * f1 + 0.06F;
@@ -278,8 +278,8 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			f16 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt_float, onGrounds[0]) * (float) Math.PI * 2.0F);
 			f17 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt_float, onGrounds[1]) * (float) Math.PI * 2.0F);
 			bipedBody.rotateAngleY = (f16 - f17) * 0.2F;
-			rightArm.rotateAngleY = bipedBody.rotateAngleY;
-			leftArm.rotateAngleY = bipedBody.rotateAngleY;			// R
+			rightArm.rotateAngleY += bipedBody.rotateAngleY;
+			leftArm.rotateAngleY += bipedBody.rotateAngleY;			// R
 			if (onGrounds[0] > 0F) {
 				f15 = 1.0F - onGrounds[0];
 				f15 *= f15;
@@ -305,7 +305,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		}		//呼吸 腕
 		float fb = (float) Math.cos(f2 * 0.07F) * 0.06F;
 		rightArm.rotateAngleZ = 0.2F + fb;
-		leftArm.rotateAngleZ = -rightArm.rotateAngleZ;		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsWait) && !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
+		leftArm.rotateAngleZ = -rightArm.rotateAngleZ;		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsWait)				&& !Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
 			rightArm.rotateAngleX = (float) Math.sin(f2 * 0.067F) * 0.05F - 0.45F;
 			rightArm.rotateAngleY = 0.0F;
 			rightArm.rotateAngleZ = -0.2F;
@@ -490,4 +490,4 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		setCapsValue(entityCaps, caps_visible, Headwear, b);	}	@Override
 	public void setArmorBipedBodyShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {
 		super.setArmorBipedBodyShowModel(entityCaps, b);
-		setCapsValue(entityCaps, caps_visible, Body2, b);		setCapsValue(entityCaps, caps_visible, Body3, b);		setCapsValue(entityCaps, caps_visible, Bodywear, b);		setCapsValue(entityCaps, caps_visible, shield, b);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		if (Skirt != null) {			if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) {				setCapsValue(entityCaps, caps_visible, SkirtR, b);				setCapsValue(entityCaps, caps_visible, SkirtL, b);			} else {				setCapsValue(entityCaps, caps_visible, SkirtTop, b);				setCapsValue(entityCaps, caps_visible, SkirtFront, b);				setCapsValue(entityCaps, caps_visible, SkirtRight, b);				setCapsValue(entityCaps, caps_visible, SkirtLeft, b);				setCapsValue(entityCaps, caps_visible, SkirtBack, b);				setCapsValue(entityCaps, caps_visible, SkirtTopL, b);				setCapsValue(entityCaps, caps_visible, SkirtFrontL, b);				setCapsValue(entityCaps, caps_visible, SkirtLeftL, b);				setCapsValue(entityCaps, caps_visible, SkirtBackL, b);			}		}	}	@Override	public String[] getBreastName() {		return new String[]{ "body2" };	}}
+		setCapsValue(entityCaps, caps_visible, Body2, b);		setCapsValue(entityCaps, caps_visible, Body3, b);		setCapsValue(entityCaps, caps_visible, Bodywear, b);		setCapsValue(entityCaps, caps_visible, shield, b);		//Modchu_Debug.mDebug("setArmorBipedBodyShowModel Body2.showModel="+Body2.showModel);	}	@Override	public void setArmorSkirtShowModel(ModchuModel_IEntityCaps entityCaps, boolean b) {		if (Skirt != null) {			if (Modchu_EntityCapsHelper.getCapsValueInt(this, null, caps_skirtFloats) < 2) {				setCapsValue(entityCaps, caps_visible, SkirtR, b);				setCapsValue(entityCaps, caps_visible, SkirtL, b);			} else {				setCapsValue(entityCaps, caps_visible, SkirtTop, b);				setCapsValue(entityCaps, caps_visible, SkirtFront, b);				setCapsValue(entityCaps, caps_visible, SkirtRight, b);				setCapsValue(entityCaps, caps_visible, SkirtLeft, b);				setCapsValue(entityCaps, caps_visible, SkirtBack, b);				setCapsValue(entityCaps, caps_visible, SkirtTopL, b);				setCapsValue(entityCaps, caps_visible, SkirtFrontL, b);				setCapsValue(entityCaps, caps_visible, SkirtLeftL, b);				setCapsValue(entityCaps, caps_visible, SkirtBackL, b);			}		}	}	@Override	public String[] getBreastName() {		return new String[]{ "body2" };	}}

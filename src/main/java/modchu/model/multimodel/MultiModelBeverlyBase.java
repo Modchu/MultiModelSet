@@ -1,6 +1,7 @@
 package modchu.model.multimodel;
 
 import modchu.lib.Modchu_AS;
+import modchu.lib.Modchu_Debug;
 import modchu.lib.Modchu_EntityCapsHelper;
 import modchu.lib.Modchu_Main;
 import modchu.lib.Modchu_Reflect;
