@@ -662,36 +662,6 @@ public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public ModchuMode
 		bipedHead.rotationPointX = 0.0F;
 		bipedHead.rotationPointZ = 0.0F;
 	}	@Override
-	public void action1(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
-		float speed = Modchu_EntityCapsHelper.getCapsValueFloat(this, entityCaps, caps_actionSpeed) / 25;
-		if (speed < 0.0F) return;		float f6 = bipedBody.rotateAngleZ;		bipedRightArm.rotateAngleX = -f6 * 1.86567233F;
-		bipedRightArm.rotateAngleY = 0.0F;
-		bipedRightArm.rotateAngleZ = 0.0F;
-		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_freeVariable, "actionReverse")) {
-			if (f6 < 0.5F) {
-				f6 += speed;
-			} else entityCaps.setCapsValue(caps_freeVariable, "actionReverse", true);
-		} else {
-			if (f6 > -0.3F) {
-				f6 -= speed;
-			} else entityCaps.setCapsValue(caps_freeVariable, "actionReverse", false);
-		}
-		if (f6 > 0.5449998F) f6 = 0.5449998F;
-		if (f6 < -0.3880023F) f6 = -0.3880023F;
-		if (f6 > 0.0F) {
-			bipedHead.rotationPointY = bipedBody.rotationPointY + 3.5F + (f6 * 2.61778528F);
-		} else {
-			bipedHead.rotationPointY = bipedBody.rotationPointY + 3.5F - (f6 * 2.61778528F);
-		}
-		bipedHead.rotationPointX = f6 * 2.10447914F;
-		bipedHead.rotateAngleX = -f6 * 0.2F;
-		bipedHead.rotateAngleY = f6 * 0.2F;
-		bipedHead.rotateAngleZ = f6;
-		bipedLeftArm.rotateAngleX = -bipedRightArm.rotateAngleX;
-		bipedLeftArm.rotateAngleY = bipedRightArm.rotateAngleY;
-		bipedLeftArm.rotateAngleZ = bipedRightArm.rotateAngleZ;
-		bipedBody.rotateAngleZ = f6;
-	}	@Override
 	public float getHeight(ModchuModel_IEntityCaps entityCaps) {
 		return 0.999F;
 	}	@Override
