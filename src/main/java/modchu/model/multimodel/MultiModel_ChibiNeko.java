@@ -372,7 +372,7 @@ package modchu.model.multimodel;import java.util.Map;import modchu.lib.Modch
 		bipedRightLeg.setRotationPoint(-0.9F, 15.0F + Scale, 0.0F);
 		bipedLeftLeg.setRotationPoint(0.9F, 15.0F + Scale, 0.0F);
 		HeadTop.setRotationPoint(0.0F, -6.0F, 0.0F);
-	}	@Override
+		bipedRightArm.setRotationPoint(-2.1F, 4.5F + 2 * Scale, 0F);		bipedLeftArm.setRotationPoint(2.1F, 4.5F + 2 * Scale, 0.0F);	}	@Override
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = Modchu_EntityCapsHelper.getCapsValue(entityCaps, entityCaps.caps_Entity);
