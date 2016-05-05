@@ -6,6 +6,7 @@ import modchu.lib.Modchu_EntityCapsHelper;
 import modchu.lib.Modchu_Main;
 import modchu.lib.Modchu_Reflect;
 import modchu.model.ModchuModel_IEntityCaps;
+import modchu.model.ModchuModel_ModelDataBase;
 import modchu.model.ModchuModel_ModelRenderer;
 import modchu.model.multimodel.base.MultiModel_SR2;
 
@@ -152,6 +153,11 @@ public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
 	@Override
 	public ModchuModel_ModelRenderer getBipedLeftLeg(ModchuModel_IEntityCaps entityCaps) {
 		return leftLeg;
+	}
+
+	@Override
+	public float getRenderCorrectionYOffset(ModchuModel_ModelDataBase entityCaps) {
+		return 1.8F - getHeight(entityCaps);
 	}
 
 }

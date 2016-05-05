@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB extends MultiModel {	public ModchuModel_ModelRenderer rightLeg;
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Main;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel;public class MultiModel_QB extends MultiModel {	public ModchuModel_ModelRenderer rightLeg;
 	public ModchuModel_ModelRenderer leftLeg;
 	public ModchuModel_ModelRenderer rightear;
 	public ModchuModel_ModelRenderer leftear;
@@ -230,23 +230,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		}
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
 			// 弓構え
-			float f13 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, onGrounds[dominantArm] * 3.141593F);
-			float f14 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, (1.0F - (1.0F - onGrounds[dominantArm]) * (1.0F - onGrounds[dominantArm])) * 3.141593F);
-			bipedRightArm.rotateAngleZ = 0.0F;
-			bipedLeftArm.rotateAngleZ = 0.0F;
-			bipedRightArm.rotateAngleY = -(0.1F - f13 * 0.6F) + bipedHead.rotateAngleY;
-			bipedLeftArm.rotateAngleY = (0.1F - f13 * 0.6F) + bipedHead.rotateAngleY + 0.4F;
-			bipedRightArm.rotateAngleX = -1.470796F;
-			bipedLeftArm.rotateAngleX = -1.470796F;
-			bipedRightArm.rotateAngleX -= f13 * 1.2F - f14 * 0.4F;
-			bipedLeftArm.rotateAngleX -= f13 * 1.2F - f14 * 0.4F;
-			bipedRightArm.rotateAngleZ += Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f2 * 0.09F) * 0.05F + 0.05F;
-			bipedLeftArm.rotateAngleZ -= Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f2 * 0.09F) * 0.05F + 0.05F;
-			bipedRightArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;
-			bipedLeftArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;
-			bipedRightArm.rotateAngleX += bipedHead.rotateAngleX;
-			bipedLeftArm.rotateAngleX += bipedHead.rotateAngleX;
-			bipedRightArm.rotationPointX = -2.0F;
+			Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);			boolean flag1 = isDominantArmLeft(entityCaps);			float f13 = flag1 ? -0.4F : 0.0F;			float f14 = flag1 ? 0.8F : 0.0F;			bipedRightArm.rotateAngleZ = 0.0F;			bipedLeftArm.rotateAngleZ = 0.0F;			bipedRightArm.rotateAngleY = -(0.1F - f13 * 0.6F) + bipedHead.rotateAngleY;			bipedLeftArm.rotateAngleY = 0.1F - f14 * 0.6F + bipedHead.rotateAngleY + 0.4F;			bipedRightArm.rotateAngleX = -((float) Math.PI / 2F) + bipedHead.rotateAngleX;			bipedLeftArm.rotateAngleX = -((float) Math.PI / 2F) + bipedHead.rotateAngleX;			bipedRightArm.rotationPointX = -2.0F;
 			bipedLeftArm.rotationPointX = 2.0F;
 			bipedRightArm.rotationPointZ += 1.5F;
 			bipedLeftArm.rotationPointZ += 1.5F;
@@ -349,31 +333,26 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			}
 		}
 	}	@Override
-	public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
-		super.setRotationAnglesfirstPerson(f, f1, f2, f3, f4, f5, entityCaps);
-		ModchuModel_ModelRenderer arm = getDominantArm(entityCaps);
-		Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);
-		if (entity != null
-				&& entityCaps.getCapsValue(entityCaps.caps_currentEquippedItem) != null) {
-			//地図を持っている時
-			if (dominantArm == 0) {
+	public void setRotationAnglesfirstPerson(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps, int renderArmIndex) {
+		super.setRotationAnglesfirstPerson(f, f1, f2, f3, f4, f5, entityCaps, renderArmIndex);
+		int version = Modchu_Main.getMinecraftVersion();		boolean flag = version > 189;		ModchuModel_ModelRenderer arm = !flag ? getDominantArm(entityCaps) : renderArmIndex == 0 ? getBipedRightArm(entityCaps) : getBipedLeftArm(entityCaps);		if (renderArmIndex != 0) {			arm.setRotateAngle(0.0F, 0.0F, 0.0F);			if (!flag) armSwing(f, f1, f2, f3, f4, f5, entityCaps);		}		int ck = isFirstPersonCheckItem(entityCaps, renderArmIndex);		switch (ck) {		case 1:			//地図を持っている時
+			if (renderArmIndex == 0) {
 				arm.rotationPointX = -8.0F;
 				arm.rotationPointY = 5.5F;
 				arm.rotationPointZ = 0.0F;
 			} else {
-				arm.rotationPointX = -7.5F;
-				arm.rotationPointY = 5.5F;
-				arm.rotationPointZ = 0.0F;
-			}
-		} else {
-			//素手時
-			if (dominantArm == 0) {
-				arm.rotationPointY += 3.0F;
+				if (flag) {					arm.rotationPointX = 8.0F;					arm.rotationPointY = 5.5F;					arm.rotationPointZ = 0.0F;				} else {					arm.rotationPointX = -7.5F;
+					arm.rotationPointY = 5.5F;
+					arm.rotationPointZ = 0.0F;				}
+			}			break;
+		case 0:			//素手時
+			if (renderArmIndex == 0) {
+				if (flag) {					arm.rotationPointY += 1.5F;				} else {					arm.rotationPointY += 3.0F;				}
 			} else {
 				arm.rotationPointX -= 4.0F;
 				arm.rotationPointY += 1.0F;
 			}
-		}
+			break;		}
 	}	@Override
 	public void defaultPartsSettingBefore(ModchuModel_IEntityCaps entityCaps) {
 		super.defaultPartsSettingBefore(entityCaps);

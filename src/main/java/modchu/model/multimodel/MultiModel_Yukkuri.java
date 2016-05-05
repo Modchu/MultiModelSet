@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelDataBase;import modchu.model.ModchuModel_ModelRenderer;
 public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public ModchuModel_ModelRenderer Item1;
 	public ModchuModel_ModelRenderer Item2;
 	public ModchuModel_ModelRenderer HeadR;
@@ -545,23 +545,7 @@ public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public ModchuMode
 			bipedHead.rotationPointY = bipedRightLeg.rotateAngleX < 0.0F ? basebipedHeadRotationPointY : basebipedHeadRotationPointY - bipedRightLeg.rotateAngleX * 8F;
 		}
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
-			float f6 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, onGrounds[dominantArm] * 3.141593F);
-			float f7 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, (1.0F - (1.0F - onGrounds[dominantArm]) * (1.0F - onGrounds[dominantArm])) * 3.141593F);
-			bipedRightArm.rotateAngleZ = 0.0F;
-			bipedLeftArm.rotateAngleZ = 0.0F;
-			bipedRightArm.rotateAngleY = -(0.1F - f6 * 0.6F) + bipedHead.rotateAngleY;
-			bipedLeftArm.rotateAngleY = (0.1F - f6 * 0.6F) + bipedHead.rotateAngleY + 0.4F;
-			bipedRightArm.rotateAngleX = -1.470796F;
-			bipedLeftArm.rotateAngleX = -1.470796F;
-			bipedRightArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
-			bipedLeftArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
-			bipedRightArm.rotateAngleZ += Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f2 * 0.09F) * 0.05F + 0.05F;
-			bipedLeftArm.rotateAngleZ -= Modchu_AS.getFloat(Modchu_AS.mathHelperCos, f2 * 0.09F) * 0.05F + 0.05F;
-			bipedRightArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;
-			bipedLeftArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;
-			bipedRightArm.rotateAngleX += bipedHead.rotateAngleX;
-			bipedLeftArm.rotateAngleX += bipedHead.rotateAngleX;
-			bipedRightArm.rotationPointX = -7F;
+			// 弓構え			Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);			boolean flag1 = isDominantArmLeft(entityCaps);			float f7 = flag1 ? -0.4F : 0.0F;			float f8 = flag1 ? 0.8F : 0.0F;			bipedRightArm.rotateAngleZ = 0.0F;			bipedLeftArm.rotateAngleZ = 0.0F;			bipedRightArm.rotateAngleY = -(0.1F - f7 * 0.6F) + bipedHead.rotateAngleY;			bipedLeftArm.rotateAngleY = 0.1F - f8 * 0.6F + bipedHead.rotateAngleY + 0.4F;			bipedRightArm.rotateAngleX = -((float) Math.PI / 2F) + bipedHead.rotateAngleX;			bipedLeftArm.rotateAngleX = -((float) Math.PI / 2F) + bipedHead.rotateAngleX;			bipedRightArm.rotationPointX = -7F;
 			bipedLeftArm.rotationPointX = 6F;
 			bipedRightArm.rotationPointZ = -2F;
 			bipedLeftArm.rotationPointZ = -2F;
@@ -675,7 +659,7 @@ public class MultiModel_Yukkuri extends MultiModelOkotaSR2 {	public ModchuMode
 		float d = 1.4F;
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsRiding)) d -= 0.1F;
 		return d;
-	}	@Override
+	}	@Override	public float getRenderCorrectionYOffset(ModchuModel_ModelDataBase entityCaps) {		return bipedHead.rotationPointY * 0.1F;	}	@Override
 	public String getUsingTexture() {
 		return null;
 	}

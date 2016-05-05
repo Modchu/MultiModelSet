@@ -170,14 +170,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		}
 		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) {
 			// 弓構え
-			float f6 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, onGrounds[dominantArm] * 3.141593F);
-			float f7 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, (1.0F - (1.0F - onGrounds[dominantArm])) * 3.141593F);
-			bipedRightArm.rotateAngleX = -1.470796F;
-			bipedRightArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
-			bipedRightArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;
-			bipedRightArm.rotateAngleX += bipedHead.rotateAngleX;
-			bipedLeftArm.rotateAngleX = bipedRightArm.rotateAngleX + 0.4F;
-		} else {
+			Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);			boolean flag1 = isDominantArmLeft(entityCaps);			float f7 = flag1 ? -0.4F : 0.0F;			float f8 = flag1 ? 0.8F : 0.0F;			bipedRightArm.rotateAngleZ = 0.0F;			bipedLeftArm.rotateAngleZ = 0.0F;			bipedRightArm.rotateAngleY = -(0.1F - f7 * 0.6F) + bipedHead.rotateAngleY;			bipedLeftArm.rotateAngleY = 0.1F - f8 * 0.6F + bipedHead.rotateAngleY + 0.4F;			bipedRightArm.rotateAngleX = -((float) Math.PI / 2F) + bipedHead.rotateAngleX;			bipedLeftArm.rotateAngleX = -((float) Math.PI / 2F) + bipedHead.rotateAngleX;		} else {
 			if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsWait)) {
 				// 呼吸 腕等
 				bipedRightArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.067F) * 0.05F;

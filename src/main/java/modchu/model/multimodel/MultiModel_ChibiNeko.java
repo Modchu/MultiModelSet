@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import java.util.Map;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_ChibiNeko extends MultiModel_SR2 {	public ModchuModel_ModelRenderer Prim;
+package modchu.model.multimodel;import java.util.Map;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Main;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_ChibiNeko extends MultiModel_SR2 {	public ModchuModel_ModelRenderer Prim;
 	public ModchuModel_ModelRenderer Tail2;
 	public ModchuModel_ModelRenderer Tail3;
 	public ModchuModel_ModelRenderer Tail4;
@@ -372,7 +372,7 @@ package modchu.model.multimodel;import java.util.Map;import modchu.lib.Modch
 		bipedRightLeg.setRotationPoint(-0.9F, 15.0F + Scale, 0.0F);
 		bipedLeftLeg.setRotationPoint(0.9F, 15.0F + Scale, 0.0F);
 		HeadTop.setRotationPoint(0.0F, -6.0F, 0.0F);
-		bipedRightArm.setRotationPoint(-2.1F, 4.5F + 2 * Scale, 0F);		bipedLeftArm.setRotationPoint(2.1F, 4.5F + 2 * Scale, 0.0F);	}	@Override
+		bipedRightArm.setRotationPoint(-2.1F, 4.5F + 2 * Scale, 0F);		bipedLeftArm.setRotationPoint(2.1F, 4.5F + 2 * Scale, 0.0F);		int version = Modchu_Main.getMinecraftVersion();		if (version > 189) Arms[1].setRotateAngle(0.0F, 0.0F, 0.0F);	}	@Override
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
 		super.setLivingAnimationsLM(entityCaps, f, f1, f2);
 		Object entityliving = Modchu_EntityCapsHelper.getCapsValue(entityCaps, entityCaps.caps_Entity);
@@ -484,8 +484,7 @@ package modchu.model.multimodel;import java.util.Map;import modchu.lib.Modch
 			EarL2.rotateAngleY = EarLi2.rotateAngleY = -100F / 180F * (float) Math.PI;
 			EarR1.rotateAngleY = EarRi1.rotateAngleY = 100F / 180F * (float) Math.PI;
 			EarR2.rotateAngleY = EarRi2.rotateAngleY = -80F / 180F * (float) Math.PI;
-		}
-		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
+		}		setRotationAnglesGulliverAfter(f, f1, f2, f3, f4, f5, entityCaps);
 		skirtFloats(f, f1, t, f3, f4, f5, entityCaps);
 	}	@Override
 	public void skirtFloats(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
