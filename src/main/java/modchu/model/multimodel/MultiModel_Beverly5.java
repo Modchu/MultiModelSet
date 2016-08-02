@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;/**
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Main;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;/**
  * 多関節モデル
  * 身長2.25ブロック級
  */
@@ -202,7 +202,7 @@ public class MultiModel_Beverly5 extends MultiModelBeverlyBase {	//added field
 			BunchR.rotateAngleZ -= bipedHead.rotateAngleZ * 0.2F;
 		} else {
 			BunchL.rotateAngleZ -= bipedHead.rotateAngleZ * 0.2F;
-		}		// アイテム持ってるときの腕振りを抑える+表示角オフセット		if (heldItem[1] != 0) {			leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[1];		}		if (heldItem[0] != 0) {			rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[0];		}		boolean isRiding = Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsRiding);		if (isRiding) {			// 背負われている
+		}		boolean isRiding = Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsRiding);		if (isRiding) {			// 背負われている
 			if (isRidingMaster) {
 				rightArm2.rotateAngleX -= 1.3F;
 				leftArm2.rotateAngleX -= 1.3F;
@@ -343,7 +343,7 @@ public class MultiModel_Beverly5 extends MultiModelBeverlyBase {	//added field
 				rightArm.rotateAngleY += bipedHead.rotateAngleY;
 				leftArm.rotateAngleY += bipedHead.rotateAngleY;
 			} else {// 通常
-				rightArm.rotateAngleZ += 0.2F;
+				int version = Modchu_Main.getMinecraftVersion();				boolean flag = version > 189;				// アイテム持ってるときの腕振りを抑える+表示角オフセット				if (heldItem[1] != 0) {					if (heldItem[1] == 3) {						leftArm.rotateAngleX = flag ? leftArm.rotateAngleX * 0.5F - 0.9424779F : leftArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[1];						if (flag) {							leftArm.rotateAngleY = 0.5235988F;							if (!Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) Arms[1].setRotateAngle(-0.24F, -0.48F, 0.36F);							//Arms[1].setRotateAngle(Modchu_Debug.debaf1, Modchu_Debug.debaf2, Modchu_Debug.debaf3);							//Modchu_Debug.mdDebug(""+Modchu_Debug.debaf1+" "+Modchu_Debug.debaf2+" "+Modchu_Debug.debaf3+" ");						}					} else {						leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[1];					}				}				if (heldItem[0] != 0) {					if (heldItem[0] == 3) {						rightArm.rotateAngleX = flag ? rightArm.rotateAngleX * 0.5F - 0.9424779F : rightArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[0];						if (flag) {							rightArm.rotateAngleY = -0.5235988F;							if (!Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) Arms[0].setRotateAngle(-0.12F, -0.22F, -0.56F);							//Arms[0].setRotateAngle(Modchu_Debug.debaf1, Modchu_Debug.debaf2, Modchu_Debug.debaf3);							//Modchu_Debug.mdDebug(""+Modchu_Debug.debaf1+" "+Modchu_Debug.debaf2+" "+Modchu_Debug.debaf3+" ");						}					} else {						rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[0];					}				}				rightArm.rotateAngleZ += 0.2F;
 				leftArm.rotateAngleZ -= 0.2F;
 				rightArm2.rotateAngleZ += 0.05F;
 				leftArm2.rotateAngleZ -= 0.05F;

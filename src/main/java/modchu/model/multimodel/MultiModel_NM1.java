@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM1 extends MultiModel_SR2 {
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_Main;import modchu.lib.Modchu_Reflect;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_SR2;public class MultiModel_NM1 extends MultiModel_SR2 {
 	public ModchuModel_ModelRenderer Headwear;
 	public ModchuModel_ModelRenderer HornR1;
 	public ModchuModel_ModelRenderer HornR2;
@@ -432,13 +432,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			bipedLeftLeg.rotateAngleY = -((float) Math.PI / 10F);
 		} else {
 			setRotationAnglesGulliverBefore(f, f1, f2, f3, f4, f5, entityCaps);
-		}		if (heldItem[1] != 0) {
-			bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - ((float) Math.PI / 10F) * heldItem[1];
-		}		if (heldItem[0] != 0) {
-			bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - ((float) Math.PI / 10F) * heldItem[0];
-		}		bipedRightArm.rotateAngleY =
-		bipedLeftArm.rotateAngleY = 0.0F;
-		armSwing(f, f1, f2, f3, f4, f5, entityCaps);		bipedBody.rotateAngleX =
+		}		bipedRightArm.rotateAngleY =		bipedLeftArm.rotateAngleY = 0.0F;		int version = Modchu_Main.getMinecraftVersion();		boolean flag = version > 189;		// アイテム持ってるときの腕振りを抑える+表示角オフセット		if (heldItem[1] != 0) {			if (heldItem[1] == 3) {				bipedLeftArm.rotateAngleX = flag ? bipedLeftArm.rotateAngleX * 0.5F - 0.9424779F : -0.8F;				bipedLeftArm.rotateAngleY = flag ? 0.5235988F : -0.4F;				if (flag) {					if (!Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) Arms[1].setRotateAngle(-0.24F, -0.48F, 0.36F);					//Arms[1].setRotateAngle(Modchu_Debug.debaf1, Modchu_Debug.debaf2, Modchu_Debug.debaf3);					//Modchu_Debug.mdDebug(""+Modchu_Debug.debaf1+" "+Modchu_Debug.debaf2+" "+Modchu_Debug.debaf3+" ");				}			} else {				bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - 0.3141593F * heldItem[1];			}		}		if (heldItem[0] != 0) {			if (heldItem[0] == 3) {				bipedRightArm.rotateAngleX = flag ? bipedRightArm.rotateAngleX * 0.5F - 0.9424779F : -0.8F;				bipedRightArm.rotateAngleY = flag ? -0.5235988F : -0.4F;				if (flag) {					if (!Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) Arms[0].setRotateAngle(-0.12F, -0.22F, -0.56F);					//Arms[0].setRotateAngle(Modchu_Debug.debaf1, Modchu_Debug.debaf2, Modchu_Debug.debaf3);					//Modchu_Debug.mdDebug(""+Modchu_Debug.debaf1+" "+Modchu_Debug.debaf2+" "+Modchu_Debug.debaf3+" ");				}			} else {				bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - 0.3141593F * heldItem[0];			}		}		armSwing(f, f1, f2, f3, f4, f5, entityCaps);		bipedBody.rotateAngleX =
 		bipedBody.rotateAngleY =
 		bipedBody.rotateAngleZ = 0.0F;
 		bipedBody.rotationPointZ = 0F;

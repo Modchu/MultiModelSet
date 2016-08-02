@@ -309,14 +309,7 @@ public class MultiModel_Beverly6 extends MultiModelBeverlyBase {	//added field
 				breastL.rotateAngleX -= f16 * f16 * 0.18F * f1 - Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.057F) * 0.05F;
 				mainFrame.rotationPointY += f16 * f16 * 0.1F;
 			}
-			setRotationAnglesGulliverBefore(f, f1, f2, f3, f4, f5, entityCaps);		}		int version = Modchu_Main.getMinecraftVersion();		boolean flag = version > 189;		// アイテム持ってるときの腕振りを抑える+表示角オフセット
-		if (heldItem[1] != 0) {
-			leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[1];
-		}
-		if (heldItem[0] != 0) {
-			rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[0];
-		}
-		armSwing(f, f1, f2, f3, f4, f5, entityCaps);		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsWait)) {// 待機状態 腕
+			setRotationAnglesGulliverBefore(f, f1, f2, f3, f4, f5, entityCaps);		}		armSwing(f, f1, f2, f3, f4, f5, entityCaps);		if (Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_getIsWait)) {// 待機状態 腕
 			rightArm.rotateAngleX += Modchu_AS.getFloat(Modchu_AS.mathHelperSin, f2 * 0.057F) * 0.05F - 0.5F;
 			rightArm.rotateAngleZ -= 0.3F;
 			Arms[0].rotateAngleZ -= 1.5F;
@@ -330,7 +323,7 @@ public class MultiModel_Beverly6 extends MultiModelBeverlyBase {	//added field
 			breastR.rotationPointX += 0.1F;
 			breastL.rotationPointX -= 0.1F;
 		} else {
-			if (aimedBow) {// 弓構え 腕
+			int version = Modchu_Main.getMinecraftVersion();			boolean flag = version > 189;			if (aimedBow) {// 弓構え 腕
 				float fr6 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, onGrounds[0] * 3.141593F);
 				float fl6 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, onGrounds[1] * 3.141593F);
 				float fr7 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, (1.0F - (1.0F - onGrounds[0]) * (1.0F - onGrounds[0])) * 3.141593F);
@@ -351,7 +344,7 @@ public class MultiModel_Beverly6 extends MultiModelBeverlyBase {	//added field
 				leftArm.rotateAngleX += bipedHead.rotateAngleX;
 				rightArm.rotateAngleY += bipedHead.rotateAngleY;
 				leftArm.rotateAngleY += bipedHead.rotateAngleY;				Object entity = entityCaps.getCapsValue(entityCaps.caps_Entity);				boolean flag1 = version > 189						&& Modchu_AS.getEnum("EntityLivingBase", "getPrimaryHand", entity) == Modchu_AS.getEnum("EnumHandSide", "LEFT");				if (flag1) {					bipedRightArm.rotateAngleY *= 1.2F;					bipedLeftArm.rotateAngleY *= 0.5F;				}			} else {// 通常
-				rightArm.rotateAngleZ += 0.2F;
+				// アイテム持ってるときの腕振りを抑える+表示角オフセット				if (heldItem[1] != 0) {					if (heldItem[1] == 3) {						leftArm.rotateAngleX = flag ? leftArm.rotateAngleX * 0.5F - 0.9424779F : leftArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[1];						if (flag) {							leftArm.rotateAngleY = 0.5235988F;							if (!Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) Arms[1].setRotateAngle(-0.24F, -0.48F, 0.36F);							//Arms[1].setRotateAngle(Modchu_Debug.debaf1, Modchu_Debug.debaf2, Modchu_Debug.debaf3);							//Modchu_Debug.mdDebug(""+Modchu_Debug.debaf1+" "+Modchu_Debug.debaf2+" "+Modchu_Debug.debaf3+" ");						}					} else {						leftArm.rotateAngleX = leftArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[1];					}				}				if (heldItem[0] != 0) {					if (heldItem[0] == 3) {						rightArm.rotateAngleX = flag ? rightArm.rotateAngleX * 0.5F - 0.9424779F : rightArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[0];						if (flag) {							rightArm.rotateAngleY = -0.5235988F;							if (!Modchu_EntityCapsHelper.getCapsValueBoolean(this, entityCaps, caps_aimedBow)) Arms[0].setRotateAngle(-0.12F, -0.22F, -0.56F);							//Arms[0].setRotateAngle(Modchu_Debug.debaf1, Modchu_Debug.debaf2, Modchu_Debug.debaf3);							//Modchu_Debug.mdDebug(""+Modchu_Debug.debaf1+" "+Modchu_Debug.debaf2+" "+Modchu_Debug.debaf3+" ");						}					} else {						rightArm.rotateAngleX = rightArm.rotateAngleX * 0.5F - (float) Math.PI * 0.1F * heldItem[0];					}				}				rightArm.rotateAngleZ += 0.2F;
 				leftArm.rotateAngleZ -= 0.2F;
 				rightArm2.rotateAngleZ += 0.05F;
 				leftArm2.rotateAngleZ -= 0.05F;
