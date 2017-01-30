@@ -37,10 +37,10 @@ public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
 		int y;
 		int z;
 		if (Modchu_Main.getMinecraftVersion() < 180) { 
-			x = Modchu_AS.getInt(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving));
+			x = Modchu_AS.getInt(Modchu_AS.mathHelperFloor, Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving));
 			Object boundingBox = Modchu_AS.get(Modchu_AS.entityBoundingBox, entityliving);
-			y = Modchu_AS.getInt(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityBoundingBoxMaxY, boundingBox) + 1.0D);
-			z = Modchu_AS.getInt(Modchu_AS.mathHelperFloor_double, Modchu_AS.getDouble(Modchu_AS.entityPosZ, entityliving));
+			y = Modchu_AS.getInt(Modchu_AS.mathHelperFloor, Modchu_AS.getDouble(Modchu_AS.entityBoundingBoxMaxY, boundingBox) + 1.0D);
+			z = Modchu_AS.getInt(Modchu_AS.mathHelperFloor, Modchu_AS.getDouble(Modchu_AS.entityPosZ, entityliving));
 		} else {
 			x = (int) Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving);
 			y = (int) Modchu_AS.getDouble(Modchu_AS.entityPosY, entityliving) + 2;

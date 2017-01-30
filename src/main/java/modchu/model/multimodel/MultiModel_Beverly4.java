@@ -275,8 +275,8 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 			// 腕振り
 			float f15;
 			float f16, f17;
-			f16 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt_float, onGrounds[0]) * (float) Math.PI * 2.0F);
-			f17 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt_float, onGrounds[1]) * (float) Math.PI * 2.0F);
+			f16 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt, onGrounds[0]) * (float) Math.PI * 2.0F);
+			f17 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt, onGrounds[1]) * (float) Math.PI * 2.0F);
 			bipedBody.rotateAngleY = (f16 - f17) * 0.2F;
 			rightArm.rotateAngleY += bipedBody.rotateAngleY;
 			leftArm.rotateAngleY += bipedBody.rotateAngleY;			// R

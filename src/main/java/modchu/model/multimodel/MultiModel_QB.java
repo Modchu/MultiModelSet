@@ -298,8 +298,8 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		if (armSwingFlag(entityCaps)) {
 			// 腕振り
 			float f6, f7, f8;
-			f6 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt_float, onGrounds[0]) * (float) Math.PI * 2.0F);
-			f7 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt_float, onGrounds[1]) * (float) Math.PI * 2.0F);
+			f6 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt, onGrounds[0]) * (float) Math.PI * 2.0F);
+			f7 = Modchu_AS.getFloat(Modchu_AS.mathHelperSin, Modchu_AS.getFloat(Modchu_AS.mathHelperSqrt, onGrounds[1]) * (float) Math.PI * 2.0F);
 			bipedBody.rotateAngleY = (f6 - f7) * 0.2F;
 			bipedRightArm.rotateAngleY += bipedBody.rotateAngleY;
 			bipedLeftArm.rotateAngleY += bipedBody.rotateAngleY;
