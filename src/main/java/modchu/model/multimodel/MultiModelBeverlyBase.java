@@ -36,7 +36,7 @@ public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
 		int x;
 		int y;
 		int z;
-		if (Modchu_Main.getMinecraftVersion() < 180) { 
+		if (Modchu_Main.getMinecraftVersion() < 180) {
 			x = Modchu_AS.getInt(Modchu_AS.mathHelperFloor, Modchu_AS.getDouble(Modchu_AS.entityPosX, entityliving));
 			Object boundingBox = Modchu_AS.get(Modchu_AS.entityBoundingBox, entityliving);
 			y = Modchu_AS.getInt(Modchu_AS.mathHelperFloor, Modchu_AS.getDouble(Modchu_AS.entityBoundingBoxMaxY, boundingBox) + 1.0D);
@@ -158,6 +158,15 @@ public abstract class MultiModelBeverlyBase extends MultiModel_SR2 {
 	@Override
 	public float getRenderCorrectionYOffset(ModchuModel_ModelDataBase entityCaps) {
 		return 1.8F - getHeight(entityCaps);
+	}
+
+	@Override
+	protected float getFakeBreastSizeCorrectionPoint(ModchuModel_IEntityCaps entityCaps, ModchuModel_ModelRenderer modelRenderer, String s, float scale) {
+		if (s.equals("fakeBreastSizeCorrectionPointZ")) {
+			float f = -(scale - 1.0F);
+			return f;
+		}
+		return super.getFakeBreastSizeCorrectionPoint(entityCaps, modelRenderer, s, scale);
 	}
 
 }

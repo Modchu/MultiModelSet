@@ -352,8 +352,7 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		SkirtBack.rotateAngleX = -motionY / 2.0F;
 		SkirtFrontL.rotateAngleX = motionY / 2.0F;
 		SkirtLeftL.rotateAngleZ = motionY / 2.0F;
-		SkirtBackL.rotateAngleX = -motionY / 2.0F;		SkirtFront.scaleX = SkirtBack.scaleX = SkirtFrontL.scaleX = SkirtBackL.scaleX = 1.0F - (motionY * 1.2F);
-		SkirtRight.scaleZ = SkirtLeftL.scaleZ = 1.0F - (motionY * 1.2F);
+		SkirtBackL.rotateAngleX = -motionY / 2.0F;		float f6 = motionY * 0.8F;		SkirtFront.scaleX = SkirtBack.scaleX = SkirtFrontL.scaleX = SkirtBackL.scaleX = SkirtRight.scaleZ = SkirtLeftL.scaleZ = 1.0F - f6;
 	}	@Override
 	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);

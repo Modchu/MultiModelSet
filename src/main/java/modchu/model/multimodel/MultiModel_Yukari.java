@@ -1,4 +1,4 @@
-package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_ModelPlateMaster;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_Aug;public class MultiModel_Yukari extends MultiModel_Aug {	public ModchuModel_ModelRenderer Skirt_R;
+package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib.Modchu_Debug;import modchu.lib.Modchu_EntityCapsHelper;import modchu.lib.Modchu_ModelPlateMaster;import modchu.lib.Modchu_RunCalculationList;import modchu.lib.Modchu_TextCalculation;import modchu.model.ModchuModel_IEntityCaps;import modchu.model.ModchuModel_ModelRenderer;import modchu.model.multimodel.base.MultiModel_Aug;public class MultiModel_Yukari extends MultiModel_Aug {	public ModchuModel_ModelRenderer Skirt_R;
 	public ModchuModel_ModelRenderer Skirt_L;
 	public ModchuModel_ModelRenderer Skirt_RF;
 	public ModchuModel_ModelRenderer Skirt_RB;
@@ -89,14 +89,14 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 	public ModchuModel_ModelRenderer Body_B;
 	public ModchuModel_ModelRenderer Breast;
 	public ModchuModel_ModelRenderer Breast_C;
-	public ModchuModel_ModelRenderer Breast_U;
-	public ModchuModel_ModelRenderer Breast_B;
-	public ModchuModel_ModelRenderer Breast_R;
-	public ModchuModel_ModelRenderer Breast_L;
-	public ModchuModel_ModelRenderer Breast_RU;
-	public ModchuModel_ModelRenderer Breast_LU;
-	public ModchuModel_ModelRenderer Breast_RB;
-	public ModchuModel_ModelRenderer Breast_LB;	public MultiModel_Yukari() {
+	public ModchuModel_ModelRenderer Br_U;
+	public ModchuModel_ModelRenderer Br_B;
+	public ModchuModel_ModelRenderer Br_R;
+	public ModchuModel_ModelRenderer Br_L;
+	public ModchuModel_ModelRenderer Br_RU;
+	public ModchuModel_ModelRenderer Br_LU;
+	public ModchuModel_ModelRenderer Br_RB;
+	public ModchuModel_ModelRenderer Br_LB;	public MultiModel_Yukari() {
 		this(0.0F);
 	}	public MultiModel_Yukari(float f) {
 		this(f, 0.0F);
@@ -333,24 +333,15 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		Breast = new ModchuModel_ModelRenderer(this, 56, 16);
 		Breast.addBox(0.0F, -2.5F, 0.0F, 2, 5, 2, f);
 		Breast_C = new ModchuModel_ModelRenderer(this, 53, 16);
-		Breast_C.addPlate(-2F, 0.0F, 0.0F, 4, 1, 0);
-		Breast_U = new ModchuModel_ModelRenderer(this, 53, 15);
-		Breast_U.addPlate(-2F, -1F, 0.0F, 4, 1, 0);
-		Breast_B = new ModchuModel_ModelRenderer(this, 53, 17);
-		Breast_B.addPlate(-2F, 0.0F, 0.0F, 4, 1, 0);
-		Breast_R = new ModchuModel_ModelRenderer(this, 52, 16);
-		Breast_R.addPlate(-1F, -0.5F, 0.0F, 1, 1, 0);
-		Breast_RU = new ModchuModel_ModelRenderer(this, 52, 15);
-		Breast_RU.addPlate(-1F, -1F, 0.0F, 1, 1, 0);
-		Breast_RB = new ModchuModel_ModelRenderer(this, 52, 17);
-		Breast_RB.addPlate(-1F, 0.0F, 0.0F, 1, 1, 0);
-		Breast_L = new ModchuModel_ModelRenderer(this, 57, 16);
-		Breast_L.addPlate(0.0F, -0.5F, 0.0F, 1, 1, 0);
-		Breast_LU = new ModchuModel_ModelRenderer(this, 57, 15);
-		Breast_LU.addPlate(0.0F, -1F, 0.0F, 1, 1, 0);
-		Breast_LB = new ModchuModel_ModelRenderer(this, 57, 17);
-		Breast_LB.addPlate(0.0F, 0.0F, 0.0F, 1, 1, 0);
-		SideTailR = new ModchuModel_ModelRenderer(this);
+		Breast_C.addPlate(-2F, 0.0F, 0.0F, 4, 1, 0);		Br_U = new ModchuModel_ModelRenderer(this, 53, 15);
+		Br_U.addPlate(-2F, -1F, 0.0F, 4, 1, 0);		Br_B = new ModchuModel_ModelRenderer(this, 53, 17);
+		Br_B.addPlate(-2F, 0.0F, 0.0F, 4, 1, 0);		Br_R = new ModchuModel_ModelRenderer(this, 52, 16);
+		Br_R.addPlate(-1F, -0.5F, 0.0F, 1, 1, 0);		Br_RU = new ModchuModel_ModelRenderer(this, 52, 15);
+		Br_RU.addPlate(-1F, -1F, 0.0F, 1, 1, 0);		Br_RB = new ModchuModel_ModelRenderer(this, 52, 17);
+		Br_RB.addPlate(-1F, 0.0F, 0.0F, 1, 1, 0);		Br_L = new ModchuModel_ModelRenderer(this, 57, 16);
+		Br_L.addPlate(0.0F, -0.5F, 0.0F, 1, 1, 0);		Br_LU = new ModchuModel_ModelRenderer(this, 57, 15);
+		Br_LU.addPlate(0.0F, -1F, 0.0F, 1, 1, 0);		Br_LB = new ModchuModel_ModelRenderer(this, 57, 17);
+		Br_LB.addPlate(0.0F, 0.0F, 0.0F, 1, 1, 0);		SideTailR = new ModchuModel_ModelRenderer(this);
 		SideTailL = new ModchuModel_ModelRenderer(this);
 		mainFrame = new ModchuModel_ModelRenderer(this, 0, 0);
 		Skirt_R.setRotationPoint(0.0F, 0.0F, 0.0F);		Skirt_L.setRotationPoint(0.0F, 0.0F, 0.0F);		Skirt_RF.setRotationPoint(-2.71F, 0.0F, -3.0F);		Skirt_RB.setRotationPoint(0.0F, 0.0F, 6.0F);		Skirt_RR.setRotationPoint(3.39F, 0.0F, 0.0F);		Skirt_RL.setRotationPoint(1.61F, 0.0F, 0.0F);		Skirt_LF.setRotationPoint(-2.29F, 0.0F, -3.0F);		Skirt_LB.setRotationPoint(0.0F, 0.0F, 6.0F);		Skirt_LR.setRotationPoint(3.39F, 0.0F, 0.0F);		Skirt_LL.setRotationPoint(1.61F, 0.0F, 0.0F);		Arm_RF.setRotationPoint(-2.0F, 3.0F, -2.0F);		Arm_RB.setRotationPoint(0.0F, 0.0F, 4.0F);		Arm_RR.setRotationPoint(0.0F, 0.0F, 0.0F);		Arm_RL.setRotationPoint(4.0F, 0.0F, 0.0F);		Arm_LF.setRotationPoint(-2.0F, 3.0F, -2.0F);		Arm_LB.setRotationPoint(0.0F, 0.0F, 4.0F);		Arm_LR.setRotationPoint(0.0F, 0.0F, 0.0F);		Arm_LL.setRotationPoint(4.0F, 0.0F, 0.0F);		Parka_1.setRotationPoint(0.0F, -3.0F, 2.0F);		Parka_1.setRotateAngleX(0.08726461F);		Parka_2.setRotationPoint(0.0F, -3.0F, 0.18F);		Parka_F.setRotationPoint(0.0F, 3.5F, -4.5F);		Parka_B.setRotationPoint(0.0F, 3.5F, 4.5F);		Parka_R.setRotationPoint(-1.51F, 3.5F, 0.0F);		Parka_L.setRotationPoint(1.51F, 3.5F, 0.0F);		RabbitEar_RB1.setRotationPoint(-2.5F, 3.0F, 1.0F);		RabbitEar_RB2.setRotationPoint(0.0F, 4.5F, 0.0F);		RabbitEar_LB1.setRotationPoint(2.5F, 3.0F, 1.0F);		RabbitEar_LB2.setRotationPoint(0.0F, 4.5F, 0.0F);		RabbitEar_R1.setRotationPoint(-2.3F, -8.0F, -1.5F);		RabbitEar_R1.setRotateAngleZ(0.08726461F);		RabbitEar_R2.setRotationPoint(-2F, -1.0F, 0.0F);		RabbitEar_R2.setRotateAngleZ(-((float) Math.PI / 4F));		RabbitEar_R3.setRotationPoint(-1F, 0.0F, 0.0F);		RabbitEar_R4.setRotationPoint(1.0F, 5.0F, 0.0F);		RabbitEar_R4.setRotateAngleZ(0.1745292F);		RabbitEar_L1.setRotationPoint(2.3F, -8.0F, -1.5F);		RabbitEar_L1.setRotateAngleZ(-0.08726461F);		RabbitEar_L2.setRotationPoint(2.0F, -1.0F, 0.0F);		RabbitEar_L2.setRotateAngleZ(((float) Math.PI / 4F));		RabbitEar_L3.setRotationPoint(1.0F, 0.0F, 0.0F);		RabbitEar_L4.setRotationPoint(-1F, 5.0F, 0.0F);		RabbitEar_L4.setRotateAngleZ(-0.1745292F);		HairOrnament_R.setRotationPoint(3.5F, -1.8F, -3.5F);		HairOrnament_L.setRotationPoint(-3.5F, -1.8F, -3.5F);		PigTail_R1.setRotationPoint(-3.5F, 0.0F, -3.5F);		PigTail_R2.setRotationPoint(0.5F, 1.0F, 0.5F);		PigTail_R2.setRotateAngleX(-0.1745292F);		PigTail_R2.setRotateAngleY(0.0F);		PigTail_R2.setRotateAngleZ(0.1745292F);		PigTail_L1.setRotationPoint(3.5F, 0.0F, -3.5F);		PigTail_L2.setRotationPoint(-0.5F, 1.0F, 0.5F);		PigTail_L2.setRotateAngleX(-0.1745292F);		PigTail_L2.setRotateAngleY(0.0F);		PigTail_L2.setRotateAngleZ(-0.1745292F);		Accessory_S1.setRotationPoint(1.8F, -6.0F, -2.3F);		Accessory_S2.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_B1.setRotationPoint(3F, -6.75F, -2.599F);		Accessory_B2.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_H.setRotationPoint(0.0F, 1.5F, 0.0F);		Accessory_HRF1.setRotationPoint(-2.3F, 0.4F, -1.4F);		Accessory_HRF1.setRotateAngleZ(0.226888F);		Accessory_HRF2.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_HRF3.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_HRF3.setRotateAngleZ(0.08726461F);		Accessory_HR1.setRotationPoint(-2.7F, 0.0F, -0.65F);		Accessory_HR1.setRotateAngleY(((float) Math.PI / 2F));		Accessory_HR2.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_HLF1.setRotationPoint(2.3F, 0.4F, -1.4F);		Accessory_HLF1.setRotateAngleZ(-0.226888F);		Accessory_HLF2.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_HLF3.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_HLF3.setRotateAngleZ(-0.08726461F);		Accessory_HL1.setRotationPoint(2.7F, 0.0F, -0.65F);		Accessory_HL1.setRotateAngleY(-((float) Math.PI / 2F));		Accessory_HL2.setRotationPoint(0.0F, 0.0F, 0.0F);		Accessory_HB1.setRotationPoint(0.0F, 0.0F, 0.3F);		Accessory_HB1.setRotateAngleY((float) Math.PI);		Accessory_HB2.setRotationPoint(0.0F, 0.0F, 0.0F);		ArmAccessory_RF.setRotationPoint(0.0F, 5.0F, 0.0F);		ArmAccessory_RB.setRotationPoint(0.0F, 0.0F, 0.0F);		ArmAccessory_RR.setRotationPoint(0.0F, 0.0F, 0.0F);		ArmAccessory_RL.setRotationPoint(0.0F, 0.0F, 0.0F);		ArmAccessory_R.setRotationPoint(-1.5F, 0.36F, -1.97F);		ArmAccessory_R.setRotateAngleY(0.01745292F);		Belt_R.setRotationPoint(-0.3F, 0.35F, 0.0F);		Belt_R.setRotateAngleX(((float) Math.PI * 2F / 9F));		Belt_R.setRotateAngleY(-((float) Math.PI / 2F));		Belt_L.setRotationPoint(0.3F, 0.35F, 0.0F);		Belt_L.setRotateAngleX(((float) Math.PI * 2F / 9F));		Belt_L.setRotateAngleY(((float) Math.PI / 2F));		BeltAccessory_L.setRotationPoint(2.301F, 2.2F, 0.0F);		BeltAccessory_L.setRotateAngleY(-((float) Math.PI / 2F));		Incom_1.setRotationPoint(4F, -1.75F, -2.1F);		Incom_1.setRotateAngleX(((float) Math.PI / 2F));		Incom_1.setRotateAngleY(-1.919821F);		Incom_1.setRotateAngleZ(-((float) Math.PI / 2F));		Incom_2.setRotationPoint(3.1F, -1.0F, -4F);		Incom_2.setRotateAngleZ(-0.2617939F);		Incom_3.setRotationPoint(0.0F, 0.0F, 0.0F);		Shaggy_B1.setRotationPoint(0.0F, -8.0F, 4.0F);		Shaggy_B1.setRotateAngleX(10F / 180F * 3.141526F);		Shaggy_B2.setRotationPoint(0.0F, -6.0F, 4F);		Shaggy_B2.setRotateAngleX(0.1745292F);		Shaggy_B3.setRotationPoint(0.0F, -4.0F, 4F);		Shaggy_B3.setRotateAngleX(0.1745292F);		Shaggy_B4.setRotationPoint(0.0F, -2.0F, 4F);		Shaggy_B4.setRotateAngleX(0.2617939F);		Shaggy_B5.setRotationPoint(0.0F, -1.0F, 4F);		Shaggy_B5.setRotateAngleX(0.2617939F);		Shaggy_R1.setRotationPoint(-4.0F, -8.0F, 0.0F);		Shaggy_R1.setRotateAngleZ(10F / 180F * 3.141526F);		Shaggy_R2.setRotationPoint(-4F, -6.0F, 0.0F);		Shaggy_R2.setRotateAngleZ(0.1745292F);		Shaggy_R3.setRotationPoint(-4F, -4.0F, 0.0F);		Shaggy_R3.setRotateAngleZ(0.1745292F);		Shaggy_R4.setRotationPoint(-4F, -2.0F, 0.0F);		Shaggy_R4.setRotateAngleZ(0.2617939F);		Shaggy_R5.setRotationPoint(-4F, -1.0F, 0.0F);		Shaggy_R5.setRotateAngleZ(0.2617939F);		Shaggy_L1.setRotationPoint(4.0F, -8.0F, 0.0F);		Shaggy_L1.setRotateAngleZ(-10F / 180F * 3.141526F);		Shaggy_L2.setRotationPoint(4F, -6.0F, 0.0F);		Shaggy_L2.setRotateAngleZ(-0.1745292F);		Shaggy_L3.setRotationPoint(4F, -4.0F, 0.0F);		Shaggy_L3.setRotateAngleZ(-0.1745292F);		Shaggy_L4.setRotationPoint(4F, -2.0F, 0.0F);		Shaggy_L4.setRotateAngleZ(-0.2617939F);		Shaggy_L5.setRotationPoint(4F, -1.0F, 0.0F);		Shaggy_L5.setRotateAngleZ(-0.2617939F);		sensor1.setRotationPoint(0.0F, -8.0F, 0.0F);		sensor2.setRotationPoint(0.0F, -8.0F, 0.0F);		sensor3.setRotationPoint(0.0F, -8.0F, 0.0F);		sensor4.setRotationPoint(0.0F, -8.0F, 0.0F);		eyeR.setRotationPoint(0.0F, 0.0F, 0.0F);		eyeL.setRotationPoint(0.0F, 0.0F, 0.0F);		Cheek_R.setRotationPoint(0.0F, 1.0F, 0.0F);		Cheek_L.setRotationPoint(0.0F, 1.0F, 0.0F);		Head_F.setRotationPoint(3.25F, -5.25F, -4.002F);		Body_B.setRotationPoint(0.0F, 0.0F, 2.001F);		if (isAfterInit) afterInit(f, f1);
@@ -441,16 +432,16 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		Incom_2.clearChildModels();
 		Incom_2.addChild(Incom_3);
 		Breast_C.clearChildModels();
-		Breast_C.addChild(Breast_U);
-		Breast_C.addChild(Breast_B);
-		Breast_C.addChild(Breast_R);
-		Breast_R.clearChildModels();
-		Breast_R.addChild(Breast_RU);
-		Breast_R.addChild(Breast_RB);
-		Breast_C.addChild(Breast_L);
-		Breast_L.clearChildModels();
-		Breast_L.addChild(Breast_LU);
-		Breast_L.addChild(Breast_LB);
+		Breast_C.addChild(Br_U);
+		Breast_C.addChild(Br_B);
+		Breast_C.addChild(Br_R);
+		Br_R.clearChildModels();
+		Br_R.addChild(Br_RU);
+		Br_R.addChild(Br_RB);
+		Breast_C.addChild(Br_L);
+		Br_L.clearChildModels();
+		Br_L.addChild(Br_LU);
+		Br_L.addChild(Br_LB);
 		bipedHead.addChild(Incom_1);
 		bipedHead.addChild(Incom_2);
 		bipedHead.addChild(Shaggy_B1);
@@ -507,22 +498,22 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		Breast.setRotateAngleZ(((float) Math.PI / 2F));
 		Breast.setRotateAngleY(((float) Math.PI * 2F / 9F));
 		Breast_C.setRotationPoint(0.0F, -1.5F, -2.25F);
-		Breast_U.setRotationPoint(0.0F, 0.0F, 0.0F);
-		Breast_U.setRotateAngleX(-0.2617939F);
-		Breast_B.setRotationPoint(0.0F, 1.0F, 0.0F);
-		Breast_B.setRotateAngleX(0.2617939F);
-		Breast_R.setRotationPoint(-2F, 0.5F, 0.0F);
-		Breast_R.setRotateAngleY(0.2617939F);
-		Breast_RU.setRotationPoint(0.0F, -0.5F, 0.0F);
-		Breast_RU.setRotateAngleX(-0.2617939F);
-		Breast_RB.setRotationPoint(0.0F, 0.5F, 0.0F);
-		Breast_RB.setRotateAngleX(0.2617939F);
-		Breast_L.setRotationPoint(2.0F, 0.5F, 0.0F);
-		Breast_L.setRotateAngleY(-0.2617939F);
-		Breast_LU.setRotationPoint(0.0F, -0.5F, 0.0F);
-		Breast_LU.setRotateAngleX(-0.2617939F);
-		Breast_LB.setRotationPoint(0.0F, 0.5F, 0.0F);
-		Breast_LB.setRotateAngleX(0.2617939F);
+		Br_U.setRotationPoint(0.0F, 0.0F, 0.0F);
+		Br_U.setRotateAngleX(-0.2617939F);
+		Br_B.setRotationPoint(0.0F, 1.0F, 0.0F);
+		Br_B.setRotateAngleX(0.2617939F);
+		Br_R.setRotationPoint(-2F, 0.5F, 0.0F);
+		Br_R.setRotateAngleY(0.2617939F);
+		Br_RU.setRotationPoint(0.0F, -0.5F, 0.0F);
+		Br_RU.setRotateAngleX(-0.2617939F);
+		Br_RB.setRotationPoint(0.0F, 0.5F, 0.0F);
+		Br_RB.setRotateAngleX(0.2617939F);
+		Br_L.setRotationPoint(2.0F, 0.5F, 0.0F);
+		Br_L.setRotateAngleY(-0.2617939F);
+		Br_LU.setRotationPoint(0.0F, -0.5F, 0.0F);
+		Br_LU.setRotateAngleX(-0.2617939F);
+		Br_LB.setRotationPoint(0.0F, 0.5F, 0.0F);
+		Br_LB.setRotateAngleX(0.2617939F);
 		mainFrame.setRotationPoint(0.0F, 8.0F, 0.0F);
 	}	@Override
 	public void setLivingAnimationsLM(ModchuModel_IEntityCaps entityCaps, float f, float f1, float f2) {
@@ -762,14 +753,14 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		Body_B.setVisible(b);
 		Breast.setVisible(b);
 		Breast_C.setVisible(b);
-		Breast_U.setVisible(b);
-		Breast_B.setVisible(b);
-		Breast_R.setVisible(b);
-		Breast_L.setVisible(b);
-		Breast_RU.setVisible(b);
-		Breast_LU.setVisible(b);
-		Breast_RB.setVisible(b);
-		Breast_LB.setVisible(b);
+		Br_U.setVisible(b);
+		Br_B.setVisible(b);
+		Br_R.setVisible(b);
+		Br_L.setVisible(b);
+		Br_RU.setVisible(b);
+		Br_LU.setVisible(b);
+		Br_RB.setVisible(b);
+		Br_LB.setVisible(b);
 		Breast_C.rotationPointZ = -2.35F;
 		//Skirt_LR.setRotationPoint(3.39F, 0.0F, 0.0F);
 	}	@Override
@@ -803,4 +794,4 @@ package modchu.model.multimodel;import modchu.lib.Modchu_AS;import modchu.lib
 		super.setArmorBipedLeftLegShowModel(entityCaps, b);
 		bipedLeftLeg.isHidden = !b;
 	}
-	@Override	public void showModelSettingReflects(ModchuModel_IEntityCaps entityCaps) {		super.showModelSettingReflects(entityCaps);		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_skirtFloats) > 1) {			setCapsValue(entityCaps, caps_visible, Skirt, true);		}	}}
+	@Override	public void showModelSettingReflects(ModchuModel_IEntityCaps entityCaps) {		super.showModelSettingReflects(entityCaps);		if (Modchu_EntityCapsHelper.getCapsValueInt(this, entityCaps, caps_skirtFloats) > 1) {			setCapsValue(entityCaps, caps_visible, Skirt, true);		}	}	@Override	protected float getFakeBreastScale(ModchuModel_IEntityCaps entityCaps, ModchuModel_ModelRenderer modelRenderer, String s, float scale) {		if (s.equals("fakeBreastScaleZ")) {			return scale * 3.0F;		}		if (s.equals("fakeBreastScaleY")) {			return (scale - 1.0F) * 0.5F + 1.0F;		}		return 1.0F;	}	@Override	protected float getFakeBreastSizeCorrectionPoint(ModchuModel_IEntityCaps entityCaps, ModchuModel_ModelRenderer modelRenderer, String s, float scale) {		if (s.equals("fakeBreastSizeCorrectionPointZ")) {			float f = (scale - 1.0F) * 0.25F;			return f;		}		return super.getFakeBreastSizeCorrectionPoint(entityCaps, modelRenderer, s, scale);	}}
