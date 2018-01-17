@@ -163,7 +163,7 @@ public class MultiModel_Elsa3 extends MultiModel_SR2 {	public ModchuModel_Mode
 	}	@Override
 	public void defaultAddChildSetting() {
 		super.defaultAddChildSetting();
-		bipedHead.removeChild(SideTailR);
+		bipedHead.removeChild(Ponytail);		bipedHead.removeChild(SideTailR);
 		bipedHead.removeChild(SideTailL);
 	}	/**
 	 * 姿勢制御・更新差分

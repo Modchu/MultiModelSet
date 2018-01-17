@@ -98,8 +98,7 @@ public class MultiModel_Elsa4 extends MultiModel_SR2 {	public ModchuModel_Mode
 	}	@Override
 	public void defaultAddChildSetting() {
 		super.defaultAddChildSetting();
-		Skirt.addChild(hemSkirt);
-	}	@Override
+		bipedHead.addChild(Ponytail);		bipedHead.addChild(BunchR);		bipedHead.addChild(BunchL);		Skirt.addChild(hemSkirt);	}	@Override
 	public void setDefaultPause(float f, float f1, float f2, float f3, float f4, float f5, ModchuModel_IEntityCaps entityCaps) {
 		bipedHeadwear.setRotationPoint(0F, 0F, 0F);
 		bipedBody.setRotationPoint(0F, bodyPosY, 0F);		//INIT POSITION
